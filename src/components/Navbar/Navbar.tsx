@@ -1,13 +1,14 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import styles from "./Navbar.module.css";
 import LanguageSelector from "../language-selector";
 import { useTranslation } from "react-i18next";
 import { IoMenu } from "react-icons/io5";
-import Drawer from "./Drawer"; // Import the Drawer component
+import Drawer from "./Drawer";
 
 const Navbar: React.FC = () => {
   const { t } = useTranslation();
+  const location = useLocation();
 
   const h1one = t("header1.h1one") as string;
   const h1two = t("header1.h1two") as string;
@@ -18,22 +19,18 @@ const Navbar: React.FC = () => {
   const h2btn1 = t("header2.h2btn1") as string;
   const h2btn2 = t("header2.h2btn2") as string;
 
-  const [active, setActive] = useState(false);
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
-  // Define links for the drawer
   const links = [
     { path: "/en/home", label: h2one },
     { path: "/about", label: h2two },
     { path: "/contact", label: h2three },
-    { path: "/contact", label: h2four },
-    // Add more links as needed
+    { path: "/services", label: h2four },
   ];
 
   const toggleDrawer = () => {
     setIsDrawerOpen((prev) => !prev);
   };
-  const closeDrawer = () => setIsDrawerOpen(false);
 
   return (
     <nav className={styles.navbar}>
@@ -69,26 +66,20 @@ const Navbar: React.FC = () => {
           </span>
           <div className={`${styles.navLeft} d-flex align-items-center gap-5`}>
             <ul className={`d-flex gap-3 ${styles.navLinks}`}>
-              <li>
-                <Link to={`/en/home`} className={styles.linkActive}>
-                  {h2one}
-                </Link>
-              </li>
-              <li>
-                <Link to="/about" className={styles.link}>
-                  {h2two}
-                </Link>
-              </li>
-              <li>
-                <Link to="/contact" className={styles.link}>
-                  {h2three}
-                </Link>
-              </li>
-              <li>
-                <Link to="/contact" className={styles.link}>
-                  {h2four}
-                </Link>
-              </li>
+              {links.map((link) => (
+                <li key={link.path}>
+                  <Link
+                    to={link.path}
+                    className={
+                      location.pathname === link.path
+                        ? styles.linkActive
+                        : styles.link
+                    }
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
           <IoMenu className={styles.menuIcon} onClick={toggleDrawer} />
@@ -108,7 +99,12 @@ const Navbar: React.FC = () => {
       </div>
 
       {/* Drawer for mobile menu */}
-      <Drawer active={isDrawerOpen} onClose={toggleDrawer} links={links} />
+      <Drawer
+        active={isDrawerOpen}
+        onClose={toggleDrawer}
+        links={links}
+        activePath={location.pathname} // Pass the active path to the Drawer
+      />
     </nav>
   );
 };
