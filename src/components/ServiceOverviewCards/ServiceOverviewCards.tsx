@@ -31,17 +31,17 @@ const ServiceOverviewCards: React.FC<ServiceOverviewCardsProps> = ({ t }) => {
   return (
     <>
       <div className={`row g-5 ${styles.heroBottomCard}`}>
-        <div className={`col-4`}>
+        <div className={`col-xl-4`}>
           <img src="/Frame.png" alt="Frame" />
           <h3 className={`${styles.card1Heading}`}>{box3line1}</h3>
           <p className={`${styles.card1Desc}`}>{box3line2}</p>
         </div>
-        <div className={`col-4`}>
+        <div className={`col-xl-4`}>
           <img src="/Frame-1.png" alt="Frame" />
           <h3 className={`${styles.card1Heading}`}>{box4line1}</h3>
           <p className={`${styles.card1Desc}`}>{box4line2}</p>
         </div>
-        <div className={`col-4`}>
+        <div className={`col-xl-4`}>
           <img src="/Frame-2.png" alt="Frame" />
           <h3 className={`${styles.card1Heading}`}>{box5line1}</h3>
           <p className={`${styles.card1Desc}`}>{box5line2}</p>

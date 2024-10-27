@@ -37,20 +37,29 @@
 }
 
 /* Media queries for responsiveness */
+@media screen and (max-width: 1200px) {
+  .homeHero {
+    padding: 30px 20px;
+  }
+  .heroSubHeading {
+    width: 100%;
+  }
+}
+
 @media screen and (max-width: 420px) {
   .heroHeading {
-      font-size: 35px !important;
+    font-size: 35px !important;
   }
 }
 
 @media screen and (max-width: 375px) {
   .heroHeading {
-      font-size: 30px !important;
+    font-size: 30px !important;
   }
 }
 
 @media screen and (max-width: 325px) {
   .heroHeading {
-      font-size: 28px !important;
+    font-size: 28px !important;
   }
 }

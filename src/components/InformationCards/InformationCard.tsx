@@ -56,15 +56,24 @@ const InformationCards: React.FC<InformationCardsProps> = ({ t }) => {
         </div>
 
         <div className={styles.col8Right}>
-          <div>
-            <div className={styles.card1}>2</div>
-            <p className={styles.card1Title}>{boxline4}</p>
-            <h3 className={styles.card1Heading}>{boxline5}</h3>
-            <p className={styles.card1Desc}>{boxline6}</p>
+          <div className={styles.col8RightInner}>
+            <div>
+              <div className={styles.card1}>2</div>
+              <p className={styles.card1Title}>{boxline4}</p>
+              <h3 className={styles.card1Heading}>{boxline5}</h3>
+              <p className={styles.card1Desc}>{boxline6}</p>
+            </div>
+            <div className={styles.buttonsLG}>
+              <button className={styles.card2mblbtn1}>{boxbutton}</button>
+              <button className={styles.card2mblbtn2}>{box4line1}</button>
+            </div>
+            <FaChevronRight className={styles.rightIconSM} />
+          </div>
+          <div className={styles.buttonsSM}>
             <button className={styles.card2mblbtn1}>{boxbutton}</button>
             <button className={styles.card2mblbtn2}>{box4line1}</button>
           </div>
-          <FaChevronRight className={styles.rightIcon} />
+          <FaChevronRight className={styles.rightIconLG} />
         </div>
       </div>
 
