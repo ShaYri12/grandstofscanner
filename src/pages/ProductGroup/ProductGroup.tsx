@@ -4,54 +4,10 @@ import { ProductGroup } from "./ProductTypes";
 import { FaChevronRight } from "react-icons/fa";
 
 // Sample data for testing
-const sampleGroups: ProductGroup[] = [
-  {
-    id: "340600",
-    name: "Kaarsen en dergelijke artikelen",
-    materials: [
-      {
-        id: "Fe",
-        symbol: "Fe",
-        name: "Ijzer",
-        factsheetLink: "#",
-        riskLevel: "Verwaarloosbaar",
-      },
-      {
-        id: "Sb",
-        symbol: "Sb",
-        name: "Antimoon",
-        factsheetLink: "#",
-        riskLevel: "Beperkt",
-      },
-      {
-        id: "Fe2",
-        symbol: "Fe",
-        name: "Ijzer",
-        factsheetLink: "#",
-        riskLevel: "Gemiddeld",
-      },
-    ],
-  },
-  {
-    id: "340601",
-    name: "Kaarsen en dergelijke artikelen",
-    materials: [
-      {
-        id: "Fe3",
-        symbol: "Fe",
-        name: "Ijzer",
-        factsheetLink: "#",
-        riskLevel: "Verwaarloosbaar",
-      },
-      {
-        id: "Sb2",
-        symbol: "Sb",
-        name: "Antimoon",
-        factsheetLink: "#",
-        riskLevel: "Beperkt",
-      },
-    ],
-  },
+const factsheets = [
+  { id: 1, symbol: "Fe", title: "IJzer", linkText: "Bekijk factsheet" },
+  { id: 2, symbol: "Sb", title: "Antimoon", linkText: "Bekijk factsheet" },
+  { id: 3, symbol: "Fe", title: "IJzer", linkText: "Bekijk factsheet" },
 ];
 
 const ProductGroups: React.FC = () => (
@@ -87,34 +43,59 @@ const ProductGroups: React.FC = () => (
         hoeveelheid, weergegeven.
       </p>
 
-      <div className={styles.groupsContainer}>
-        {sampleGroups.map((group) => (
-          <div key={group.id} className={styles.groupCard}>
-            <div className={styles.groupHeader}>
-              <h4>{group.name}</h4>
-              <a href="#" className={styles.factsheetLink}>
-                Bekijk factsheet &gt;
-              </a>
+      <div className={styles.boxes}>
+        <div className={styles.sidePanel}>
+          {factsheets.map((item) => (
+            <div key={item.id} className={styles.item}>
+              <div className={styles.icon}>{item.symbol}</div>
+              <div>
+                <p className={styles.title}>{item.title}</p>
+                <a href="#" className={styles.link}>
+                  {item.linkText} &gt;
+                </a>
+              </div>
             </div>
-            <div className={styles.materials}>
-              {group.materials.map((material) => (
-                <div key={material.id} className={styles.material}>
-                  <div className={styles.symbol}>{material.symbol}</div>
-                  <div className={styles.materialInfo}>
-                    <span className={styles.materialName}>{material.name}</span>
-                    <a
-                      href={material.factsheetLink}
-                      className={styles.materialFactsheet}
-                    >
-                      Bekijk factsheet &gt;
-                    </a>
-                  </div>
-                  <span className={styles.riskLevel}>{material.riskLevel}</span>
-                </div>
-              ))}
-            </div>
+          ))}
+        </div>
+
+        <div className={styles.mainContent}>
+          <p className={styles.code}>340600</p>
+          <h3 className={styles.mainTitle}>Kaarsen en dergelijke artikelen</h3>
+          <a href="#" className={styles.mainLink}>
+            Bekijk factsheet &gt;
+          </a>
+          <div className={styles.info}>
+            <p>Verwaarloosbaar</p>
+            <p>Beperkt</p>
+            <p>Gemiddeld</p>
           </div>
-        ))}
+        </div>
+
+        <div className={styles.mainContentAlt}>
+          <p className={styles.code}>340600</p>
+          <h3 className={styles.mainTitle}>Kaarsen en dergelijke artikelen</h3>
+          <a href="#" className={styles.mainLink}>
+            Bekijk factsheet &gt;
+          </a>
+          <div className={styles.info}>
+            <p>Verwaarloosbaar</p>
+            <p>Beperkt</p>
+            <p>Gemiddeld</p>
+          </div>
+        </div>
+
+        <div className={styles.mainContent}>
+          <p className={styles.code}>340600</p>
+          <h3 className={styles.mainTitle}>Kaarsen en dergelijke artikelen</h3>
+          <a href="#" className={styles.mainLink}>
+            Bekijk factsheet &gt;
+          </a>
+          <div className={styles.info}>
+            <p>Verwaarloosbaar</p>
+            <p>Beperkt</p>
+            <p>Gemiddeld</p>
+          </div>
+        </div>
       </div>
       <button className={styles.actionButton}>Handelingsperspectieven</button>
     </div>
