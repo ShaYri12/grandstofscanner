@@ -1,12 +1,12 @@
-import React, { useEffect } from 'react';
-import { useTranslation } from 'react-i18next';
-import styles from './Home.module.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { useParams } from 'react-router-dom';
-import Footer from '../../components/Footer/Footer';
-import HeroSection from '../../components/HeroSection/HeroSection';
-import InformationCards from '../../components/InformationCards/InformationCard.';
-import ServiceOverviewCards from '../../components/ServiceOverviewCards/ServiceOverviewCards';
+import React, { useEffect } from "react";
+import { useTranslation } from "react-i18next";
+import styles from "./Home.module.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { useParams } from "react-router-dom";
+import Footer from "../../components/Footer/Footer";
+import HeroSection from "../../components/HeroSection/HeroSection";
+import InformationCards from "../../components/InformationCards/InformationCard";
+import ServiceOverviewCards from "../../components/ServiceOverviewCards/ServiceOverviewCards";
 
 const Home = () => {
   const { lang } = useParams();

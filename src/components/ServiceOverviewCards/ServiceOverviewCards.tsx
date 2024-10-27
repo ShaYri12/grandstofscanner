@@ -1,14 +1,36 @@
 import React from "react";
 import styles from "./ServiceOverviewCards.module.css";
 
-const ServiceOverviewCards = ({ t }) => {
-  const { box3line1, box3line2 } = t("box3");
-  const { box4line1, box4line2 } = t("box4");
-  const { box5line1, box5line2 } = t("box5");
-  const { heading, subHeading } = t("mobile");
+// Define an interface for the expected translation structure
+interface ServiceOverviewTranslation {
+  box3line1: string;
+  box3line2: string;
+  box4line1: string;
+  box4line2: string;
+  box5line1: string;
+  box5line2: string;
+  heading: string;
+  subHeading: string;
+}
+
+// Define the props interface
+interface ServiceOverviewCardsProps {
+  t: (key: string) => string; // Adjusting to a generic string return
+}
+
+const ServiceOverviewCards: React.FC<ServiceOverviewCardsProps> = ({ t }) => {
+  const box3line1 = t("box3.box3line1");
+  const box3line2 = t("box3.box3line2");
+  const box4line1 = t("box4.box4line1");
+  const box4line2 = t("box4.box4line2");
+  const box5line1 = t("box5.box5line1");
+  const box5line2 = t("box5.box5line2");
+  const heading = t("mobile.heading");
+  const subHeading = t("mobile.subHeading");
+
   return (
     <>
-      <div className={` row g-5 ${styles.heroBottomCard}`}>
+      <div className={`row g-5 ${styles.heroBottomCard}`}>
         <div className={`col-4`}>
           <img src="/Frame.png" alt="Frame" />
           <h3 className={`${styles.card1Heading}`}>{box3line1}</h3>

@@ -68,7 +68,7 @@ p {
 /* Hero card styles */
 .heroCardCenter {
   border-radius: 20px;
-  padding: 0 60px;
+  padding: 0 40px;
   position: relative;
   display: flex;
   transform: translateY(-50%);
@@ -161,6 +161,12 @@ p {
 }
 
 /* Media Queries */
+@media screen and (max-width: 1340px) {
+  .heroCardCenter {
+    transform: translateY(-40%);
+  }
+}
+
 @media screen and (min-width: 1200px) {
   .card2mblbtn1,
   .card2mblbtn2 {
