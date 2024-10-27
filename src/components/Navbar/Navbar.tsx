@@ -107,35 +107,37 @@ const Navbar: React.FC = () => {
           className={`fa-solid fa-bars ${styles.navicon}`}
           onClick={() => setActive(!active)}
         ></i>
-        <h1 className={`${styles.mblnavlogo} ${styles.heroHeading}`}>
-          Grondstoffen <br /> scanner
-        </h1>
-        <span className={styles.logoText}>
-          <img src="/logo.png" alt="Logo" />
-        </span>
-        <div className={`${styles.navLeft} d-flex align-items-center gap-5`}>
-          <ul className={`d-flex gap-5 ${styles.navLinks}`}>
-            <li>
-              <Link to={`/en/home`} className={styles.linkActive}>
-                {h2one}
-              </Link>
-            </li>
-            <li>
-              <Link to="/about" className={styles.link}>
-                {h2two}
-              </Link>
-            </li>
-            <li>
-              <Link to="/contact" className={styles.link}>
-                {h2three}
-              </Link>
-            </li>
-            <li>
-              <Link to="/contact" className={styles.link}>
-                {h2four}
-              </Link>
-            </li>
-          </ul>
+        <div className={styles.navBottomLeft}>
+          <h1 className={`${styles.mblnavlogo} ${styles.heroHeading}`}>
+            Grondstoffen <br /> scanner
+          </h1>
+          <span className={styles.logoText}>
+            <img src="/logo.png" alt="Logo" />
+          </span>
+          <div className={`${styles.navLeft} d-flex align-items-center gap-5`}>
+            <ul className={`d-flex gap-3 ${styles.navLinks}`}>
+              <li>
+                <Link to={`/en/home`} className={styles.linkActive}>
+                  {h2one}
+                </Link>
+              </li>
+              <li>
+                <Link to="/about" className={styles.link}>
+                  {h2two}
+                </Link>
+              </li>
+              <li>
+                <Link to="/contact" className={styles.link}>
+                  {h2three}
+                </Link>
+              </li>
+              <li>
+                <Link to="/contact" className={styles.link}>
+                  {h2four}
+                </Link>
+              </li>
+            </ul>
+          </div>
         </div>
         <div className={`${styles.navRight} gap-2 d-flex`}>
           <span

@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./InformationCards.module.css";
 import { TFunction } from "i18next";
+import { FaChevronRight } from "react-icons/fa";
 
 interface InformationCardsProps {
   t: TFunction;
@@ -42,22 +43,28 @@ const InformationCards: React.FC<InformationCardsProps> = ({ t }) => {
     <div className={styles.heroCardCenter}>
       <div className={`d-flex ${styles.heroLeftCardUpper}`}>
         <div className={styles.col8Left}>
-          <div className={styles.card1}>1</div>
-          <p className={styles.card1Title}>{boxline1}</p>
-          <h3 className={styles.card1Heading}>{boxline2}</h3>
-          <p className={styles.card1Desc}>{boxline3}</p>
-          <button className={`rounded-1 ${styles.heroButton1}`}>
-            {boxbutton}
-          </button>
+          <div>
+            <div className={styles.card1}>1</div>
+            <p className={styles.card1Title}>{boxline1}</p>
+            <h3 className={styles.card1Heading}>{boxline2}</h3>
+            <p className={styles.card1Desc}>{boxline3}</p>
+            <button className={`rounded-1 ${styles.heroButton1}`}>
+              {boxbutton}
+            </button>
+          </div>
+          <FaChevronRight className={styles.rightIcon} />
         </div>
 
         <div className={styles.col8Right}>
-          <div className={styles.card1}>2</div>
-          <p className={styles.card1Title}>{boxline4}</p>
-          <h3 className={styles.card1Heading}>{boxline5}</h3>
-          <p className={styles.card1Desc}>{boxline6}</p>
-          <button className={styles.card2mblbtn1}>{boxbutton}</button>
-          <button className={styles.card2mblbtn2}>{box4line1}</button>
+          <div>
+            <div className={styles.card1}>2</div>
+            <p className={styles.card1Title}>{boxline4}</p>
+            <h3 className={styles.card1Heading}>{boxline5}</h3>
+            <p className={styles.card1Desc}>{boxline6}</p>
+            <button className={styles.card2mblbtn1}>{boxbutton}</button>
+            <button className={styles.card2mblbtn2}>{box4line1}</button>
+          </div>
+          <FaChevronRight className={styles.rightIcon} />
         </div>
       </div>
 
