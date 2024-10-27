@@ -1,36 +1,37 @@
 /* Color Variables */
 :root {
-    --footer-background: rgb(30, 30, 56);
-    --footer-background-mobile: rgb(94, 92, 92);
-    --footer-text-color: white;
+  --footer-background: rgb(30, 30, 56);
+  --footer-background-mobile: rgb(94, 92, 92);
+  --footer-text-color: white;
 }
 
 /* Footer Wrapper Styles */
 .footerWrapper {
-    min-height: 100px;
-    background-color: var(--footer-background);
-    width: 100%;
+  min-height: 100px;
+  background-color: var(--footer-background);
+  width: 100%;
 }
 
 /* Footer List Item Styles */
 .footerLi {
-    color: var(--footer-text-color);
-    text-decoration: none;
-    list-style: none;
+  color: var(--footer-text-color);
+  text-decoration: none;
+  list-style: none;
 }
 
 /* Media Queries */
 @media screen and (max-width: 650px) {
-    .footerUl {
-        flex-direction: column;
-        align-items: flex-start !important; /* Updated for clarity */
-        padding-left: 10px;
-    }
+  .footerUl {
+    flex-direction: column;
+    align-items: center !important; /* Updated for clarity */
+    width: 100%;
+    padding-left: 10px;
+  }
 
-    .footerWrapper {
-        justify-content: flex-start;
-        padding: 40px 0;
-        align-items: flex-start;
-        background-color: var(--footer-background-mobile);
-    }
+  .footerWrapper {
+    justify-content: center;
+    padding: 40px 0;
+    align-items: center;
+    width: 100%;
+  }
 }

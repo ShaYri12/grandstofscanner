@@ -167,9 +167,9 @@ p {
   font-size: 17px;
   justify-content: center;
   align-items: center;
-  color: black;
+  color: white;
   font-weight: 700;
-  background-color: var(--dark-gray);
+  background-color: var(--button2-background);
   border-radius: 50%;
   display: none;
 }
@@ -304,5 +304,12 @@ p {
   .mblbottomdiv {
     padding: 0 10px;
     display: block;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .col8Left,
+  .col8Right {
+    padding: 24px 15px;
   }
 }

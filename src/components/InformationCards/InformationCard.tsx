@@ -43,16 +43,26 @@ const InformationCards: React.FC<InformationCardsProps> = ({ t }) => {
     <div className={styles.heroCardCenter}>
       <div className={`d-flex ${styles.heroLeftCardUpper}`}>
         <div className={styles.col8Left}>
-          <div>
-            <div className={styles.card1}>1</div>
-            <p className={styles.card1Title}>{boxline1}</p>
-            <h3 className={styles.card1Heading}>{boxline2}</h3>
-            <p className={styles.card1Desc}>{boxline3}</p>
+          <div className={styles.col8RightInner}>
+            <div>
+              <div className={styles.card1}>1</div>
+              <p className={styles.card1Title}>{boxline1}</p>
+              <h3 className={styles.card1Heading}>{boxline2}</h3>
+              <p className={styles.card1Desc}>{boxline3}</p>
+            </div>
+            <div className={styles.buttonsLG}>
+              <button className={`rounded-1 ${styles.heroButton1}`}>
+                {boxbutton}
+              </button>
+            </div>
+            <FaChevronRight className={styles.rightIconSM} />
+          </div>
+          <div className={styles.buttonsSM}>
             <button className={`rounded-1 ${styles.heroButton1}`}>
               {boxbutton}
             </button>
           </div>
-          <FaChevronRight className={styles.rightIcon} />
+          <FaChevronRight className={styles.rightIconLG} />
         </div>
 
         <div className={styles.col8Right}>
