@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import styles from "./Home.module.css";
 import "bootstrap/dist/css/bootstrap.min.css";

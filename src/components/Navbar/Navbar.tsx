@@ -1,10 +1,11 @@
-import React, { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Link, useLocation, useParams } from "react-router-dom";
 import styles from "./Navbar.module.css";
 import LanguageSelector from "../language-selector";
 import { useTranslation } from "react-i18next";
 import { IoMenu } from "react-icons/io5";
 import Drawer from "./Drawer";
+import i18next from "i18next";
 
 const Navbar: React.FC = () => {
   const { t } = useTranslation();
@@ -20,12 +21,26 @@ const Navbar: React.FC = () => {
   const h2btn2 = t("header2.h2btn2") as string;
 
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+  const [currentLang, setCurrentLang] = useState(i18next.language);
+  const { lang } = useParams<{ lang: string }>();
+
+  useEffect(() => {
+    if (lang) {
+      // Update the i18n language if lang is defined
+      i18next.changeLanguage(lang).then(() => {
+        setCurrentLang(lang);
+      });
+    } else {
+      // Fallback to the default language if lang is undefined
+      setCurrentLang(i18next.language);
+    }
+  }, [lang]);
 
   const links = [
-    { path: "/en/home", label: h2one },
-    { path: "/about", label: h2two },
-    { path: "/contact", label: h2three },
-    { path: "/services", label: h2four },
+    { path: `/${currentLang}/home`, label: h2one },
+    { path: `/${currentLang}/about`, label: h2two },
+    { path: `/${currentLang}/trade`, label: h2three },
+    { path: `/${currentLang}/services`, label: h2four },
   ];
 
   const toggleDrawer = () => {

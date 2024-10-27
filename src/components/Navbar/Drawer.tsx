@@ -24,13 +24,18 @@ const Drawer: React.FC<DrawerProps> = ({
   return (
     <>
       {/* Overlay with onClick to close the drawer */}
-      <div
-        className={`${styles.overlay} ${active ? styles.active : ""}`}
-        onClick={onClose}
-      ></div>
+      {active && (
+        <div
+          className={styles.overlay}
+          onClick={onClose} // Close drawer only on overlay click
+        ></div>
+      )}
 
       <div className={`${styles.drawer} ${active ? styles.active : ""}`}>
-        <div className={styles.drawerContent}>
+        <div
+          className={styles.drawerContent}
+          onClick={(e) => e.stopPropagation()} // Prevent click from closing the drawer
+        >
           <button className={styles.closeButton} onClick={onClose}>
             <IoClose />
           </button>

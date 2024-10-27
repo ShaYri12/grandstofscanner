@@ -36,6 +36,7 @@
   padding: 0;
   background: transparent;
   color: #012e44;
+  border: none;
   font-size: 30px;
   margin-top: -15px;
   margin-left: -5px;
@@ -49,10 +50,12 @@
   flex-direction: column;
   align-items: center;
   gap: 20px;
+  text-align: center;
 }
 
 .navLinks li a {
   padding: 8px;
+  text-align: center;
 }
 
 .link {
@@ -61,6 +64,7 @@
   text-decoration: none;
   font-size: 1.2rem;
   font-weight: 400;
+  text-align: center;
 }
 
 .linkActive {
@@ -69,6 +73,7 @@
   text-decoration: none;
   font-size: 1.2rem;
   text-transform: uppercase;
+  text-align: center;
 }
 
 /* Overlay styles */

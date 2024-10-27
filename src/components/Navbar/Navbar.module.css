@@ -16,6 +16,7 @@
 /* Navbar Styles */
 .navbar {
   background-color: var(--navbar-background);
+  width: 100%;
 }
 
 .navLabelText {
