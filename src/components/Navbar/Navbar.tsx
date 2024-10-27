@@ -50,66 +50,72 @@ const Navbar: React.FC = () => {
   return (
     <nav className={styles.navbar}>
       <div className={`${styles.navLabel} py-2 d-flex justify-content-between`}>
-        <div className="text-white fw-bolder d-flex align-items-center">
-          <span className={styles.navLabelText}>{h1one}</span>
-          <span className="d-flex align-items-center">
-            <img
-              className={styles.flagImg}
-              src={
-                h1two.startsWith("EN")
-                  ? "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTERnbE2vj5IueStB7LDbcN0TSrOcJSF6o9Jg&s"
-                  : h1two.startsWith("NL")
-                  ? "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRiFFZN3Ee-yph_FyJWXQII9-rTs8dRwSS4kQ&s"
-                  : ""
-              }
-              alt=""
-            />
-          </span>
-          <span className={styles.navLabelText}>{h1two}</span>
-        </div>
-        <div className="navLabelRight">
-          <LanguageSelector txtclr="text-white" txtclr2="white" />
+        <div className={styles.navMaxWidth}>
+          <div className="text-white fw-bolder d-flex align-items-center">
+            <span className={styles.navLabelText}>{h1one}</span>
+            <span className="d-flex align-items-center">
+              <img
+                className={styles.flagImg}
+                src={
+                  h1two.startsWith("EN")
+                    ? "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTERnbE2vj5IueStB7LDbcN0TSrOcJSF6o9Jg&s"
+                    : h1two.startsWith("NL")
+                    ? "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRiFFZN3Ee-yph_FyJWXQII9-rTs8dRwSS4kQ&s"
+                    : ""
+                }
+                alt=""
+              />
+            </span>
+            <span className={styles.navLabelText}>{h1two}</span>
+          </div>
+          <div className="navLabelRight">
+            <LanguageSelector txtclr="text-white" txtclr2="white" />
+          </div>
         </div>
       </div>
 
       <div
         className={`${styles.navBottom} d-flex justify-content-between align-items-center`}
       >
-        <div className={styles.navBottomLeft}>
-          <span className={styles.logoText}>
-            <img src="/logo.png" alt="Logo" />
-          </span>
-          <div className={`${styles.navLeft} d-flex align-items-center gap-5`}>
-            <ul className={`d-flex gap-3 ${styles.navLinks}`}>
-              {links.map((link) => (
-                <li key={link.path}>
-                  <Link
-                    to={link.path}
-                    className={
-                      location.pathname === link.path
-                        ? styles.linkActive
-                        : styles.link
-                    }
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
+        <div className={styles.navMaxWidth}>
+          <div className={styles.navBottomLeft}>
+            <span className={styles.logoText}>
+              <img src="/logo.png" alt="Logo" />
+            </span>
+            <div
+              className={`${styles.navLeft} d-flex align-items-center gap-5`}
+            >
+              <ul className={`d-flex gap-3 ${styles.navLinks}`}>
+                {links.map((link) => (
+                  <li key={link.path}>
+                    <Link
+                      to={link.path}
+                      className={
+                        location.pathname === link.path
+                          ? styles.linkActive
+                          : styles.link
+                      }
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <IoMenu className={styles.menuIcon} onClick={toggleDrawer} />
           </div>
-          <IoMenu className={styles.menuIcon} onClick={toggleDrawer} />
-        </div>
-        <div className={`${styles.navRight} gap-2 d-flex`}>
-          <span
-            className={`rounded-2 border-none outline-none ${styles.navButton1}`}
-          >
-            {h2btn1}
-          </span>
-          <span
-            className={`rounded-2 border-none outline-none ${styles.navButton2}`}
-          >
-            {h2btn2}
-          </span>
+          <div className={`${styles.navRight} gap-2 d-flex`}>
+            <span
+              className={`rounded-2 border-none outline-none ${styles.navButton1}`}
+            >
+              {h2btn1}
+            </span>
+            <span
+              className={`rounded-2 border-none outline-none ${styles.navButton2}`}
+            >
+              {h2btn2}
+            </span>
+          </div>
         </div>
       </div>
 

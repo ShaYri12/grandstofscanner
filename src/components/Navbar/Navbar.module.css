@@ -58,7 +58,15 @@
 /* Navigation Label */
 .navLabel {
   background-color: var(--nav-label-background);
-  padding: 0 90px;
+  padding: 0 20px;
+}
+.navMaxWidth {
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
 }
 
 /* Flag Image Styles */
@@ -107,7 +115,7 @@
 
 /* Bottom Navigation Styles */
 .navBottom {
-  padding: 25px 90px;
+  padding: 25px 20px;
 }
 
 .navBottomLeft {
