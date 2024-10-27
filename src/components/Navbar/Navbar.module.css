@@ -1,0 +1,195 @@
+/* Color Variables */
+:root {
+  --navbar-background: #f0f8ff;
+  --link-color: black;
+  --link-active-color: black;
+  --nav-label-background: rgb(30, 30, 56);
+  --button1-background: rgb(253, 143, 0);
+  --button1-color: rgb(107, 31, 31);
+  --button2-background: rgb(77, 171, 226);
+  --button2-color: rgb(19, 38, 66);
+  --hidden-nav-background: white;
+  --hidden-nav-border: rgb(94, 92, 92);
+  --mobile-button-background: rgb(94, 92, 92);
+}
+
+/* Navbar Styles */
+.navbar { 
+  background-color: var(--navbar-background);
+}
+
+.navLinks {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.logoText {
+  line-height: 22px;
+  font-size: 30px;
+}
+
+/* Link Styles */
+.link {
+  color: var(--link-color);
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+.linkActive {
+  color: var(--link-active-color);
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+}
+
+/* Navigation Label */
+.navLabel {
+  background-color: var(--nav-label-background);
+  padding: 0 90px;
+}
+
+/* Flag Image Styles */
+.flagImg {
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  margin: 0 10px;
+  object-fit: cover;
+}
+
+/* Button Styles */
+.navButton1 {
+  background-color: var(--button1-background);
+  font-weight: 700;
+  color: var(--button1-color);
+  padding: 12px 30px;
+  cursor: pointer;
+}
+
+.navButton1:hover {
+  background-color: var(--button1-background);
+  color: var(--button1-color);
+}
+
+.navButton2 {
+  background-color: var(--button2-background);
+  font-weight: 700;
+  color: var(--button2-color);
+  padding: 12px 30px;
+  cursor: pointer;
+}
+
+.navButton2:hover {
+  background-color: var(--button2-background);
+  color: var(--button2-color);
+}
+
+/* Bottom Navigation Styles */
+.navBottom {
+  padding: 25px 90px;
+}
+
+/* Hidden Navigation Styles */
+.hiddennav {
+  height: 100vh !important;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  background-color: var(--hidden-nav-background);
+  display: none;
+}
+
+.transform0 {
+  transform: translateY(0);
+}
+
+.transform1 {
+  transform: translateY(-200%);
+}
+
+/* Hidden Navigation Icon Styles */
+.hnavicon {
+  font-size: 25px;
+}
+
+.hnavheading {
+  color: var(--link-color);
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.hiddenNavCenter {
+  padding: 30px 20px;
+}
+
+.hiddennavheader {
+  padding: 30px 20px;
+  border-bottom: 1px solid var(--hidden-nav-border);
+}
+
+/* Mobile Button Styles */
+.card2mblbtn1 {
+  background-color: var(--mobile-button-background);
+  border-radius: 50px;
+  padding: 15px 30px;
+  font-weight: 700;
+  color: var(--hidden-nav-background);
+  display: block;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.card2mblbtn2 {
+  background-color: transparent;
+  border: 1px solid var(--mobile-button-background);
+  border-radius: 50px;
+  font-weight: 700;
+  color: var(--mobile-button-background);
+  padding: 15px 30px;
+  display: block;
+  width: 100%;
+}
+
+.mblnavlogo {
+  display: none;
+}
+
+/* Media Queries */
+@media screen and (max-width: 1200px) {
+  .mblnavlogo {
+      display: block;
+      font-size: 20px !important;
+  }
+
+  .navicon {
+      display: block !important;
+      font-size: 30px;
+  }
+
+  .hiddennav {
+      display: block;
+      transition-duration: 0.5s;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .navLeft, .navRight, .navLabel {
+      display: none !important;
+  }
+
+  .navBottom {
+      padding-left: 20px !important;
+      padding-right: 20px !important;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .navicon {
+      display: none !important;
+  }
+}
