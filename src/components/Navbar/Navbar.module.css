@@ -3,7 +3,7 @@
   --navbar-background: #f0f8ff;
   --link-color: black;
   --link-active-color: black;
-  --nav-label-background: rgb(30, 30, 56);
+  --nav-label-background: #012e44;
   --button1-background: #f2b34d;
   --button1-color: rgb(107, 31, 31);
   --button2-background: #56a9de;
@@ -16,6 +16,10 @@
 /* Navbar Styles */
 .navbar {
   background-color: var(--navbar-background);
+}
+
+.navLabelText {
+  font-size: 18px;
 }
 
 .navLinks {
@@ -110,67 +114,8 @@
   align-items: center;
 }
 
-/* Hidden Navigation Styles */
-.hiddennav {
-  height: 100vh !important;
-  width: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 9999;
-  background-color: var(--hidden-nav-background);
+.menuIcon {
   display: none;
-}
-
-.transform0 {
-  transform: translateY(0);
-}
-
-.transform1 {
-  transform: translateY(-200%);
-}
-
-/* Hidden Navigation Icon Styles */
-.hnavicon {
-  font-size: 25px;
-}
-
-.hnavheading {
-  color: var(--link-color);
-  font-weight: 700;
-  font-size: 18px;
-}
-
-.hiddenNavCenter {
-  padding: 30px 20px;
-}
-
-.hiddennavheader {
-  padding: 30px 20px;
-  border-bottom: 1px solid var(--hidden-nav-border);
-}
-
-/* Mobile Button Styles */
-.card2mblbtn1 {
-  background-color: var(--mobile-button-background);
-  border-radius: 50px;
-  padding: 15px 30px;
-  font-weight: 700;
-  color: var(--hidden-nav-background);
-  display: block;
-  width: 100%;
-  margin-top: 10px;
-}
-
-.card2mblbtn2 {
-  background-color: transparent;
-  border: 1px solid var(--mobile-button-background);
-  border-radius: 50px;
-  font-weight: 700;
-  color: var(--mobile-button-background);
-  padding: 15px 30px;
-  display: block;
-  width: 100%;
 }
 
 .mblnavlogo {
@@ -203,18 +148,34 @@
     display: block !important;
     font-size: 30px;
   }
-
-  .hiddennav {
-    display: block;
-    transition-duration: 0.5s;
-  }
 }
 
 @media screen and (max-width: 1200px) {
+  .navBottomLeft {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .logoText img {
+    width: 130px;
+  }
+
+  .menuIcon {
+    font-size: 40px;
+    display: flex;
+    color: var(--button2-color);
+  }
+
   .navLeft,
-  .navRight,
-  .navLabel {
+  .navRight {
     display: none !important;
+  }
+
+  .navLabel {
+    padding: 0 15px;
   }
 
   .navBottom {
@@ -226,5 +187,20 @@
 @media screen and (min-width: 1200px) {
   .navicon {
     display: none !important;
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .navLabelText {
+    font-size: 12px !important;
+  }
+  .logoText img {
+    width: 110px;
+  }
+
+  .menuIcon {
+    font-size: 30px;
+    display: flex;
+    color: var(--button2-color);
   }
 }

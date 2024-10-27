@@ -1,6 +1,6 @@
 /* Color Variables */
 :root {
-  --footer-background: rgb(30, 30, 56);
+  --footer-background: #012e44;
   --footer-background-mobile: rgb(94, 92, 92);
   --footer-text-color: white;
 }
