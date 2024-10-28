@@ -1,150 +1,137 @@
 .container {
   min-height: 100vh;
-  background-color: #e0f2fe;
-  padding: 2rem;
-  width: 100%;
-  overflow-x: hidden;
 }
 
-.card {
+.innerContainer {
+  padding-left: 20px;
+  padding-right: 20px;
+  max-width: 1280px;
   margin: 0 auto;
-  background-color: white;
-  border-radius: 0.5rem;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  padding: 1.5rem;
-  position: relative;
 }
 
-.dotsContainer {
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  width: 0.25rem;
+.breadcrumb {
   display: flex;
-  flex-direction: column;
   align-items: center;
 }
 
-.dot {
-  width: 1rem;
-  height: 1rem;
-  border-radius: 50%;
-  background-color: #0284c7;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
+.breadcrumbLink {
+  color: #4a90e2; /* Link color */
+  text-decoration: none;
 }
 
-.verticalLine {
-  width: 0.125rem;
-  flex-grow: 1;
-  background-color: #0284c7;
+.breadcrumbIcon {
+  margin: 0 8px; /* Spacing between icons */
 }
 
-.content {
-  padding-left: 2rem;
+.heading1 {
+  font-size: 2rem; /* Corresponds to text-2xl */
+  margin-bottom: 1rem; /* Corresponds to mb-4 */
 }
 
-.title {
-  font-size: 1.5rem;
-  font-weight: bold;
+.para {
+  margin-bottom: 1.5rem; /* Corresponds to mb-6 */
+  color: #4a4a4a; /* Corresponds to text-gray-600 */
+}
+
+.sidebarAndMain {
+  display: flex;
+  flex: 1;
+  width: 100%;
+  padding: 20px;
+  background-color: #f7f7f7; /* Light background color */
+  border-right: 1px solid #ddd; /* Border for separation */
+}
+
+.sidebarContent {
   margin-bottom: 1.5rem;
 }
 
-.spacing {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
+.resultsCount {
+  font-size: 1.25rem; /* Corresponds to text-xl */
+  margin-bottom: 1rem; /* Corresponds to mb-4 */
 }
 
-.label {
-  display: block;
-  font-size: 0.875rem;
-  font-weight: 500;
-  color: #374151;
-  margin-bottom: 0.25rem;
+.filterSection {
+  margin-bottom: 1rem; /* Corresponds to mb-4 */
 }
 
-.searchContainer {
-  display: flex;
+.filterTitle {
+  font-weight: bold; /* Corresponds to font-bold */
+  margin-bottom: 0.5rem; /* Corresponds to mb-2 */
 }
 
-.searchInput {
-  flex-grow: 1;
-  padding: 0.5rem 0.75rem;
-  border: 1px solid #d1d5db;
-  border-radius: 0.375rem 0 0 0.375rem;
-  outline: none;
-  transition: all 0.3s ease;
-}
-
-.searchInput:focus {
-  border-color: #0284c7;
-  box-shadow: 0 0 0 1px #0284c7;
-}
-
-.searchButton {
+.checkboxContainer {
   display: flex;
   align-items: center;
-  padding: 0.5rem 1rem;
-  background-color: #38bdf8;
-  color: white;
-  border-radius: 0 0.375rem 0.375rem 0;
-  cursor: pointer;
+  margin-bottom: 0.5rem; /* Corresponds to mb-2 */
 }
 
-.searchButton:hover {
-  background-color: #0ea5e9;
+.checkbox {
+  margin-right: 0.5rem; /* Spacing between checkbox and label */
 }
 
-.icon {
-  margin-right: 0.5rem;
+.checkboxLabel {
+  color: #4a4a4a; /* Corresponds to text-gray-600 */
 }
 
-.orText {
-  text-align: center;
-  font-size: 0.875rem;
-  color: #6b7280;
+.mainContent {
+  flex: 3;
+  padding: 20px;
 }
 
-.selectContainer {
-  position: relative;
+.card {
+  border: 1px solid #ddd; /* Border around cards */
+  border-radius: 0.5rem; /* Rounded corners */
+  margin-bottom: 1rem; /* Space between cards */
+  background-color: #fff; /* White background for cards */
+  transition: box-shadow 0.2s; /* Smooth shadow transition */
 }
 
-.select {
-  width: 100%;
-  padding: 0.5rem 0.75rem;
-  border: 1px solid #d1d5db;
-  border-radius: 0.375rem;
-  outline: none;
-  appearance: none;
+.card:hover {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Shadow on hover */
 }
 
-.select:focus {
-  border-color: #0284c7;
-  box-shadow: 0 0 0 1px #0284c7;
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem; /* Corresponds to p-4 */
+  cursor: pointer; /* Pointer cursor for clickable header */
 }
 
-.chevronIcon {
-  position: absolute;
-  right: 0.75rem;
-  top: 50%;
-  transform: translateY(-50%);
-  color: #9ca3af;
-  pointer-events: none;
+.cardTitle {
+  font-size: 1.25rem; /* Corresponds to text-xl */
 }
 
-.results {
-  margin-top: 2rem;
+.cardDescription {
+  padding: 1rem; /* Corresponds to p-4 */
+  border-top: 1px solid #ddd; /* Separator between header and content */
 }
 
-.resultTitle {
-  font-size: 1.25rem;
-  font-weight: 600;
-  margin-bottom: 0.5rem;
+.cardDetail {
+  display: flex;
+  justify-content: space-between; /* Space between icon and text */
+  align-items: center; /* Center align items */
+  margin-bottom: 0.5rem; /* Space between details */
 }
 
-.resultText {
-  font-size: 0.875rem;
-  color: #4b5563;
+.cardDetailSection {
+  display: flex;
+  align-items: center; /* Center align icon and text */
+}
+
+.cardDetailTitle {
+  font-weight: bold; /* Corresponds to font-bold */
+  margin-right: 0.5rem; /* Space between title and value */
+}
+
+.textGray600 {
+  color: #4a4a4a; /* Corresponds to text-gray-600 */
+}
+
+.textGray300 {
+  color: #a0aec0; /* Corresponds to text-gray-300 */
+}
+
+.iconMargin {
+  margin-right: 0.5rem; /* Space between icon and text */
 }
