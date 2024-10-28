@@ -1,9 +1,9 @@
 .section {
   padding: 20px;
+  padding-bottom: 100px;
 }
 
 .container {
-  font-family: Arial, sans-serif;
   max-width: 1280px;
   margin: 0 auto;
 }
@@ -11,8 +11,8 @@
 .breadcrumb {
   display: flex;
   align-items: center;
-  font-size: 0.9rem;
-  color: #555;
+  font-size: 16px;
+  color: #696969;
   margin-bottom: 15px;
 }
 
@@ -26,120 +26,261 @@
 }
 
 .breadcrumbIcon {
-  margin: 0 5px;
-  color: #999;
+  margin: 0 12px;
+  color: #c8c8c8;
+  font-size: 14px;
 }
 
 .breadcrumbCurrent {
   color: #333;
 }
 
-.header h2 {
-  font-size: 1.8rem;
-  font-weight: bold;
-  color: #333;
-  margin-bottom: 10px;
+.heading1 {
+  font-size: 40px;
+  font-weight: 700;
+  letter-spacing: -2%;
+  color: #000;
+  margin-bottom: 24px;
 }
 
-.header p {
-  color: #555;
-  font-size: 1rem;
-  line-height: 1.5;
-  margin-bottom: 15px;
+.para {
+  color: #000;
+  font-size: 18px;
+  letter-spacing: -2%;
+  margin-bottom: 33px;
+  max-width: 856px;
+}
+
+.heading2 {
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: -2%;
+  color: #000;
+  margin-bottom: 24px;
 }
 
 .boxes {
-  display: flex;
+  display: grid;
+  gap: 20px; /* Optional: space between the grid items */
+  margin-bottom: 30px;
+  margin-top: 7px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* Show 4 columns on large devices */
+@media (min-width: 1112px) {
+  .boxes {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Show 2 columns on medium devices (below 1111px) */
+@media (max-width: 1111px) {
+  .boxes {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Show 1 column on small devices */
+@media (max-width: 609px) {
+  .boxes {
+    grid-template-columns: 1fr;
+  }
 }
 
 .sidePanel {
-  background-color: #eaf3fd;
-  padding: 20px;
+  background-color: #eef6fc;
+  padding: 24px;
   display: flex;
   flex-direction: column;
-  gap: 16px;
-  width: 200px;
+  gap: 40px;
+  flex: 1;
+}
+
+@media (max-width: 6010px) {
+  .sidePanel {
+    padding-top: 155px;
+    padding-bottom: 83px;
+  }
+}
+
+@media (max-width: 609px) {
+  .sidePanel {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
 }
 
 .item {
   display: flex;
-  gap: 8px;
+  gap: 16px;
   align-items: center;
 }
 
 .icon {
-  width: 36px;
-  height: 36px;
-  background-color: #c5dcec;
+  width: 58px;
+  height: 58px;
+  background-color: #cce0f1;
   border-radius: 6px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-weight: bold;
-  color: #005b99;
+  font-weight: 700;
+  font-size: 18px;
+  color: #01689b;
 }
 
 .title {
-  font-weight: bold;
-  color: #333;
+  font-weight: 700;
+  color: #000;
+  font-size: 18px;
+  margin: 0;
+  padding-bottom: 4px;
 }
 
 .link {
-  color: #005b99;
-  text-decoration: none;
-  font-size: 0.875rem;
+  color: #01689b;
+  font-size: 18px;
+  font-weight: 300;
+  text-decoration: underline;
+}
+
+.linkIcon {
+  font-size: 13px;
 }
 
 .mainContent,
 .mainContentAlt {
-  padding: 20px;
+  padding: 24px;
   flex: 1;
 }
 
-.mainContent {
-  border-left: 1px solid #e0e0e0;
-}
-
 .mainContentAlt {
-  background-color: #eaf3fd;
+  background-color: #eef6fc;
 }
 
 .code {
-  font-size: 0.75rem;
-  color: #888;
+  font-size: 16px;
+  font-weight: 300;
+  color: #696969;
+  padding-bottom: 4px;
+  margin: 0;
 }
 
 .mainTitle {
-  font-weight: bold;
-  color: #333;
+  font-weight: 700;
+  color: #000;
   font-size: 18px;
+  padding-bottom: 4px;
+  margin: 0;
 }
 
 .mainLink {
-  color: #005b99;
-  text-decoration: none;
-  font-size: 0.875rem;
+  color: #01689b;
+  text-decoration: underline;
+  font-size: 18px;
+  font-weight: 300;
   display: block;
-  margin-bottom: 16px;
+  margin-bottom: 43px;
+  border-bottom: 1px solid #cccccc;
+  padding-bottom: 20px;
 }
 
 .info {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  font-size: 18px;
+  letter-spacing: -2%;
+  color: #000;
+}
+
+.info p {
+  color: #000;
+  font-weight: 300;
 }
 
 .actionButton {
-  background-color: #f59b42;
-  color: #fff;
-  padding: 10px 20px;
+  background-color: #f2b34d;
+  color: #6d4300;
+  padding: 16px 24px;
   border: none;
-  border-radius: 5px;
+  border-radius: 8px;
   cursor: pointer;
-  margin-top: 20px;
+  margin-top: 7px;
   font-size: 1rem;
 }
 
 .actionButton:hover {
   background-color: #e08534;
+}
+
+/* Responsive Adjustments */
+
+/* Medium Devices (1024px and below) */
+@media screen and (max-width: 1024px) {
+  .para {
+    margin-bottom: 20px;
+  }
+
+  /* Reduce font sizes from 18px to 16px */
+  .para,
+  .title,
+  .link,
+  .mainLink,
+  .info,
+  .actionButton,
+  .icon {
+    font-size: 16px;
+  }
+
+  /* Decrease icon width and height */
+  .icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  /* Adjust heading and other text */
+  .heading1 {
+    font-size: 36px;
+    line-height: 40px;
+    margin-bottom: 18px;
+    margin-top: 5px;
+  }
+
+  .heading2 {
+    font-size: 22px;
+    margin-bottom: 18px;
+    margin-top: 5px;
+  }
+}
+
+/* Small Devices (768px and below) */
+@media screen and (max-width: 768px) {
+  /* Further font adjustments if needed for very small screens */
+  .heading1 {
+    font-size: 32px;
+    line-height: 36px;
+  }
+
+  .heading2 {
+    font-size: 20px;
+  }
+
+  .breadcrumb {
+    font-size: 14px;
+  }
+
+  .breadcrumbIcon {
+    margin: 0 5px;
+  }
+}
+
+@media screen and (max-width: 355px) {
+  .breadcrumb {
+    font-size: 12px;
+  }
 }
