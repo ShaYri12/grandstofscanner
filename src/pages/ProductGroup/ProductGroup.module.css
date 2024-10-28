@@ -222,6 +222,14 @@
 
 /* Medium Devices (1024px and below) */
 @media screen and (max-width: 1024px) {
+  .info {
+    gap: 20px;
+  }
+
+  .sidePanel {
+    gap: 20px;
+  }
+
   .para {
     margin-bottom: 20px;
   }

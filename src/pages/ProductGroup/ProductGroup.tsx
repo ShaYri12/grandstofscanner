@@ -1,114 +1,183 @@
 import React from "react";
+import { useTranslation } from "react-i18next"; // Import useTranslation
 import styles from "./ProductGroup.module.css";
 import { FaChevronRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
-// Sample data for testing
-const factsheets = [
-  { id: 1, symbol: "Fe", title: "IJzer", linkText: "Bekijk factsheet" },
-  { id: 2, symbol: "Sb", title: "Antimoon", linkText: "Bekijk factsheet" },
-  { id: 3, symbol: "Fe", title: "IJzer", linkText: "Bekijk factsheet" },
-];
+interface Factsheet {
+  symbol: string;
+  title: string;
+  linkText: string;
+}
 
-const ProductGroups: React.FC = () => (
-  <div className={styles.section}>
-    <div className={styles.container}>
-      <nav className={styles.breadcrumb}>
-        <Link to="/" className={styles.breadcrumbLink}>
-          Home
-        </Link>
-        <FaChevronRight className={styles.breadcrumbIcon} />
-        <Link to="/" className={styles.breadcrumbLink}>
-          Verlenen & Beoordelen
-        </Link>
-        <FaChevronRight className={styles.breadcrumbIcon} />
-        <span className={styles.breadcrumbCurrent}>Beoordelen</span>
-      </nav>
-      <div>
-        <h2 className={styles.heading1}>Beoordelen: uw productgroepen</h2>
-        <p className={styles.para}>
-          Bekijk welke kritische materialen uw geselecteerde producten bevatten.
-          Productgroepen of grondstoffen kunt u bekijken. Hier ziet u een
-          risicoanalyse op basis van leveringszekerheid, prijsvolatiliteit en de
-          risico’s voor mens en milieu.
-        </p>
-        <p className={styles.para}>
-          Als een grondstof als “conflictmateriaal” wordt aangemerkt is deze
-          rood gearceerd in het overzicht van de grondstof.
-        </p>
-      </div>
-      <h3 className={styles.heading2}>Uw geselecteerde productgroepen</h3>
-      <p className={styles.para}>
-        Per productgroep staan de grondstoffen, inclusief hun relatieve
-        hoeveelheid, weergegeven.
-      </p>
+interface ProductGroup {
+  code: string;
+  title: string;
+  linkText: string;
+  info: string[]; // Explicitly define as an array of strings
+  isAlt: boolean;
+}
 
-      <div className={styles.boxes}>
-        <div className={styles.sidePanel}>
-          {factsheets.map((item) => (
-            <div key={item.id} className={styles.item}>
-              <div className={styles.icon}>{item.symbol}</div>
-              <div>
-                <p className={styles.title}>{item.title}</p>
-                <a href="#" className={styles.link}>
-                  {item.linkText} <FaChevronRight className={styles.linkIcon} />
-                </a>
+interface ProductGroupTranslations {
+  breadcrumb: {
+    home: string;
+    exploreReview: string;
+    review: string;
+  };
+  heading1: string;
+  paragraphs: {
+    intro1: string;
+    intro2: string;
+    selectedGroups: string;
+    riskAction: string;
+    note: string;
+  };
+  heading2: string;
+  actionButton: string;
+  factsheets: Factsheet[];
+  productGroups: ProductGroup[];
+}
+
+const ProductGroups: React.FC = () => {
+  const { t } = useTranslation(); // Initialize the translation function
+
+  // Use the translation structure from your provided data
+  const productGroup: ProductGroupTranslations = {
+    breadcrumb: {
+      home: t("productGroup.breadcrumb.home"),
+      exploreReview: t("productGroup.breadcrumb.exploreReview"),
+      review: t("productGroup.breadcrumb.review"),
+    },
+    heading1: t("productGroup.heading1"),
+    paragraphs: {
+      intro1: t("productGroup.paragraphs.intro1"),
+      intro2: t("productGroup.paragraphs.intro2"),
+      selectedGroups: t("productGroup.paragraphs.selectedGroups"),
+      riskAction: t("productGroup.paragraphs.riskAction"),
+      note: t("productGroup.paragraphs.note"),
+    },
+    heading2: t("productGroup.heading2"),
+    actionButton: t("productGroup.actionButton"),
+    factsheets: [
+      {
+        symbol: "Fe",
+        title: t("productGroup.factsheets.0.title"),
+        linkText: t("productGroup.factsheetLinkText"),
+      },
+      {
+        symbol: "Sb",
+        title: t("productGroup.factsheets.1.title"),
+        linkText: t("productGroup.factsheetLinkText"),
+      },
+      {
+        symbol: "Fe",
+        title: t("productGroup.factsheets.2.title"),
+        linkText: t("productGroup.factsheetLinkText"),
+      },
+    ],
+    productGroups: [
+      {
+        code: "340600",
+        title: t("productGroup.productGroups.0.title"),
+        linkText: t("productGroup.productGroups.0.linkText"),
+        info: t("productGroup.productGroups.0.info", {
+          returnObjects: true,
+        }) as string[], // Cast to string[]
+        isAlt: false,
+      },
+      {
+        code: "340600",
+        title: t("productGroup.productGroups.1.title"),
+        linkText: t("productGroup.productGroups.1.linkText"),
+        info: t("productGroup.productGroups.1.info", {
+          returnObjects: true,
+        }) as string[], // Cast to string[]
+        isAlt: true,
+      },
+      {
+        code: "340600",
+        title: t("productGroup.productGroups.2.title"),
+        linkText: t("productGroup.productGroups.2.linkText"),
+        info: t("productGroup.productGroups.2.info", {
+          returnObjects: true,
+        }) as string[], // Cast to string[]
+        isAlt: false,
+      },
+    ],
+  };
+
+  return (
+    <div className={styles.section}>
+      <div className={styles.container}>
+        <nav className={styles.breadcrumb}>
+          <Link to="/" className={styles.breadcrumbLink}>
+            {productGroup.breadcrumb.home}
+          </Link>
+          <FaChevronRight className={styles.breadcrumbIcon} />
+          <Link to="/" className={styles.breadcrumbLink}>
+            {productGroup.breadcrumb.exploreReview}
+          </Link>
+          <FaChevronRight className={styles.breadcrumbIcon} />
+          <span className={styles.breadcrumbCurrent}>
+            {productGroup.breadcrumb.review}
+          </span>
+        </nav>
+        <div>
+          <h2 className={styles.heading1}>{productGroup.heading1}</h2>
+          <p className={styles.para}>{productGroup.paragraphs.intro1}</p>
+          <p className={styles.para}>{productGroup.paragraphs.intro2}</p>
+        </div>
+        <h3 className={styles.heading2}>{productGroup.heading2}</h3>
+        <p className={styles.para}>{productGroup.paragraphs.selectedGroups}</p>
+
+        <div className={styles.boxes}>
+          {/* Side Panel */}
+          <div className={styles.sidePanel}>
+            {productGroup.factsheets.map((item, index) => (
+              <div key={index} className={styles.item}>
+                <div className={styles.icon}>{item.symbol}</div>
+                <div>
+                  <p className={styles.title}>{item.title}</p>
+                  <a href="#" className={styles.link}>
+                    {item.linkText}{" "}
+                    <FaChevronRight className={styles.linkIcon} />
+                  </a>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Main Content and Alternate Content */}
+          {productGroup.productGroups.map((product, index) => (
+            <div
+              key={index}
+              className={
+                product.isAlt ? styles.mainContentAlt : styles.mainContent
+              }
+            >
+              <p className={styles.code}>{product.code}</p>
+              <h3 className={styles.mainTitle}>{product.title}</h3>
+              <a href="#" className={styles.mainLink}>
+                {product.linkText}{" "}
+                <FaChevronRight className={styles.linkIcon} />
+              </a>
+              <div className={styles.info}>
+                {product.info.map((text, idx) => (
+                  <p key={idx}>{text}</p>
+                ))}
               </div>
             </div>
           ))}
         </div>
 
-        <div className={styles.mainContent}>
-          <p className={styles.code}>340600</p>
-          <h3 className={styles.mainTitle}>Kaarsen en dergelijke artikelen</h3>
-          <a href="#" className={styles.mainLink}>
-            Bekijk factsheet <FaChevronRight className={styles.linkIcon} />
-          </a>
-          <div className={styles.info}>
-            <p>Verwaarloosbaar</p>
-            <p>Beperkt</p>
-            <p>Gemiddeld</p>
-          </div>
-        </div>
-
-        <div className={styles.mainContentAlt}>
-          <p className={styles.code}>340600</p>
-          <h3 className={styles.mainTitle}>Kaarsen en dergelijke artikelen</h3>
-          <a href="#" className={styles.mainLink}>
-            Bekijk factsheet <FaChevronRight className={styles.linkIcon} />
-          </a>
-          <div className={styles.info}>
-            <p>Verwaarloosbaar</p>
-            <p>Beperkt</p>
-            <p>Gemiddeld</p>
-          </div>
-        </div>
-
-        <div className={styles.mainContent}>
-          <p className={styles.code}>340600</p>
-          <h3 className={styles.mainTitle}>Kaarsen en dergelijke artikelen</h3>
-          <a href="#" className={styles.mainLink}>
-            Bekijk factsheet <FaChevronRight className={styles.linkIcon} />
-          </a>
-          <div className={styles.info}>
-            <p>Verwaarloosbaar</p>
-            <p>Beperkt</p>
-            <p>Gemiddeld</p>
-          </div>
-        </div>
+        <p className={styles.para}>{productGroup.paragraphs.riskAction}</p>
+        <p className={styles.para}>{productGroup.paragraphs.note}</p>
+        <button className={styles.actionButton}>
+          {productGroup.actionButton}
+        </button>
       </div>
-      <p className={styles.para}>
-        Wanneer de factsheet(s) voor uw productgroep(en) laat zien dat u voor
-        één of meer grondstoffen een risico loopt, kijk dan bij ‘Handelen’ wat u
-        kunt doen om dit risico te beperken.
-      </p>
-      <p className={styles.para}>
-        Let op dat deze handelingsperspectieven niet grondstofspecifiek zijn en
-        dienen te worden aangepast aan uw specifieke situatie.
-      </p>
-      <button className={styles.actionButton}>Handelingsperspectieven</button>
     </div>
-  </div>
-);
+  );
+};
 
 export default ProductGroups;

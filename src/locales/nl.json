@@ -1,0 +1,101 @@
+{
+  "header1": {
+    "h1one": "Gegevens bron:",
+    "h1two": "NL (2018)"
+  },
+  "header2": {
+    "h2one": "Home",
+    "h2two": "Verkennen & Beoordelen",
+    "h2three": "Handelen",
+    "h2four": "Landinfo",
+    "h2btn1": "Registreren",
+    "h2btn2": "Inloggen"
+  },
+  "body": {
+    "title": "Grondstoffenscanner",
+    "subTitle": "Welkom bij de Grondstoffenscanner. Hier kunt u ontdekken in hoeverre (bio)grondstoffen waarvan u afhankelijk bent, in de toekomst mogelijk schaars worden of een risico vormen voor mens en milieu."
+  },
+  "box1": {
+    "boxline1": "Stap 1",
+    "boxline2": "Verkennen",
+    "boxline3": "Krijg inzicht in de grondstoffen en producten die bij uw productieproces horen.",
+    "boxbutton": "Start de scan",
+    "boxline4": "Stap 2",
+    "boxline5": "Beoordelen",
+    "boxline6": "Beoordeel of uw bedrijf in de toekomst een risico loopt."
+  },
+  "box2": {
+    "box2line1": "Stap 3",
+    "box2line2": "Handelen",
+    "box2line3": "Doorloop de risicoanalyse om inzicht te krijgen in de risico’s.",
+    "box2button": "Ga direct naar handelen"
+  },
+  "box3": {
+    "box3line1": "Waarom?",
+    "box3line2": "Grondstoffen kunnen door omstandigheden ineens duurder, minder beschikbaar of zelfs niet meer leverbaar zijn. Met de Grondstoffenscanner krijgt u inzicht in het risicoprofiel van de door u gebruikte materialen."
+  },
+  "box4": {
+    "box4line1": "Hoe werkt het?",
+    "box4line2": "Beantwoord een aantal vragen over uw product en zie direct welke grondstoffen u gebruikt en hoe het risico op bijvoorbeeld schaarste kan worden verkleind."
+  },
+  "box5": {
+    "box5line1": "Voor wie?",
+    "box5line2": "Voor bedrijven in Nederland die afhankelijk zijn van een stabiele toevoer van grondstoffen, zoals metalen of biogrondstoffen."
+  },
+  "mobile": {
+    "heading": "Internationaal Maatschappelijk Verantwoord Ondernemen",
+    "subHeading": "De scanner biedt bedrijven informatie over Internationaal Maatschappelijk Verantwoord Ondernemen (IMVO). IMVO is een doorlopend proces dat vooral gericht is op het identificeren, voorkomen en beheersen van sociale en milieurisico’s. U kunt de informatie in de scanner gebruiken als een eerste stap naar de implementatie van ‘due diligence’."
+  },
+  "footer": {
+    "fone": "Over Grondstoffenscanner",
+    "ftwo": "Toegankelijkheid",
+    "fthree": "Cookies",
+    "ffour": "Privacyverklaring"
+  },
+  "productGroup": {
+    "breadcrumb": {
+      "home": "Home",
+      "exploreReview": "Verkennen & Beoordelen",
+      "review": "Beoordelen"
+    },
+    "heading1": "Beoordelen: uw productgroepen",
+    "paragraphs": {
+      "intro1": "Bekijk welke kritische materialen uw geselecteerde producten bevatten. U kunt productgroepen of grondstoffen bekijken. Hier ziet u een risicoanalyse op basis van leveringszekerheid, prijsvolatiliteit en risico’s voor mens en milieu.",
+      "intro2": "Als een grondstof als 'conflictmateriaal' wordt aangemerkt, is deze rood gemarkeerd in het overzicht.",
+      "selectedGroups": "Per productgroep worden de grondstoffen weergegeven, inclusief hun relatieve hoeveelheden.",
+      "riskAction": "Wanneer de factsheet(s) voor uw productgroep(en) laten zien dat u voor één of meer grondstoffen een risico loopt, kijk dan bij ‘Handelen’ wat u kunt doen om dit risico te beperken.",
+      "note": "Let op dat deze handelingsperspectieven niet grondstofspecifiek zijn en dienen te worden aangepast aan uw specifieke situatie."
+    },
+    "heading2": "Uw geselecteerde productgroepen",
+    "actionButton": "Handelingsperspectieven",
+    "factsheetLinkText": "Bekijk factsheet",
+    "factsheets": [
+      { "symbol": "Fe", "title": "IJzer", "linkText": "Bekijk factsheet" },
+      { "symbol": "Sb", "title": "Antimoon", "linkText": "Bekijk factsheet" },
+      { "symbol": "Fe", "title": "IJzer", "linkText": "Bekijk factsheet" }
+    ],
+    "productGroups": [
+      {
+        "code": "340600",
+        "title": "Kaarsen en dergelijke artikelen",
+        "linkText": "Bekijk factsheet",
+        "info": ["Verwaarloosbaar", "Beperkt", "Gemiddeld"],
+        "isAlt": false
+      },
+      {
+        "code": "340600",
+        "title": "Kaarsen en dergelijke artikelen",
+        "linkText": "Bekijk factsheet",
+        "info": ["Verwaarloosbaar", "Beperkt", "Gemiddeld"],
+        "isAlt": true
+      },
+      {
+        "code": "340600",
+        "title": "Kaarsen en dergelijke artikelen",
+        "linkText": "Bekijk factsheet",
+        "info": ["Verwaarloosbaar", "Beperkt", "Gemiddeld"],
+        "isAlt": false
+      }
+    ]
+  }
+}

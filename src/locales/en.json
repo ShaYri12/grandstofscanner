@@ -1,0 +1,101 @@
+{
+  "header1": {
+    "h1one": "Data source:",
+    "h1two": "EN (2018)"
+  },
+  "header2": {
+    "h2one": "Home",
+    "h2two": "Explore & Review",
+    "h2three": "Trade",
+    "h2four": "Landinfo",
+    "h2btn1": "Register",
+    "h2btn2": "Login"
+  },
+  "body": {
+    "title": "Grondstoffenscanner",
+    "subTitle": "Welcome to the Raw Materials Scanner. Here you can find out to what extent (Bio)raw materials on which you depend may be scarce in the future pose a risk to humans and the environment."
+  },
+  "box1": {
+    "boxline1": "Step 1",
+    "boxline2": "Explore",
+    "boxline3": "Gain insight into the raw materials and products that are part of your production process hear",
+    "boxbutton": "Start the scan",
+    "boxline4": "Step 2",
+    "boxline5": "Judge",
+    "boxline6": "Assess whether your business will be in the future at risk."
+  },
+  "box2": {
+    "box2line1": "Step 3",
+    "box2line2": "Trade",
+    "box2line3": "Then go through the risk analysis to gain insight into to get on the risks",
+    "box2button": "Go directly to trading"
+  },
+  "box3": {
+    "box3line1": "Why?",
+    "box3line2": "Raw materials can suddenly be used due to circumstances more expensive, less available or even no longer available available. With the Raw Materials Scanner, you get Insight into the risk profile of the products you use Materials."
+  },
+  "box4": {
+    "box4line1": "How does it work?",
+    "box4line2": "Answer a few questions about your product and Immediately see which raw materials you use and how it is risk of, for example, scarcity, can be alleged. reduced."
+  },
+  "box5": {
+    "box5line1": "For whom?",
+    "box5line2": "For companies in the Netherlands that depend on a stable supply of raw materials, such as metals or bio raw materials."
+  },
+  "mobile": {
+    "heading": "International Social Corporate Responsibility",
+    "subHeading": "The scanner also provides companies with information about International Civil Society Corporate Responsibility (IRBC). IRBC is an ongoing process that focuses mainly on identifying, preventing and managing social and environmental risks. You can use the information in using the scanner as a first step towards the implementation of due diligence."
+  },
+  "footer": {
+    "fone": "About Raw Materials Scanner",
+    "ftwo": "Accessibility",
+    "fthree": "Cookies",
+    "ffour": "Privacy statement"
+  },
+  "productGroup": {
+    "breadcrumb": {
+      "home": "Home",
+      "exploreReview": "Explore & Review",
+      "review": "Review"
+    },
+    "heading1": "Review: your product groups",
+    "paragraphs": {
+      "intro1": "See which critical materials your selected products contain. You can view product groups or raw materials. Here you will see a risk analysis based on supply security, price volatility, and risks to people and the environment.",
+      "intro2": "If a raw material is designated as a “conflict material,” it is shaded red in the raw material overview.",
+      "selectedGroups": "For each product group, the raw materials, including their relative amounts, are displayed.",
+      "riskAction": "If the factsheet(s) for your product group(s) show that you are at risk for one or more raw materials, check 'Act' to see what you can do to mitigate this risk.",
+      "note": "Please note that these action perspectives are not material-specific and need to be adapted to your specific situation."
+    },
+    "heading2": "Your selected product groups",
+    "actionButton": "Action Perspectives",
+    "factsheetLinkText": "View Factsheet",
+    "factsheets": [
+      { "symbol": "Fe", "title": "Iron", "linkText": "View Factsheet" },
+      { "symbol": "Sb", "title": "Antimony", "linkText": "View Factsheet" },
+      { "symbol": "Fe", "title": "Iron", "linkText": "View Factsheet" }
+    ],
+    "productGroups": [
+      {
+        "code": "340600",
+        "title": "Candles and similar articles",
+        "linkText": "View Factsheet",
+        "info": ["Negligible", "Limited", "Moderate"],
+        "isAlt": false
+      },
+      {
+        "code": "340600",
+        "title": "Candles and similar articles",
+        "linkText": "View Factsheet",
+        "info": ["Negligible", "Limited", "Moderate"],
+        "isAlt": true
+      },
+      {
+        "code": "340600",
+        "title": "Candles and similar articles",
+        "linkText": "View Factsheet",
+        "info": ["Negligible", "Limited", "Moderate"],
+        "isAlt": false
+      }
+    ]
+  }
+}
