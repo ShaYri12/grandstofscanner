@@ -1,11 +1,5 @@
 import React from "react";
-import { useParams } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-
-// Define a type for the parameters expected in the URL
-interface Params extends Record<string, string | undefined> {
-  lang?: string; // Optional parameter for language
-}
 
 // Define a type for the translation object structure
 interface BoxTranslation {
@@ -37,7 +31,6 @@ function isBoxTranslation(obj: any): obj is BoxTranslation {
 
 const HeroCard1: React.FC = () => {
   const { t } = useTranslation();
-  const { lang } = useParams<Params>();
   const translation = t("box1");
 
   // Ensure the translation result is of type BoxTranslation
@@ -54,15 +47,7 @@ const HeroCard1: React.FC = () => {
       };
 
   // Destructure the translation strings for box1
-  const {
-    boxline1,
-    boxline2,
-    boxline3,
-    boxbutton,
-    boxline4,
-    boxline5,
-    boxline6,
-  } = boxTranslation;
+  const { boxline1 } = boxTranslation;
 
   return (
     <>

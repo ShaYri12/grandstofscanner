@@ -1,6 +1,5 @@
 import React from "react";
 import styles from "./ProductGroup.module.css";
-import { ProductGroup } from "./ProductTypes";
 import { FaChevronRight } from "react-icons/fa";
 
 // Sample data for testing
