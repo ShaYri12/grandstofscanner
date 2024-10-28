@@ -1,18 +1,6 @@
 import React from "react";
 import styles from "./ServiceOverviewCards.module.css";
 
-// Define an interface for the expected translation structure
-interface ServiceOverviewTranslation {
-  box3line1: string;
-  box3line2: string;
-  box4line1: string;
-  box4line2: string;
-  box5line1: string;
-  box5line2: string;
-  heading: string;
-  subHeading: string;
-}
-
 // Define the props interface
 interface ServiceOverviewCardsProps {
   t: (key: string) => string; // Adjusting to a generic string return
