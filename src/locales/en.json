@@ -97,5 +97,101 @@
         "isAlt": false
       }
     ]
+  },
+  "trade": {
+    "breadcrumb": {
+      "home": "Home",
+      "current": "Trade"
+    },
+    "step": "Step 3",
+    "heading": "Trade",
+    "paragraph1": "Here you will find actionable perspectives that can help you manage your business risks and the impacts on people and the environment.",
+    "paragraph2": "Are you looking for more information and support in identifying and addressing negative impacts on people and the environment in metal supply chains? Visit the International CSR Covenant for the Metal Sector website. You can also consult the Circular Procurement Guide tool for additional ideas on closing material loops."
+  },
+  "tradeSearch": {
+    "filter": {
+      "typeSupply": "Type Supply",
+      "otherSupply": "Other Supply (2)",
+      "betterSupply": "Better Supply (5)",
+      "lessConsumption": "Less Consumption (5)",
+      "operations": "Operations",
+      "longTermSupply": "Long-Term Supply Security (5)",
+      "shortTermSupply": "Short-Term Supply Security (10)",
+      "impactOnPeopleAndEnvironment": "Impact on People and Environment (22)",
+      "businessResults": "Business Results (33)",
+      "imvo": "IMVO (46)"
+    },
+    "results": {
+      "setUpSystem": "Set up a system to manage supply chain risk in the organization",
+      "systemDescription": "Set up supply chain risk management and a suitable strategy: - Secure the importance and continuity in the organization (for example: appropriate budget and impact on targets). - Analyze what competencies and responsibilities are needed and involve them (for example: purchasing, marketing & sales, R&D, engineering). - Define indicators for determining impact and risks. - Map critical dependencies (suppliers, components, resources, etc.). - For each dependency, create an action plan (compare with HACCP approach). - Analyze the likelihood and impact of delivery issues (financial, reputation, etc.) using a Kraljic analysis. - Establish business continuity plans (for example: insurance). - Design a strategy for dealing with suppliers (for example: periodic audits, communication strategy, etc.)."
+    },
+    "resultsCount": "search results",
+    "filterSections": [
+      {
+        "title": "Supply Type",
+        "options": [
+          "Other supply (2)",
+          "Better supply (5)",
+          "Less consumption (5)"
+        ]
+      },
+      {
+        "title": "Business Operations",
+        "options": [
+          {
+            "label": "Long-term supply security (5)",
+            "image": "long-term-security.png"
+          },
+          {
+            "label": "Short-term supply security (10)",
+            "image": "short-term-security.png"
+          },
+          {
+            "label": "Impact on people and the environment (22)",
+            "image": "people-stars.png"
+          },
+          {
+            "label": "Business results (33)",
+            "image": "chart.png"
+          },
+          {
+            "label": "Responsible business conduct (46)",
+            "image": "world.png"
+          }
+        ]
+      }
+    ],
+    "tradeSearchResult": {
+      "results": {
+        "count": "results",
+        "business_operations": "Business Operations",
+        "cost": "Cost",
+        "time": "Time",
+        "complexity": "Complexity",
+        "abiotic": "(A)-biotic"
+      },
+      "cards": [
+        {
+          "title": "Set up a system to manage supply chain risk in the organization",
+          "description": "Establish supply chain risk management and a suitable strategy: - Ensure importance and continuity in the organization (for example: appropriate budget and impact on targets). - Analyze which competencies and responsibilities are needed and involve them (for example: procurement, marketing & sales, R&D, engineering). - Define indicators for determining impact and risks. - Map critical dependencies (suppliers, components, resources, etc.). - Create an action plan for each dependency (compare with the HACCP approach). - Analyze the likelihood and impact of delivery issues (financial, reputational, etc.), for example, with a Kraljic analysis. - Develop business continuity plans (for example: insurance). - Design a strategy for dealing with suppliers (for example: periodic audits, communication strategy, etc.)."
+        },
+        {
+          "title": "Set up a system to manage supply chain risk in the organization",
+          "description": "Establish supply chain risk management and a suitable strategy: - Ensure importance and continuity in the organization (for example: appropriate budget and impact on targets). - Analyze which competencies and responsibilities are needed and involve them (for example: procurement, marketing & sales, R&D, engineering). - Define indicators for determining impact and risks. - Map critical dependencies (suppliers, components, resources, etc.). - Create an action plan for each dependency (compare with the HACCP approach). - Analyze the likelihood and impact of delivery issues (financial, reputational, etc.), for example, with a Kraljic analysis. - Develop business continuity plans (for example: insurance). - Design a strategy for dealing with suppliers (for example: periodic audits, communication strategy, etc.)."
+        },
+        {
+          "title": "Set up a system to manage supply chain risk in the organization",
+          "description": "Establish supply chain risk management and a suitable strategy: - Ensure importance and continuity in the organization (for example: appropriate budget and impact on targets). - Analyze which competencies and responsibilities are needed and involve them (for example: procurement, marketing & sales, R&D, engineering). - Define indicators for determining impact and risks. - Map critical dependencies (suppliers, components, resources, etc.). - Create an action plan for each dependency (compare with the HACCP approach). - Analyze the likelihood and impact of delivery issues (financial, reputational, etc.), for example, with a Kraljic analysis. - Develop business continuity plans (for example: insurance). - Design a strategy for dealing with suppliers (for example: periodic audits, communication strategy, etc.)."
+        },
+        {
+          "title": "Set up a system to manage supply chain risk in the organization",
+          "description": "Establish supply chain risk management and a suitable strategy: - Ensure importance and continuity in the organization (for example: appropriate budget and impact on targets). - Analyze which competencies and responsibilities are needed and involve them (for example: procurement, marketing & sales, R&D, engineering). - Define indicators for determining impact and risks. - Map critical dependencies (suppliers, components, resources, etc.). - Create an action plan for each dependency (compare with the HACCP approach). - Analyze the likelihood and impact of delivery issues (financial, reputational, etc.), for example, with a Kraljic analysis. - Develop business continuity plans (for example: insurance). - Design a strategy for dealing with suppliers (for example: periodic audits, communication strategy, etc.)."
+        },
+        {
+          "title": "Set up a system to manage supply chain risk in the organization",
+          "description": "Establish supply chain risk management and a suitable strategy: - Ensure importance and continuity in the organization (for example: appropriate budget and impact on targets). - Analyze which competencies and responsibilities are needed and involve them (for example: procurement, marketing & sales, R&D, engineering). - Define indicators for determining impact and risks. - Map critical dependencies (suppliers, components, resources, etc.). - Create an action plan for each dependency (compare with the HACCP approach). - Analyze the likelihood and impact of delivery issues (financial, reputational, etc.), for example, with a Kraljic analysis. - Develop business continuity plans (for example: insurance). - Design a strategy for dealing with suppliers (for example: periodic audits, communication strategy, etc.)."
+        }
+      ]
+    }
   }
 }

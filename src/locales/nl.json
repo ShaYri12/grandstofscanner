@@ -97,5 +97,101 @@
         "isAlt": false
       }
     ]
+  },
+  "trade": {
+    "breadcrumb": {
+      "home": "Home",
+      "current": "Handelen"
+    },
+    "step": "Stap 3",
+    "heading": "Handelen",
+    "paragraph1": "Hier vindt u handelingsperspectieven die u kunnen helpen bij het managen van uw bedrijfsrisico’s en (de risico’s van) impacts op mens en milieu.",
+    "paragraph2": "Bent u op zoek naar meer informatie en ondersteuning bij het identificeren en adresseren van negatieve impacts op mens en milieu in metaalketens? Bekijk de website van het Internationaal MVO convenant voor de metaalsector. Daarnaast kunt u de tool Wegwijzer Circulair Inkopen raadplegen voor aanvullende ideeën rondom het sluiten van materiaalkringlopen."
+  },
+  "tradeSearch": {
+    "filter": {
+      "typeSupply": "Type supply",
+      "otherSupply": "Andere supply (2)",
+      "betterSupply": "Betere supply (5)",
+      "lessConsumption": "Minder verbruik (5)",
+      "operations": "Bedrijfsvoering",
+      "longTermSupply": "Lange termijn leveringszekerheid (5)",
+      "shortTermSupply": "Korte termijn leveringszekerheid (10)",
+      "impactOnPeopleAndEnvironment": "Impact op mens en milieu (22)",
+      "businessResults": "Bedrijfsresultaat (33)",
+      "imvo": "IMVO (46)"
+    },
+    "results": {
+      "setUpSystem": "Zet een systeem op om het supply-chain-risico te managen in de organisatie",
+      "systemDescription": "Zet supply chain risk management en een passende strategie op: - Borg het belang en de continuïteit in de organisatie (bijvoorbeeld: passend budget en impact op targets). - Analyseer welke competenties en verantwoordelijkheden nodig zijn en betrek die (bijvoorbeeld: inkoop, marketing & sales, R&D, techniek). - Definieer indicatoren voor de bepaling van impact en risico's. - Breng kritieke afhankelijkheden (leveranciers, componenten, resources, en dergelijke) in kaart. - Stel per afhankelijkheid een actieplan op (vergelijk met HACCP-aanpak). - Analyseer de kans op en impact van leveringsproblemen (financieel, reputatie, enzovoorts) bijvoorbeeld met een Kraljic-analyse. - Stel businesscontinuïteitsplannen op (bijvoorbeeld: verzekeringen). - Ontwerp een strategie hoe met leveranciers om te gaan (bijvoorbeeld periodieke audits, communicatiestrategie, etc.)."
+    },
+    "resultsCount": "zoekresultaten",
+    "filterSections": [
+      {
+        "title": "Type supply",
+        "options": [
+          "Andere supply (2)",
+          "Betere supply (5)",
+          "Minder verbruik (5)"
+        ]
+      },
+      {
+        "title": "Bedrijfsvoering",
+        "options": [
+          {
+            "label": "Lange termijn leveringszekerheid (5)",
+            "image": "long-term-security.png"
+          },
+          {
+            "label": "Korte termijn leveringszekerheid (10)",
+            "image": "short-term-security.png"
+          },
+          {
+            "label": "Impact op mens en milieu (22)",
+            "image": "people-stars.png"
+          },
+          {
+            "label": "Bedrijfsresultaat (33)",
+            "image": "chart.png"
+          },
+          {
+            "label": "IMVO (46)",
+            "image": "world.png"
+          }
+        ]
+      }
+    ],
+    "tradeSearchResult": {
+      "results": {
+        "count": "zoekresultaten",
+        "business_operations": "Bedrijfsvoering",
+        "cost": "Kosten",
+        "time": "Tijd",
+        "complexity": "Complexiteit",
+        "abiotic": "(A)-biotisch"
+      },
+      "cards": [
+        {
+          "title": "Zet een systeem op om het supply-chain-risico te managen in de organisatie",
+          "description": "Zet supply chain risk management en een passende strategie op: - Borg het belang en de continuïteit in de organisatie (bijvoorbeeld: passend budget en impact op targets). - Analyseer welke competenties en verantwoordelijkheden nodig zijn en betrek die (bijvoorbeeld: inkoop, marketing & sales, R&D, techniek). - Definieer indicatoren voor de bepaling van impact en risico's. - Breng kritieke afhankelijkheden (leveranciers, componenten, resources, en dergelijke) in kaart. - Stel per afhankelijkheid een actieplan op (vergelijk met HACCP-aanpak). - Analyseer de kans op en impact van leveringsproblemen (financieel, reputatie, enzovoorts) bijvoorbeeld met een Kraljic-analyse. - Stel businesscontinuïteitsplannen op (bijvoorbeeld: verzekeringen). - Ontwerp een strategie hoe met leveranciers om te gaan (bijvoorbeeld periodieke audits, communicatiestrategie, etc.)."
+        },
+        {
+          "title": "Zet een systeem op om het supply-chain-risico te managen in de organisatie",
+          "description": "Zet supply chain risk management en een passende strategie op: - Borg het belang en de continuïteit in de organisatie (bijvoorbeeld: passend budget en impact op targets). - Analyseer welke competenties en verantwoordelijkheden nodig zijn en betrek die (bijvoorbeeld: inkoop, marketing & sales, R&D, techniek). - Definieer indicatoren voor de bepaling van impact en risico's. - Breng kritieke afhankelijkheden (leveranciers, componenten, resources, en dergelijke) in kaart. - Stel per afhankelijkheid een actieplan op (vergelijk met HACCP-aanpak). - Analyseer de kans op en impact van leveringsproblemen (financieel, reputatie, enzovoorts) bijvoorbeeld met een Kraljic-analyse. - Stel businesscontinuïteitsplannen op (bijvoorbeeld: verzekeringen). - Ontwerp een strategie hoe met leveranciers om te gaan (bijvoorbeeld periodieke audits, communicatiestrategie, etc.)."
+        },
+        {
+          "title": "Zet een systeem op om het supply-chain-risico te managen in de organisatie",
+          "description": "Zet supply chain risk management en een passende strategie op: - Borg het belang en de continuïteit in de organisatie (bijvoorbeeld: passend budget en impact op targets). - Analyseer welke competenties en verantwoordelijkheden nodig zijn en betrek die (bijvoorbeeld: inkoop, marketing & sales, R&D, techniek). - Definieer indicatoren voor de bepaling van impact en risico's. - Breng kritieke afhankelijkheden (leveranciers, componenten, resources, en dergelijke) in kaart. - Stel per afhankelijkheid een actieplan op (vergelijk met HACCP-aanpak). - Analyseer de kans op en impact van leveringsproblemen (financieel, reputatie, enzovoorts) bijvoorbeeld met een Kraljic-analyse. - Stel businesscontinuïteitsplannen op (bijvoorbeeld: verzekeringen). - Ontwerp een strategie hoe met leveranciers om te gaan (bijvoorbeeld periodieke audits, communicatiestrategie, etc.)."
+        },
+        {
+          "title": "Zet een systeem op om het supply-chain-risico te managen in de organisatie",
+          "description": "Zet supply chain risk management en een passende strategie op: - Borg het belang en de continuïteit in de organisatie (bijvoorbeeld: passend budget en impact op targets). - Analyseer welke competenties en verantwoordelijkheden nodig zijn en betrek die (bijvoorbeeld: inkoop, marketing & sales, R&D, techniek). - Definieer indicatoren voor de bepaling van impact en risico's. - Breng kritieke afhankelijkheden (leveranciers, componenten, resources, en dergelijke) in kaart. - Stel per afhankelijkheid een actieplan op (vergelijk met HACCP-aanpak). - Analyseer de kans op en impact van leveringsproblemen (financieel, reputatie, enzovoorts) bijvoorbeeld met een Kraljic-analyse. - Stel businesscontinuïteitsplannen op (bijvoorbeeld: verzekeringen). - Ontwerp een strategie hoe met leveranciers om te gaan (bijvoorbeeld periodieke audits, communicatiestrategie, etc.)."
+        },
+        {
+          "title": "Zet een systeem op om het supply-chain-risico te managen in de organisatie",
+          "description": "Zet supply chain risk management en een passende strategie op: - Borg het belang en de continuïteit in de organisatie (bijvoorbeeld: passend budget en impact op targets). - Analyseer welke competenties en verantwoordelijkheden nodig zijn en betrek die (bijvoorbeeld: inkoop, marketing & sales, R&D, techniek). - Definieer indicatoren voor de bepaling van impact en risico's. - Breng kritieke afhankelijkheden (leveranciers, componenten, resources, en dergelijke) in kaart. - Stel per afhankelijkheid een actieplan op (vergelijk met HACCP-aanpak). - Analyseer de kans op en impact van leveringsproblemen (financieel, reputatie, enzovoorts) bijvoorbeeld met een Kraljic-analyse. - Stel businesscontinuïteitsplannen op (bijvoorbeeld: verzekeringen). - Ontwerp een strategie hoe met leveranciers om te gaan (bijvoorbeeld periodieke audits, communicatiestrategie, etc.)."
+        }
+      ]
+    }
   }
 }

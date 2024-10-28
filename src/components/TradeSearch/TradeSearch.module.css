@@ -1,0 +1,259 @@
+.sidebarAndMain {
+  flex: 1;
+  padding: 80px 20px;
+  background-color: #eef6fc; /* Light background color */
+}
+
+.box {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  align-items: start;
+  gap: 40px;
+}
+
+.sidebarContent {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  padding: 24px;
+  border-radius: 8px;
+  border: 1px solid #56a9de;
+  gap: 40px;
+  margin-top: 40px;
+}
+
+.resultsCount {
+  font-size: 20px; /* Corresponds to text-xl */
+  margin-bottom: 16px; /* Corresponds to mb-4 */
+  font-weight: 400;
+  letter-spacing: -2%;
+  color: #000;
+}
+
+.resultsCount span {
+  font-weight: 700;
+}
+
+.filterSection {
+  margin-bottom: 1rem; /* Corresponds to mb-4 */
+}
+
+.filterTitle {
+  font-weight: 700; /* Corresponds to font-bold */
+  font-size: 24px;
+  letter-spacing: -2%;
+}
+
+.checkboxContainer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 16px; /* Corresponds to mb-2 */
+}
+
+.checkbox {
+  width: 16px;
+  height: 16px;
+  min-width: 16px;
+  min-height: 16px;
+}
+
+.checkboxLabel {
+  color: #000;
+  font-size: 18px;
+  letter-spacing: -2%;
+}
+
+.mainContent {
+  flex: 3;
+}
+
+.card {
+  border: 1px solid #56a9de; /* Border around cards */
+  border-radius: 8px; /* Rounded corners */
+  margin-bottom: 16px; /* Space between cards */
+  background-color: #fff; /* White background for cards */
+  transition: box-shadow 0.2s; /* Smooth shadow transition */
+}
+
+.card:hover {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Shadow on hover */
+}
+
+.cardHeader {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  padding: 24px; /* Corresponds to p-4 */
+  cursor: pointer; /* Pointer cursor for clickable header */
+  gap: 6px;
+}
+
+.cardHeader h3 {
+  color: #01689b;
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: -2%;
+  line-height: 36px;
+  margin-bottom: 0;
+}
+
+.cardTitle {
+  font-size: 1.25rem; /* Corresponds to text-xl */
+}
+
+.circle {
+  min-width: 45px;
+  min-height: 45px;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #eef6fc;
+  border-radius: 50%;
+  color: #000;
+  font-size: 15px;
+}
+
+.cardDescription {
+  padding: 0 24px; /* Corresponds to p-4 */
+}
+
+.cardDetail {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center; /* Center align items */
+  padding-bottom: 30px;
+  gap: 45px;
+}
+
+.detail {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  gap: 16px;
+}
+
+.detailsIcons {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  min-height: 24px;
+  min-width: 24px;
+}
+
+.detailIcon,
+.detailIconGray {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.detailIcon svg,
+.detailIconGray svg {
+  width: 100%;
+  height: 100%;
+}
+
+.detailIconGray {
+  opacity: 0.3;
+}
+
+.cardPara {
+  color: #000000; /* Corresponds to text-gray-300 */
+  padding-bottom: 0;
+  margin-bottom: 0;
+  padding-bottom: 30px;
+  font-size: 18px;
+}
+
+/* Media Queries for Responsive Font Sizes */
+@media screen and (max-width: 1280px) {
+  .cardDetail {
+    gap: 25px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .box {
+    flex-direction: column;
+  }
+  .sidebarContent {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .resultsCount {
+    font-size: 18px; /* Decrease results count size */
+  }
+
+  .filterTitle {
+    font-size: 20px; /* Decrease filter title size */
+  }
+
+  .checkboxLabel {
+    font-size: 16px; /* Decrease checkbox label size */
+  }
+
+  .cardHeader h3 {
+    font-size: 20px; /* Decrease card header size */
+    line-height: 28px;
+  }
+
+  .cardTitle {
+    font-size: 18px; /* Decrease card title size */
+  }
+
+  .detail {
+    gap: 10px;
+  }
+
+  .category {
+    font-size: 14px;
+  }
+
+  .cardPara {
+    font-size: 16px; /* Decrease card paragraph size */
+  }
+
+  .detailIcon,
+  .detailIconGray {
+    width: 18px;
+    height: 18px;
+  }
+
+  .cardDetail {
+    gap: 20px;
+  }
+
+  .circle {
+    min-width: 30px;
+    min-height: 30px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #eef6fc;
+    border-radius: 50%;
+    color: #000;
+    font-size: 13px;
+  }
+
+  .sidebarContent {
+    padding: 18px;
+  }
+
+  .cardHeader {
+    padding: 18px;
+  }
+
+  .cardDescription {
+    padding: 0 18px; /* Corresponds to p-4 */
+  }
+}
