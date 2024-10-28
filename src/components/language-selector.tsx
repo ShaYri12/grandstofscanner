@@ -50,7 +50,7 @@ const LanguageSelector: React.FC<LanguageSelectorProps> = ({
     <div className="cursor-pointer">
       {languages.map((lng, index) => (
         <span
-          className={`h-0 p-0 bg-transparent cursor-pointer outline-[0px] inline-block border-[5px] text-secondary fs-6 fw-bolder ${
+          className={`h-0 p-0 bg-transparent cursor-pointer outline-[0px] inline-block border-[5px] text-secondary fw-bolder ${
             lng.code === selectedLang ? txtclr : ""
           }`}
           key={lng.code}
@@ -71,7 +71,7 @@ const LanguageSelector: React.FC<LanguageSelectorProps> = ({
                 height: "15px",
                 width: "15px",
                 borderRadius: "50%",
-                margin: "0px 5px",
+                margin: "0px 3px",
               }}
             />
             {index < languages.length - 1 && (
