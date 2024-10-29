@@ -1,4 +1,3 @@
-import { useTranslation } from "react-i18next"; // Import useTranslation
 import styles from "./FactSheet.module.css";
 import { FaChevronRight } from "react-icons/fa";
 import { useProductGroupData } from "../../assets/productGroupData";
