@@ -4,7 +4,7 @@ import shortTermSecurity from "../../assets/short-term-security.png";
 import world from "../../assets/world.png";
 import people from "../../assets/people-stars.png";
 import chart from "../../assets/chart.png";
-import TradeSearchResult from "./TradeSearchResult";
+import TradeSearchResult from "../TradeSearchResult/TradeSearchResult";
 import { useTranslation } from "react-i18next";
 
 type FilterOption = {

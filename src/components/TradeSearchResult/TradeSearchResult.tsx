@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { FaChevronDown, FaChevronUp, FaEuroSign, FaLeaf } from "react-icons/fa";
-import styles from "./TradeSearch.module.css";
+import styles from "./TradeSearchResult.module.css";
 import { LuClock3 } from "react-icons/lu";
 import { RiSettings5Fill } from "react-icons/ri";
 import longTermSecurtiy from "../../assets/long-term-security.png";
