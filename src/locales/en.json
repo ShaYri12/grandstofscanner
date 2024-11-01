@@ -227,5 +227,19 @@
         "plastic_products": "Plastic products"
       }
     }
+  },
+  "grondstoffenscanner": {
+    "breadcrumb": {
+      "home": "Home",
+      "current": "About Raw Material Scanner"
+    },
+    "headings": {
+      "heading1": "About Raw Material Scanner",
+      "heading2": "How Does the Raw Material Scanner Work?"
+    },
+    "paragraphs": {
+      "para1": "Many companies in the Netherlands depend on a stable supply of raw materials, such as metals or bio-based resources. Due to various circumstances, raw materials can suddenly become much more expensive, harder to obtain, or even unavailable. This could be a risk for your business. You might receive them today, but what about tomorrow? With the Raw Material Scanner, you can assess the risk of future scarcity for the materials your company uses.",
+      "para2": "You scan a product through the scanner, for example, a phone. You then receive an overview of the possible materials used. Where do they come from? What is the risk profile for each material? This can involve economic risks, as well as environmental and social risks, such as those related to human rights. The Raw Material Scanner visually displays estimates for a selected number of raw materials. You can immediately see the supply security and reputation risk. You also learn what you can do to reduce your risk in a way that aligns with your business strategy."
+    }
   }
 }

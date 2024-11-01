@@ -227,5 +227,19 @@
         "plastic_products": "Plastic producten"
       }
     }
+  },
+  "grondstoffenscanner": {
+    "breadcrumb": {
+      "home": "Home",
+      "current": "Over Grondstoffenscanner"
+    },
+    "headings": {
+      "heading1": "Over Grondstoffenscanner",
+      "heading2": "Hoe werkt de Grondstoffenscanner?"
+    },
+    "paragraphs": {
+      "para1": "Veel bedrijven in Nederland zijn afhankelijk van een stabiele toevoer van grondstoffen, zoals metalen of bio grondstoffen. Grondstoffen kunnen door omstandigheden ineens een stuk duurder, slechter leverbaar of zelfs niet meer leverbaar zijn. En dat kan een risico zijn voor uw bedrijf. U krijgt ze vandaag misschien nog binnen, maar overmorgen ook? Met de Grondstoffenscanner kunt u van de grondstoffen die uw bedrijf gebruikt bijvoorbeeld het risico op schaarste in de toekomst inschatten.",
+      "para2": "U haalt een product door de scanner, bijvoorbeeld een telefoon. U krijgt vervolgens een overzicht van de mogelijk toegepaste materialen. Waar komen ze vandaan? Wat is het risicoprofiel per materiaal? Daarbij kan het gaan om economische risico’s, maar ook om milieu- en maatschappelijke risico’s, bijvoorbeeld rond mensenrechten. De Grondstoffenscanner geeft de schattingen over een geselecteerd aantal grondstoffen visueel weer. U kunt in één keer zien wat de leveringszekerheid en het reputatierisico zijn. Ook leest u wat u kunt doen om uw risico te beperken op een manier die past bij uw bedrijfsstrategie."
+    }
   }
 }
