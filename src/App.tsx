@@ -32,8 +32,8 @@ const App = () => {
           />
           <Route path="*" element={<Navigate to={`/:lang/home`} />} />
         </Routes>
+        <Footer />
       </Router>
-      <Footer />
     </>
   );
 };

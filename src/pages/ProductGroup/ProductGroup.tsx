@@ -16,6 +16,10 @@ const ProductGroups: React.FC = () => {
     }
   }, [lang]);
 
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
+
   return (
     <div className={styles.section}>
       <div className={styles.container}>

@@ -15,6 +15,10 @@ export default function Grondstoffenscanner() {
     }
   }, [lang]);
 
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
+
   return (
     <section className={styles.container}>
       <div className={styles.innerContainer}>

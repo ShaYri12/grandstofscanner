@@ -14,6 +14,10 @@ const Home = () => {
     i18n.changeLanguage(lang);
   }, [lang, i18n]);
 
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
+
   return (
     <div className={styles.container}>
       <HeroSection t={t} />

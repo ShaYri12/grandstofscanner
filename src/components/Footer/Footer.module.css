@@ -20,6 +20,15 @@
   list-style: none;
 }
 
+.footerLi a {
+  text-decoration: none;
+  color: var(--footer-text-color);
+}
+
+.linkActive {
+  font-weight: 700;
+}
+
 .footerUl {
   padding-top: 65px;
   padding-bottom: 40px;
