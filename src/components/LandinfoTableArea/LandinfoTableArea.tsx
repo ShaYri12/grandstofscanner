@@ -7,6 +7,7 @@ import {
   IoMdArrowDropdown,
   IoMdArrowDropup,
 } from "react-icons/io";
+import { useTranslation } from "react-i18next";
 
 interface TableData {
   land: string;
@@ -20,6 +21,7 @@ interface TableData {
 }
 
 const LandinfoTableArea = () => {
+  const { t } = useTranslation();
   const [selectedCountry, setSelectedCountry] = useState("Albanie");
   const [sortConfig, setSortConfig] = useState<{
     key: keyof TableData | null;
@@ -29,7 +31,7 @@ const LandinfoTableArea = () => {
   // Sample data
   const data: TableData[] = [
     {
-      land: "Weefsels van katoen",
+      land: t("landinfo.tableArea.countries.cotton_fabrics"),
       importTon: 120,
       exportTon: 250,
       importEur: 5000,
@@ -39,7 +41,7 @@ const LandinfoTableArea = () => {
       hdi: 0.785,
     },
     {
-      land: "Elektronische apparaten",
+      land: t("landinfo.tableArea.countries.electronics"),
       importTon: 300,
       exportTon: 400,
       importEur: 15000,
@@ -49,7 +51,7 @@ const LandinfoTableArea = () => {
       hdi: 0.805,
     },
     {
-      land: "Voertuigen",
+      land: t("landinfo.tableArea.countries.vehicles"),
       importTon: 800,
       exportTon: 650,
       importEur: 60000,
@@ -59,7 +61,7 @@ const LandinfoTableArea = () => {
       hdi: 0.81,
     },
     {
-      land: "Farmaceutische producten",
+      land: t("landinfo.tableArea.countries.pharmaceuticals"),
       importTon: 100,
       exportTon: 200,
       importEur: 35000,
@@ -69,7 +71,7 @@ const LandinfoTableArea = () => {
       hdi: 0.9,
     },
     {
-      land: "Garens, andere dan naaigarens, van synthetische stapelvezels, bevattende < 85 gewichtspercenten stapelvezels",
+      land: t("landinfo.tableArea.countries.synthetic_yarns"),
       importTon: 0,
       exportTon: 0,
       importEur: 0,
@@ -79,7 +81,7 @@ const LandinfoTableArea = () => {
       hdi: 0.785,
     },
     {
-      land: "Kledingstukken van wol",
+      land: t("landinfo.tableArea.countries.wool_clothing"),
       importTon: 180,
       exportTon: 90,
       importEur: 12000,
@@ -89,7 +91,7 @@ const LandinfoTableArea = () => {
       hdi: 0.79,
     },
     {
-      land: "Landbouwmachines",
+      land: t("landinfo.tableArea.countries.agriculture_machines"),
       importTon: 50,
       exportTon: 75,
       importEur: 24000,
@@ -99,7 +101,7 @@ const LandinfoTableArea = () => {
       hdi: 0.84,
     },
     {
-      land: "Groenten en fruit",
+      land: t("landinfo.tableArea.countries.fruits_vegetables"),
       importTon: 500,
       exportTon: 550,
       importEur: 5000,
@@ -109,7 +111,7 @@ const LandinfoTableArea = () => {
       hdi: 0.795,
     },
     {
-      land: "Papier en karton, van de soort gebruikt om te worden beschreven of bedrukt of voor andere grafische doeleinden, gestreken met of voorzien van een deklaag van kaolien of van andere anorganische stoffen",
+      land: t("landinfo.tableArea.countries.paper_products"),
       importTon: 0,
       exportTon: 0,
       importEur: 0,
@@ -119,7 +121,7 @@ const LandinfoTableArea = () => {
       hdi: 0.785,
     },
     {
-      land: "Weefsels van katoen",
+      land: t("landinfo.tableArea.countries.metal_products"),
       importTon: 0,
       exportTon: 0,
       importEur: 0,
@@ -129,7 +131,7 @@ const LandinfoTableArea = () => {
       hdi: 0.785,
     },
     {
-      land: "Metaalproducten",
+      land: t("landinfo.tableArea.countries.meat_products"),
       importTon: 600,
       exportTon: 400,
       importEur: 42000,
@@ -139,7 +141,7 @@ const LandinfoTableArea = () => {
       hdi: 0.75,
     },
     {
-      land: "Vleesproducten",
+      land: t("landinfo.tableArea.countries.cotton_fabrics"),
       importTon: 300,
       exportTon: 200,
       importEur: 9000,
@@ -149,7 +151,7 @@ const LandinfoTableArea = () => {
       hdi: 0.83,
     },
     {
-      land: "Plastic producten",
+      land: t("landinfo.tableArea.countries.plastic_products"),
       importTon: 420,
       exportTon: 350,
       importEur: 27000,
@@ -197,18 +199,22 @@ const LandinfoTableArea = () => {
   return (
     <div className={styles.innerBox}>
       <div className="">
-        <label className={styles.label}>
-          Kies van welke land u informtie wilt bekijken
-        </label>
+        <label className={styles.label}>{t("landinfo.tableArea.label")}</label>
         <div className={styles.selectContainer}>
           <select
             className={styles.select}
             value={selectedCountry}
             onChange={(e) => setSelectedCountry(e.target.value)}
           >
-            <option value="Albanie">Albanie</option>
-            <option value="Albanie">Albanie</option>
-            <option value="Albanie">Albanie</option>
+            <option value="albania">
+              {t("landinfo.tableArea.countries.albania")}
+            </option>
+            <option value="cotton_fabrics">
+              {t("landinfo.tableArea.countries.cotton_fabrics")}
+            </option>
+            <option value="electronics">
+              {t("landinfo.tableArea.countries.electronics")}
+            </option>
             {/* Add more options as needed */}
           </select>
           <IoIosArrowDown color="#343A40" className={styles.icon} />
@@ -219,26 +225,23 @@ const LandinfoTableArea = () => {
         <table className={styles.table}>
           <thead className={styles.thead}>
             <tr>
-              {Object.keys(data[0]).map((key) => (
+              {[
+                "land",
+                "importTon",
+                "exportTon",
+                "importEur",
+                "exportEur",
+                "epi",
+                "wgi",
+                "hdi",
+              ].map((key) => (
                 <th
                   key={key}
                   onClick={() => handleSort(key as keyof TableData)}
                   className={styles.th}
                 >
                   <div className={styles.headerContent}>
-                    <span>
-                      {key === "land"
-                        ? "Land"
-                        : key === "importTon"
-                        ? "Import in ton"
-                        : key === "exportTon"
-                        ? "Export in ton"
-                        : key === "importEur"
-                        ? "Import in k €"
-                        : key === "exportEur"
-                        ? "Export in k €"
-                        : key.toUpperCase()}
-                    </span>
+                    <span>{t(`landinfo.tableArea.${key}`)}</span>
                     {getSortIcon(key as keyof TableData)}
                   </div>
                 </th>

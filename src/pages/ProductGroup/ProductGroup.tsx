@@ -1,22 +1,30 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./ProductGroup.module.css";
 import { FaChevronRight } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import FactSheet from "../../components/FactSheet/FactSheet";
 import { useProductGroupData } from "../../assets/productGroupData";
+import i18next from "i18next";
 
 const ProductGroups: React.FC = () => {
   const productGroup = useProductGroupData();
+  const { lang } = useParams<{ lang: string }>();
+
+  useEffect(() => {
+    if (lang && lang !== i18next.language) {
+      i18next.changeLanguage(lang);
+    }
+  }, [lang]);
 
   return (
     <div className={styles.section}>
       <div className={styles.container}>
         <nav className={styles.breadcrumb}>
-          <Link to="/" className={styles.breadcrumbLink}>
+          <Link to={`/${lang}/home`} className={styles.breadcrumbLink}>
             {productGroup.breadcrumb.home}
           </Link>
           <FaChevronRight className={styles.breadcrumbIcon} />
-          <Link to="/" className={styles.breadcrumbLink}>
+          <Link to={`/${lang}/home`} className={styles.breadcrumbLink}>
             {productGroup.breadcrumb.exploreReview}
           </Link>
           <FaChevronRight className={styles.breadcrumbIcon} />

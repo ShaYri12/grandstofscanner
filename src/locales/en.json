@@ -193,5 +193,39 @@
         }
       ]
     }
+  },
+  "landinfo": {
+    "breadcrumb": {
+      "home": "Home",
+      "current": "Trade"
+    },
+    "heading": "Country Information",
+    "description": "On this page, you will find country-specific information.",
+    "tableArea": {
+      "label": "Choose which country’s information you want to view",
+      "land": "Country",
+      "importTon": "Import in tons",
+      "exportTon": "Export in tons",
+      "importEur": "Import in €K",
+      "exportEur": "Export in €K",
+      "epi": "EPI",
+      "wgi": "WGI",
+      "hdi": "HDI",
+      "countries": {
+        "albania": "Albania",
+        "cotton_fabrics": "Cotton fabrics",
+        "electronics": "Electronic devices",
+        "vehicles": "Vehicles",
+        "pharmaceuticals": "Pharmaceutical products",
+        "synthetic_yarns": "Yarns, other than sewing threads, of synthetic staple fibers, containing < 85% by weight staple fibers",
+        "wool_clothing": "Clothing of wool",
+        "agriculture_machines": "Agricultural machines",
+        "fruits_vegetables": "Fruits and vegetables",
+        "paper_products": "Paper and cardboard, of the type used for writing, printing, or other graphic purposes, coated with or containing a coating of kaolin or other inorganic substances",
+        "metal_products": "Metal products",
+        "meat_products": "Meat products",
+        "plastic_products": "Plastic products"
+      }
+    }
   }
 }

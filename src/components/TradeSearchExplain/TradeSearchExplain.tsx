@@ -1,14 +1,23 @@
 import { FaChevronRight } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import styles from "./TradeSearchExplain.module.css";
+import i18next from "i18next";
+import { useEffect } from "react";
 
 const TradeSearchExplain = () => {
   const { t } = useTranslation();
+  const { lang } = useParams<{ lang: string }>();
+
+  useEffect(() => {
+    if (lang && lang !== i18next.language) {
+      i18next.changeLanguage(lang);
+    }
+  }, [lang]);
   return (
     <div className={styles.texts}>
       <nav className={styles.breadcrumb}>
-        <Link to="/" className={styles.breadcrumbLink}>
+        <Link to={`/${lang}/home`} className={styles.breadcrumbLink}>
           {t("trade.breadcrumb.home")}
         </Link>
         <FaChevronRight className={styles.breadcrumbIcon} />

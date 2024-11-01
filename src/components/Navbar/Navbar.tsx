@@ -40,7 +40,7 @@ const Navbar: React.FC = () => {
     { path: `/${currentLang}/home`, label: h2one },
     { path: `/${currentLang}/about`, label: h2two },
     { path: `/${currentLang}/trade`, label: h2three },
-    { path: `/${currentLang}/services`, label: h2four },
+    { path: `/${currentLang}/landinfo`, label: h2four },
   ];
 
   const toggleDrawer = () => {

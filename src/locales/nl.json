@@ -193,5 +193,39 @@
         }
       ]
     }
+  },
+  "landinfo": {
+    "breadcrumb": {
+      "home": "Home",
+      "current": "Handelen"
+    },
+    "heading": "Landinfo",
+    "description": "Op deze pagina vindt u landspecifieke informatie.",
+    "tableArea": {
+      "label": "Kies van welke land u informatie wilt bekijken",
+      "land": "Land",
+      "importTon": "Import in ton",
+      "exportTon": "Export in ton",
+      "importEur": "Import in k €",
+      "exportEur": "Export in k €",
+      "epi": "EPI",
+      "wgi": "WGI",
+      "hdi": "HDI",
+      "countries": {
+        "albania": "Albanië",
+        "cotton_fabrics": "Weefsels van katoen",
+        "electronics": "Elektronische apparaten",
+        "vehicles": "Voertuigen",
+        "pharmaceuticals": "Farmaceutische producten",
+        "synthetic_yarns": "Garens, andere dan naaigarens, van synthetische stapelvezels, bevattende < 85 gewichtspercenten stapelvezels",
+        "wool_clothing": "Kledingstukken van wol",
+        "agriculture_machines": "Landbouwmachines",
+        "fruits_vegetables": "Groenten en fruit",
+        "paper_products": "Papier en karton, van de soort gebruikt om te worden beschreven of bedrukt of voor andere grafische doeleinden, gestreken met of voorzien van een deklaag van kaolien of van andere anorganische stoffen",
+        "metal_products": "Metaalproducten",
+        "meat_products": "Vleesproducten",
+        "plastic_products": "Plastic producten"
+      }
+    }
   }
 }
