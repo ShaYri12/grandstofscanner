@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import styles from "./ProductGroup.module.css";
 import { FaChevronRight } from "react-icons/fa";
 import { Link, useParams } from "react-router-dom";
