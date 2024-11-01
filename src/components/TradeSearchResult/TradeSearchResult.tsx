@@ -11,6 +11,8 @@ import chart from "../../assets/chart.png";
 import truck from "../../assets/truck.png";
 import { IconType } from "react-icons";
 import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
+import i18next from "i18next";
 
 type IconMapKeys =
   | "long-term-security"
@@ -31,6 +33,7 @@ const iconMap: Record<Icon2MapKeys, string | IconType> = {
 const TradeSearchResult = () => {
   const { t } = useTranslation();
   const [expandedCards, setExpandedCards] = useState<number[]>([]);
+  const [currentLang, setCurrentLang] = useState(i18next.language);
 
   const toggleCard = (index: number) => {
     setExpandedCards((prev) =>
@@ -98,19 +101,16 @@ const TradeSearchResult = () => {
       <div className={styles.mainContentInner}>
         {results.map((result, index) => (
           <div key={index} className={styles.card}>
-            <div
-              className={styles.cardHeader}
-              onClick={() => toggleCard(index)}
-            >
+            <Link to={`/${currentLang}/landinfo`} className={styles.cardHeader}>
               <h3 className={styles.cardTitle}>{result.title}</h3>
-              <div className={styles.circle}>
+              <div className={styles.circle} onClick={() => toggleCard(index)}>
                 {expandedCards.includes(index) ? (
                   <FaChevronUp className={styles.icon} />
                 ) : (
                   <FaChevronDown className={styles.icon} />
                 )}
               </div>
-            </div>
+            </Link>
 
             <div className={styles.cardDescription}>
               <div className={styles.cardDetail}>

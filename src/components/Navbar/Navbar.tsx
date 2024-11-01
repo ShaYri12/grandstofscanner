@@ -79,9 +79,9 @@ const Navbar: React.FC = () => {
       >
         <div className={styles.navMaxWidth}>
           <div className={styles.navBottomLeft}>
-            <span className={styles.logoText}>
+            <Link to={`/${currentLang}/home`} className={styles.logoText}>
               <img src="/logo.png" alt="Logo" />
-            </span>
+            </Link>
             <div
               className={`${styles.navLeft} d-flex align-items-center gap-5`}
             >
