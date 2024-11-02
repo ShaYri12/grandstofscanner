@@ -12,6 +12,7 @@ import ProductGroups from "./pages/ProductGroup/ProductGroup";
 import Footer from "./components/Footer/Footer";
 import Landinfo from "./pages/Landinfo/Landinfo";
 import Grondstoffenscanner from "./pages/Grondstoffenscanner/Grondstoffenscanner";
+import Antimoon from "./pages/Antimoon/Antimoon";
 
 const App = () => {
   return (
@@ -30,6 +31,7 @@ const App = () => {
             path={`/:lang/explore-assess/product-group`}
             element={<ProductGroups />}
           />
+          <Route path={`/:lang/antimoon`} element={<Antimoon />} />
           <Route path="*" element={<Navigate to={`/:lang/home`} />} />
         </Routes>
         <Footer />

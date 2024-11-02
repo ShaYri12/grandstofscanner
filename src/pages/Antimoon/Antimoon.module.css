@@ -1,0 +1,211 @@
+.section {
+  padding: 20px;
+  padding-bottom: 100px;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  color: #696969;
+  margin-bottom: 40px;
+}
+
+.breadcrumbLink {
+  color: #01689b;
+  text-decoration: none;
+}
+
+.breadcrumbLink:hover {
+  color: #333;
+}
+
+.breadcrumbIcon {
+  margin: 0 12px;
+  color: #c8c8c8;
+  font-size: 14px;
+}
+
+.breadcrumbCurrent {
+  color: #696969;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.subtitle {
+  font-size: 16px;
+  font-weight: 700;
+  color: #012e44;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.titleContainer {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.title {
+  font-size: 40px;
+  font-weight: 700;
+  color: #000;
+}
+
+.symbol {
+  background-color: #bbdefb;
+  color: #1565c0;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+}
+
+.infoIcon {
+  color: #1565c0;
+  font-size: 2rem;
+}
+
+.description {
+  color: #4a4a4a;
+  margin-bottom: 2rem;
+}
+
+.grid {
+  display: flex;
+  gap: 2rem;
+}
+
+.gridMain {
+  flex: 2;
+}
+
+.infoBoxes {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.infoBox {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 1.5rem;
+  position: relative;
+}
+
+.infoBoxIcon {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  color: #1565c0;
+}
+
+.infoBoxTitle {
+  font-size: 1rem;
+  color: #6b7280;
+  margin-bottom: 1rem;
+}
+
+.infoBoxValue {
+  font-size: 2rem;
+  color: #1565c0;
+}
+
+.expandableSections {
+  margin-top: 1rem;
+}
+
+.expandableBox {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.expandableButton {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  width: 100%;
+  background: none;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+}
+
+.expandableTitle {
+  font-size: 1.25rem;
+  color: #1565c0;
+  font-weight: bold;
+}
+
+.chevronIcon {
+  color: #1565c0;
+}
+
+.expandableContent {
+  padding: 1rem;
+  color: #4a4a4a;
+}
+
+.sidebar {
+  flex: 1;
+  background-color: #e3f2fd;
+  border-radius: 8px;
+  padding: 1.5rem;
+}
+
+.sidebarTitle {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.sidebarSection {
+  margin-bottom: 1.5rem;
+}
+
+.symbolLabel {
+  font-weight: bold;
+}
+
+.nonConflictLabel {
+  background-color: #c8e6c9;
+  color: #388e3c;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  display: inline-block;
+  font-size: 0.875rem;
+  margin-top: 0.5rem;
+}
+
+.productList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.productItem {
+  display: flex;
+  align-items: center;
+  color: #1565c0;
+  cursor: pointer;
+}
+
+.expandAllButton {
+  color: #1565c0;
+  margin-top: 1rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  font-size: 1rem;
+}
