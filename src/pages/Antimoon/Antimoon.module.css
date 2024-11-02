@@ -77,11 +77,14 @@
 .description {
   color: #4a4a4a;
   margin-bottom: 2rem;
+  margin-top: 40px;
 }
 
 .grid {
   display: flex;
-  gap: 2rem;
+  gap: 29px;
+  flex-wrap: wrap;
+  align-items: start;
 }
 
 .gridMain {
@@ -161,6 +164,7 @@
   background-color: #e3f2fd;
   border-radius: 8px;
   padding: 1.5rem;
+  margin-top: 115px;
 }
 
 .sidebarTitle {

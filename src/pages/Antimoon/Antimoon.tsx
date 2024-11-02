@@ -41,25 +41,23 @@ const Antimoon: React.FC = () => {
         </nav>
 
         <div className={styles.mainContent}>
-          <div className={styles.header}>
-            <div>
-              <h1 className={styles.subtitle}>Factsheet grondstof</h1>
-              <div className={styles.titleContainer}>
-                <h2 className={styles.title}>Antimoon</h2>
-                <span className={styles.symbol}>Sb</span>
-              </div>
-            </div>
-            <IoInformationCircle className={styles.infoIcon} />
-          </div>
-
-          <p className={styles.description}>
-            Antimoon wordt vooral gebruikt als vlamvertrager in plastics (52%).
-            Daarnaast wordt het ingezet in lood-accu's (27%) en voor het harden
-            van legeringen.
-          </p>
-
           <div className={styles.grid}>
             <div className={styles.gridMain}>
+              <div className={styles.header}>
+                <div>
+                  <h1 className={styles.subtitle}>Factsheet grondstof</h1>
+                  <div className={styles.titleContainer}>
+                    <h2 className={styles.title}>Antimoon</h2>
+                    <span className={styles.symbol}>Sb</span>
+                  </div>
+                </div>
+                <IoInformationCircle className={styles.infoIcon} />
+              </div>
+              <p className={styles.description}>
+                Antimoon wordt vooral gebruikt als vlamvertrager in plastics
+                (52%). Daarnaast wordt het ingezet in lood-accu's (27%) en voor
+                het harden van legeringen.
+              </p>
               <div className={styles.infoBoxes}>
                 <div className={styles.infoBox}>
                   <IoInformationCircle className={styles.infoBoxIcon} />
