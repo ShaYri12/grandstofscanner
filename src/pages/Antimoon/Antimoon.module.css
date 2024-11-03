@@ -100,28 +100,19 @@
 .infoBoxes {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
+  gap: 24px;
 }
 
 .infoBox {
   border: 1px solid #b4b4b4;
   border-radius: 8px;
-  padding: 56px 21px;
+  padding: 56px 19px;
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   text-align: center;
-}
-
-.infoBoxIcon {
-  position: absolute;
-  top: 16.37px;
-  right: 16.37px;
-  color: #01689b;
-  width: 23.25px;
-  height: 23.25px;
 }
 
 .infoBoxTitle {
@@ -132,101 +123,38 @@
   letter-spacing: -2%;
 }
 
-.infoBoxValue {
+.infoBoxValue1,
+.infoBoxValue2 {
   font-size: 40px;
   font-weight: 700;
   letter-spacing: -2%;
   color: #1565c0;
+  margin-bottom: 0;
 }
 
-.expandableSections {
-  margin-top: 1rem;
+.infoBoxValue2 {
+  margin-top: 17px;
 }
 
-.expandableBox {
-  border: 1px solid #e0e0e0;
-  border-radius: 8px;
-  margin-bottom: 1rem;
+@media (max-width: 956px) {
+  .infoBoxes {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
 
-.expandableButton {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem;
-  width: 100%;
-  background: none;
-  border: none;
-  text-align: left;
-  cursor: pointer;
+/* Small Devices (768px and below) */
+@media screen and (max-width: 768px) {
+  .breadcrumb {
+    font-size: 14px;
+  }
+
+  .breadcrumbIcon {
+    margin: 0 5px;
+  }
 }
 
-.expandableTitle {
-  font-size: 1.25rem;
-  color: #1565c0;
-  font-weight: bold;
-}
-
-.chevronIcon {
-  color: #1565c0;
-}
-
-.expandableContent {
-  padding: 1rem;
-  color: #4a4a4a;
-}
-
-.sidebar {
-  flex: 1;
-  background-color: #e3f2fd;
-  border-radius: 8px;
-  padding: 1.5rem;
-  margin-top: 115px;
-}
-
-.sidebarTitle {
-  font-size: 1.5rem;
-  font-weight: bold;
-  margin-bottom: 1rem;
-}
-
-.sidebarSection {
-  margin-bottom: 1.5rem;
-}
-
-.symbolLabel {
-  font-weight: bold;
-}
-
-.nonConflictLabel {
-  background-color: #c8e6c9;
-  color: #388e3c;
-  padding: 0.25rem 0.5rem;
-  border-radius: 4px;
-  display: inline-block;
-  font-size: 0.875rem;
-  margin-top: 0.5rem;
-}
-
-.productList {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-.productItem {
-  display: flex;
-  align-items: center;
-  color: #1565c0;
-  cursor: pointer;
-}
-
-.expandAllButton {
-  color: #1565c0;
-  margin-top: 1rem;
-  background: none;
-  border: none;
-  cursor: pointer;
-  text-align: left;
-  font-size: 1rem;
+@media screen and (max-width: 355px) {
+  .breadcrumb {
+    font-size: 12px;
+  }
 }

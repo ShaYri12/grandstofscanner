@@ -1,0 +1,63 @@
+.expandableSections {
+  margin-top: 40px;
+}
+
+.expandAll {
+  display: flex;
+  align-items: end;
+  justify-content: end;
+  margin-left: auto;
+  border: 0;
+  background: transparent;
+  color: #01689b;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: -2%;
+  margin-bottom: 12px;
+}
+
+.expandableBox {
+  border-top: 1px solid #b4b4b4;
+  padding: 24px 0;
+}
+
+.expandableButton {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 30px;
+  padding-left: 0;
+  padding-right: 0;
+  width: 100%;
+  background: none;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+}
+
+.expandableTitle {
+  font-size: 32px;
+  color: #01689b;
+  font-weight: 700;
+  letter-spacing: -2%;
+  margin-bottom: 0;
+}
+
+.expandableButton span {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: #eef6fc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.chevronIcon {
+  color: #1565c0;
+  font-size: 18px;
+}
+
+.expandableContent {
+  color: #000;
+}

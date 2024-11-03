@@ -1,0 +1,98 @@
+/* Component.module.css */
+
+.priceFluctuation {
+  width: 100%;
+  max-width: 768px; /* Equivalent to max-w-3xl */
+  margin: auto; /* Center align */
+  margin-top: 24px; /* Space equivalent to space-y-6 */
+}
+
+.tabContainer {
+  display: flex;
+  width: 300px;
+  overflow: hidden;
+}
+
+.tabButton {
+  flex: 1;
+  padding: 16px; /* py-2 px-4 */
+  font-weight: 400; /* font-medium */
+  background-color: transparent; /* Placeholder for background */
+  font-size: 18px;
+  border: 0px;
+}
+
+.activeTab {
+  background-color: #eef6fc; /* Placeholder for primary background */
+  color: #000000;
+  font-weight: 700;
+  border-bottom: 1px solid #01689b;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+}
+
+.inactiveTab {
+  background-color: var(--bg-background); /* Placeholder for background */
+}
+
+.infoSection {
+  margin-top: 32px; /* space-y-4 */
+}
+
+.selectLabel {
+  font-size: 20px;
+  color: #000000de;
+}
+
+.selectContainer {
+  position: relative;
+}
+
+.select {
+  width: 100%;
+  appearance: none;
+  border: 1px solid #d1d5db; /* Tailwind border color */
+  border-radius: 0.375rem; /* Rounded-md */
+  padding: 0.5rem 0.75rem; /* py-2 px-3 */
+  background-color: var(--bg-background); /* Placeholder for background */
+  padding-right: 2rem; /* pr-8 */
+}
+
+.arrowIcon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  padding: 0 0.5rem; /* px-2 */
+  color: #4b5563; /* Tailwind text-gray-700 */
+}
+
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem; /* gap-6 */
+  margin-top: 16px; /* Added for spacing */
+}
+
+.legendItem {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem; /* gap-2 */
+}
+
+.legendBox {
+  height: 1rem; /* h-4 */
+  width: 1rem; /* w-4 */
+}
+
+.map {
+  width: 100%;
+  max-height: 398.69px;
+  margin: 60px 0 40px 0;
+}
+
+.map img {
+  width: 100%;
+  max-height: 398.69px;
+}

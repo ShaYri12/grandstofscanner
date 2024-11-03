@@ -1,19 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import styles from "./Antimoon.module.css";
 import { FaChevronRight } from "react-icons/fa";
 import { Link, useParams } from "react-router-dom";
 import i18next from "i18next";
-import {
-  IoInformationCircle,
-  IoChevronDown,
-  IoChevronUp,
-} from "react-icons/io5";
-import { FaBox } from "react-icons/fa";
+import Tooltip from "../../components/Tooltip/Tooltip";
+import ExpandableSection from "../../components/AntimoonExpandables/ExpandableSection";
+import AntimoonSideContent from "../../components/AntimoonSideContent/AntimoonSideContent";
 
 const Antimoon: React.FC = () => {
   const { lang } = useParams<{ lang: string }>();
-  const [showImportInfo, setShowImportInfo] = useState(false);
-  const [showPriceInfo, setShowPriceInfo] = useState(false);
 
   useEffect(() => {
     if (lang && lang !== i18next.language) {
@@ -51,7 +46,10 @@ const Antimoon: React.FC = () => {
                     <span className={styles.symbol}>Sb</span>
                   </div>
                 </div>
-                <IoInformationCircle className={styles.infoIcon} />
+                <Tooltip
+                  title="Maximale prijsstijging even titel iets langer maken"
+                  text="Dit staat voor de grootste prijsstijging die -sinds 1900- in één enkel jaar is opgetreden. Een maximale prijsstijging van 100% wil zeggen dat in één enkel jaar de prijs van een grondstof is verdubbeld. Er wordt gerekend in jaargemiddelden; dag-, week- en maandgemiddelden zijn buiten beschouwing gelaten."
+                />
               </div>
               <p className={styles.description}>
                 Antimoon wordt vooral gebruikt als vlamvertrager in plastics
@@ -60,103 +58,30 @@ const Antimoon: React.FC = () => {
               </p>
               <div className={styles.infoBoxes}>
                 <div className={styles.infoBox}>
-                  <IoInformationCircle className={styles.infoBoxIcon} />
+                  <Tooltip
+                    title="Maximale prijsstijging even titel iets langer maken"
+                    text="Dit staat voor de grootste prijsstijging die -sinds 1900- in één enkel jaar is opgetreden. Een maximale prijsstijging van 100% wil zeggen dat in één enkel jaar de prijs van een grondstof is verdubbeld. Er wordt gerekend in jaargemiddelden; dag-, week- en maandgemiddelden zijn buiten beschouwing gelaten."
+                    position="absolute" // Apply absolute for specific positioning
+                  />
                   <h3 className={styles.infoBoxTitle}>
-                    Prijsvolatiliteit van grondstoffen/materialen (MAPII)
+                    Prijsvolatiliteit van grondstoffen/ materialen (MAPII)
                   </h3>
-                  <p className={styles.infoBoxValue}>+131%</p>
+                  <p className={styles.infoBoxValue1}>+131%</p>
                 </div>
                 <div className={styles.infoBox}>
-                  <IoInformationCircle className={styles.infoBoxIcon} />
+                  <Tooltip
+                    title="Maximale prijsstijging even titel iets langer maken"
+                    text="Dit staat voor de grootste prijsstijging die -sinds 1900- in één enkel jaar is opgetreden. Een maximale prijsstijging van 100% wil zeggen dat in één enkel jaar de prijs van een grondstof is verdubbeld. Er wordt gerekend in jaargemiddelden; dag-, week- en maandgemiddelden zijn buiten beschouwing gelaten."
+                    position="absolute" // Apply absolute for specific positioning
+                  />
                   <h3 className={styles.infoBoxTitle}>Wereldproductie</h3>
-                  <p className={styles.infoBoxValue}>42.833 ton</p>
+                  <p className={styles.infoBoxValue2}>42.833 ton</p>
                 </div>
               </div>
-
-              <div className={styles.expandableSections}>
-                <div className={styles.expandableBox}>
-                  <button
-                    onClick={() => setShowImportInfo(!showImportInfo)}
-                    className={styles.expandableButton}
-                  >
-                    <h3 className={styles.expandableTitle}>
-                      Informatie importlanden
-                    </h3>
-                    {showImportInfo ? (
-                      <IoChevronUp className={styles.chevronIcon} />
-                    ) : (
-                      <IoChevronDown className={styles.chevronIcon} />
-                    )}
-                  </button>
-                  {showImportInfo && (
-                    <div className={styles.expandableContent}>
-                      <p>
-                        In de onderstaande wereldkaart ziet u uit welke landen
-                        Nederland de getoonde grondstof importeert en wat hun
-                        scores zijn op het gebied van Environmental Performance
-                        (EPI), Human Development (HDI) en World Governance
-                        (WGI).
-                      </p>
-                    </div>
-                  )}
-                </div>
-
-                <div className={styles.expandableBox}>
-                  <button
-                    onClick={() => setShowPriceInfo(!showPriceInfo)}
-                    className={styles.expandableButton}
-                  >
-                    <h3 className={styles.expandableTitle}>Prijsfluctuatie</h3>
-                    {showPriceInfo ? (
-                      <IoChevronUp className={styles.chevronIcon} />
-                    ) : (
-                      <IoChevronDown className={styles.chevronIcon} />
-                    )}
-                  </button>
-                  {showPriceInfo && (
-                    <div className={styles.expandableContent}>
-                      <p>
-                        In de onderstaande wereldkaart ziet u uit welke landen
-                        Nederland de getoonde grondstof importeert en wat hun
-                        scores zijn op het gebied van Environmental Performance
-                        (EPI), Human Development (HDI) en World Governance
-                        (WGI).
-                      </p>
-                    </div>
-                  )}
-                </div>
-              </div>
+              <ExpandableSection />
             </div>
 
-            <div className={styles.sidebar}>
-              <h3 className={styles.sidebarTitle}>Algemene informatie</h3>
-              <div className={styles.sidebarSection}>
-                <p>
-                  <span className={styles.symbolLabel}>Sb</span> is de afkorting
-                  van <span className={styles.symbolLabel}>Antimoon</span> in
-                  het periodiek systeem
-                </p>
-                <div className={styles.nonConflictLabel}>
-                  Geen conflict materiaal
-                </div>
-              </div>
-
-              <h3 className={styles.sidebarTitle}>Productgroepen</h3>
-              <div className={styles.productList}>
-                <div className={styles.productItem}>
-                  <FaBox />
-                  <span>Luchtballons en luchtschepen (0,002)</span>
-                </div>
-                <div className={styles.productItem}>
-                  <FaBox />
-                  <span>Hefschroefvliegtuigen (0,000)</span>
-                </div>
-              </div>
-
-              <button className={styles.expandAllButton}>
-                Alles uitklappen
-              </button>
-            </div>
+            <AntimoonSideContent />
           </div>
         </div>
       </div>

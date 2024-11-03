@@ -1,0 +1,75 @@
+.sidebar {
+  flex: 1;
+  background-color: #eef6fc;
+  border-radius: 8px;
+  padding: 24px;
+  margin-top: 115px;
+}
+
+.sidebarTitle {
+  font-size: 32px;
+  font-weight: 32px;
+  margin-bottom: 16px;
+  letter-spacing: -2%;
+}
+
+.sidebarSection {
+  margin-bottom: 1.5rem;
+}
+
+.sidebarPara {
+  color: #000;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: -2%;
+  margin-bottom: 26px;
+}
+
+.symbolLabel {
+  font-weight: 700;
+}
+
+.nonConflictLabel {
+  background-color: #dfe6e1;
+  color: #275937;
+  padding: 4px;
+  border-radius: 8px;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 300;
+  letter-spacing: -2%;
+}
+
+.ProductGroup {
+  margin-top: 45px;
+  color: #000;
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 18px;
+}
+
+.productList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.productItem {
+  display: flex;
+  align-items: center;
+  color: #01689b;
+  cursor: pointer;
+  text-decoration: underline;
+  gap: 6px;
+  font-size: 16px;
+}
+
+.productItem .fileIcon1 {
+  color: #d52b1e;
+  font-size: 27px;
+}
+
+.productItem .fileIcon2 {
+  color: #007bc7;
+  font-size: 27px;
+}
