@@ -52,7 +52,7 @@
 
 .titleContainer {
   display: flex;
-  align-items: center;
+  align-items: start;
   gap: 9px;
 }
 
@@ -63,10 +63,13 @@
 }
 
 .symbol {
-  background-color: #bbdefb;
-  color: #1565c0;
-  padding: 0.25rem 0.5rem;
-  border-radius: 4px;
+  background-color: #cce0f1;
+  color: #01689b;
+  padding: 11px 13px;
+  font-weight: 700;
+  font-size: 18px;
+  border-radius: 8px;
+  margin-top: -8px;
 }
 
 .infoIcon {
@@ -78,6 +81,9 @@
   color: #4a4a4a;
   margin-bottom: 2rem;
   margin-top: 40px;
+  font-size: 24px;
+  font-weight: 300;
+  color: #000;
 }
 
 .grid {
@@ -98,27 +104,38 @@
 }
 
 .infoBox {
-  border: 1px solid #e0e0e0;
+  border: 1px solid #b4b4b4;
   border-radius: 8px;
-  padding: 1.5rem;
+  padding: 56px 21px;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
 }
 
 .infoBoxIcon {
   position: absolute;
-  top: 1rem;
-  right: 1rem;
-  color: #1565c0;
+  top: 16.37px;
+  right: 16.37px;
+  color: #01689b;
+  width: 23.25px;
+  height: 23.25px;
 }
 
 .infoBoxTitle {
-  font-size: 1rem;
-  color: #6b7280;
-  margin-bottom: 1rem;
+  font-size: 24px;
+  font-weight: 300;
+  color: #000;
+  margin-bottom: 0;
+  letter-spacing: -2%;
 }
 
 .infoBoxValue {
-  font-size: 2rem;
+  font-size: 40px;
+  font-weight: 700;
+  letter-spacing: -2%;
   color: #1565c0;
 }
 
