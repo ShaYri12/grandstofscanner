@@ -1,0 +1,97 @@
+.container {
+  width: 100%;
+  padding-top: 34px;
+}
+
+/* Grid layout */
+.grid {
+  display: grid;
+  row-gap: 40px;
+  column-gap: 24px;
+}
+
+.gridTwoCols {
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+  .gridTwoCols {
+    grid-template-columns: repeat(2, 1fr); /* Tailwind's md:grid-cols-2 */
+  }
+}
+
+.sectionHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 16px; /* Tailwind's mb-4 */
+}
+
+.icon {
+  width: 34px; /* Tailwind's w-6 */
+  height: 34px; /* Tailwind's h-6 */
+}
+
+.title {
+  font-size: 24px; /* Tailwind's text-2xl */
+  font-weight: 700;
+  color: #000;
+  margin-bottom: 0;
+}
+
+/* Checkbox styles */
+.checkboxContainer {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px; /* Tailwind's gap-3 */
+}
+
+.checkbox {
+  margin-top: 8px; /* Tailwind's mt-1 */
+  width: 16px; /* Tailwind's w-4 */
+  height: 16px; /* Tailwind's h-4 */
+  min-width: 16px; /* Tailwind's w-4 */
+  min-height: 16px; /* Tailwind's h-4 */
+  border-radius: 2px; /* Tailwind's rounded */
+  border: 1px solid #d1d5db; /* Tailwind's border-gray-300 */
+  color: #01689b;
+}
+
+.checkbox:focus {
+  outline: none;
+}
+
+.checkboxContainer span {
+  font-size: 18px;
+  color: #000000;
+  font-weight: 400;
+}
+
+/* Space between labels */
+.spaceY4 > * + * {
+  margin-top: 16px;
+}
+
+.lastSection {
+  margin-top: 40px;
+}
+
+.lastSectionHeader {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 8px;
+}
+
+.imageContainer {
+  width: 100%;
+  padding: 32px 0;
+}
+
+.viewDataIn {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  font-size: 18px;
+  color: #01689b;
+  text-decoration: underline;
+}

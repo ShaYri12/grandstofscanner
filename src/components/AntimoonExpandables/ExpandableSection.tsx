@@ -2,6 +2,7 @@ import { useState } from "react";
 import styles from "./ExpandableSection.module.css";
 import { IoChevronDown, IoChevronUp } from "react-icons/io5";
 import PriceFluctuation from "../PriceFluctuation/PriceFluctuation";
+import RiskIndicators from "../RiskIndicators/RiskIndicators";
 
 const ExpandableSection = () => {
   const [showImportInfo, setShowImportInfo] = useState(false);
@@ -15,41 +16,31 @@ const ExpandableSection = () => {
       showInfo: showImportInfo,
       toggleInfo: () => setShowImportInfo((prev) => !prev),
       content: (
-        <>
-          <p>
-            In de onderstaande wereldkaart ziet u uit welke landen Nederland de
-            getoonde grondstof importeert en wat hun scores zijn op het gebied
-            van Environmental Performance (EPI), Human Development (HDI) en
-            World Governance (WGI).
-          </p>
-        </>
+        <p>
+          In de onderstaande wereldkaart ziet u uit welke landen Nederland de
+          getoonde grondstof importeert en wat hun scores zijn op het gebied van
+          Environmental Performance (EPI), Human Development (HDI) en World
+          Governance (WGI).
+        </p>
       ),
-      expandedContent: (
-        <>
-          <PriceFluctuation />
-        </>
-      ),
+      expandedContent: <PriceFluctuation />,
     },
     {
       title: "Prijsfluctuatie",
       showInfo: showPriceInfo,
       toggleInfo: () => setShowPriceInfo((prev) => !prev),
       content: (
-        <>
-          <p>
-            Prijsfluctuaties kunnen aanzienlijk variëren op basis van
-            verschillende factoren, zoals marktvraag, seizoensgebonden trends,
-            en politieke stabiliteit.
-          </p>
-        </>
+        <p>
+          Prijsfluctuaties kunnen aanzienlijk variëren op basis van
+          verschillende factoren, zoals marktvraag, seizoensgebonden trends, en
+          politieke stabiliteit.
+        </p>
       ),
       expandedContent: (
-        <>
-          <p>
-            In de onderstaande grafiek ziet u de prijstrends van de afgelopen
-            jaren.
-          </p>
-        </>
+        <p>
+          In de onderstaande grafiek ziet u de prijstrends van de afgelopen
+          jaren.
+        </p>
       ),
     },
     {
@@ -57,14 +48,12 @@ const ExpandableSection = () => {
       showInfo: showIMVOInfo,
       toggleInfo: () => setShowIMVOInfo((prev) => !prev),
       content: (
-        <>
-          <p>
-            In de onderstaande wereldkaart ziet u uit welke landen Nederland de
-            getoonde grondstof importeert en wat hun scores zijn op het gebied
-            van Environmental Performance (EPI), Human Development (HDI) en
-            World Governance (WGI).
-          </p>
-        </>
+        <p>
+          In de onderstaande wereldkaart ziet u uit welke landen Nederland de
+          getoonde grondstof importeert en wat hun scores zijn op het gebied van
+          Environmental Performance (EPI), Human Development (HDI) en World
+          Governance (WGI).
+        </p>
       ),
       expandedContent: (
         <>
@@ -86,29 +75,14 @@ const ExpandableSection = () => {
       showInfo: showRiskIndicatorsInfo,
       toggleInfo: () => setShowRiskIndicatorsInfo((prev) => !prev),
       content: (
-        <>
-          <p>
-            In de onderstaande wereldkaart ziet u uit welke landen Nederland de
-            getoonde grondstof importeert en wat hun scores zijn op het gebied
-            van Environmental Performance (EPI), Human Development (HDI) en
-            World Governance (WGI).
-          </p>
-        </>
+        <p>
+          In de onderstaande wereldkaart ziet u uit welke landen Nederland de
+          getoonde grondstof importeert en wat hun scores zijn op het gebied van
+          Environmental Performance (EPI), Human Development (HDI) en World
+          Governance (WGI).
+        </p>
       ),
-      expandedContent: (
-        <>
-          <p>
-            In de onderstaande grafiek ziet u de prijstrends van de afgelopen
-            jaren.
-          </p>
-          <p>
-            In de onderstaande wereldkaart ziet u uit welke landen Nederland de
-            getoonde grondstof importeert en wat hun scores zijn op het gebied
-            van Environmental Performance (EPI), Human Development (HDI) en
-            World Governance (WGI).
-          </p>
-        </>
-      ),
+      expandedContent: <RiskIndicators />,
     },
   ];
 
