@@ -70,30 +70,54 @@
     "actionButton": "Handelingsperspectieven",
     "factsheetLinkText": "Bekijk factsheet",
     "factsheets": [
-      { "symbol": "Fe", "title": "IJzer", "linkText": "Bekijk factsheet" },
-      { "symbol": "Sb", "title": "Antimoon", "linkText": "Bekijk factsheet" },
-      { "symbol": "Fe", "title": "IJzer", "linkText": "Bekijk factsheet" }
+      {
+        "symbol": "Fe",
+        "title": "IJzer",
+        "linkText": "Bekijk factsheet"
+      },
+      {
+        "symbol": "Sb",
+        "title": "Antimoon",
+        "linkText": "Bekijk factsheet"
+      },
+      {
+        "symbol": "Fe",
+        "title": "IJzer",
+        "linkText": "Bekijk factsheet"
+      }
     ],
     "productGroups": [
       {
         "code": "340600",
         "title": "Kaarsen en dergelijke artikelen",
         "linkText": "Bekijk factsheet",
-        "info": ["Verwaarloosbaar", "Beperkt", "Gemiddeld"],
+        "info": [
+          "Verwaarloosbaar",
+          "Beperkt",
+          "Gemiddeld"
+        ],
         "isAlt": false
       },
       {
         "code": "340600",
         "title": "Kaarsen en dergelijke artikelen",
         "linkText": "Bekijk factsheet",
-        "info": ["Verwaarloosbaar", "Beperkt", "Gemiddeld"],
+        "info": [
+          "Verwaarloosbaar",
+          "Beperkt",
+          "Gemiddeld"
+        ],
         "isAlt": true
       },
       {
         "code": "340600",
         "title": "Kaarsen en dergelijke artikelen",
         "linkText": "Bekijk factsheet",
-        "info": ["Verwaarloosbaar", "Beperkt", "Gemiddeld"],
+        "info": [
+          "Verwaarloosbaar",
+          "Beperkt",
+          "Gemiddeld"
+        ],
         "isAlt": false
       }
     ]
@@ -240,6 +264,44 @@
     "paragraphs": {
       "para1": "Veel bedrijven in Nederland zijn afhankelijk van een stabiele toevoer van grondstoffen, zoals metalen of bio grondstoffen. Grondstoffen kunnen door omstandigheden ineens een stuk duurder, slechter leverbaar of zelfs niet meer leverbaar zijn. En dat kan een risico zijn voor uw bedrijf. U krijgt ze vandaag misschien nog binnen, maar overmorgen ook? Met de Grondstoffenscanner kunt u van de grondstoffen die uw bedrijf gebruikt bijvoorbeeld het risico op schaarste in de toekomst inschatten.",
       "para2": "U haalt een product door de scanner, bijvoorbeeld een telefoon. U krijgt vervolgens een overzicht van de mogelijk toegepaste materialen. Waar komen ze vandaan? Wat is het risicoprofiel per materiaal? Daarbij kan het gaan om economische risico’s, maar ook om milieu- en maatschappelijke risico’s, bijvoorbeeld rond mensenrechten. De Grondstoffenscanner geeft de schattingen over een geselecteerd aantal grondstoffen visueel weer. U kunt in één keer zien wat de leveringszekerheid en het reputatierisico zijn. Ook leest u wat u kunt doen om uw risico te beperken op een manier die past bij uw bedrijfsstrategie."
+    }
+  },
+  "exploreheader": {
+    "header": {
+      "home": "Home",
+      "current": "Handelen",
+      "stap": "Stap 1",
+      "title": "Verkennen: Wat koopt u in?",
+      "paragraph": "Ga opzoek naar productgroepen op basis van een zoekterm, productcategorie of een grondstof, zo kunt u ontdekken welke grondstoffen nodig zijn voor de productie. Via grondstof kun je ook opzoek naar een grondstof."
+    },
+    "stepOne": {
+      "title": "Kies waar u de informatie vandaan wilt halen",
+      "labelOne": "Zoek op naam of HS-code van de productgroep",
+      "labelTwo": "Zoek op basis van productcategorie",
+      "labelThree": "Zoek op basis van grondstof",
+      "toSearch": "Zoeken",
+      "of": "of",
+      "btnOne": "Biotische grondstoffen",
+      "btnTwo": "Abiotische grondstoffen",
+      "btnThree": "Primaire",
+      "btnFour": "Gerecycled"
+    },
+    "stepTwo": {
+      "title": "Gevonden resultaten",
+      "para": "Met de resultaten kunt u de factsheet over de grondstof of productgroep bekijken of verschillende productgroepen toevoegen om de verschillen te bekijken.",
+      "paraTwo": "Voor Antimoon is een factsheet grondstof beschikbaar",
+      "tolookit": "Bekijken",
+      "titleOne": "Andere niet-metaalhoudende minerale producten",
+      "titleTwo": "Ander bewerkt glas, technisch glaswerk daaronder begrepen",
+      "titleThree": "702000 - Glaswerk, n.e.g.",
+      "viewFactSheet": "Bekijk factsheet",
+      "add": "Toevoegen"
+    },
+    "stepThree": {
+      "title": "Uw geselecteerde productgroepen",
+      "deleteEverything": "Verwijder alles",
+      "titleOne": "702000 - Glaswerk, n.e.g.",
+      "continue": "Ga door met beoordelen"
     }
   }
 }

@@ -13,6 +13,7 @@ import Footer from "./components/Footer/Footer";
 import Landinfo from "./pages/Landinfo/Landinfo";
 import Grondstoffenscanner from "./pages/Grondstoffenscanner/Grondstoffenscanner";
 import Antimoon from "./pages/Antimoon/Antimoon";
+import Explore from "./pages/Explore/Explore";
 
 const App = () => {
   return (
@@ -23,6 +24,7 @@ const App = () => {
           <Route path={`/:lang/home`} element={<Home />} />
           <Route path={`/:lang/trade`} element={<Trade />} />
           <Route path={`/:lang/landinfo`} element={<Landinfo />} />
+          <Route path={`/:lang/explore`} element={<Explore />} />
           <Route
             path={`/:lang/grondstoffenscanner`}
             element={<Grondstoffenscanner />}

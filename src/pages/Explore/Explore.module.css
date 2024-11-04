@@ -1,0 +1,9 @@
+.timelineSteps{
+    width: 100%;
+    background: #EEF6FC;
+}
+
+.timelineContainer{
+    max-width: 1300px;
+    margin: auto;
+}

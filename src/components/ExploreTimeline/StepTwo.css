@@ -1,0 +1,147 @@
+.faqContainer {
+  margin-top: 20px;
+  background: white;
+  padding: 24px;
+  border-radius: 4px;
+  width: 100%;
+}
+
+.main-faq {
+  border: 1px solid #cce0f1;
+  padding: 24px 0 0 0;
+}
+
+.faq-title {
+  color: #01689b;
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  text-align: left;
+}
+
+.faq-one {
+  padding: 0 24px;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.faq-two {
+  margin-top: 24px;
+  border-top: 1px solid #cce0f1;
+  padding: 24px 24px 0 24px;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+.three-faq-container {
+  padding: 24px;
+}
+
+.faq-three-main {
+  border: 1px solid #cce0f1;
+}
+.faq-three {
+  padding: 24px;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.last-faq-container {
+  padding: 0 24px 24px 24px;
+}
+.faq-last {
+  padding: 24px;
+  border: 1px solid #cce0f1;
+}
+
+.btns {
+  margin-top: 33px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+  font-size: 18px;
+  line-height: 27px;
+}
+.btn-one {
+  font-weight: 700;
+  border: 1px solid #56a9de;
+  color: #012e44;
+  background: transparent;
+  border-radius: 8px;
+  padding: 16px 24px;
+}
+.btn-two {
+  font-weight: 700;
+  padding: 16px 24px;
+  color: #012e44;
+  border: none;
+  background-color: #56a9de;
+  border-radius: 8px !important;
+}
+.arrow-btn {
+  border: none;
+  background: transparent;
+  border-radius: 8px;
+}
+.arrow-btn img {
+  width: 45px;
+  height: 45px;
+}
+
+@media (max-width: 640px) {
+  .arrow-btn img {
+    width: 30px;
+    height: 30px;
+  }
+  .faqContainer {
+    padding: 14px;
+  }
+  .main-faq {
+    padding: 14px 0 0 0;
+  }
+  .faq-title {
+    font-size: 16px;
+  }
+  .faq-one {
+    padding: 0 14px;
+  }
+  .faq-two {
+    margin-top: 14px;
+    padding: 14px 14px 0 14px;
+  }
+  .three-faq-container {
+    padding: 14px;
+  }
+  .faq-three {
+    padding: 14px;
+  }
+  .last-faq-container {
+    padding: 0 14px 14px 14px;
+  }
+  .faq-last {
+    padding: 14px;
+    border: 1px solid #cce0f1;
+  }
+  .btns {
+    flex-direction: column;
+    font-size: 14px;
+  }
+  .btn-one {
+    width: 100%;
+    max-width: 80%;
+    margin: auto;
+    padding: 8px 20px;
+  }
+  .btn-two {
+    width: 100%;
+    max-width: 80%;
+    margin: auto;
+    padding: 8px 20px;
+  }
+}

@@ -70,30 +70,54 @@
     "actionButton": "Action Perspectives",
     "factsheetLinkText": "View Factsheet",
     "factsheets": [
-      { "symbol": "Fe", "title": "Iron", "linkText": "View Factsheet" },
-      { "symbol": "Sb", "title": "Antimony", "linkText": "View Factsheet" },
-      { "symbol": "Fe", "title": "Iron", "linkText": "View Factsheet" }
+      {
+        "symbol": "Fe",
+        "title": "Iron",
+        "linkText": "View Factsheet"
+      },
+      {
+        "symbol": "Sb",
+        "title": "Antimony",
+        "linkText": "View Factsheet"
+      },
+      {
+        "symbol": "Fe",
+        "title": "Iron",
+        "linkText": "View Factsheet"
+      }
     ],
     "productGroups": [
       {
         "code": "340600",
         "title": "Candles and similar articles",
         "linkText": "View Factsheet",
-        "info": ["Negligible", "Limited", "Moderate"],
+        "info": [
+          "Negligible",
+          "Limited",
+          "Moderate"
+        ],
         "isAlt": false
       },
       {
         "code": "340600",
         "title": "Candles and similar articles",
         "linkText": "View Factsheet",
-        "info": ["Negligible", "Limited", "Moderate"],
+        "info": [
+          "Negligible",
+          "Limited",
+          "Moderate"
+        ],
         "isAlt": true
       },
       {
         "code": "340600",
         "title": "Candles and similar articles",
         "linkText": "View Factsheet",
-        "info": ["Negligible", "Limited", "Moderate"],
+        "info": [
+          "Negligible",
+          "Limited",
+          "Moderate"
+        ],
         "isAlt": false
       }
     ]
@@ -240,6 +264,44 @@
     "paragraphs": {
       "para1": "Many companies in the Netherlands depend on a stable supply of raw materials, such as metals or bio-based resources. Due to various circumstances, raw materials can suddenly become much more expensive, harder to obtain, or even unavailable. This could be a risk for your business. You might receive them today, but what about tomorrow? With the Raw Material Scanner, you can assess the risk of future scarcity for the materials your company uses.",
       "para2": "You scan a product through the scanner, for example, a phone. You then receive an overview of the possible materials used. Where do they come from? What is the risk profile for each material? This can involve economic risks, as well as environmental and social risks, such as those related to human rights. The Raw Material Scanner visually displays estimates for a selected number of raw materials. You can immediately see the supply security and reputation risk. You also learn what you can do to reduce your risk in a way that aligns with your business strategy."
+    }
+  },
+  "exploreheader": {
+    "header": {
+      "home": "Home",
+      "current": "Trade",
+      "stap": "Step 1",
+      "title": "Explore: What are you purchasing?",
+      "paragraph": "Search for product groups based on a keyword, product category, or raw material, allowing you to discover which raw materials are needed for production. You can also search further by raw material."
+    },
+    "stepOne": {
+      "title": "Choose where you want to retrieve the information from",
+      "labelOne": "Search by name or HS code of the product group",
+      "labelTwo": "Search by product category",
+      "labelThree": "Search by raw material",
+      "toSearch": "Search",
+      "of": "or",
+      "btnOne": "Biotic raw materials",
+      "btnTwo": "Abiotic raw materials",
+      "btnThree": "Primary",
+      "btnFour": "Recycled"
+    },
+    "stepTwo": {
+      "title": "Found Results",
+      "para": "With the results, you can view the factsheet about the raw material or product group or add various product groups to compare the differences.",
+      "paraTwo": "A raw material factsheet is available for Antimony",
+      "tolookit": "View",
+      "titleOne": "Other non-metallic mineral products",
+      "titleTwo": "Other processed glass, including technical glassware",
+      "titleThree": "702000 - Glassware, n.e.s.",
+      "viewFactSheet": "View factsheet",
+      "add": "Add"
+    },
+    "stepThree": {
+      "title": "Your selected product groups",
+      "deleteEverything": "Delete everything",
+      "titleOne": "702000 - Glassware, n.e.s.",
+      "continue": "Proceed with review"
     }
   }
 }
