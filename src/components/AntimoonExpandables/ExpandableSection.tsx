@@ -1,10 +1,12 @@
 import { useState } from "react";
 import styles from "./ExpandableSection.module.css";
 import { IoChevronDown, IoChevronUp } from "react-icons/io5";
-import PriceFluctuation from "../PriceFluctuation/PriceFluctuation";
 import RiskIndicators from "../RiskIndicators/RiskIndicators";
+import { useTranslation } from "react-i18next";
+import ImportCountryInformation from "../ImportCountryInformation/ImportCountryInformation";
 
 const ExpandableSection = () => {
+  const { t } = useTranslation();
   const [showImportInfo, setShowImportInfo] = useState(false);
   const [showPriceInfo, setShowPriceInfo] = useState(false);
   const [showIMVOInfo, setShowIMVOInfo] = useState(false);
@@ -12,74 +14,61 @@ const ExpandableSection = () => {
 
   const sections = [
     {
-      title: "Informatie importlanden",
+      title: t("antimoon.expandableSection.import_country_info"), // Translated title
       showInfo: showImportInfo,
       toggleInfo: () => setShowImportInfo((prev) => !prev),
       content: (
         <p>
-          In de onderstaande wereldkaart ziet u uit welke landen Nederland de
-          getoonde grondstof importeert en wat hun scores zijn op het gebied van
-          Environmental Performance (EPI), Human Development (HDI) en World
-          Governance (WGI).
+          {t("antimoon.expandableSection.import_country_info_description")}{" "}
+          {/* Translated content */}
         </p>
       ),
-      expandedContent: <PriceFluctuation />,
+      expandedContent: <ImportCountryInformation />,
     },
     {
-      title: "Prijsfluctuatie",
+      title: t("antimoon.expandableSection.price_fluctuation"), // Translated title
       showInfo: showPriceInfo,
       toggleInfo: () => setShowPriceInfo((prev) => !prev),
       content: (
         <p>
-          Prijsfluctuaties kunnen aanzienlijk variëren op basis van
-          verschillende factoren, zoals marktvraag, seizoensgebonden trends, en
-          politieke stabiliteit.
+          {t("antimoon.expandableSection.price_fluctuation_description")}{" "}
+          {/* Translated content */}
         </p>
       ),
       expandedContent: (
         <p>
-          In de onderstaande grafiek ziet u de prijstrends van de afgelopen
-          jaren.
+          {t("antimoon.expandableSection.price_trends_description")}{" "}
+          {/* Translated content */}
         </p>
       ),
     },
     {
-      title: "IMVO",
+      title: t("antimoon.expandableSection.IMVO"), // Translated title
       showInfo: showIMVOInfo,
       toggleInfo: () => setShowIMVOInfo((prev) => !prev),
       content: (
         <p>
-          In de onderstaande wereldkaart ziet u uit welke landen Nederland de
-          getoonde grondstof importeert en wat hun scores zijn op het gebied van
-          Environmental Performance (EPI), Human Development (HDI) en World
-          Governance (WGI).
+          {t("antimoon.expandableSection.import_country_info_description")}{" "}
+          {/* Reuse the description */}
         </p>
       ),
       expandedContent: (
         <>
+          <p>{t("antimoon.expandableSection.price_trends_description")}</p>
           <p>
-            In de onderstaande grafiek ziet u de prijstrends van de afgelopen
-            jaren.
-          </p>
-          <p>
-            In de onderstaande wereldkaart ziet u uit welke landen Nederland de
-            getoonde grondstof importeert en wat hun scores zijn op het gebied
-            van Environmental Performance (EPI), Human Development (HDI) en
-            World Governance (WGI).
+            {t("antimoon.expandableSection.import_country_info_description")}
           </p>
         </>
       ),
     },
     {
-      title: "Risk indicators",
+      title: t("antimoon.expandableSection.risk_indicators"), // Translated title
       showInfo: showRiskIndicatorsInfo,
       toggleInfo: () => setShowRiskIndicatorsInfo((prev) => !prev),
       content: (
         <p>
-          In de onderstaande wereldkaart ziet u uit welke landen Nederland de
-          getoonde grondstof importeert en wat hun scores zijn op het gebied van
-          Environmental Performance (EPI), Human Development (HDI) en World
-          Governance (WGI).
+          {t("antimoon.expandableSection.import_country_info_description")}{" "}
+          {/* Reuse the description */}
         </p>
       ),
       expandedContent: <RiskIndicators />,
@@ -88,7 +77,10 @@ const ExpandableSection = () => {
 
   return (
     <div className={styles.expandableSections}>
-      <button className={styles.expandAll}>Alles uitklappen</button>
+      <button className={styles.expandAll}>
+        {t("antimoon.expandableSection.expand_all")}
+      </button>{" "}
+      {/* Translated button */}
       {sections.map(
         ({ title, showInfo, toggleInfo, content, expandedContent }, index) => (
           <div key={index} className={styles.expandableBox}>

@@ -1,5 +1,6 @@
 import Tooltip from "../Tooltip/Tooltip";
 import styles from "./RiskIndicators.module.css";
+import { useTranslation } from "react-i18next";
 
 interface RiskSectionProps {
   title: string;
@@ -11,7 +12,7 @@ function RiskSection({ title, items }: RiskSectionProps) {
   return (
     <section className={styles.section}>
       <div className={styles.sectionHeader}>
-        <img src="/sheild.png" className={styles.icon} />
+        <img src="/sheild.png" className={styles.icon} alt="Shield Icon" />
         <h2 className={styles.title}>{title}</h2>
       </div>
       <div className={styles.spaceY4}>
@@ -27,34 +28,36 @@ function RiskSection({ title, items }: RiskSectionProps) {
 }
 
 export default function RiskIndicators() {
+  const { t } = useTranslation(); // Use the translation hook
+
   const sections = [
     {
-      title: "Lange termijn leveringszekerheid",
+      title: t("antimoon.riskIndicators.long_term_security"),
       items: [
-        "Risico van lage bewezen reserves (abiotische grondstoffen)",
-        "Companionality (mate waarin grondstof een bijproduct is)",
-        "Concentratie van reserves van grondstoffen (abiotische grondstoffen)",
+        t("antimoon.riskIndicators.long_term_items.0"),
+        t("antimoon.riskIndicators.long_term_items.1"),
+        t("antimoon.riskIndicators.long_term_items.2"),
       ],
     },
     {
-      title: "Korte termijn leveringszekerheid",
+      title: t("antimoon.riskIndicators.short_term_security"),
       items: [
-        "Concentratie van grondstofwinning/productie",
-        "Risico's in verband met lage stabiliteit en kwaliteit van bestuur in bronlanden",
-        "Risico dat grondstof wordt geraakt door exportrestricties",
-        "Risico's vanwege afwezigheid van recycling",
+        t("antimoon.riskIndicators.short_term_items.0"),
+        t("antimoon.riskIndicators.short_term_items.1"),
+        t("antimoon.riskIndicators.short_term_items.2"),
+        t("antimoon.riskIndicators.short_term_items.3"),
       ],
     },
     {
-      title: "Bedrijfsresultaat",
-      items: ["Risico van hoge prijsvolatiliteit van grondstoffen/materialen"],
+      title: t("antimoon.riskIndicators.business_performance"),
+      items: [t("antimoon.riskIndicators.business_items.0")],
     },
     {
-      title: "Impact op mens en milieu",
+      title: t("antimoon.riskIndicators.human_environment_impact"),
       items: [
-        "Risico in verband met milieu-impact winning en productie",
-        "Risico's in verband met lage graad van Human Development (HDI)",
-        "Impact op biodiversiteit",
+        t("antimoon.riskIndicators.human_environment_items.0"),
+        t("antimoon.riskIndicators.human_environment_items.1"),
+        t("antimoon.riskIndicators.human_environment_items.2"),
       ],
     },
   ];
@@ -72,20 +75,22 @@ export default function RiskIndicators() {
       </div>
       <div className={styles.lastSection}>
         <div className={styles.lastSectionHeader}>
-          <img src="/sheild.png" className={styles.icon} />
+          <img src="/sheild.png" className={styles.icon} alt="Shield Icon" />
           <h2 className={styles.title}>
-            Risico van lage bewezen reserves (abiotische grondstoffen)
+            {t("antimoon.riskIndicators.low_reserves_risk")}
           </h2>
           <Tooltip
-            title="Maximale prijsstijging even titel iets langer maken"
-            text="Dit staat voor de grootste prijsstijging die -sinds 1900- in één enkel jaar is opgetreden. Een maximale prijsstijging van 100% wil zeggen dat in één enkel jaar de prijs van een grondstof is verdubbeld. Er wordt gerekend in jaargemiddelden; dag-, week- en maandgemiddelden zijn buiten beschouwing gelaten."
+            title={t("antimoon.riskIndicators.max_price_increase")}
+            text={t("antimoon.riskIndicators.max_price_increase_text")}
             position="relative2"
           />
         </div>
         <div className={styles.imageContainer}>
-          <img src="/chart.png" />
+          <img src="/chart.png" alt="Chart" />
         </div>
-        <p className={styles.viewDataIn}>Bekijk data in cijfers</p>
+        <p className={styles.viewDataIn}>
+          {t("antimoon.riskIndicators.view_data")}
+        </p>
       </div>
     </div>
   );

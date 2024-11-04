@@ -91,33 +91,21 @@
         "code": "340600",
         "title": "Kaarsen en dergelijke artikelen",
         "linkText": "Bekijk factsheet",
-        "info": [
-          "Verwaarloosbaar",
-          "Beperkt",
-          "Gemiddeld"
-        ],
+        "info": ["Verwaarloosbaar", "Beperkt", "Gemiddeld"],
         "isAlt": false
       },
       {
         "code": "340600",
         "title": "Kaarsen en dergelijke artikelen",
         "linkText": "Bekijk factsheet",
-        "info": [
-          "Verwaarloosbaar",
-          "Beperkt",
-          "Gemiddeld"
-        ],
+        "info": ["Verwaarloosbaar", "Beperkt", "Gemiddeld"],
         "isAlt": true
       },
       {
         "code": "340600",
         "title": "Kaarsen en dergelijke artikelen",
         "linkText": "Bekijk factsheet",
-        "info": [
-          "Verwaarloosbaar",
-          "Beperkt",
-          "Gemiddeld"
-        ],
+        "info": ["Verwaarloosbaar", "Beperkt", "Gemiddeld"],
         "isAlt": false
       }
     ]
@@ -302,6 +290,79 @@
       "deleteEverything": "Verwijder alles",
       "titleOne": "702000 - Glaswerk, n.e.g.",
       "continue": "Ga door met beoordelen"
+    }
+  },
+  "antimoon": {
+    "antimony": "Antimoon",
+    "factsheet": "Factsheet grondstof",
+    "max_price_increase": "Maximale prijsstijging even titel iets langer maken",
+    "max_price_increase_text": "Dit staat voor de grootste prijsstijging die -sinds 1900- in één enkel jaar is opgetreden. Een maximale prijsstijging van 100% wil zeggen dat in één enkel jaar de prijs van een grondstof is verdubbeld. Er wordt gerekend in jaargemiddelden; dag-, week- en maandgemiddelden zijn buiten beschouwing gelaten.",
+    "description": "Antimoon wordt vooral gebruikt als vlamvertrager in plastics (52%). Daarnaast wordt het ingezet in lood-accu's (27%) en voor het harden van legeringen.",
+    "price_volatility": "Prijsvolatiliteit van grondstoffen/ materialen (MAPII)",
+    "world_production": "Wereldproductie",
+    "share_page": "Deel deze pagina",
+    "expandableSection": {
+      "import_country_info": "Informatie importlanden",
+      "import_country_info_description": "In de onderstaande wereldkaart ziet u uit welke landen Nederland de getoonde grondstof importeert en wat hun scores zijn op het gebied van Environmental Performance (EPI), Human Development (HDI) en World Governance (WGI).",
+      "price_fluctuation": "Prijsfluctuatie",
+      "price_fluctuation_description": "Prijsfluctuaties kunnen aanzienlijk variëren op basis van verschillende factoren, zoals marktvraag, seizoensgebonden trends, en politieke stabiliteit.",
+      "price_trends_description": "In de onderstaande grafiek ziet u de prijstrends van de afgelopen jaren.",
+      "IMVO": "IMVO",
+      "risk_indicators": "Risk indicators",
+      "expand_all": "Alles uitklappen"
+    },
+    "import_country": {
+      "world_map": "Wereld kaart",
+      "table": "Tabel",
+      "select_info": "Welke info wil je zien?",
+      "default_value": "Import: in k €",
+      "low": "Laag",
+      "medium": "Gemiddeld",
+      "high": "Hoog",
+      "no_info": "Geen informatie",
+      "info1": "Info 1",
+      "info2": "Info 2",
+      "info3": "Info 3",
+      "map_alt": "Kaart van landen"
+    },
+    "riskIndicators": {
+      "long_term_security": "Lange termijn leveringszekerheid",
+      "long_term_items": [
+        "Risico van lage bewezen reserves (abiotische grondstoffen)",
+        "Companionality (mate waarin een grondstof een bijproduct is)",
+        "Concentratie van grondstofreserves (abiotische grondstoffen)"
+      ],
+      "short_term_security": "Korte termijn leveringszekerheid",
+      "short_term_items": [
+        "Concentratie van grondstofwinning/productie",
+        "Risico's in verband met lage stabiliteit en kwaliteit van bestuur in bronlanden",
+        "Risico dat grondstof wordt beïnvloed door exportrestricties",
+        "Risico's vanwege afwezigheid van recycling"
+      ],
+      "business_performance": "Bedrijfsresultaat",
+      "business_items": [
+        "Risico van hoge prijsvolatiliteit van grondstoffen/materialen"
+      ],
+      "human_environment_impact": "Impact op mens en milieu",
+      "human_environment_items": [
+        "Risico in verband met milieu-impact van winning en productie",
+        "Risico's in verband met lage Human Development Index (HDI)",
+        "Impact op biodiversiteit"
+      ],
+      "low_reserves_risk": "Risico van lage bewezen reserves (abiotische grondstoffen)",
+      "max_price_increase": "Maximale prijsstijging, met een iets langere titel",
+      "max_price_increase_text": "Dit staat voor de grootste prijsstijging die in één enkel jaar sinds 1900 is geregistreerd. Een maximale prijsstijging van 100% betekent dat de prijs van een grondstof in één enkel jaar is verdubbeld. Jaargemiddelden worden berekend; dagelijkse, wekelijkse en maandgemiddelden worden uitgesloten.",
+      "view_data": "Bekijk data in cijfers"
+    },
+    "sideContent": {
+      "general_information": "Algemene informatie",
+      "is_abbreviation": "is de afkorting van",
+      "antimony": "Antimoon",
+      "in_periodic_table": "in het periodiek systeem",
+      "no_conflict_material": "Geen conflict materiaal",
+      "product_groups": "Productgroepen",
+      "air_balloons_and_dirigibles": "Luchtballons en luchtschepen (0,002)",
+      "lift_screw_aircraft": "Hefschroefvliegtuigen (0,000)"
     }
   }
 }

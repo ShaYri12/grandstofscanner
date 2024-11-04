@@ -91,33 +91,21 @@
         "code": "340600",
         "title": "Candles and similar articles",
         "linkText": "View Factsheet",
-        "info": [
-          "Negligible",
-          "Limited",
-          "Moderate"
-        ],
+        "info": ["Negligible", "Limited", "Moderate"],
         "isAlt": false
       },
       {
         "code": "340600",
         "title": "Candles and similar articles",
         "linkText": "View Factsheet",
-        "info": [
-          "Negligible",
-          "Limited",
-          "Moderate"
-        ],
+        "info": ["Negligible", "Limited", "Moderate"],
         "isAlt": true
       },
       {
         "code": "340600",
         "title": "Candles and similar articles",
         "linkText": "View Factsheet",
-        "info": [
-          "Negligible",
-          "Limited",
-          "Moderate"
-        ],
+        "info": ["Negligible", "Limited", "Moderate"],
         "isAlt": false
       }
     ]
@@ -302,6 +290,79 @@
       "deleteEverything": "Delete everything",
       "titleOne": "702000 - Glassware, n.e.s.",
       "continue": "Proceed with review"
+    }
+  },
+  "antimoon": {
+    "antimony": "Antimony",
+    "factsheet": "Factsheet raw material",
+    "max_price_increase": "Maximum price increase, with a slightly longer title",
+    "max_price_increase_text": "This represents the largest price increase recorded in a single year since 1900. A maximum price increase of 100% means that the price of a raw material doubled in a single year. Annual averages are calculated; daily, weekly, and monthly averages are excluded.",
+    "description": "Antimony is mainly used as a flame retardant in plastics (52%). It is also used in lead-acid batteries (27%) and to harden alloys.",
+    "price_volatility": "Price volatility of raw materials/materials (MAPII)",
+    "world_production": "World production",
+    "share_page": "Share this page",
+    "expandableSection": {
+      "import_country_info": "Import Country Information",
+      "import_country_info_description": "In the world map below, you can see which countries the Netherlands imports the shown resource from and their scores on Environmental Performance (EPI), Human Development (HDI), and World Governance (WGI).",
+      "price_fluctuation": "Price Fluctuation",
+      "price_fluctuation_description": "Price fluctuations can vary significantly based on various factors such as market demand, seasonal trends, and political stability.",
+      "price_trends_description": "In the graph below, you can see the price trends from the past years.",
+      "IMVO": "IMVO",
+      "risk_indicators": "Risk Indicators",
+      "expand_all": "Expand All"
+    },
+    "import_country": {
+      "world_map": "World Map",
+      "table": "Table",
+      "select_info": "Which information do you want to see?",
+      "default_value": "Import: in k €",
+      "low": "Low",
+      "medium": "Medium",
+      "high": "High",
+      "no_info": "No Information",
+      "info1": "Info 1",
+      "info2": "Info 2",
+      "info3": "Info 3",
+      "map_alt": "Map of countries"
+    },
+    "riskIndicators": {
+      "long_term_security": "Long-term Supply Security",
+      "long_term_items": [
+        "Risk of low proven reserves (abiotic resources)",
+        "Companionality (extent to which a resource is a by-product)",
+        "Concentration of resource reserves (abiotic resources)"
+      ],
+      "short_term_security": "Short-term Supply Security",
+      "short_term_items": [
+        "Concentration of resource extraction/production",
+        "Risks related to low stability and quality of governance in source countries",
+        "Risk that resource is impacted by export restrictions",
+        "Risks due to lack of recycling"
+      ],
+      "business_performance": "Business Performance",
+      "business_items": [
+        "Risk of high price volatility of resources/materials"
+      ],
+      "human_environment_impact": "Impact on People and Environment",
+      "human_environment_items": [
+        "Risk associated with environmental impact of extraction and production",
+        "Risks related to low Human Development Index (HDI)",
+        "Impact on biodiversity"
+      ],
+      "low_reserves_risk": "Risk of low proven reserves (abiotic resources)",
+      "max_price_increase": "Maximum price increase, with a slightly longer title",
+      "max_price_increase_text": "This represents the largest price increase recorded in a single year since 1900. A maximum price increase of 100% means that the price of a raw material doubled in a single year. Annual averages are calculated; daily, weekly, and monthly averages are excluded.",
+      "view_data": "View data in figures"
+    },
+    "sideContent": {
+      "general_information": "General Information",
+      "is_abbreviation": "is the abbreviation for",
+      "antimony": "Antimony",
+      "in_periodic_table": "in the periodic table",
+      "no_conflict_material": "No conflict material",
+      "product_groups": "Product Groups",
+      "air_balloons_and_dirigibles": "Air balloons and airships (0.002)",
+      "lift_screw_aircraft": "Lift screw aircraft (0.000)"
     }
   }
 }
