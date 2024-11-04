@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { FaChevronDown, FaChevronUp, FaEuroSign, FaLeaf } from "react-icons/fa";
 import styles from "./TradeSearchResult.module.css";
 import { LuClock3 } from "react-icons/lu";
@@ -11,7 +11,7 @@ import chart from "../../assets/chart.png";
 import truck from "../../assets/truck.png";
 import { IconType } from "react-icons";
 import { useTranslation } from "react-i18next";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import i18next from "i18next";
 
 type IconMapKeys =
@@ -33,7 +33,13 @@ const iconMap: Record<Icon2MapKeys, string | IconType> = {
 const TradeSearchResult = () => {
   const { t } = useTranslation();
   const [expandedCards, setExpandedCards] = useState<number[]>([]);
-  const [currentLang, setCurrentLang] = useState(i18next.language);
+  const { lang } = useParams<{ lang: string }>();
+
+  useEffect(() => {
+    if (lang && lang !== i18next.language) {
+      i18next.changeLanguage(lang);
+    }
+  }, [lang]);
 
   const toggleCard = (index: number) => {
     setExpandedCards((prev) =>
@@ -101,7 +107,7 @@ const TradeSearchResult = () => {
       <div className={styles.mainContentInner}>
         {results.map((result, index) => (
           <div key={index} className={styles.card}>
-            <Link to={`/${currentLang}/landinfo`} className={styles.cardHeader}>
+            <Link to={`/${lang}/landinfo`} className={styles.cardHeader}>
               <h3 className={styles.cardTitle}>{result.title}</h3>
               <div className={styles.circle} onClick={() => toggleCard(index)}>
                 {expandedCards.includes(index) ? (
