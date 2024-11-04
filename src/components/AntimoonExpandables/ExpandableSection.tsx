@@ -129,8 +129,10 @@ const ExpandableSection = () => {
               </span>
             </button>
             <div className={styles.expandableContent}>{content}</div>
-            {showInfo && (
+            {showInfo ? (
               <div className={styles.expandableContent}>{expandedContent}</div>
+            ) : (
+              <div className={styles.expandableContent}>...</div>
             )}
           </div>
         )

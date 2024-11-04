@@ -1,10 +1,5 @@
-/* Component.module.css */
-
 .priceFluctuation {
   width: 100%;
-  max-width: 768px; /* Equivalent to max-w-3xl */
-  margin: auto; /* Center align */
-  margin-top: 24px; /* Space equivalent to space-y-6 */
 }
 
 .tabContainer {
@@ -15,9 +10,9 @@
 
 .tabButton {
   flex: 1;
-  padding: 16px; /* py-2 px-4 */
-  font-weight: 400; /* font-medium */
-  background-color: transparent; /* Placeholder for background */
+  padding: 16px;
+  font-weight: 400;
+  background-color: transparent;
   font-size: 18px;
   border: 0px;
 }
@@ -71,19 +66,20 @@
 .legend {
   display: flex;
   flex-wrap: wrap;
-  gap: 1.5rem; /* gap-6 */
-  margin-top: 16px; /* Added for spacing */
+  row-gap: 16px;
+  column-gap: 35px;
+  margin-top: 24px;
 }
 
 .legendItem {
   display: flex;
   align-items: center;
-  gap: 0.5rem; /* gap-2 */
+  gap: 14px;
 }
 
 .legendBox {
-  height: 1rem; /* h-4 */
-  width: 1rem; /* w-4 */
+  height: 24px;
+  width: 24px;
 }
 
 .map {

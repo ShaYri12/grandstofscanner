@@ -1,11 +1,12 @@
 import React, { useEffect } from "react";
 import styles from "./Antimoon.module.css";
-import { FaChevronRight } from "react-icons/fa";
+import { FaChevronRight, FaFacebookSquare, FaLinkedin } from "react-icons/fa";
 import { Link, useParams } from "react-router-dom";
 import i18next from "i18next";
 import Tooltip from "../../components/Tooltip/Tooltip";
 import ExpandableSection from "../../components/AntimoonExpandables/ExpandableSection";
 import AntimoonSideContent from "../../components/AntimoonSideContent/AntimoonSideContent";
+import { IoMdMail } from "react-icons/io";
 
 const Antimoon: React.FC = () => {
   const { lang } = useParams<{ lang: string }>();
@@ -79,6 +80,14 @@ const Antimoon: React.FC = () => {
                 </div>
               </div>
               <ExpandableSection />
+              <div className={styles.share}>
+                <p>Deel deze pagina</p>
+                <span>
+                  <FaLinkedin />
+                  <FaFacebookSquare />
+                  <IoMdMail />
+                </span>
+              </div>
             </div>
 
             <AntimoonSideContent />

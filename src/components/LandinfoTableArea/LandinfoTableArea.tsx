@@ -8,6 +8,7 @@ import {
   IoMdArrowDropup,
 } from "react-icons/io";
 import { useTranslation } from "react-i18next";
+import Select from "../Select/Select";
 
 interface TableData {
   land: string;
@@ -27,6 +28,19 @@ const LandinfoTableArea = () => {
     key: keyof TableData | null;
     direction: "asc" | "desc" | null;
   }>({ key: null, direction: null });
+
+  const options = [
+    { value: "albania", label: t("landinfo.tableArea.countries.albania") },
+    {
+      value: "cotton_fabrics",
+      label: t("landinfo.tableArea.countries.cotton_fabrics"),
+    },
+    {
+      value: "electronics",
+      label: t("landinfo.tableArea.countries.electronics"),
+    },
+    // Add more options as needed
+  ];
 
   // Sample data
   const data: TableData[] = [
@@ -200,25 +214,11 @@ const LandinfoTableArea = () => {
     <div className={styles.innerBox}>
       <div className="">
         <label className={styles.label}>{t("landinfo.tableArea.label")}</label>
-        <div className={styles.selectContainer}>
-          <select
-            className={styles.select}
-            value={selectedCountry}
-            onChange={(e) => setSelectedCountry(e.target.value)}
-          >
-            <option value="albania">
-              {t("landinfo.tableArea.countries.albania")}
-            </option>
-            <option value="cotton_fabrics">
-              {t("landinfo.tableArea.countries.cotton_fabrics")}
-            </option>
-            <option value="electronics">
-              {t("landinfo.tableArea.countries.electronics")}
-            </option>
-            {/* Add more options as needed */}
-          </select>
-          <IoIosArrowDown color="#343A40" className={styles.icon} />
-        </div>
+        <Select
+          options={options}
+          value={selectedCountry}
+          onChange={setSelectedCountry}
+        />
       </div>
 
       <div className={styles.tableContainer}>

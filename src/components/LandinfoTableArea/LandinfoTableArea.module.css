@@ -6,35 +6,6 @@
   margin-bottom: 8px;
 }
 
-.selectContainer {
-  position: relative;
-  width: 100%;
-}
-
-.select {
-  width: 100%;
-  padding: 16px;
-  padding-right: 32px;
-  border: 1px solid #999999;
-  border-radius: 4px;
-  appearance: none;
-  cursor: pointer;
-}
-
-.icon {
-  position: absolute;
-  right: 16px;
-  top: 50%;
-  transform: translateY(-50%);
-  color: #999999;
-  pointer-events: none;
-}
-
-.select:focus {
-  border-color: #3b82f6;
-  outline: none;
-}
-
 .box {
   display: flex;
   flex-direction: column;
@@ -128,13 +99,6 @@
   .th,
   .td {
     font-size: 16px;
-  }
-
-  .select {
-    padding: 10px;
-  }
-  .icon {
-    right: 10px;
   }
 
   .label {
