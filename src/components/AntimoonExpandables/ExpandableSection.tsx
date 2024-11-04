@@ -75,9 +75,16 @@ const ExpandableSection = () => {
     },
   ];
 
+  const expandAll = () => {
+    setShowIMVOInfo(true);
+    setShowImportInfo(true);
+    setShowPriceInfo(true);
+    setShowRiskIndicatorsInfo(true);
+  };
+
   return (
     <div className={styles.expandableSections}>
-      <button className={styles.expandAll}>
+      <button onClick={expandAll} className={styles.expandAll}>
         {t("antimoon.expandableSection.expand_all")}
       </button>{" "}
       {/* Translated button */}
