@@ -3,6 +3,7 @@ import styles from "./Antimoon.module.css";
 import { FaChevronRight, FaFacebookSquare, FaLinkedin } from "react-icons/fa";
 import { Link, useParams } from "react-router-dom";
 import i18next from "i18next";
+import { useTranslation } from "react-i18next";
 import Tooltip from "../../components/Tooltip/Tooltip";
 import ExpandableSection from "../../components/AntimoonExpandables/ExpandableSection";
 import AntimoonSideContent from "../../components/AntimoonSideContent/AntimoonSideContent";
@@ -10,6 +11,7 @@ import { IoMdMail } from "react-icons/io";
 
 const Antimoon: React.FC = () => {
   const { lang } = useParams<{ lang: string }>();
+  const { t } = useTranslation();
 
   useEffect(() => {
     if (lang && lang !== i18next.language) {
@@ -26,14 +28,16 @@ const Antimoon: React.FC = () => {
       <div className={styles.container}>
         <nav className={styles.breadcrumb}>
           <Link to={`/${lang}/home`} className={styles.breadcrumbLink}>
-            Home
+            {t("productGroup.breadcrumb.home")}
           </Link>
           <FaChevronRight className={styles.breadcrumbIcon} />
           <Link to={`/${lang}/home`} className={styles.breadcrumbLink}>
-            Verkennen & Beoordelen
+            {t("productGroup.breadcrumb.exploreReview")}
           </Link>
           <FaChevronRight className={styles.breadcrumbIcon} />
-          <span className={styles.breadcrumbCurrent}>Antimoon</span>
+          <span className={styles.breadcrumbCurrent}>
+            {t("antimoon.antimony")}
+          </span>
         </nav>
 
         <div className={styles.mainContent}>
@@ -41,47 +45,45 @@ const Antimoon: React.FC = () => {
             <div className={styles.gridMain}>
               <div className={styles.header}>
                 <div>
-                  <h1 className={styles.subtitle}>Factsheet grondstof</h1>
+                  <h1 className={styles.subtitle}>{t("antimoon.factsheet")}</h1>
                   <div className={styles.titleContainer}>
-                    <h2 className={styles.title}>Antimoon</h2>
+                    <h2 className={styles.title}>{t("antimoon.antimony")}</h2>
                     <span className={styles.symbol}>Sb</span>
                   </div>
                 </div>
                 <Tooltip
-                  title="Maximale prijsstijging even titel iets langer maken"
-                  text="Dit staat voor de grootste prijsstijging die -sinds 1900- in één enkel jaar is opgetreden. Een maximale prijsstijging van 100% wil zeggen dat in één enkel jaar de prijs van een grondstof is verdubbeld. Er wordt gerekend in jaargemiddelden; dag-, week- en maandgemiddelden zijn buiten beschouwing gelaten."
+                  title={t("antimoon.max_price_increase")}
+                  text={t("antimoon.max_price_increase_text")}
                 />
               </div>
-              <p className={styles.description}>
-                Antimoon wordt vooral gebruikt als vlamvertrager in plastics
-                (52%). Daarnaast wordt het ingezet in lood-accu's (27%) en voor
-                het harden van legeringen.
-              </p>
+              <p className={styles.description}>{t("antimoon.description")}</p>
               <div className={styles.infoBoxes}>
                 <div className={styles.infoBox}>
                   <Tooltip
-                    title="Maximale prijsstijging even titel iets langer maken"
-                    text="Dit staat voor de grootste prijsstijging die -sinds 1900- in één enkel jaar is opgetreden. Een maximale prijsstijging van 100% wil zeggen dat in één enkel jaar de prijs van een grondstof is verdubbeld. Er wordt gerekend in jaargemiddelden; dag-, week- en maandgemiddelden zijn buiten beschouwing gelaten."
-                    position="absolute" // Apply absolute for specific positioning
+                    title={t("antimoon.max_price_increase")}
+                    text={t("antimoon.max_price_increase_text")}
+                    position="absolute"
                   />
                   <h3 className={styles.infoBoxTitle}>
-                    Prijsvolatiliteit van grondstoffen/ materialen (MAPII)
+                    {t("antimoon.price_volatility")}
                   </h3>
                   <p className={styles.infoBoxValue1}>+131%</p>
                 </div>
                 <div className={styles.infoBox}>
                   <Tooltip
-                    title="Maximale prijsstijging even titel iets langer maken"
-                    text="Dit staat voor de grootste prijsstijging die -sinds 1900- in één enkel jaar is opgetreden. Een maximale prijsstijging van 100% wil zeggen dat in één enkel jaar de prijs van een grondstof is verdubbeld. Er wordt gerekend in jaargemiddelden; dag-, week- en maandgemiddelden zijn buiten beschouwing gelaten."
-                    position="absolute" // Apply absolute for specific positioning
+                    title={t("antimoon.max_price_increase")}
+                    text={t("antimoon.max_price_increase_text")}
+                    position="absolute"
                   />
-                  <h3 className={styles.infoBoxTitle}>Wereldproductie</h3>
+                  <h3 className={styles.infoBoxTitle}>
+                    {t("antimoon.world_production")}
+                  </h3>
                   <p className={styles.infoBoxValue2}>42.833 ton</p>
                 </div>
               </div>
               <ExpandableSection />
               <div className={styles.share}>
-                <p>Deel deze pagina</p>
+                <p>{t("antimoon.share_page")}</p>
                 <span>
                   <FaLinkedin />
                   <FaFacebookSquare />
