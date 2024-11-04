@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import "./StepThree.css";
+import styles from "./StepThree.module.css";
 import Remove from "../../assets/remove.svg";
 import i18next from "i18next";
 import { useTranslation } from "react-i18next";
@@ -16,30 +16,30 @@ const StepThree: React.FC = () => {
   }, [lang]);
   return (
     <div className="timeline-item">
-      <div className="contentthree">
-        <div className="headerStepThree">
-          <h2 className="subtitle">{t("exploreheader.stepThree.title")}</h2>
-          <button className="remove-all-button">
+      <div className={styles.contentthree}>
+        <div className={styles.headerStepThree}>
+          <h2 className={styles.subtitle}>{t("exploreheader.stepThree.title")}</h2>
+          <button className={styles.removeAllButton}>
             {t("exploreheader.stepThree.deleteEverything")}
           </button>
         </div>
 
-        <div className="product-list">
-          <div className="product-item">
+        <div className={styles.productList}>
+          <div className={styles.productItem}>
             <h3> {t("exploreheader.stepThree.titleOne")}</h3>
-            <button className="remove-button">
+            <button className={styles.removeButton}>
               <img src={Remove} alt="remove" />
             </button>
           </div>
-          <div className="product-item">
+          <div className={styles.productItem}>
             <h3>{t("exploreheader.stepThree.titleOne")}</h3>
-            <button className="remove-button">
+            <button className={styles.removeButton}>
               <img src={Remove} alt="remove" />
             </button>
           </div>
         </div>
 
-        <button className="continue-button">{t("exploreheader.stepThree.continue")}</button>
+        <button className={styles.continueButton}>{t("exploreheader.stepThree.continue")}</button>
       </div>
     </div>
   );

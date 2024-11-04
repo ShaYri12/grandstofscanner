@@ -1,5 +1,4 @@
 "use client";
-
 import React, { useState, useEffect } from "react";
 import "./TimelineSearch.css";
 import StepOne from "./StepOne";
@@ -43,7 +42,7 @@ const ExploreTimeline: React.FC = () => {
   };
 
   return (
-    <div className="timeline-container">
+    <div className="timeline-container" >
       <h1 className="title"> {t("exploreheader.stepOne.title")}</h1>
       <div className="timeline">
         <StepOne
