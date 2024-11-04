@@ -14,7 +14,7 @@
   grid-template-columns: 1fr;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 843px) {
   .gridTwoCols {
     grid-template-columns: repeat(2, 1fr); /* Tailwind's md:grid-cols-2 */
   }
@@ -79,7 +79,7 @@
 .lastSectionHeader {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  position: relative;
   gap: 8px;
 }
 
@@ -88,10 +88,29 @@
   padding: 32px 0;
 }
 
+.imageContainer img {
+  width: 100%;
+}
+
 .viewDataIn {
   margin-bottom: 0;
   padding-bottom: 0;
   font-size: 18px;
   color: #01689b;
   text-decoration: underline;
+}
+
+/* Responsive adjustments for small screens */
+@media (max-width: 768px) {
+  .title {
+    font-size: 20px; /* Decrease from 24px */
+  }
+
+  .checkboxContainer span {
+    font-size: 16px; /* Decrease from 18px */
+  }
+
+  .viewDataIn {
+    font-size: 16px; /* Decrease from 18px */
+  }
 }

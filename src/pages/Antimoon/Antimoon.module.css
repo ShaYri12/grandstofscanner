@@ -93,6 +93,12 @@
   align-items: start;
 }
 
+@media screen and (max-width: 611px) {
+  .grid {
+    flex-direction: column;
+  }
+}
+
 .gridMain {
   flex: 2;
 }
@@ -172,10 +178,46 @@
   }
 
   .breadcrumbIcon {
-    margin: 0 5px;
+    margin: 0 8px;
+    font-size: 12px;
+  }
+
+  .subtitle {
+    font-size: 14px;
+  }
+
+  .title {
+    font-size: 32px; /* Decreased from 40px */
+  }
+
+  .symbol {
+    font-size: 16px; /* Decreased from 18px */
+    padding: 8px 10px;
+  }
+
+  .description {
+    font-size: 20px; /* Decreased from 24px */
+  }
+
+  .infoBoxTitle {
+    font-size: 20px; /* Decreased from 24px */
+  }
+
+  .infoBoxValue1,
+  .infoBoxValue2 {
+    font-size: 36px; /* Decreased from 40px */
+  }
+
+  .share p {
+    font-size: 16px; /* Decreased from 18px */
+  }
+
+  .share span svg {
+    font-size: 20px; /* Decreased from 24px */
   }
 }
 
+/* Extra small devices (355px and below) */
 @media screen and (max-width: 355px) {
   .breadcrumb {
     font-size: 12px;

@@ -5,12 +5,19 @@ import { IoInformationCircle, IoClose } from "react-icons/io5";
 const Tooltip: React.FC<{
   title: string;
   text: string;
-  position?: "absolute" | "relative";
+  position?: "absolute" | "relative" | "relative2";
 }> = ({ title, text, position = "relative" }) => {
   const [showTooltip, setShowTooltip] = useState(false);
 
   return (
-    <div className={styles.tooltipContainer} style={{ position }}>
+    <div
+      className={
+        position === "relative2"
+          ? styles.tooltipContainer2
+          : styles.tooltipContainer
+      }
+      style={{ position: position === "relative2" ? "relative" : position }}
+    >
       <IoInformationCircle
         size={24}
         className={styles.infoIcon}
@@ -18,9 +25,11 @@ const Tooltip: React.FC<{
       />
       {showTooltip && (
         <div
-          className={`${styles.tooltip} ${
-            position === "absolute" ? styles.absolutePosition : ""
-          }`}
+          className={`${
+            position === "absolute"
+              ? `${styles.absolutePosition} ${styles.tooltip2}`
+              : styles.tooltip1
+          } `}
         >
           <div className={styles.tooltipHeader}>
             <span className={styles.tooltipTitle}>{title}</span>

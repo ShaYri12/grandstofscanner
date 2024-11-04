@@ -79,6 +79,7 @@ export default function RiskIndicators() {
           <Tooltip
             title="Maximale prijsstijging even titel iets langer maken"
             text="Dit staat voor de grootste prijsstijging die -sinds 1900- in één enkel jaar is opgetreden. Een maximale prijsstijging van 100% wil zeggen dat in één enkel jaar de prijs van een grondstof is verdubbeld. Er wordt gerekend in jaargemiddelden; dag-, week- en maandgemiddelden zijn buiten beschouwing gelaten."
+            position="relative2"
           />
         </div>
         <div className={styles.imageContainer}>

@@ -73,3 +73,32 @@
   color: #007bc7;
   font-size: 27px;
 }
+
+/* Responsive adjustments for small screens */
+@media (max-width: 768px) {
+  .sidebarTitle {
+    font-size: 28px; /* Decrease from 32px */
+  }
+
+  .sidebarPara {
+    font-size: 14px; /* Decrease from 16px */
+  }
+
+  .nonConflictLabel {
+    font-size: 12px; /* Decrease from 14px */
+  }
+
+  .ProductGroup {
+    font-size: 24px; /* Decrease from 28px */
+  }
+
+  .productItem {
+    font-size: 14px; /* Decrease from 16px */
+  }
+}
+
+@media screen and (max-width: 611px) {
+  .sidebar {
+    width: 100%;
+  }
+}

@@ -6,6 +6,14 @@
   max-width: 500px;
 }
 
+.tooltipContainer2 {
+  position: relative;
+  display: inline-block;
+  right: 0 !important;
+  top: 0 !important;
+  max-width: 500px;
+}
+
 .tooltipIconAbsolute {
   position: absolute;
   top: 16.27px;
@@ -21,7 +29,8 @@
 }
 
 /* Tooltip box */
-.tooltip {
+.tooltip1,
+.tooltip2 {
   max-width: 500px;
   width: max-content;
   background-color: #012e44;
@@ -30,16 +39,24 @@
   border-radius: 8px;
   position: absolute;
   z-index: 10;
-  top: 60px;
-  transform: translateX(-50.5%); /* Center horizontally */
   opacity: 1;
   transition: opacity 0.3s;
+}
+
+.tooltip1 {
+  top: 41px;
+  transform: translateX(-47.5%);
+}
+
+.tooltip2 {
+  top: 60px;
+  transform: translateX(-50.5%);
 }
 
 /* Triangle arrow */
 .tooltipArrow {
   position: absolute;
-  top: -10px; /* Position above the tooltip */
+  top: -10px;
   left: 50%;
   transform: translateX(-50%);
   width: 0;
@@ -85,7 +102,28 @@
   top: 38px !important;
 }
 
-/* Responsive positioning for small screens */
+/* Responsive adjustments for small screens */
+@media (max-width: 768px) {
+  /* Font size adjustments */
+  .tooltipText {
+    font-size: 16px; /* Decrease from 18px */
+  }
+
+  .tooltipTitle {
+    font-size: 20px; /* Decrease from 24px */
+  }
+
+  .infoIcon {
+    font-size: 22px; /* Decrease slightly */
+    width: 22px;
+    height: 22px;
+  }
+
+  .closeIcon {
+    font-size: 18px; /* Decrease slightly */
+  }
+}
+
 @media (max-width: 611px) {
   .absolutePosition {
     left: -105px !important;
@@ -93,10 +131,15 @@
   }
 
   .tooltipArrow {
-    left: 90%; /* Move arrow to the right edge */
+    left: 90%;
   }
 
-  .tooltip {
+  .tooltip1,
+  .tooltip2 {
     max-width: 300px;
+  }
+
+  .tooltip1 {
+    left: -114px;
   }
 }

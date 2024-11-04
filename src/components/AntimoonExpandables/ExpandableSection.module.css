@@ -61,3 +61,23 @@
 .expandableContent {
   color: #000;
 }
+
+/* Responsive adjustments for small screens */
+@media (max-width: 768px) {
+  .expandAll {
+    font-size: 16px; /* Decrease from 18px */
+  }
+
+  .expandableTitle {
+    font-size: 28px; /* Decrease from 32px */
+  }
+
+  .chevronIcon {
+    font-size: 16px; /* Decrease from 18px */
+  }
+
+  .expandableButton span {
+    width: 40px; /* Slightly decrease size */
+    height: 40px;
+  }
+}
