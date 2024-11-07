@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import styles from "./StepThree.module.css";
-import Remove from "../../assets/remove.svg";
+import Remove from "../../../assets/remove.svg";
 import i18next from "i18next";
 import { useTranslation } from "react-i18next";
 import { useParams } from "react-router-dom";
@@ -18,7 +18,9 @@ const StepThree: React.FC = () => {
     <div className="timeline-item">
       <div className={styles.contentthree}>
         <div className={styles.headerStepThree}>
-          <h2 className={styles.subtitle}>{t("exploreheader.stepThree.title")}</h2>
+          <h2 className={styles.subtitle}>
+            {t("exploreheader.stepThree.title")}
+          </h2>
           <button className={styles.removeAllButton}>
             {t("exploreheader.stepThree.deleteEverything")}
           </button>
@@ -39,7 +41,9 @@ const StepThree: React.FC = () => {
           </div>
         </div>
 
-        <button className={styles.continueButton}>{t("exploreheader.stepThree.continue")}</button>
+        <button className={styles.continueButton}>
+          {t("exploreheader.stepThree.continue")}
+        </button>
       </div>
     </div>
   );

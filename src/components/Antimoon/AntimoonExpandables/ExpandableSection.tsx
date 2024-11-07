@@ -3,7 +3,7 @@ import styles from "./ExpandableSection.module.css";
 import { IoChevronDown, IoChevronUp } from "react-icons/io5";
 import RiskIndicators from "../RiskIndicators/RiskIndicators";
 import { useTranslation } from "react-i18next";
-import ImportCountryInformation from "../ImportCountryInformation/ImportCountryInformation";
+import ImportCountryInformation from "../../General/ImportCountryInformation/ImportCountryInformation";
 
 const ExpandableSection = () => {
   const { t } = useTranslation();

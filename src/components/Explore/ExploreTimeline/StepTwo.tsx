@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import "./TimelineSearch.css";
-import Arrow from "../../assets/faq-btn.svg";
+import Arrow from "../../../assets/faq-btn.svg";
 import "./StepTwo.css";
 import i18next from "i18next";
 import { useTranslation } from "react-i18next";

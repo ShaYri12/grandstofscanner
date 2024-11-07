@@ -1,7 +1,7 @@
 import styles from "./Landinfo.module.css";
 import { Link, useParams } from "react-router-dom";
 import { FaChevronRight } from "react-icons/fa";
-import LandinfoTableArea from "../../components/LandinfoTableArea/LandinfoTableArea";
+import LandinfoTableArea from "../../components/LandInfo/LandinfoTableArea/LandinfoTableArea";
 import i18next from "i18next";
 import { useEffect } from "react";
 import { useTranslation } from "react-i18next";

@@ -1,4 +1,4 @@
-import Tooltip from "../Tooltip/Tooltip";
+import Tooltip from "../../General/Tooltip/Tooltip";
 import styles from "./RiskIndicators.module.css";
 import { useTranslation } from "react-i18next";
 

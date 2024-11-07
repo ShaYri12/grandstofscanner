@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import ArrowDown from "../../assets/arrow-down.svg";
+import ArrowDown from "../../../assets/arrow-down.svg";
 import i18next from "i18next";
 import { useTranslation } from "react-i18next";
 import { useParams } from "react-router-dom";

@@ -4,7 +4,7 @@ import styles from "./LandinfoTableArea.module.css";
 import { RiExpandUpDownFill } from "react-icons/ri";
 import { IoMdArrowDropdown, IoMdArrowDropup } from "react-icons/io";
 import { useTranslation } from "react-i18next";
-import Select from "../Select/Select";
+import Select from "../../General/Select/Select";
 
 interface TableData {
   land: string;

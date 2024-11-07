@@ -4,9 +4,9 @@ import { FaChevronRight, FaFacebookSquare, FaLinkedin } from "react-icons/fa";
 import { Link, useParams } from "react-router-dom";
 import i18next from "i18next";
 import { useTranslation } from "react-i18next";
-import Tooltip from "../../components/Tooltip/Tooltip";
-import ExpandableSection from "../../components/AntimoonExpandables/ExpandableSection";
-import AntimoonSideContent from "../../components/AntimoonSideContent/AntimoonSideContent";
+import Tooltip from "../../components/General/Tooltip/Tooltip";
+import ExpandableSection from "../../components/Antimoon/AntimoonExpandables/ExpandableSection";
+import AntimoonSideContent from "../../components/Antimoon/AntimoonSideContent/AntimoonSideContent";
 import { IoMdMail } from "react-icons/io";
 
 const Antimoon: React.FC = () => {

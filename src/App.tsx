@@ -6,10 +6,10 @@ import {
   Navigate,
 } from "react-router-dom";
 import Home from "./pages/Home/Home";
-import Navbar from "./components/Navbar/Navbar";
+import Navbar from "./components/General/Navbar/Navbar";
 import Trade from "./pages/Trade/Trade";
 import ProductGroups from "./pages/ProductGroup/ProductGroup";
-import Footer from "./components/Footer/Footer";
+import Footer from "./components/General/Footer/Footer";
 import Landinfo from "./pages/Landinfo/Landinfo";
 import Grondstoffenscanner from "./pages/Grondstoffenscanner/Grondstoffenscanner";
 import Antimoon from "./pages/Antimoon/Antimoon";

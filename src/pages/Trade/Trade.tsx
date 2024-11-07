@@ -1,6 +1,6 @@
 import styles from "./Trade.module.css";
-import TradeSearch from "../../components/TradeSearch/TradeSearch";
-import TradeSearchExplain from "../../components/TradeSearchExplain/TradeSearchExplain";
+import TradeSearch from "../../components/Trade/TradeSearch/TradeSearch";
+import TradeSearchExplain from "../../components/Trade/TradeSearchExplain/TradeSearchExplain";
 import { useEffect } from "react";
 
 const Trade = () => {

@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import styles from "./ProductGroup.module.css";
 import { FaChevronRight } from "react-icons/fa";
 import { Link, useParams } from "react-router-dom";
-import FactSheet from "../../components/FactSheet/FactSheet";
+import FactSheet from "../../components/ProductGroup/FactSheet/FactSheet";
 import { useProductGroupData } from "../../assets/productGroupData";
 import i18next from "i18next";
 

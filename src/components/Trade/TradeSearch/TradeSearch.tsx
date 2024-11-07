@@ -1,9 +1,9 @@
 import styles from "./TradeSearch.module.css";
-import longTermSecurity from "../../assets/long-term-security.png";
-import shortTermSecurity from "../../assets/short-term-security.png";
-import world from "../../assets/world.png";
-import people from "../../assets/people-stars.png";
-import chart from "../../assets/chart.png";
+import longTermSecurity from "../../../assets/long-term-security.png";
+import shortTermSecurity from "../../../assets/short-term-security.png";
+import world from "../../../assets/world.png";
+import people from "../../../assets/people-stars.png";
+import chart from "../../../assets/chart.png";
 import TradeSearchResult from "../TradeSearchResult/TradeSearchResult";
 import { useTranslation } from "react-i18next";
 
