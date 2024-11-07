@@ -11,7 +11,7 @@ import chart from "../../../assets/chart.png";
 import truck from "../../../assets/truck.png";
 import { IconType } from "react-icons";
 import { useTranslation } from "react-i18next";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import i18next from "i18next";
 
 type IconMapKeys =
