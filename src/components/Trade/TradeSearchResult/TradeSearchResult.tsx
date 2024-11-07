@@ -107,16 +107,19 @@ const TradeSearchResult = () => {
       <div className={styles.mainContentInner}>
         {results.map((result, index) => (
           <div key={index} className={styles.card}>
-            <Link to={`/${lang}/landinfo`} className={styles.cardHeader}>
+            <div
+              className={styles.cardHeader}
+              onClick={() => toggleCard(index)}
+            >
               <h3 className={styles.cardTitle}>{result.title}</h3>
-              <div className={styles.circle} onClick={() => toggleCard(index)}>
+              <div className={styles.circle}>
                 {expandedCards.includes(index) ? (
                   <FaChevronUp className={styles.icon} />
                 ) : (
                   <FaChevronDown className={styles.icon} />
                 )}
               </div>
-            </Link>
+            </div>
 
             <div className={styles.cardDescription}>
               <div className={styles.cardDetail}>
