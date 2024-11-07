@@ -1,6 +1,6 @@
 import styles from "./FactSheet.module.css";
 import { FaChevronRight } from "react-icons/fa";
-import { useProductGroupData } from "../../../assets/productGroupData";
+import { useProductGroupData } from "../../../../assets/productGroupData";
 
 const FactSheet = () => {
   const productGroup = useProductGroupData();

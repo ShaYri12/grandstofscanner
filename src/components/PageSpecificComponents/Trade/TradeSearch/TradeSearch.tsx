@@ -1,9 +1,9 @@
 import styles from "./TradeSearch.module.css";
-import longTermSecurity from "../../../assets/long-term-security.png";
-import shortTermSecurity from "../../../assets/short-term-security.png";
-import world from "../../../assets/world.png";
-import people from "../../../assets/people-stars.png";
-import chart from "../../../assets/chart.png";
+import longTermSecurity from "../../../../assets/long-term-security.png";
+import shortTermSecurity from "../../../../assets/short-term-security.png";
+import world from "../../../../assets/world.png";
+import people from "../../../../assets/people-stars.png";
+import chart from "../../../../assets/chart.png";
 import TradeSearchResult from "../TradeSearchResult/TradeSearchResult";
 import { useTranslation } from "react-i18next";
 
@@ -22,7 +22,7 @@ const TradeSearch = () => {
 
   const filterOptions: FilterSection[] = [
     {
-      title: t("tradeSearch.filterSections.0.title"), // Use dot notation instead of brackets
+      title: t("tradeSearch.filterSections.0.title"),  
       options: [
         t("tradeSearch.filterSections.0.options.0"),
         t("tradeSearch.filterSections.0.options.1"),

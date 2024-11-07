@@ -1,0 +1,222 @@
+/* Color Variables */
+:root {
+  --navbar-background: #f0f8ff;
+  --link-color: black;
+  --link-active-color: black;
+  --nav-label-background: #012e44;
+  --button1-background: #f2b34d;
+  --button1-color: rgb(107, 31, 31);
+  --button2-background: #56a9de;
+  --button2-color: rgb(19, 38, 66);
+  --hidden-nav-background: white;
+  --hidden-nav-border: rgb(94, 92, 92);
+  --mobile-button-background: rgb(94, 92, 92);
+}
+
+/* Navbar Styles */
+.navbar {
+  background-color: var(--navbar-background);
+  width: 100%;
+}
+
+.navLabelText {
+  font-size: 18px;
+}
+
+.navLinks {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navLinks li a {
+  padding: 8px;
+}
+
+.logoText {
+  line-height: 22px;
+  font-size: 30px;
+}
+
+/* Link Styles */
+.link {
+  color: var(--link-color);
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+
+.linkActive {
+  color: var(--link-active-color);
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+}
+
+/* Navigation Label */
+.navLabel {
+  background-color: var(--nav-label-background);
+  padding: 0 20px;
+}
+.navMaxWidth {
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Flag Image Styles */
+.flagImg {
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  margin: 0 10px;
+  object-fit: cover;
+}
+
+/* Button Styles */
+.navButton1 {
+  background-color: var(--button1-background);
+  font-weight: 700;
+  color: var(--button1-color);
+  padding: 16px;
+  width: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.navButton1:hover {
+  background-color: var(--button1-background);
+  color: var(--button1-color);
+}
+
+.navButton2 {
+  background-color: var(--button2-background);
+  font-weight: 700;
+  color: var(--button2-color);
+  padding: 16px;
+  width: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.navButton2:hover {
+  background-color: var(--button2-background);
+  color: var(--button2-color);
+}
+
+/* Bottom Navigation Styles */
+.navBottom {
+  padding: 25px 20px;
+}
+
+.navBottomLeft {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+}
+
+.menuIcon {
+  display: none;
+}
+
+.mblnavlogo {
+  display: none;
+}
+
+@media screen and (max-width: 1340px) {
+  .navLinks {
+    gap: 10px !important;
+  }
+  .navBottomLeft {
+    gap: 16px;
+  }
+
+  .navButton1,
+  .navButton2 {
+    width: 115px;
+    padding: 12px;
+  }
+}
+
+/* Media Queries */
+@media screen and (max-width: 1200px) {
+  .mblnavlogo {
+    display: block;
+    font-size: 20px !important;
+  }
+
+  .navicon {
+    display: block !important;
+    font-size: 30px;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .navBottomLeft {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .logoText img {
+    width: 130px;
+  }
+
+  .menuIcon {
+    font-size: 40px;
+    display: flex;
+    color: var(--button2-color);
+  }
+
+  .navLeft,
+  .navRight {
+    display: none !important;
+  }
+
+  .navLabel {
+    padding: 0 15px;
+  }
+
+  .navBottom {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .navicon {
+    display: none !important;
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .navLabelText {
+    font-size: 12px !important;
+  }
+  .logoText img {
+    width: 110px;
+  }
+
+  .menuIcon {
+    font-size: 30px;
+    display: flex;
+    color: var(--button2-color);
+  }
+}
+
+@media screen and (max-width: 340px) {
+  .navLabel {
+    padding: 0 10px;
+  }
+}

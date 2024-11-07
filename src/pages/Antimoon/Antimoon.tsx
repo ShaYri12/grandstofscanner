@@ -5,9 +5,11 @@ import { Link, useParams } from "react-router-dom";
 import i18next from "i18next";
 import { useTranslation } from "react-i18next";
 import Tooltip from "../../components/General/Tooltip/Tooltip";
-import ExpandableSection from "../../components/Antimoon/AntimoonExpandables/ExpandableSection";
-import AntimoonSideContent from "../../components/Antimoon/AntimoonSideContent/AntimoonSideContent";
+// import ExpandableSection from "../../components/Antimoon/AntimoonExpandables/ExpandableSection";
+// import AntimoonSideContent from "../../components/A/ntimoon/AntimoonSideContent/AntimoonSideContent";
 import { IoMdMail } from "react-icons/io";
+import ExpandableSection from "../../components/PageSpecificComponents/Antimoon/AntimoonExpandables/ExpandableSection";
+import AntimoonSideContent from "../../components/PageSpecificComponents/Antimoon/AntimoonSideContent/AntimoonSideContent";
 
 const Antimoon: React.FC = () => {
   const { lang } = useParams<{ lang: string }>();
