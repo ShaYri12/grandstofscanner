@@ -4,7 +4,10 @@ import {
   Route,
   Routes,
   Navigate,
+  useParams,
+  useNavigate,
 } from "react-router-dom";
+import { useEffect } from "react";
 import Home from "./pages/Home/Home";
 import Navbar from "./components/General/Navbar/Navbar";
 import Trade from "./pages/Trade/Trade";
@@ -15,12 +18,31 @@ import Grondstoffenscanner from "./pages/Grondstoffenscanner/Grondstoffenscanner
 import Antimoon from "./pages/Antimoon/Antimoon";
 import Explore from "./pages/Explore/Explore";
 
+// Component to handle redirecting to the default language if not provided
+const DefaultLanguageRedirect = () => {
+  const { lang } = useParams();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    // If no language is provided, redirect to /nl/home
+    if (!lang) {
+      navigate("/nl/home", { replace: true });
+    }
+  }, [lang, navigate]);
+
+  return null; // This component does not render anything
+};
+
 const App = () => {
   return (
     <>
       <Router>
         <Navbar />
         <Routes>
+          {/* Redirect to default language if none is provided */}
+          <Route path="/" element={<DefaultLanguageRedirect />} />
+
+          {/* Define your routes with the language parameter */}
           <Route path={`/:lang/home`} element={<Home />} />
           <Route path={`/:lang/trade`} element={<Trade />} />
           <Route path={`/:lang/landinfo`} element={<Landinfo />} />
@@ -34,7 +56,9 @@ const App = () => {
             element={<ProductGroups />}
           />
           <Route path={`/:lang/antimoon`} element={<Antimoon />} />
-          <Route path="*" element={<Navigate to={`/:lang/home`} />} />
+
+          {/* Redirect to home page if no matching route is found */}
+          <Route path="*" element={<Navigate to={`/nl/home`} />} />
         </Routes>
         <Footer />
       </Router>
