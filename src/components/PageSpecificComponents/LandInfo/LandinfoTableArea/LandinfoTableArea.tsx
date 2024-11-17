@@ -1,10 +1,9 @@
-"use client";
-import { useState } from "react";
-import styles from "./LandinfoTableArea.module.css";
+import React, { useState } from "react";
 import { RiExpandUpDownFill } from "react-icons/ri";
 import { IoMdArrowDropdown, IoMdArrowDropup } from "react-icons/io";
 import { useTranslation } from "react-i18next";
 import Select from "../../General/Select/Select";
+import styles from "./LandinfoTableArea.module.css";
 
 interface TableData {
   land: string;
@@ -17,15 +16,25 @@ interface TableData {
   hdi: number;
 }
 
-const LandinfoTableArea = () => {
-  const { t } = useTranslation();
-  const [selectedCountry, setSelectedCountry] = useState("Albanie");
-  const [sortConfig, setSortConfig] = useState<{
-    key: keyof TableData | null;
-    direction: "asc" | "desc" | null;
-  }>({ key: null, direction: null });
+interface SortConfig {
+  key: keyof TableData | null;
+  direction: "asc" | "desc" | null;
+}
 
-  const options = [
+interface SelectOption {
+  value: string;
+  label: string;
+}
+
+const LandinfoTableArea: React.FC = () => {
+  const { t } = useTranslation();
+  const [selectedCountry, setSelectedCountry] = useState<string>("Albanie");
+  const [sortConfig, setSortConfig] = useState<SortConfig>({
+    key: null,
+    direction: null,
+  });
+
+  const options: SelectOption[] = [
     { value: "albania", label: t("landinfo.tableArea.countries.albania") },
     {
       value: "cotton_fabrics",
@@ -35,10 +44,8 @@ const LandinfoTableArea = () => {
       value: "electronics",
       label: t("landinfo.tableArea.countries.electronics"),
     },
-    // Add more options as needed
   ];
 
-  // Sample data
   const data: TableData[] = [
     {
       land: t("landinfo.tableArea.countries.cotton_fabrics"),
@@ -170,23 +177,19 @@ const LandinfoTableArea = () => {
       wgi: 60.7,
       hdi: 0.77,
     },
-    // Add more rows as needed
   ];
 
   const handleSort = (key: keyof TableData) => {
     let direction: "asc" | "desc" | null = "asc";
-
     if (sortConfig.key === key) {
       if (sortConfig.direction === "asc") direction = "desc";
       else if (sortConfig.direction === "desc") direction = null;
     }
-
     setSortConfig({ key, direction });
   };
 
   const getSortedData = () => {
     if (!sortConfig.key || !sortConfig.direction) return data;
-
     return [...data].sort((a, b) => {
       if (a[sortConfig.key!] < b[sortConfig.key!])
         return sortConfig.direction === "asc" ? -1 : 1;
@@ -208,7 +211,7 @@ const LandinfoTableArea = () => {
 
   return (
     <div className={styles.innerBox}>
-      <div className="">
+      <div>
         <label className={styles.label}>{t("landinfo.tableArea.label")}</label>
         <Select
           options={options}

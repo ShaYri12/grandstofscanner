@@ -1,21 +1,42 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useCallback } from "react";
 import styles from "./ProductGroup.module.css";
 import { FaChevronRight } from "react-icons/fa";
 import { Link, useParams } from "react-router-dom";
-// import FactSheet from "../../components/ProductGroup/FactSheet/FactSheet";
 import { useProductGroupData } from "../../assets/productGroupData";
 import i18next from "i18next";
 import FactSheet from "../../components/PageSpecificComponents/ProductGroup/FactSheet/FactSheet";
 
+interface ProductGroupData {
+  breadcrumb: {
+    home: string;
+    exploreReview: string;
+    review: string;
+  };
+  heading1: string;
+  paragraphs: {
+    intro1: string;
+    intro2: string;
+    selectedGroups: string;
+    riskAction: string;
+    note: string;
+  };
+  heading2: string;
+  actionButton: string;
+}
+
 const ProductGroups: React.FC = () => {
-  const productGroup = useProductGroupData();
+  const productGroup = useProductGroupData() as ProductGroupData; 
   const { lang } = useParams<{ lang: string }>();
 
-  useEffect(() => {
+  const changeLanguage = useCallback(() => {
     if (lang && lang !== i18next.language) {
       i18next.changeLanguage(lang);
     }
   }, [lang]);
+
+  useEffect(() => {
+    changeLanguage();
+  }, [changeLanguage]);
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });

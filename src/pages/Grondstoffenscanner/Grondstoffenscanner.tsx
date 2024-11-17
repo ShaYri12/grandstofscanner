@@ -1,13 +1,18 @@
-import styles from "./grondstoffenscanner.module.css";
+import { useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import { FaChevronRight } from "react-icons/fa";
 import i18next from "i18next";
-import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
+import styles from "./grondstoffenscanner.module.css";
 
-export default function Grondstoffenscanner() {
+interface GrondstoffenscannerParams {
+  lang: string;
+  [key: string]: string | undefined;
+}
+
+const Grondstoffenscanner: React.FC = () => {
   const { t } = useTranslation();
-  const { lang } = useParams<{ lang: string }>();
+  const { lang } = useParams<GrondstoffenscannerParams>();
 
   useEffect(() => {
     if (lang && lang !== i18next.language) {
@@ -50,7 +55,10 @@ export default function Grondstoffenscanner() {
                   width="100%"
                   height="100%"
                   src="https://www.youtube.com/embed/c861pGgGNGk?si=9_y_hNUnmik_Qpg2"
-                  title="YouTube video player"
+                  title={
+                    t("grondstoffenscanner.videoTitle") ||
+                    "YouTube video player"
+                  }
                   frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   referrerPolicy="strict-origin-when-cross-origin"
@@ -71,4 +79,6 @@ export default function Grondstoffenscanner() {
       </div>
     </section>
   );
-}
+};
+
+export default Grondstoffenscanner;

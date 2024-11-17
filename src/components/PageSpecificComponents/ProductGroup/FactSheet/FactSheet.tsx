@@ -2,15 +2,33 @@ import styles from "./FactSheet.module.css";
 import { FaChevronRight } from "react-icons/fa";
 import { useProductGroupData } from "../../../../assets/productGroupData";
 
-const FactSheet = () => {
-  const productGroup = useProductGroupData();
+interface FactSheetItem {
+  symbol: JSX.Element;
+  title: string;
+  linkText: string;
+}
+
+interface ProductGroupItem {
+  code: string;
+  title: string;
+  linkText: string;
+  isAlt: boolean;
+  info: string[];
+}
+
+interface ProductGroupData {
+  factsheets: FactSheetItem[];
+  productGroups: ProductGroupItem[];
+}
+
+const FactSheet: React.FC = () => {
+  const productGroup = useProductGroupData() as unknown as ProductGroupData;
 
   return (
     <div className={styles.boxes}>
-      {/* Side Panel */}
       <div className={styles.sidePanel}>
-        {productGroup.factsheets.map((item, index) => (
-          <div key={index} className={styles.item}>
+        {productGroup.factsheets.map((item) => (
+          <div key={item.title} className={styles.item}>
             <div className={styles.icon}>{item.symbol}</div>
             <div>
               <p className={styles.title}>{item.title}</p>
@@ -22,10 +40,9 @@ const FactSheet = () => {
         ))}
       </div>
 
-      {/* Main Content and Alternate Content */}
-      {productGroup.productGroups.map((product, index) => (
+      {productGroup.productGroups.map((product) => (
         <div
-          key={index}
+          key={product.code}
           className={product.isAlt ? styles.mainContentAlt : styles.mainContent}
         >
           <p className={styles.code}>{product.code}</p>

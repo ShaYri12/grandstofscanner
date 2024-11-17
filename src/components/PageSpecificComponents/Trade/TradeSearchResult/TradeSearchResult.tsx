@@ -23,12 +23,20 @@ type IconMapKeys =
 
 type Icon2MapKeys = "truck" | "leaf";
 
-const iconMap: Record<Icon2MapKeys, string | IconType> = {
-  truck: truck,  
-  leaf: FaLeaf,  
+const iconMap: Record<IconMapKeys, string> = {
+  "long-term-security": longTermSecurtiy,
+  "short-term-security": shortTermSecurity,
+  world: world,
+  people: people,
+  chart: chart,
 };
 
-const TradeSearchResult = () => {
+const icon2Map: Record<Icon2MapKeys, string | IconType> = {
+  truck: truck,
+  leaf: FaLeaf,
+};
+
+const TradeSearchResult: React.FC = () => {
   const { t } = useTranslation();
   const [expandedCards, setExpandedCards] = useState<number[]>([]);
   const { lang } = useParams<{ lang: string }>();
@@ -97,6 +105,7 @@ const TradeSearchResult = () => {
       description: t("tradeSearch.tradeSearchResult.cards.4.description"),
     },
   ];
+
   return (
     <div className={styles.mainContent}>
       <h2 className={styles.resultsCount}>
@@ -128,23 +137,14 @@ const TradeSearchResult = () => {
                     )}
                   </span>
                   <div className={styles.detailsIcons}>
-                    {result.bedrijfsvoering.map((iconName, idx) => {
-                      const iconMap: Record<IconMapKeys, string> = {
-                        "long-term-security": longTermSecurtiy,
-                        "short-term-security": shortTermSecurity,
-                        world: world,
-                        people: people,
-                        chart: chart,
-                      };
-                      return (
-                        <span key={idx} className={styles.detailIcon}>
-                          <img
-                            src={iconMap[iconName as IconMapKeys]}
-                            alt={iconName}
-                          />
-                        </span>
-                      );
-                    })}
+                    {result.bedrijfsvoering.map((iconName, idx) => (
+                      <span key={idx} className={styles.detailIcon}>
+                        <img
+                          src={iconMap[iconName as IconMapKeys]}
+                          alt={iconName}
+                        />
+                      </span>
+                    ))}
                   </div>
                 </div>
 
@@ -214,7 +214,7 @@ const TradeSearchResult = () => {
                   </span>
                   <div className={styles.detailsIcons}>
                     {result.abiotisch.map((iconName, idx) => {
-                      const icon = iconMap[iconName as Icon2MapKeys];
+                      const icon = icon2Map[iconName as Icon2MapKeys];
                       return (
                         <span key={idx} className={styles.detailIcon}>
                           {typeof icon === "string" ? (

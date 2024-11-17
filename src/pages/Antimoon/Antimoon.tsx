@@ -1,25 +1,32 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useCallback } from "react";
 import styles from "./Antimoon.module.css";
 import { FaChevronRight, FaFacebookSquare, FaLinkedin } from "react-icons/fa";
 import { Link, useParams } from "react-router-dom";
 import i18next from "i18next";
 import { useTranslation } from "react-i18next";
 import Tooltip from "../../components/General/Tooltip/Tooltip";
-// import ExpandableSection from "../../components/Antimoon/AntimoonExpandables/ExpandableSection";
-// import AntimoonSideContent from "../../components/A/ntimoon/AntimoonSideContent/AntimoonSideContent";
-import { IoMdMail } from "react-icons/io";
 import ExpandableSection from "../../components/PageSpecificComponents/Antimoon/AntimoonExpandables/ExpandableSection";
 import AntimoonSideContent from "../../components/PageSpecificComponents/Antimoon/AntimoonSideContent/AntimoonSideContent";
+import { IoMdMail } from "react-icons/io";
+
+interface LangParams {
+  lang: string;
+  [key: string]: string | undefined;
+}
 
 const Antimoon: React.FC = () => {
-  const { lang } = useParams<{ lang: string }>();
+  const { lang } = useParams<LangParams>();
   const { t } = useTranslation();
 
-  useEffect(() => {
+  const changeLanguage = useCallback(() => {
     if (lang && lang !== i18next.language) {
       i18next.changeLanguage(lang);
     }
   }, [lang]);
+
+  useEffect(() => {
+    changeLanguage();
+  }, [changeLanguage]);
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -96,6 +103,7 @@ const Antimoon: React.FC = () => {
 
             <AntimoonSideContent />
           </div>
+           
         </div>
       </div>
     </div>

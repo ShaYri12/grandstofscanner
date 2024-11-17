@@ -1,9 +1,19 @@
+import { FC } from "react";
 import styles from "./AntimoonSideContent.module.css";
 import { FaFile } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
 
-const AntimoonSideContent = () => {
+interface AntimoonSideContentProps {}
+
+const AntimoonSideContent: FC<AntimoonSideContentProps> = () => {
   const { t } = useTranslation();
+
+  const renderProductItem = (iconClass: string, labelKey: string) => (
+    <div className={styles.productItem}>
+      <FaFile className={iconClass} />
+      <span>{t(labelKey)}</span>
+    </div>
+  );
 
   return (
     <div className={styles.sidebar}>
@@ -28,14 +38,14 @@ const AntimoonSideContent = () => {
         {t("antimoon.sideContent.product_groups")}
       </h3>
       <div className={styles.productList}>
-        <div className={styles.productItem}>
-          <FaFile className={styles.fileIcon1} />
-          <span>{t("antimoon.sideContent.air_balloons_and_dirigibles")}</span>
-        </div>
-        <div className={styles.productItem}>
-          <FaFile className={styles.fileIcon2} />
-          <span>{t("antimoon.sideContent.lift_screw_aircraft")}</span>
-        </div>
+        {renderProductItem(
+          styles.fileIcon1,
+          "antimoon.sideContent.air_balloons_and_dirigibles"
+        )}
+        {renderProductItem(
+          styles.fileIcon2,
+          "antimoon.sideContent.lift_screw_aircraft"
+        )}
       </div>
     </div>
   );

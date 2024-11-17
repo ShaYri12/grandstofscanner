@@ -7,19 +7,28 @@ import { useTranslation } from "react-i18next";
 import { useParams } from "react-router-dom";
 import UniversalButton from "../../../General/Buttons";
 
+interface LangParam {
+  lang: string;
+}
+
 interface StepTwoProps {
   showStepThree: () => void;
 }
 
+interface LangParam extends Record<string, string | undefined> {
+  lang: string;
+}
+
 const StepTwo: React.FC<StepTwoProps> = ({ showStepThree }) => {
   const { t } = useTranslation();
-  const { lang } = useParams<{ lang: string }>();
+  const { lang } = useParams<LangParam>();
 
   useEffect(() => {
     if (lang && lang !== i18next.language) {
       i18next.changeLanguage(lang);
     }
   }, [lang]);
+
   return (
     <div className="timeline-item">
       <div className="step-two">

@@ -1,19 +1,24 @@
 import { FaChevronRight } from "react-icons/fa";
 import { Link, useParams } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import styles from "./TradeSearchExplain.module.css";
 import i18next from "i18next";
+import styles from "./TradeSearchExplain.module.css";
 import { useEffect } from "react";
 
-const TradeSearchExplain = () => {
+interface LangParam extends Record<string, string | undefined> {
+  lang: string;
+}
+
+const TradeSearchExplain: React.FC = () => {
   const { t } = useTranslation();
-  const { lang } = useParams<{ lang: string }>();
+  const { lang } = useParams<LangParam>();  
 
   useEffect(() => {
     if (lang && lang !== i18next.language) {
       i18next.changeLanguage(lang);
     }
   }, [lang]);
+
   return (
     <div className={styles.texts}>
       <nav className={styles.breadcrumb}>

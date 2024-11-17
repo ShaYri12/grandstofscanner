@@ -309,7 +309,10 @@
       "price_trends_description": "In the graph below, you can see the price trends from the past years.",
       "IMVO": "IMVO",
       "risk_indicators": "Risk Indicators",
-      "expand_all": "Expand All"
+      "expand_all": "Expand All",
+      "chains": "Chains",
+      "phase": "Phase",
+      "material": "Material"
     },
     "import_country": {
       "world_map": "World Map",

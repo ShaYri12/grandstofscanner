@@ -1,12 +1,13 @@
+import React, { useEffect } from "react";
 import TradeSearch from "../../components/PageSpecificComponents/Trade/TradeSearch/TradeSearch";
 import TradeSearchExplain from "../../components/PageSpecificComponents/Trade/TradeSearchExplain/TradeSearchExplain";
 import styles from "./Trade.module.css";
-import { useEffect } from "react";
 
-const Trade = () => {
+const Trade: React.FC = () => {
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, []);
+
   return (
     <div className={styles.container}>
       <div className={styles.innerContainer}>

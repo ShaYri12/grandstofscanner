@@ -309,7 +309,10 @@
       "price_trends_description": "In de onderstaande grafiek ziet u de prijstrends van de afgelopen jaren.",
       "IMVO": "IMVO",
       "risk_indicators": "Risk indicators",
-      "expand_all": "Alles uitklappen"
+      "expand_all": "Alles uitklappen",
+      "chains": "Kettingen",
+      "phase": "Fase",
+      "material": "Materiaal"
     },
     "import_country": {
       "world_map": "Wereld kaart",

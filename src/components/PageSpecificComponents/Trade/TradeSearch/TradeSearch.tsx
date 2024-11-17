@@ -1,3 +1,4 @@
+import React from "react";
 import styles from "./TradeSearch.module.css";
 import longTermSecurity from "../../../../assets/long-term-security.png";
 import shortTermSecurity from "../../../../assets/short-term-security.png";
@@ -17,12 +18,12 @@ type FilterSection = {
   options: (string | FilterOption)[];
 };
 
-const TradeSearch = () => {
+const TradeSearch: React.FC = () => {
   const { t } = useTranslation();
 
   const filterOptions: FilterSection[] = [
     {
-      title: t("tradeSearch.filterSections.0.title"),  
+      title: t("tradeSearch.filterSections.0.title"),
       options: [
         t("tradeSearch.filterSections.0.options.0"),
         t("tradeSearch.filterSections.0.options.1"),
@@ -61,7 +62,7 @@ const TradeSearch = () => {
       <div className={styles.box}>
         <div className={styles.sidebarContent}>
           {filterOptions.map((section, index) => (
-            <div key={index} className={styles.filterSection}>
+            <div key={section.title} className={styles.filterSection}>
               <h3 className={styles.filterTitle}>{section.title}</h3>
               {section.options.map((option, optionIndex) => (
                 <div key={optionIndex} className={styles.checkboxContainer}>
@@ -89,7 +90,6 @@ const TradeSearch = () => {
           ))}
         </div>
 
-        {/* Main content */}
         <TradeSearchResult />
       </div>
     </div>

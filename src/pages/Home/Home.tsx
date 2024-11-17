@@ -1,17 +1,24 @@
-import { useEffect } from "react";
+import React, { useEffect } from "react";
+import { useParams } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import styles from "./Home.module.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { useParams } from "react-router-dom";
 import HeroSection from "../../components/PageSpecificComponents/Home/HeroSection/HeroSection";
 import InformationCards from "../../components/PageSpecificComponents/Home/InformationCards/InformationCard";
 import ServiceOverviewCards from "../../components/PageSpecificComponents/Home/ServiceOverviewCards/ServiceOverviewCards";
 
-const Home = () => {
-  const { lang } = useParams();
+interface LangParam extends Record<string, string | undefined> {
+  lang: string;
+}
+
+const Home: React.FC = () => {
+  const { lang } = useParams<LangParam>();
   const { t, i18n } = useTranslation();
+
   useEffect(() => {
-    i18n.changeLanguage(lang);
+    if (lang) {
+      i18n.changeLanguage(lang);
+    }
   }, [lang, i18n]);
 
   useEffect(() => {

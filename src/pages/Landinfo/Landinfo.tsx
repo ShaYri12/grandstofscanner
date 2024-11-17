@@ -1,15 +1,18 @@
-import styles from "./Landinfo.module.css";
+import React, { useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import { FaChevronRight } from "react-icons/fa";
-// import LandinfoTableArea from "../../components/LandInfo/LandinfoTableArea/LandinfoTableArea";
 import i18next from "i18next";
-import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import LandinfoTableArea from "../../components/PageSpecificComponents/LandInfo/LandinfoTableArea/LandinfoTableArea";
+import styles from "./Landinfo.module.css";
 
-export default function Landinfo() {
+interface LangParam extends Record<string, string | undefined> {
+  lang: string;
+}
+
+const Landinfo: React.FC = () => {
   const { t } = useTranslation();
-  const { lang } = useParams<{ lang: string }>();
+  const { lang } = useParams<LangParam>();
 
   useEffect(() => {
     if (lang && lang !== i18next.language) {
@@ -45,4 +48,6 @@ export default function Landinfo() {
       </div>
     </section>
   );
-}
+};
+
+export default Landinfo;
