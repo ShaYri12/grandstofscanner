@@ -3,12 +3,12 @@ import { FaChevronDown, FaChevronUp, FaEuroSign, FaLeaf } from "react-icons/fa";
 import styles from "./TradeSearchResult.module.css";
 import { LuClock3 } from "react-icons/lu";
 import { RiSettings5Fill } from "react-icons/ri";
-import longTermSecurtiy from "../../../assets/long-term-security.png";
-import shortTermSecurity from "../../../assets/short-term-security.png";
-import world from "../../../assets/world.png";
-import people from "../../../assets/people-stars.png";
-import chart from "../../../assets/chart.png";
-import truck from "../../../assets/truck.png";
+import longTermSecurtiy from "../../../../assets/long-term-security.png";
+import shortTermSecurity from "../../../../assets/short-term-security.png";
+import world from "../../../../assets/world.png";
+import people from "../../../../assets/people-stars.png";
+import chart from "../../../../assets/chart.png";
+import truck from "../../../../assets/truck.png";
 import { IconType } from "react-icons";
 import { useTranslation } from "react-i18next";
 import { useParams } from "react-router-dom";
@@ -21,13 +21,11 @@ type IconMapKeys =
   | "chart"
   | "short-term-security";
 
-// Define a union type for your icon keys
 type Icon2MapKeys = "truck" | "leaf";
 
-// Define the icon map with a specific type
 const iconMap: Record<Icon2MapKeys, string | IconType> = {
-  truck: truck, // Using the imported truck icon
-  leaf: FaLeaf, // Using the imported FaLeaf component
+  truck: truck,  
+  leaf: FaLeaf,  
 };
 
 const TradeSearchResult = () => {

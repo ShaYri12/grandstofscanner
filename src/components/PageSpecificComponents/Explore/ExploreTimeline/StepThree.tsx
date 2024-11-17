@@ -1,9 +1,10 @@
 import React, { useEffect } from "react";
 import styles from "./StepThree.module.css";
-import Remove from "../../../assets/remove.svg";
+import Remove from "../../../../assets/remove.svg";
 import i18next from "i18next";
 import { useTranslation } from "react-i18next";
 import { useParams } from "react-router-dom";
+import UniversalButton from "../../../General/Buttons";
 
 const StepThree: React.FC = () => {
   const { t } = useTranslation();
@@ -21,29 +22,38 @@ const StepThree: React.FC = () => {
           <h2 className={styles.subtitle}>
             {t("exploreheader.stepThree.title")}
           </h2>
-          <button className={styles.removeAllButton}>
+          <UniversalButton
+            onClick={() => {}}
+            customClass={styles.removeAllButton}
+          >
             {t("exploreheader.stepThree.deleteEverything")}
-          </button>
+          </UniversalButton>
         </div>
 
         <div className={styles.productList}>
           <div className={styles.productItem}>
             <h3> {t("exploreheader.stepThree.titleOne")}</h3>
-            <button className={styles.removeButton}>
+            <UniversalButton
+              onClick={() => {}}
+              customClass={styles.removeButton}
+            >
               <img src={Remove} alt="remove" />
-            </button>
+            </UniversalButton>
           </div>
           <div className={styles.productItem}>
             <h3>{t("exploreheader.stepThree.titleOne")}</h3>
-            <button className={styles.removeButton}>
+            <UniversalButton
+              onClick={() => {}}
+              customClass={styles.removeButton}
+            >
               <img src={Remove} alt="remove" />
-            </button>
+            </UniversalButton>
           </div>
         </div>
 
-        <button className={styles.continueButton}>
+        <UniversalButton onClick={() => {}} customClass={styles.continueButton}>
           {t("exploreheader.stepThree.continue")}
-        </button>
+        </UniversalButton>
       </div>
     </div>
   );

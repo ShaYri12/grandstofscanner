@@ -1,0 +1,97 @@
+:root {
+  --navbar-background: #f0f8ff;
+  --link-color: black;
+  --link-active-color: black;
+  --nav-label-background: #012e44;
+  --button1-background: #f2b34d;
+  --button1-color: rgb(107, 31, 31);
+  --button2-background: #56a9de;
+  --button2-color: rgb(19, 38, 66);
+  --hidden-nav-background: white;
+  --hidden-nav-border: rgb(94, 92, 92);
+  --mobile-button-background: rgb(94, 92, 92);
+}
+
+.drawer {
+  position: fixed;
+  top: 0;
+  right: -100%; /* Start off-screen */
+  height: 100%;
+  width: 300px; /* Width of your drawer */
+  background-color: white; /* Background color */
+  transition: right 0.3s ease; /* Transition effect */
+  z-index: 1001; /* Ensure it appears above other content */
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+.drawer.active {
+  right: 0; /* Move to visible position */
+}
+
+.drawerContent {
+  padding: 20px; /* Padding inside the drawer */
+}
+
+.closeButton {
+  padding: 0;
+  background: transparent;
+  color: #012e44;
+  border: none;
+  font-size: 30px;
+  margin-top: -15px;
+  margin-left: -5px;
+}
+
+.navLinks {
+  list-style: none; /* Remove default list styles */
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  text-align: center;
+}
+
+.navLinks li a {
+  padding: 8px;
+  text-align: center;
+}
+
+.link {
+  color: var(--link-color);
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: 400;
+  text-align: center;
+}
+
+.linkActive {
+  color: var(--link-active-color);
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+/* Overlay styles */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Dark transparent background */
+  backdrop-filter: blur(8px); /* Blur effect */
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  z-index: 1000; /* Below the drawer */
+}
+
+.overlay.active {
+  opacity: 1;
+  visibility: visible;
+}

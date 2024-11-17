@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
-import ArrowDown from "../../../assets/arrow-down.svg";
+import ArrowDown from "../../../../assets/arrow-down.svg";
 import i18next from "i18next";
 import { useTranslation } from "react-i18next";
 import { useParams } from "react-router-dom";
+import UniversalButton from "../../../General/Buttons";
 
 interface StepOneProps {
   setSearchMethod: React.Dispatch<
@@ -94,9 +95,12 @@ const StepOne: React.FC<StepOneProps> = ({
               value={localSearchValue}
               onChange={(e) => setLocalSearchValue(e.target.value)}
             />
-            <button className="custom-button" onClick={onSearchClick}>
+            <UniversalButton
+              onClick={onSearchClick}
+              customClass="custom-button"
+            >
               {t("exploreheader.stepOne.toSearch")}
-            </button>
+            </UniversalButton>
           </div>
         </div>
 
@@ -135,39 +139,45 @@ const StepOne: React.FC<StepOneProps> = ({
               readOnly
               onClick={toggleDropdown}
             />
-            <button onClick={toggleDropdown}>
+            <UniversalButton onClick={toggleDropdown}>
               <img src={ArrowDown} alt="arrow" />
-            </button>
+            </UniversalButton>
           </div>
           {isOpen && (
             <div className="dropdown-option">
               <div className="tabs-container">
                 <div className="tabs-btns">
-                  <button
+                  <UniversalButton
                     onClick={() => handleTabChange("Biotische grondstoffen")}
-                    className={
+                    customClass={
                       activeTab === "Biotische grondstoffen" ? "active" : ""
                     }
                   >
                     {t("exploreheader.stepOne.btnOne")}
-                  </button>
-                  <button
-                    className={`abiotische-grondstoffen ${
+                  </UniversalButton>
+
+                  <UniversalButton
+                    onClick={() => handleTabChange("Abiotische grondstoffen")}
+                    customClass={`abiotische-grondstoffen ${
                       activeTab === "Abiotische grondstoffen" ? "active" : ""
                     }`}
-                    onClick={() => handleTabChange("Abiotische grondstoffen")}
                   >
                     {t("exploreheader.stepOne.btnTwo")}
-                  </button>
+                  </UniversalButton>
                 </div>
                 {showAdditionalButtons && (
                   <div className="tabs-btns">
-                    <button onClick={() => handleOptionSelect("Primaire")}>
+                    <UniversalButton
+                      onClick={() => handleOptionSelect("Primaire")}
+                    >
                       {t("exploreheader.stepOne.btnThree")}
-                    </button>
-                    <button onClick={() => handleOptionSelect("Recycled")}>
+                    </UniversalButton>
+
+                    <UniversalButton
+                      onClick={() => handleOptionSelect("Recycled")}
+                    >
                       {t("exploreheader.stepOne.btnFour")}
-                    </button>
+                    </UniversalButton>
                   </div>
                 )}
               </div>
@@ -175,7 +185,11 @@ const StepOne: React.FC<StepOneProps> = ({
               <div className="options">
                 <ul>
                   {options[activeTab].map((option: string, index: number) => (
-                    <li key={index} onClick={() => handleOptionSelect(option)}>
+                    <li
+                      key={index}
+                      onClick={() => handleOptionSelect(option)}
+                      style={{ cursor: "pointer" }}
+                    >
                       {option}
                     </li>
                   ))}

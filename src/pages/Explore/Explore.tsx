@@ -1,5 +1,5 @@
-import ExploreHeader from "../../components/Explore/ExploreHeader/ExploreHeader";
-import ExploreTimeline from "../../components/Explore/ExploreTimeline/ExploreTimeline";
+import ExploreHeader from "../../components/PageSpecificComponents/Explore/ExploreHeader/ExploreHeader";
+import ExploreTimeline from "../../components/PageSpecificComponents/Explore/ExploreTimeline/ExploreTimeline";
 import styles from "./Explore.module.css";
 
 const Explore = () => {

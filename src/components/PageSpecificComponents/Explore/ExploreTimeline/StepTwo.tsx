@@ -1,10 +1,11 @@
 import React, { useEffect } from "react";
 import "./TimelineSearch.css";
-import Arrow from "../../../assets/faq-btn.svg";
+import Arrow from "../../../../assets/faq-btn.svg";
 import "./StepTwo.css";
 import i18next from "i18next";
 import { useTranslation } from "react-i18next";
 import { useParams } from "react-router-dom";
+import UniversalButton from "../../../General/Buttons";
 
 interface StepTwoProps {
   showStepThree: () => void;
@@ -28,9 +29,12 @@ const StepTwo: React.FC<StepTwoProps> = ({ showStepThree }) => {
       <div className="step-container">
         <div className="result-card">
           <h4>{t("exploreheader.stepTwo.paraTwo")}</h4>
-          <button className="custom-button-two" onClick={showStepThree}>
+          <UniversalButton
+            onClick={showStepThree}
+            customClass="custom-button-two"
+          >
             {t("exploreheader.stepTwo.tolookit")}
-          </button>
+          </UniversalButton>
         </div>
 
         <div className="faqContainer">
@@ -40,17 +44,17 @@ const StepTwo: React.FC<StepTwoProps> = ({ showStepThree }) => {
                 <h3 className="faq-title">
                   {t("exploreheader.stepTwo.titleOne")}
                 </h3>
-                <button className="arrow-btn">
+                <UniversalButton onClick={() => {}} customClass="arrow-btn">
                   <img src={Arrow} alt="arrow" />
-                </button>
+                </UniversalButton>
               </div>
               <div className="faq-two">
                 <h3 className="faq-title">
                   {t("exploreheader.stepTwo.titleOne")}
                 </h3>
-                <button className="arrow-btn">
+                <UniversalButton onClick={() => {}} customClass="arrow-btn">
                   <img src={Arrow} alt="arrow" />
-                </button>
+                </UniversalButton>
               </div>
               <div className="three-faq-container">
                 <div className="faq-three-main">
@@ -58,9 +62,9 @@ const StepTwo: React.FC<StepTwoProps> = ({ showStepThree }) => {
                     <h3 className="faq-title">
                       {t("exploreheader.stepTwo.titleTwo")}
                     </h3>
-                    <button className="arrow-btn">
+                    <UniversalButton onClick={() => {}} customClass="arrow-btn">
                       <img src={Arrow} alt="arrow" />
-                    </button>
+                    </UniversalButton>
                   </div>
                   <div className="last-faq-container">
                     <div className="faq-last">
@@ -68,12 +72,19 @@ const StepTwo: React.FC<StepTwoProps> = ({ showStepThree }) => {
                         {t("exploreheader.stepTwo.titleThree")}
                       </h3>
                       <div className="btns">
-                        <button className="btn-one" onClick={showStepThree}>
+                        <UniversalButton
+                          onClick={showStepThree}
+                          customClass="btn-one"
+                        >
                           {t("exploreheader.stepTwo.viewFactSheet")}
-                        </button>
-                        <button className="btn-two" onClick={showStepThree}>
+                        </UniversalButton>
+
+                        <UniversalButton
+                          onClick={showStepThree}
+                          customClass="btn-two"
+                        >
                           {t("exploreheader.stepTwo.add")}
-                        </button>
+                        </UniversalButton>
                       </div>
                     </div>
                   </div>

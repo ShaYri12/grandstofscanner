@@ -3,9 +3,9 @@ import { useTranslation } from "react-i18next";
 import styles from "./Home.module.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useParams } from "react-router-dom";
-import HeroSection from "../../components/Home/HeroSection/HeroSection";
-import InformationCards from "../../components/Home/InformationCards/InformationCard";
-import ServiceOverviewCards from "../../components/Home/ServiceOverviewCards/ServiceOverviewCards";
+import HeroSection from "../../components/PageSpecificComponents/Home/HeroSection/HeroSection";
+import InformationCards from "../../components/PageSpecificComponents/Home/InformationCards/InformationCard";
+import ServiceOverviewCards from "../../components/PageSpecificComponents/Home/ServiceOverviewCards/ServiceOverviewCards";
 
 const Home = () => {
   const { lang } = useParams();
