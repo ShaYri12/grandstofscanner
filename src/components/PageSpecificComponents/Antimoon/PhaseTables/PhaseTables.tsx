@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./PhaseTables.module.css";
 import { useTranslation } from "react-i18next";
+import { GoArrowDown, GoArrowRight } from "react-icons/go";
 
 type Phase = {
   materials: string[];
@@ -15,23 +16,38 @@ const PhaseTables: React.FC<PhaseTablesProps> = ({ phases }) => {
   return (
     <div className={styles.container}>
       {phases.map((phase, index) => (
-        <div key={index} className={styles.phaseTable}>
-          <table className={styles.table}>
-            <thead>
-              <tr>
-                <th>{`${t("antimoon.expandableSection.phase")} ${index + 1}`}</th>
-              </tr>
-            </thead>
-            <tbody>
-              
-              {phase.materials.map((material, idx) => (
-                <tr key={idx}>
-                  <td>{material}</td>
+        <React.Fragment key={index}>
+          <div className={styles.phaseTable}>
+            <table className={styles.table}>
+              <thead>
+                <tr>
+                  <th>{`${t("antimoon.expandableSection.phase")} ${
+                    index + 1
+                  }`}</th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
+              </thead>
+              <tbody>
+                {phase.materials.map((material, idx) => (
+                  <tr key={idx}>
+                    <td>{material}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+
+          {/* Render arrow except after the last phase */}
+          {index < phases.length - 1 && (
+            <div className={styles.arrowContainer}>
+              <span className={styles.arrowRight}>
+                <GoArrowRight />
+              </span>
+              <span className={styles.arrowDown}>
+                <GoArrowDown />
+              </span>
+            </div>
+          )}
+        </React.Fragment>
       ))}
     </div>
   );

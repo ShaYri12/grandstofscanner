@@ -69,12 +69,8 @@ const ExpandableSection: React.FC = () => {
       title: t("antimoon.expandableSection.chains"),
       showInfo: sectionsVisibility.priceInfo,
       toggleInfo: () => toggleSectionVisibility("priceInfo"),
-      content: (
-        <p>{t("antimoon.expandableSection.chains")}</p>
-      ),
-      expandedContent: (
-        <PhaseTable/>
-      ),
+      content: <p>{t("antimoon.expandableSection.chains")}</p>,
+      expandedContent: <PhaseTable />,
     },
     {
       title: t("antimoon.expandableSection.IMVO"),
@@ -91,15 +87,6 @@ const ExpandableSection: React.FC = () => {
           </p>
         </>
       ),
-    },
-    {
-      title: t("antimoon.expandableSection.risk_indicators"),
-      showInfo: sectionsVisibility.riskIndicatorsInfo,
-      toggleInfo: () => toggleSectionVisibility("riskIndicatorsInfo"),
-      content: (
-        <p>{t("antimoon.expandableSection.import_country_info_description")}</p>
-      ),
-      expandedContent: <RiskIndicators />,
     },
     {
       title: t("antimoon.expandableSection.risk_indicators"),
@@ -135,8 +122,10 @@ const ExpandableSection: React.FC = () => {
               </span>
             </button>
             <div className={styles.expandableContent}>{content}</div>
-            {showInfo && (
+            {showInfo ? (
               <div className={styles.expandableContent}>{expandedContent}</div>
+            ) : (
+              "..."
             )}
           </div>
         )

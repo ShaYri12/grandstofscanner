@@ -3,6 +3,7 @@
   gap: 20px;
   width: 100%;
   max-width: 1200px;
+  align-items: center; /* Align tables and arrows vertically */
 }
 
 .phaseTable {
@@ -12,12 +13,31 @@
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
 }
 
+.arrowContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.arrowRight,
+.arrowDown {
+  font-size: 24px; /* Increase arrow size */
+  color: #01689b; /* Match the header color */
+  padding: 0 10px;
+}
+
+.arrowDown {
+  display: none !important;
+}
+
+/* Table styles */
 .table {
   width: 100%;
   border-collapse: collapse;
-  margin-bottom: 10px;
 }
 
 .table th,
@@ -41,6 +61,13 @@
   background-color: #eaeaea;
 }
 
+/* Media queries for responsiveness */
+@media (max-width: 920px) {
+  .container {
+    gap: 10px;
+  }
+}
+
 @media (max-width: 768px) {
   .container {
     flex-direction: column;
@@ -57,6 +84,19 @@
     font-size: 14px;
     padding: 8px;
   }
+
+  .arrowRight,
+  .arrowDown {
+    font-size: 20px;
+  }
+
+  .arrowRight {
+    display: none !important;
+  }
+
+  .arrowDown {
+    display: block !important;
+  }
 }
 
 @media (max-width: 480px) {
@@ -68,5 +108,10 @@
   .table td {
     font-size: 12px;
     padding: 6px;
+  }
+
+  .arrowRight,
+  .arrowDown {
+    font-size: 18px;
   }
 }
