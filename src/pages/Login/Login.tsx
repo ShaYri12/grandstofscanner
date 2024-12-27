@@ -1,18 +1,33 @@
 import React, { useState, useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { toast } from "react-toastify";
+import { useTranslation } from "react-i18next";
 import styles from "./Login.module.css";
 import { IoWarningOutline } from "react-icons/io5";
 import { MdOutlineEmail } from "react-icons/md";
 import { CiLock } from "react-icons/ci";
 
+interface LangParam extends Record<string, string | undefined> {
+  lang: string;
+}
+
 const Login: React.FC = () => {
+  const { lang } = useParams<LangParam>();
+  const { t, i18n } = useTranslation();
+
   const [formData, setFormData] = useState({
     email: "",
     password: "",
   });
   const [error, setError] = useState("");
   const navigate = useNavigate();
+  const currentLanguage = i18n.language || "en";
+
+  useEffect(() => {
+    if (lang) {
+      i18n.changeLanguage(lang);
+    }
+  }, [lang, i18n]);
 
   useEffect(() => {
     const initialUserData = [
@@ -48,13 +63,13 @@ const Login: React.FC = () => {
 
       if (user) {
         localStorage.setItem("auth", JSON.stringify(user));
-        toast.success("Login Successful");
+        toast.success(t("login.success"));
         navigate("/");
       } else {
-        setError("Incorrect email or password!");
+        setError(t("login.incorrectCredentials"));
       }
     } else {
-      setError("No user data found in the system.");
+      setError(t("login.noUserData"));
     }
   };
 
@@ -66,9 +81,9 @@ const Login: React.FC = () => {
     <div className={styles.container}>
       <div className={styles.content}>
         <div className={styles.formContainer}>
-          <h2 className={styles.formTitle}>Login</h2>
+          <h2 className={styles.formTitle}>{t("login.title")}</h2>
           <p className={`${styles.subtitle} ${!error && styles.extraPadding}`}>
-            Sign in to your account
+            {t("login.subtitle")}
           </p>
           <form className={styles.form} onSubmit={handleLogin}>
             <p className={`${styles.error} ${!error && styles.invisible}`}>
@@ -84,7 +99,7 @@ const Login: React.FC = () => {
               <input
                 type="email"
                 id="email"
-                placeholder="Email"
+                placeholder={t("login.emailPlaceholder")}
                 className={styles.input}
                 value={formData.email}
                 onChange={handleChange}
@@ -98,7 +113,7 @@ const Login: React.FC = () => {
               <input
                 type="password"
                 id="password"
-                placeholder="Password"
+                placeholder={t("login.passwordPlaceholder")}
                 className={styles.input}
                 value={formData.password}
                 onChange={handleChange}
@@ -110,19 +125,22 @@ const Login: React.FC = () => {
               className={styles.button}
               disabled={isFormIncomplete()}
             >
-              Login
+              {t("login.button")}
             </button>
           </form>
         </div>
         <div className={styles.signupText}>
-          <span>Don't have an account?</span>{" "}
-          <Link to="/register" className={styles.signupLink}>
-            Sign up
+          <span>{t("login.noAccount")}</span>{" "}
+          <Link
+            to={`/${currentLanguage}/register`}
+            className={styles.signupLink}
+          >
+            {t("login.signUp")}
           </Link>
         </div>
         <div className={styles.forgotPassword}>
           <a href="#" className={styles.forgotPasswordLink}>
-            Forgot password?
+            {t("login.forgotPassword")}
           </a>
         </div>
       </div>

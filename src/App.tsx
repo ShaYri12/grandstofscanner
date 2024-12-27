@@ -20,6 +20,7 @@ import Navbar from "./components/General/Navbar/Navbar";
 import Footer from "./components/General/Footer/Footer";
 import Login from "./pages/Login/Login";
 import Register from "./pages/Register/Register";
+import FAQ from "./pages/FAQ/FAQ";
 
 const App: React.FC = () => {
   return (
@@ -39,8 +40,9 @@ const App: React.FC = () => {
           element={<ProductGroups />}
         />
         <Route path="/:lang/antimoon" element={<Antimoon />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
+        <Route path="/:lang/faq" element={<FAQ />} />
+        <Route path="/:lang/login" element={<Login />} />
+        <Route path="/:lang/register" element={<Register />} />
         <Route path="*" element={<Navigate to="/en/home" />} />
       </Routes>
       <Footer />

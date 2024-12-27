@@ -367,5 +367,57 @@
       "air_balloons_and_dirigibles": "Air balloons and airships (0.002)",
       "lift_screw_aircraft": "Lift screw aircraft (0.000)"
     }
+  },
+  "login": {
+    "title": "Login",
+    "subtitle": "Sign in to your account",
+    "emailPlaceholder": "Email",
+    "passwordPlaceholder": "Password",
+    "button": "Login",
+    "noAccount": "Don't have an account?",
+    "signUp": "Sign up",
+    "forgotPassword": "Forgot password?",
+    "success": "Login Successful",
+    "incorrectCredentials": "Incorrect email or password!",
+    "noUserData": "No user data found in the system."
+  },
+  "register": {
+    "title": "Register",
+    "subtitle": "Create Your Account",
+    "namePlaceholder": "Your Name",
+    "emailPlaceholder": "Email",
+    "passwordPlaceholder": "Password",
+    "confirmPasswordPlaceholder": "Confirm Password",
+    "button": "Sign Up",
+    "alreadyHaveAccount": "Already have an account?",
+    "login": "Login",
+    "success": "Registration Successful",
+    "error": {
+      "emailInUse": "Email already in use, please use another.",
+      "registrationError": "Registration error"
+    }
+  },
+  "faq": {
+    "title": "FAQs",
+    "question1": "What is the Grondstoffenscanner?",
+    "answer1": "The Grondstoffenscanner is a tool designed to help you assess the future scarcity of raw materials and their potential risks to humans and the environment.",
+    "question2": "How does the Grondstoffenscanner work?",
+    "answer2": "The Grondstoffenscanner guides you through three steps: Explore, where you identify raw materials in your process; Judge, where you assess potential future risks; and Trade, where you analyze risks to take actionable steps.",
+    "question3": "Who can use the Grondstoffenscanner?",
+    "answer3": "The tool is designed for businesses and organizations that depend on raw materials and want to understand and mitigate potential future risks.",
+    "question4": "What types of raw materials are included in the scan?",
+    "answer4": "The Grondstoffenscanner covers a wide range of raw materials, including bio-based materials, to help you gain comprehensive insights into your production process.",
+    "question5": "Do I need any technical knowledge to use the tool?",
+    "answer5": "No, the Grondstoffenscanner is user-friendly and provides clear instructions to guide you through each step of the process.",
+    "question6": "Is the Grondstoffenscanner free to use?",
+    "answer6": "Yes, the Grondstoffenscanner is free to use and is designed to provide valuable insights without any additional costs.",
+    "question7": "Can I save my progress while using the Grondstoffenscanner?",
+    "answer7": "Yes, the tool allows you to save your progress, so you can return and complete the scan at your convenience.",
+    "question8": "What happens after completing the three steps?",
+    "answer8": "Once you complete the three steps, you will have a detailed risk analysis and actionable insights to address any potential raw material risks in your production process.",
+    "question9": "How often should I use the Grondstoffenscanner?",
+    "answer9": "We recommend using the Grondstoffenscanner periodically or whenever there are significant changes in your production process or market conditions.",
+    "question10": "Is the Grondstoffenscanner available in multiple languages?",
+    "answer10": "Currently, the tool is available in [language(s)], but we are working on expanding to include additional languages in the future."
   }
 }

@@ -15,6 +15,7 @@ interface DrawerProps {
   activePath: string;
   loginText: string;
   registerText: string;
+  currentLang: string;
 }
 
 const Drawer: React.FC<DrawerProps> = ({
@@ -24,6 +25,7 @@ const Drawer: React.FC<DrawerProps> = ({
   activePath,
   loginText,
   registerText,
+  currentLang,
 }) => {
   return (
     <>
@@ -58,13 +60,13 @@ const Drawer: React.FC<DrawerProps> = ({
           </ul>
           <div className={`${styles.buttonsContainer}`}>
             <Link
-              to="/register"
+              to={`/${currentLang}/register`}
               className={`rounded-2 border-none outline-none ${styles.navButton1}`}
             >
               {loginText}
             </Link>
             <Link
-              to="/login"
+              to={`/${currentLang}/login`}
               className={`rounded-2 border-none outline-none ${styles.navButton2}`}
             >
               {registerText}

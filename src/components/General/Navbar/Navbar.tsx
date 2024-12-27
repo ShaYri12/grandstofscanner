@@ -19,6 +19,7 @@ const Navbar: React.FC = () => {
   const h2four = t("header2.h2four") as string;
   const h2btn1 = t("header2.h2btn1") as string;
   const h2btn2 = t("header2.h2btn2") as string;
+  const faq = t("faq.title") as string;
 
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const [currentLang, setCurrentLang] = useState(i18next.language);
@@ -41,6 +42,7 @@ const Navbar: React.FC = () => {
     { path: `/${currentLang}/about`, label: h2two },
     { path: `/${currentLang}/trade`, label: h2three },
     { path: `/${currentLang}/landinfo`, label: h2four },
+    { path: `/${currentLang}/faq`, label: faq },
   ];
 
   const toggleDrawer = () => {
@@ -106,13 +108,13 @@ const Navbar: React.FC = () => {
           </div>
           <div className={`${styles.navRight} gap-2 d-flex`}>
             <Link
-              to="/register"
+              to={`/${currentLang}/register`}
               className={`rounded-2 border-none outline-none ${styles.navButton1}`}
             >
               {h2btn1}
             </Link>
             <Link
-              to="/login"
+              to={`/${currentLang}/login`}
               className={`rounded-2 border-none outline-none ${styles.navButton2}`}
             >
               {h2btn2}
@@ -129,6 +131,7 @@ const Navbar: React.FC = () => {
         activePath={location.pathname} // Pass the active path to the Drawer
         loginText={h2btn1}
         registerText={h2btn2}
+        currentLang={currentLang}
       />
     </nav>
   );

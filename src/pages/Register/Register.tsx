@@ -5,8 +5,10 @@ import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import styles from "./Register.module.css";
 import { CiLock } from "react-icons/ci";
+import { useTranslation } from "react-i18next";
 
 const Register: React.FC = () => {
+  const { i18n, t } = useTranslation();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -15,6 +17,7 @@ const Register: React.FC = () => {
   });
   const [error, setError] = useState<string | null>(null);
   const navigate = useNavigate();
+  const currentLanguage = i18n.language || "en";
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { id, value } = e.target;
@@ -35,7 +38,7 @@ const Register: React.FC = () => {
     );
 
     if (userExists) {
-      setError("Email already in use, please use another.");
+      setError(t("register.error.emailInUse"));
     } else {
       const newUser = {
         name: formData.name,
@@ -47,7 +50,7 @@ const Register: React.FC = () => {
 
       localStorage.setItem("userData", JSON.stringify(users));
 
-      toast.success("Registration Successful");
+      toast.success(t("register.success"));
       navigate("/login");
     }
   };
@@ -60,9 +63,9 @@ const Register: React.FC = () => {
     <div className={styles.container}>
       <div className={styles.content}>
         <div className={styles.formContainer}>
-          <h2 className={styles.formTitle}>Register</h2>
+          <h2 className={styles.formTitle}>{t("register.title")}</h2>
           <p className={`${styles.subtitle} ${!error && styles.extraPadding}`}>
-            Create Your Account
+            {t("register.subtitle")}
           </p>
           <form className={styles.form} onSubmit={handleRegister}>
             {error && (
@@ -76,7 +79,9 @@ const Register: React.FC = () => {
                   />
                 </span>
                 <div className={styles.errorContent}>
-                  <span className={styles.errorTitle}>Registration error</span>
+                  <span className={styles.errorTitle}>
+                    {t("register.error.registrationError")}
+                  </span>
                   <div className={styles.errorMessage}>
                     <span className={styles.errorDot}></span>
                     {error}
@@ -91,7 +96,7 @@ const Register: React.FC = () => {
               <input
                 type="text"
                 id="name"
-                placeholder="Your Name"
+                placeholder={t("register.namePlaceholder")}
                 className={styles.input}
                 value={formData.name}
                 onChange={handleChange}
@@ -108,7 +113,7 @@ const Register: React.FC = () => {
               <input
                 type="email"
                 id="email"
-                placeholder="Email"
+                placeholder={t("register.emailPlaceholder")}
                 className={styles.input}
                 value={formData.email}
                 onChange={handleChange}
@@ -122,7 +127,7 @@ const Register: React.FC = () => {
               <input
                 type="password"
                 id="password"
-                placeholder="Password"
+                placeholder={t("register.passwordPlaceholder")}
                 className={styles.input}
                 value={formData.password}
                 onChange={handleChange}
@@ -136,7 +141,7 @@ const Register: React.FC = () => {
               <input
                 type="password"
                 id="cpassword"
-                placeholder="Confirm Password"
+                placeholder={t("register.confirmPasswordPlaceholder")}
                 className={styles.input}
                 value={formData.cpassword}
                 onChange={handleChange}
@@ -148,15 +153,15 @@ const Register: React.FC = () => {
               className={styles.button}
               disabled={isFormIncomplete()}
             >
-              Sign Up
+              {t("register.button")}
             </button>
           </form>
         </div>
         <div className={styles.loginText}>
-          <span>Already have an account?</span>
-          <Link to="/login" className={styles.loginLink}>
+          <span>{t("register.alreadyHaveAccount")}</span>
+          <Link to={`/${currentLanguage}/login`} className={styles.loginLink}>
             {" "}
-            Login
+            {t("register.login")}
           </Link>
         </div>
       </div>
