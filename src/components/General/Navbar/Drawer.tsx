@@ -13,6 +13,8 @@ interface DrawerProps {
   onClose: () => void;
   links: LinkItem[];
   activePath: string;
+  loginText: string;
+  registerText: string;
 }
 
 const Drawer: React.FC<DrawerProps> = ({
@@ -20,6 +22,8 @@ const Drawer: React.FC<DrawerProps> = ({
   onClose,
   links,
   activePath,
+  loginText,
+  registerText,
 }) => {
   return (
     <>
@@ -52,6 +56,20 @@ const Drawer: React.FC<DrawerProps> = ({
               </li>
             ))}
           </ul>
+          <div className={`${styles.buttonsContainer}`}>
+            <Link
+              to="/register"
+              className={`rounded-2 border-none outline-none ${styles.navButton1}`}
+            >
+              {loginText}
+            </Link>
+            <Link
+              to="/login"
+              className={`rounded-2 border-none outline-none ${styles.navButton2}`}
+            >
+              {registerText}
+            </Link>
+          </div>
         </div>
       </div>
     </>

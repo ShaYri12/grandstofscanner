@@ -95,3 +95,49 @@
   opacity: 1;
   visibility: visible;
 }
+
+.buttonsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+/* Button Styles */
+.navButton1 {
+  background-color: var(--button1-background);
+  font-weight: 700;
+  color: var(--button1-color);
+  padding: 12px;
+  width: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.navButton1:hover {
+  background-color: var(--button1-background);
+  color: var(--button1-color);
+}
+
+.navButton2 {
+  background-color: var(--button2-background);
+  font-weight: 700;
+  color: var(--button2-color);
+  padding: 12px;
+  width: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.navButton2:hover {
+  background-color: var(--button2-background);
+  color: var(--button2-color);
+}

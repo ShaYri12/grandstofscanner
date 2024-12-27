@@ -127,6 +127,8 @@ const Navbar: React.FC = () => {
         onClose={toggleDrawer}
         links={links}
         activePath={location.pathname} // Pass the active path to the Drawer
+        loginText={h2btn1}
+        registerText={h2btn2}
       />
     </nav>
   );
