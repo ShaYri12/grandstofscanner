@@ -105,16 +105,18 @@ const Navbar: React.FC = () => {
             <IoMenu className={styles.menuIcon} onClick={toggleDrawer} />
           </div>
           <div className={`${styles.navRight} gap-2 d-flex`}>
-            <span
+            <Link
+              to="/register"
               className={`rounded-2 border-none outline-none ${styles.navButton1}`}
             >
               {h2btn1}
-            </span>
-            <span
+            </Link>
+            <Link
+              to="/login"
               className={`rounded-2 border-none outline-none ${styles.navButton2}`}
             >
               {h2btn2}
-            </span>
+            </Link>
           </div>
         </div>
       </div>

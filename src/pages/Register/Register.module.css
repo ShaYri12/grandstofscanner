@@ -1,0 +1,222 @@
+:root {
+  --navbar-background: #f0f8ff;
+  --link-color: black;
+  --nav-label-background: #012e44;
+  --button1-background: #f2b34d;
+  --button1-color: rgb(107, 31, 31);
+  --button2-background: #56a9de;
+  --button2-color: rgb(19, 38, 66);
+}
+
+.container {
+  position: relative;
+  min-height: 100vh;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.backgroundImage {
+  position: absolute;
+  left: 0;
+  height: 100%;
+  z-index: 1;
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+  padding: 50px 0;
+  max-width: 400px;
+  width: 100%;
+}
+
+.formContainer {
+  background-color: var(--navbar-background);
+  padding: 30px;
+  border-radius: 34px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.formTitle {
+  color: var(--nav-label-background);
+  text-align: center;
+  font-size: 30px;
+  font-weight: 500;
+}
+
+.subtitle {
+  color: #6c727f;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 36.22px;
+  text-align: center;
+  margin-bottom: 14px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  margin-top: 29px;
+}
+
+.error {
+  display: flex;
+  align-items: flex-start;
+  gap: 4px;
+  padding: 10px 22px;
+  color: white;
+  background-color: #ca242c;
+  border-radius: 22px;
+}
+
+.errorIcon {
+  min-width: 24px;
+  min-height: 24px;
+}
+
+.errorContent {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.errorTitle {
+  font-size: 20px;
+  font-weight: 400;
+  padding-left: 6px;
+}
+
+.errorMessage {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 16px;
+}
+
+.errorDot {
+  width: 5px;
+  height: 5px;
+  min-width: 5px;
+  min-height: 5px;
+  border-radius: 50%;
+  background-color: white;
+}
+
+.inputContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.inputIcon {
+  position: absolute;
+  left: 16px;
+  display: flex;
+  align-items: center;
+}
+
+.input {
+  width: 100%;
+  padding: 10px 18px 7px 48px;
+  background-color: white;
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--link-color);
+  border-radius: 9999px;
+  border: 1px solid #cccccc;
+}
+
+.input::placeholder {
+  color: #c4c4c4;
+}
+
+.input:focus {
+  outline: none;
+  box-shadow: 0 0 0 1px var(--button2-background);
+}
+
+.button {
+  width: 100%;
+  padding: 0 16px;
+  height: 55px;
+  font-size: 24px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  transition: background-color 0.3s;
+  margin-top: 22px;
+  border: none;
+}
+
+.button:disabled {
+  background-color: #56aade2e;
+  color: #938d8d;
+}
+
+.button:not(:disabled) {
+  background-color: var(--button2-background);
+  color: var(--nav-label-background);
+}
+
+.button:not(:disabled):hover {
+  background-color: #47b3f6;
+}
+
+.loginText {
+  text-align: center;
+  font-size: 18px;
+  font-weight: 500;
+  margin-top: 11px;
+}
+
+.loginText span {
+  color: var(--link-color);
+  font-weight: normal;
+}
+
+.loginLink {
+  color: var(--button1-background);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.loginLink:hover {
+  text-decoration: underline;
+}
+
+@media screen and (max-width: 768px) {
+  .formTitle {
+    font-size: 26px;
+  }
+  .subtitle {
+    font-size: 18px;
+  }
+  .errorTitle {
+    font-size: 16px;
+  }
+  .input {
+    font-size: 16px;
+  }
+  .button {
+    font-size: 18px;
+    height: 45px;
+  }
+  .loginText {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .formContainer {
+    padding: 24px 16px;
+  }
+}
