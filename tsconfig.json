@@ -6,5 +6,13 @@
   ],
   "compilerOptions": {
     "resolveJsonModule": true,
+    "target": "ES6",
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "jsx": "react",
+    "esModuleInterop": true,
+    "allowJs": true,
+    "strict": true,
+    "types": ["@testing-library/jest-dom"]
   }
 }

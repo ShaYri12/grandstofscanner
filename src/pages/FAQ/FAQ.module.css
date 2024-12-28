@@ -1,3 +1,12 @@
+:root {
+  --navbar-background: #f0f8ff;
+  --link-color: black;
+  --nav-label-background: #012e44;
+  --button1-background: #f2b34d;
+  --button2-background: #56a9de;
+  --button2-color: rgb(19, 38, 66);
+}
+
 .container {
   display: flex;
   flex-direction: column;
@@ -53,8 +62,8 @@
 }
 
 .accordionButton:not(.collapsed) {
-  color: #0c63e4;
-  background-color: #e7f1ff;
+  color: var(--nav-label-background);
+  background-color: #56aade90;
   box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.125);
 }
 

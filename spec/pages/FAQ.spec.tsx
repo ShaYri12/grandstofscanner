@@ -1,56 +1,33 @@
-import { render, screen, fireEvent } from "@testing-library/react";
-import { describe, it, expect, beforeEach } from "@jasmine/spec-core";
+import React from "react";
+import { render, fireEvent } from "@testing-library/react";
 import FAQ from "../../src/pages/FAQ/FAQ";
 
-// Mock react-i18next
-jest.mock("react-i18next", () => ({
-  useTranslation: () => ({
-    t: (key: string) => key,
-  }),
-}));
-
 describe("FAQ Component", () => {
-  beforeEach(() => {
-    render(<FAQ />);
+  it("renders without crashing", () => {
+    const { getByText } = render(<FAQ />);
+    expect(getByText("faq.title")).toBeTruthy();
   });
 
-  it("should render FAQ title", () => {
-    expect(screen.getByText("faq.title")).toBeTruthy();
+  it("renders all FAQ items", () => {
+    const { getAllByRole } = render(<FAQ />);
+    const questions = getAllByRole("button");
+    expect(questions.length).toBe(10);
   });
 
-  it("should render all FAQ questions", () => {
-    const questions = screen.getAllByRole("button");
-    expect(questions).toHaveLength(10);
-  });
+  it("toggles accordion items when clicked", () => {
+    const { getAllByRole, queryByText } = render(<FAQ />);
+    const questions = getAllByRole("button");
 
-  it("should show answer when question is clicked", () => {
-    const firstQuestion = screen.getAllByRole("button")[0];
-    fireEvent.click(firstQuestion);
-    expect(screen.getByText("faq.answer1")).toBeTruthy();
-  });
+    // First item should be open by default
+    expect(queryByText("faq.answer1")).toBeTruthy();
 
-  it("should hide answer when question is clicked again", () => {
-    const firstQuestion = screen.getAllByRole("button")[0];
-
-    // First click to show
-    fireEvent.click(firstQuestion);
-    expect(screen.getByText("faq.answer1")).toBeTruthy();
-
-    // Second click to hide
-    fireEvent.click(firstQuestion);
-    expect(screen.queryByText("faq.answer1")).toBeFalsy();
-  });
-
-  it("should only show one answer at a time", () => {
-    const questions = screen.getAllByRole("button");
-
-    // Click first question
-    fireEvent.click(questions[0]);
-    expect(screen.getByText("faq.answer1")).toBeTruthy();
-
-    // Click second question
+    // Click the second item
     fireEvent.click(questions[1]);
-    expect(screen.queryByText("faq.answer1")).toBeFalsy();
-    expect(screen.getByText("faq.answer2")).toBeTruthy();
+    expect(queryByText("faq.answer2")).toBeTruthy();
+    expect(queryByText("faq.answer1")).toBeFalsy();
+
+    // Click the second item again to close it
+    fireEvent.click(questions[1]);
+    expect(queryByText("faq.answer2")).toBeFalsy();
   });
 });
