@@ -25,6 +25,7 @@ jest.mock("react-toastify", () => ({
   },
 }));
 
+// Helper function to render the Register component with i18n
 const renderRegister = async () => {
   await act(async () => {
     render(
@@ -44,39 +45,71 @@ describe("Register Component", () => {
 
   test("renders register form", async () => {
     await renderRegister();
-    expect(screen.getByText("Register")).toBeInTheDocument();
-    expect(screen.getByPlaceholderText("Your Name")).toBeInTheDocument();
-    expect(screen.getByPlaceholderText("Email")).toBeInTheDocument();
-    expect(screen.getByPlaceholderText("Password")).toBeInTheDocument();
-    expect(screen.getByPlaceholderText("Confirm Password")).toBeInTheDocument();
-    expect(screen.getByRole("button", { name: "Sign Up" })).toBeInTheDocument();
+
+    // Check if translation keys are correctly rendered
+    expect(screen.getByText(i18n.t("register.title"))).toBeInTheDocument();
+    expect(screen.getByText(i18n.t("register.subtitle"))).toBeInTheDocument();
+    expect(
+      screen.getByPlaceholderText(i18n.t("register.namePlaceholder"))
+    ).toBeInTheDocument();
+    expect(
+      screen.getByPlaceholderText(i18n.t("register.emailPlaceholder"))
+    ).toBeInTheDocument();
+    expect(
+      screen.getByPlaceholderText(i18n.t("register.passwordPlaceholder"))
+    ).toBeInTheDocument();
+    expect(
+      screen.getByPlaceholderText(i18n.t("register.confirmPasswordPlaceholder"))
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole("button", { name: i18n.t("register.button") })
+    ).toBeInTheDocument();
   });
 
   test("allows user to fill out form", async () => {
     await renderRegister();
+
     await act(async () => {
-      fireEvent.change(screen.getByPlaceholderText("Your Name"), {
-        target: { value: "John Doe" },
-      });
-      fireEvent.change(screen.getByPlaceholderText("Email"), {
-        target: { value: "john@example.com" },
-      });
-      fireEvent.change(screen.getByPlaceholderText("Password"), {
-        target: { value: "password123" },
-      });
-      fireEvent.change(screen.getByPlaceholderText("Confirm Password"), {
-        target: { value: "password123" },
-      });
+      fireEvent.change(
+        screen.getByPlaceholderText(i18n.t("register.namePlaceholder")),
+        {
+          target: { value: "John Doe" },
+        }
+      );
+      fireEvent.change(
+        screen.getByPlaceholderText(i18n.t("register.emailPlaceholder")),
+        {
+          target: { value: "john@example.com" },
+        }
+      );
+      fireEvent.change(
+        screen.getByPlaceholderText(i18n.t("register.passwordPlaceholder")),
+        {
+          target: { value: "password123" },
+        }
+      );
+      fireEvent.change(
+        screen.getByPlaceholderText(
+          i18n.t("register.confirmPasswordPlaceholder")
+        ),
+        {
+          target: { value: "password123" },
+        }
+      );
     });
 
-    expect(screen.getByPlaceholderText("Your Name")).toHaveValue("John Doe");
-    expect(screen.getByPlaceholderText("Email")).toHaveValue(
-      "john@example.com"
-    );
-    expect(screen.getByPlaceholderText("Password")).toHaveValue("password123");
-    expect(screen.getByPlaceholderText("Confirm Password")).toHaveValue(
-      "password123"
-    );
+    expect(
+      screen.getByPlaceholderText(i18n.t("register.namePlaceholder"))
+    ).toHaveValue("John Doe");
+    expect(
+      screen.getByPlaceholderText(i18n.t("register.emailPlaceholder"))
+    ).toHaveValue("john@example.com");
+    expect(
+      screen.getByPlaceholderText(i18n.t("register.passwordPlaceholder"))
+    ).toHaveValue("password123");
+    expect(
+      screen.getByPlaceholderText(i18n.t("register.confirmPasswordPlaceholder"))
+    ).toHaveValue("password123");
   });
 
   test("displays error when email is already in use", async () => {
@@ -87,25 +120,41 @@ describe("Register Component", () => {
     await renderRegister();
 
     await act(async () => {
-      fireEvent.change(screen.getByPlaceholderText("Your Name"), {
-        target: { value: "John Doe" },
-      });
-      fireEvent.change(screen.getByPlaceholderText("Email"), {
-        target: { value: "existing@example.com" },
-      });
-      fireEvent.change(screen.getByPlaceholderText("Password"), {
-        target: { value: "password123" },
-      });
-      fireEvent.change(screen.getByPlaceholderText("Confirm Password"), {
-        target: { value: "password123" },
-      });
+      fireEvent.change(
+        screen.getByPlaceholderText(i18n.t("register.namePlaceholder")),
+        {
+          target: { value: "John Doe" },
+        }
+      );
+      fireEvent.change(
+        screen.getByPlaceholderText(i18n.t("register.emailPlaceholder")),
+        {
+          target: { value: "existing@example.com" },
+        }
+      );
+      fireEvent.change(
+        screen.getByPlaceholderText(i18n.t("register.passwordPlaceholder")),
+        {
+          target: { value: "password123" },
+        }
+      );
+      fireEvent.change(
+        screen.getByPlaceholderText(
+          i18n.t("register.confirmPasswordPlaceholder")
+        ),
+        {
+          target: { value: "password123" },
+        }
+      );
 
-      fireEvent.click(screen.getByRole("button", { name: "Sign Up" }));
+      fireEvent.click(
+        screen.getByRole("button", { name: i18n.t("register.button") })
+      );
     });
 
     await waitFor(() => {
       expect(
-        screen.getByText("Email already in use, please use another.")
+        screen.getByText(i18n.t("register.error.emailInUse"))
       ).toBeInTheDocument();
     });
   });
@@ -119,26 +168,42 @@ describe("Register Component", () => {
     await renderRegister();
 
     await act(async () => {
-      fireEvent.change(screen.getByPlaceholderText("Your Name"), {
-        target: { value: "John Doe" },
-      });
-      fireEvent.change(screen.getByPlaceholderText("Email"), {
-        target: { value: "john@example.com" },
-      });
-      fireEvent.change(screen.getByPlaceholderText("Password"), {
-        target: { value: "password123" },
-      });
-      fireEvent.change(screen.getByPlaceholderText("Confirm Password"), {
-        target: { value: "password123" },
-      });
+      fireEvent.change(
+        screen.getByPlaceholderText(i18n.t("register.namePlaceholder")),
+        {
+          target: { value: "John Doe" },
+        }
+      );
+      fireEvent.change(
+        screen.getByPlaceholderText(i18n.t("register.emailPlaceholder")),
+        {
+          target: { value: "john@example.com" },
+        }
+      );
+      fireEvent.change(
+        screen.getByPlaceholderText(i18n.t("register.passwordPlaceholder")),
+        {
+          target: { value: "password123" },
+        }
+      );
+      fireEvent.change(
+        screen.getByPlaceholderText(
+          i18n.t("register.confirmPasswordPlaceholder")
+        ),
+        {
+          target: { value: "password123" },
+        }
+      );
 
-      fireEvent.click(screen.getByRole("button", { name: "Sign Up" }));
+      fireEvent.click(
+        screen.getByRole("button", { name: i18n.t("register.button") })
+      );
     });
 
     await waitFor(() => {
       expect(mockNavigate).toHaveBeenCalledWith("/login");
       expect(require("react-toastify").toast.success).toHaveBeenCalledWith(
-        "Registration Successful"
+        i18n.t("register.success")
       );
     });
 
@@ -152,34 +217,50 @@ describe("Register Component", () => {
 
   test("disables submit button when form is incomplete", async () => {
     await renderRegister();
-    const submitButton = screen.getByRole("button", { name: "Sign Up" });
-    expect(submitButton).toBeDisabled();
-
-    await act(async () => {
-      fireEvent.change(screen.getByPlaceholderText("Your Name"), {
-        target: { value: "John Doe" },
-      });
+    const submitButton = screen.getByRole("button", {
+      name: i18n.t("register.button"),
     });
     expect(submitButton).toBeDisabled();
 
     await act(async () => {
-      fireEvent.change(screen.getByPlaceholderText("Email"), {
-        target: { value: "john@example.com" },
-      });
+      fireEvent.change(
+        screen.getByPlaceholderText(i18n.t("register.namePlaceholder")),
+        {
+          target: { value: "John Doe" },
+        }
+      );
     });
     expect(submitButton).toBeDisabled();
 
     await act(async () => {
-      fireEvent.change(screen.getByPlaceholderText("Password"), {
-        target: { value: "password123" },
-      });
+      fireEvent.change(
+        screen.getByPlaceholderText(i18n.t("register.emailPlaceholder")),
+        {
+          target: { value: "john@example.com" },
+        }
+      );
     });
     expect(submitButton).toBeDisabled();
 
     await act(async () => {
-      fireEvent.change(screen.getByPlaceholderText("Confirm Password"), {
-        target: { value: "password123" },
-      });
+      fireEvent.change(
+        screen.getByPlaceholderText(i18n.t("register.passwordPlaceholder")),
+        {
+          target: { value: "password123" },
+        }
+      );
+    });
+    expect(submitButton).toBeDisabled();
+
+    await act(async () => {
+      fireEvent.change(
+        screen.getByPlaceholderText(
+          i18n.t("register.confirmPasswordPlaceholder")
+        ),
+        {
+          target: { value: "password123" },
+        }
+      );
     });
     expect(submitButton).not.toBeDisabled();
   });
@@ -188,7 +269,7 @@ describe("Register Component", () => {
     await renderRegister();
 
     // Initially in English
-    expect(screen.getByText("Register")).toBeInTheDocument();
+    expect(screen.getByText(i18n.t("register.title"))).toBeInTheDocument();
 
     // Change language to Dutch
     await act(async () => {
@@ -196,7 +277,7 @@ describe("Register Component", () => {
     });
 
     await waitFor(() => {
-      expect(screen.getByText("Registreren")).toBeInTheDocument();
+      expect(screen.getByText(i18n.t("register.title"))).toBeInTheDocument();
     });
   });
 });
