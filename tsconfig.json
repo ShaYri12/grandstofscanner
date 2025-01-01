@@ -13,6 +13,7 @@
     "esModuleInterop": true,
     "allowJs": true,
     "strict": true,
+    "allowSyntheticDefaultImports": true,
     "types": ["@testing-library/jest-dom"]
   }
 }
