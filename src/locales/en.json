@@ -399,26 +399,86 @@
   },
   "faq": {
     "title": "FAQs",
-    "question1": "What is the Grondstoffenscanner?",
-    "answer1": "The Grondstoffenscanner is a tool designed to help you assess the future scarcity of raw materials and their potential risks to humans and the environment.",
-    "question2": "How does the Grondstoffenscanner work?",
-    "answer2": "The Grondstoffenscanner guides you through three steps: Explore, where you identify raw materials in your process; Judge, where you assess potential future risks; and Trade, where you analyze risks to take actionable steps.",
-    "question3": "Who can use the Grondstoffenscanner?",
-    "answer3": "The tool is designed for businesses and organizations that depend on raw materials and want to understand and mitigate potential future risks.",
-    "question4": "What types of raw materials are included in the scan?",
-    "answer4": "The Grondstoffenscanner covers a wide range of raw materials, including bio-based materials, to help you gain comprehensive insights into your production process.",
-    "question5": "Do I need any technical knowledge to use the tool?",
-    "answer5": "No, the Grondstoffenscanner is user-friendly and provides clear instructions to guide you through each step of the process.",
-    "question6": "Is the Grondstoffenscanner free to use?",
-    "answer6": "Yes, the Grondstoffenscanner is free to use and is designed to provide valuable insights without any additional costs.",
-    "question7": "Can I save my progress while using the Grondstoffenscanner?",
-    "answer7": "Yes, the tool allows you to save your progress, so you can return and complete the scan at your convenience.",
-    "question8": "What happens after completing the three steps?",
-    "answer8": "Once you complete the three steps, you will have a detailed risk analysis and actionable insights to address any potential raw material risks in your production process.",
-    "question9": "How often should I use the Grondstoffenscanner?",
-    "answer9": "We recommend using the Grondstoffenscanner periodically or whenever there are significant changes in your production process or market conditions.",
-    "question10": "Is the Grondstoffenscanner available in multiple languages?",
-    "answer10": "Currently, the tool is available in [language(s)], but we are working on expanding to include additional languages in the future."
+    "question1": "What is the Raw Material Scanner?",
+    "answer1": {
+      "para1": "The Raw Material Scanner helps you assess the risks associated with the raw materials your business or organization uses. For example, you can anticipate predicted price increases or prepare for shortages of your (critical or rare) raw materials.",
+      "listDescribe": "You will find information about:",
+      "list": {
+        "point1": "the remaining supply of your raw materials, measured in years of production without disruption;",
+        "point2": "the countries from which the Netherlands sources your raw materials;",
+        "point3": "the types and magnitude of risks associated with extracting and supplying your raw materials."
+      },
+      "para2": "Using the Raw Material Scanner, you can reduce risks for your business. For example, by using less of a certain raw material or by opting for alternative or recycled materials."
+    },
+    "question2": "Who is the Raw Material Scanner for?",
+    "answer2": {
+      "para1": "The Raw Material Scanner is designed for the manufacturing industry to assess the availability and risks of critical or rare raw materials."
+    },
+    "question3": "What is a factsheet?",
+    "answer3": {
+      "para1": "When you select the raw materials you use in the Raw Material Scanner, you receive an overview. This overview is called a 'factsheet,' which details the specific properties of the raw material.",
+      "listDescribe": "The factsheet also provides information about the origin of your raw materials and the associated risks, such as:",
+      "list": {
+        "point1": "the certainty of continued access to your raw materials;",
+        "point2": "economic risks, such as rapidly rising prices;",
+        "point3": "environmental risks;",
+        "point4": "social risks, including human rights concerns."
+      }
+    },
+    "question4": "What are action perspectives?",
+    "answer4": {
+      "para1": "Action perspectives are possible steps you can take when (re)selecting your raw materials. They help minimize business risks and negative impacts on people and the environment.",
+      "para2": "For example, one action perspective in the 'supply' filter suggests using alternative raw materials (substitutes) with lower risks. Another action perspective in the 'reduced consumption' filter recommends using less of the (new) raw material."
+    },
+    "question5": "What are critical raw materials?",
+    "answer5": {
+      "para1": "Critical raw materials are natural metals and minerals whose future availability is uncertain, despite being essential for our economy and society. Examples include rare metals such as rare earth elements, lithium, and cobalt, which are indispensable for various industrial ecosystems.",
+      "listDescribe": "The availability of critical raw materials is at risk due to factors such as:",
+      "list": {
+        "point1": "geopolitical instability;",
+        "point2": "limited reserves;",
+        "point3": "environmental damage caused by extraction."
+      },
+      "para2": "Read more about critical raw materials on the website of the Dutch government."
+    },
+    "question6": "Is there a public database with information on raw materials?",
+    "answer6": {
+      "listDescribe": "Yes. The data in the Raw Material Scanner is sourced from internationally recognized databases, including:",
+      "list": {
+        "point1": "the United Nations (UN);",
+        "point2": "the UN World Bank;",
+        "point3": "the UN Food and Agriculture Organization (FAO);",
+        "point4Link": "Ecoinvent",
+        "point4": "which provides data on the Life Cycle Inventory (LCI) of products."
+      }
+    },
+    "question7": "On what data and methods is the Raw Material Scanner based?",
+    "answer7": {
+      "listDescribe": "The Raw Material Scanner is based on data and methodologies from the following studies:",
+      "list": {
+        "point1Link": "'Materials in the Dutch Economy'",
+        "point1": "A report commissioned by the Ministry of Economic Affairs, produced through a collaboration between the Netherlands Organization for Applied Scientific Research (TNO), consulting firm EY, The Hague Centre for Strategic Studies (HCSS), Leiden University, and the procurement network Nevi.",
+        "point2Link": "‘Incorporation of biotic raw materials in the Raw Material Scanner’",
+        "point2": "A report commissioned by the Ministry of Agriculture, Nature and Food Quality, produced by consulting firm CREM and TNO.",
+        "point3Link": "‘Update and Expansion of the Raw Material Scanner 2021: Responsible Mining Index and Insights into Secondary Flows’",
+        "point3": "A report by TNO, commissioned by the Netherlands Enterprise Agency (RVO)."
+      }
+    },
+    "question8": "How often is the data in the Raw Material Scanner updated?",
+    "answer8": {
+      "para1": "Upon completing the three steps, you will have a detailed risk analysis and actionable insights to address potential risks in your raw material supply chain."
+    },
+    "question9": "Who created and maintains the Raw Material Scanner?",
+    "answer9": {
+      "para1": "The Raw Material Scanner was developed by the Netherlands Enterprise Agency (RVO) on behalf of the Ministry of Economic Affairs and Climate Policy. TNO provides the data for the Raw Material Scanner.",
+      "para2": "Together, we continuously work to improve the Raw Material Scanner."
+    },
+    "question10": "My question is not listed. How can I get in touch?",
+    "answer10": {
+      "para1Start": "Please",
+      "para1Link": "contact",
+      "para1End": "us."
+    }
   },
   "forgotPassword": {
     "resetTitle": "Reset Your Password",

@@ -400,25 +400,85 @@
   "faq": {
     "title": "FAQs",
     "question1": "Wat is de Grondstoffenscanner?",
-    "answer1": "De Grondstoffenscanner is een hulpmiddel om de toekomstige schaarste van grondstoffen en hun mogelijke risico's voor mens en milieu te beoordelen.",
-    "question2": "Hoe werkt de Grondstoffenscanner?",
-    "answer2": "De Grondstoffenscanner begeleidt je door drie stappen: Verkennen, waar je grondstoffen in je proces identificeert; Beoordelen, waar je potentiële toekomstige risico's inschat; en Handelen, waar je risico's analyseert om actie te ondernemen.",
-    "question3": "Wie kan de Grondstoffenscanner gebruiken?",
-    "answer3": "De tool is ontworpen voor bedrijven en organisaties die afhankelijk zijn van grondstoffen en potentiële toekomstige risico's willen begrijpen en beperken.",
-    "question4": "Welke soorten grondstoffen worden opgenomen in de scan?",
-    "answer4": "De Grondstoffenscanner omvat een breed scala aan grondstoffen, inclusief bio-gebaseerde materialen, om je uitgebreide inzichten te geven in je productieproces.",
-    "question5": "Heb ik technische kennis nodig om de tool te gebruiken?",
-    "answer5": "Nee, de Grondstoffenscanner is gebruiksvriendelijk en biedt duidelijke instructies om je door elke stap van het proces te begeleiden.",
-    "question6": "Is de Grondstoffenscanner gratis te gebruiken?",
-    "answer6": "Ja, de Grondstoffenscanner is gratis te gebruiken en is ontworpen om waardevolle inzichten te bieden zonder extra kosten.",
-    "question7": "Kan ik mijn voortgang opslaan tijdens het gebruik van de Grondstoffenscanner?",
-    "answer7": "Ja, de tool stelt je in staat om je voortgang op te slaan, zodat je later kunt terugkeren en de scan kunt voltooien.",
-    "question8": "Wat gebeurt er na het voltooien van de drie stappen?",
-    "answer8": "Na het voltooien van de drie stappen heb je een gedetailleerde risicoanalyse en bruikbare inzichten om eventuele risico's van grondstoffen in je productieproces aan te pakken.",
-    "question9": "Hoe vaak moet ik de Grondstoffenscanner gebruiken?",
-    "answer9": "We raden aan om de Grondstoffenscanner periodiek te gebruiken of wanneer er significante veranderingen in je productieproces of marktomstandigheden zijn.",
-    "question10": "Is de Grondstoffenscanner beschikbaar in meerdere talen?",
-    "answer10": "Momenteel is de tool beschikbaar in [taal (talen)], maar we werken aan uitbreiding naar meer talen in de toekomst."
+    "answer1": {
+      "para1": "Met de Grondstoffenscanner onderzoekt u de risico’s van de grondstoffen die u als ondernemer of organisatie gebruikt. Zo speelt u bijvoorbeeld in op voorspelde prijsstijgingen. Of bereidt u zich erop voor dat de voorraad van uw (kritische of zeldzame) grondstof opraakt.",
+      "listDescribe": "U vindt onder andere informatie over:",
+      "list": {
+        "point1": "de voorraad van uw grondstoffen die er nog is, in aantal jaren productie zonder verstoring;",
+        "point2": "uit welke landen Nederland uw grondstoffen haalt;",
+        "point3": "wat en hoe groot de verschillende soorten risico’s zijn wanneer u uw grondstoffen laat winnen en leveren."
+      },
+      "para2": "Met de Grondstoffenscanner kunt u de risico's voor uw onderneming verkleinen. Bijvoorbeeld door deze grondstof minder te gebruiken. En te kiezen voor een andere grondstof of voor gerecyclede materialen."
+    },
+    "question2": "Voor wie is de Grondstoffenscanner?",
+    "answer2": {
+      "para1": "De Grondstoffenscanner is er voor de maakindustrie. Om te zien wat de beschikbaarheid en de risico's van kritische of zeldzame grondstoffen zijn."
+    },
+    "question3": "Wat is een factsheet?",
+    "answer3": {
+      "para1": "Als u in de Grondstoffenscanner de door u gebruikte grondstoffen selecteert, krijgt u een overzicht. Dit overzicht noemen we een 'factsheet'. Hierop staan de specifieke eigenschappen van de grondstof.",
+      "listDescribe": "Ook laat de factsheet zien waar uw grondstoffen vandaan komen en wat per soort grondstof de risico's zijn. Dat kan gaan om:",
+      "list": {
+        "point1": "hoe zeker het is en blijft dat u uw grondstoffen binnenkrijgt;",
+        "point2": "economische risico's, zoals snel stijgende prijzen;",
+        "point3": "risico's voor het milieu;",
+        "point4": "maatschappelijke risico's, bijvoorbeeld op het gebied van mensenrechten."
+      }
+    },
+    "question4": "Wat zijn handelingsperspectieven?",
+    "answer4": {
+      "para1": "Handelingsperspectieven zijn uw mogelijke acties bij het (opnieuw) kiezen van uw grondstoffen. U kunt zo uw bedrijfsrisico’s en negatieve gevolgen voor mens en milieu kleiner maken.",
+      "para2": "Een voorbeeld is een handelingsperspectief in de filter ‘supply’ (leveren). Dan gebruikt u andere grondstoffen (substituten) met een lager risico. En het handelingsperspectief in de filter ‘minder verbruik’. Dan gebruikt u minder van de (nieuwe) grondstof."
+    },
+    "question5": "Wat zijn kritieke grondstoffen?",
+    "answer5": {
+      "para1": "Kritieke grondstoffen zijn natuurlijke metalen en mineralen waarvan we niet zeker weten of ze in de toekomst genoeg beschikbaar zijn. Terwijl dit de belangrijkste grondstoffen zijn voor onze economie en maatschappij. Bijvoorbeeld zeldzame metalen, zoals aardmetalen, lithium, en kobalt. Deze grondstoffen kunnen we niet missen in verschillende ecosystemen in onze industrie.",
+      "listDescribe": "De beschikbaarheid van kritieke grondstoffen kent risico's door oorzaken als:",
+      "list": {
+        "point1": "geopolitieke onrust;",
+        "point2": "weinig reserves;",
+        "point3": "milieuschade bij het uit de grond halen."
+      },
+      "para2": "Lees meer informatie over kritieke grondstoffen op de website van de Rijksoverheid"
+    },
+    "question6": "Is er een openbare databank met informatie over grondstoffen?",
+    "answer6": {
+      "listDescribe": "Ja. De gegevens in de Grondstoffenscanner komen uit internationaal geaccepteerde databanken. Bijvoorbeeld uit de databank van:",
+      "list": {
+        "point1": "de Verenigde Naties (VN);",
+        "point2": "de Wereldbank van de VN;",
+        "point3": "Voedsel- en Landbouworganisatie van de VN (FAO);",
+        "point4Link": "Ecoinvent",
+        "point4": "met gegevens over de Life Cycle Inventory (LCI) van producten."
+      }
+    },
+    "question7": "Op welke gegevens en methodes is de Grondstoffenscanner gebaseerd?",
+    "answer7": {
+      "listDescribe": "De Grondstoffenscanner is gebaseerd op gegevens en methodes uit de volgende onderzoeken:",
+      "list": {
+        "point1Link": "'Materialen in de Nederlandse Economie'",
+        "point1": "Dit rapport is in opdracht van het ministerie van Economische Zaken. Door een samenwerking van Nederlandse Organisatie voor Toegepast-natuurwetenschappelijk Onderzoek (TNO), adviesbureau EY, The Hague Centre for Strategic Studies (HCSS), Universiteit Leiden en inkoopnetwerk Nevi.",
+        "point2Link": "‘Opname biotische grondstoffen in de Grondstoffenscanner’",
+        "point2": "Een rapport in opdracht van het ministerie van Landbouw, Natuur en Voedselkwaliteit. Door adviesbureau CREM en TNO.",
+        "point3Link": "‘Update en uitbreiding van de Grondstoffenscanner 2021: Responsible Mining Index en inzicht in secundaire stromen’",
+        "point3": "Een rapport door TNO, in opdracht van de Rijksdienst voor Ondernemend Nederland (RVO)."
+      }
+    },
+    "question8": "Hoe vaak worden de gegevens in de Grondstoffenscanner vernieuwd?",
+    "answer8": {
+      "para1": "Na het voltooien van de drie stappen heb je een gedetailleerde risicoanalyse en bruikbare inzichten om eventuele risico's van grondstoffen in je productieproces aan te pakken."
+    },
+    "question9": "Wie maakte en onderhoudt de Grondstoffenscanner?",
+    "answer9": {
+      "para1": "De Grondstoffenscanner is ontwikkeld door de Rijksdienst voor Ondernemend Nederland (RVO), in opdracht van het ministerie van Economische Zaken en Klimaat. TNO levert de gegevens aan voor de Grondstoffenscanner.",
+      "para2": "Samen werken wij doorlopend aan het verbeteren van de Grondstoffenscanner."
+    },
+    "question10": "Mijn vraag staat er niet bij. Hoe kom ik in contact?",
+    "answer10": {
+      "para1Start": "Neem",
+      "para1Link": "contact",
+      "para1End": "met ons op."
+    }
   },
   "forgotPassword": {
     "resetTitle": "Stel je wachtwoord opnieuw in",

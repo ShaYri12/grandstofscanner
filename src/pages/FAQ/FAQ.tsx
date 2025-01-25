@@ -3,11 +3,10 @@ import { useTranslation } from "react-i18next";
 import styles from "./FAQ.module.css";
 
 interface FAQItem {
-  questionKey: string; // Key for translation
-  answerKey: string; // Key for translation
+  questionKey: string;
+  answerKey: string;
 }
 
-// Translation keys for FAQ data
 const faqData: FAQItem[] = [
   { questionKey: "faq.question1", answerKey: "faq.answer1" },
   { questionKey: "faq.question2", answerKey: "faq.answer2" },
@@ -22,7 +21,7 @@ const faqData: FAQItem[] = [
 ];
 
 const FAQ: React.FC = () => {
-  const [activeIndex, setActiveIndex] = useState<number | null>(0);
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
   const { t } = useTranslation();
 
   const toggleAccordion = (index: number) => {
@@ -37,23 +36,85 @@ const FAQ: React.FC = () => {
       </div>
       <div className={styles.faqText}>
         <div className={styles.accordion}>
-          {faqData.map((item, index) => (
-            <div key={index} className={styles.accordionItem}>
-              <h2 className={styles.accordionHeader}>
-                <button
-                  className={`${styles.accordionButton} ${
-                    activeIndex === index ? "" : styles.collapsed
-                  }`}
-                  onClick={() => toggleAccordion(index)}
-                >
-                  {t(item.questionKey)}
-                </button>
-              </h2>
-              {activeIndex === index && (
-                <div className={styles.accordionBody}>{t(item.answerKey)}</div>
-              )}
-            </div>
-          ))}
+          {faqData.map((item, index) => {
+            const answer = t(item.answerKey, { returnObjects: true }) as Record<
+              string,
+              any
+            >;
+
+            return (
+              <div key={index} className={styles.accordionItem}>
+                <h2 className={styles.accordionHeader}>
+                  <button
+                    className={`${styles.accordionButton} ${
+                      activeIndex === index ? "" : styles.collapsed
+                    }`}
+                    onClick={() => toggleAccordion(index)}
+                    aria-expanded={activeIndex === index}
+                    aria-controls={`faq-answer-${index}`}
+                  >
+                    {t(item.questionKey)}
+                  </button>
+                </h2>
+                {activeIndex === index && (
+                  <div
+                    id={`faq-answer-${index}`}
+                    className={styles.accordionBody}
+                  >
+                    {/* Render Paragraphs */}
+                    {answer.para1 && <p>{answer.para1}</p>}
+                    {answer.para2 && <p>{answer.para2}</p>}
+
+                    {/* Render Lists */}
+                    {answer.listDescribe && (
+                      <p>
+                        <strong>{answer.listDescribe}</strong>
+                      </p>
+                    )}
+                    {answer.list && (
+                      <ul>
+                        {Object.keys(answer.list).map((key) => {
+                          if (key.includes("Link")) return null; // Ignore link keys
+
+                          const linkKey = `${key}Link`; // Example: point1 -> point1Link
+                          const hasLink = answer.list[linkKey];
+
+                          return (
+                            <li key={key}>
+                              {hasLink ? (
+                                <>
+                                  <a
+                                    href={hasLink}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                  >
+                                    {hasLink}
+                                  </a>
+                                  ,
+                                </>
+                              ) : null}{" "}
+                              {answer.list[key]}
+                            </li>
+                          );
+                        })}
+                      </ul>
+                    )}
+
+                    {/* Handle Inline Links */}
+                    {answer.para1Start && (
+                      <p>
+                        {answer.para1Start}{" "}
+                        <a href="#" target="_blank" rel="noopener noreferrer">
+                          {answer.para1Link}
+                        </a>{" "}
+                        {answer.para1End}
+                      </p>
+                    )}
+                  </div>
+                )}
+              </div>
+            );
+          })}
         </div>
       </div>
     </div>
