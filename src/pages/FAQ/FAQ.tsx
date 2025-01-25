@@ -20,12 +20,35 @@ const faqData: FAQItem[] = [
   { questionKey: "faq.question10", answerKey: "faq.answer10" },
 ];
 
+const isPdfLink = (link: string) => link.endsWith(".pdf");
+
 const FAQ: React.FC = () => {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
   const { t } = useTranslation();
 
   const toggleAccordion = (index: number) => {
     setActiveIndex(activeIndex === index ? null : index);
+  };
+
+  const handleLinkClick = (
+    event: React.MouseEvent<HTMLAnchorElement>,
+    link: string
+  ) => {
+    if (isPdfLink(link)) {
+      event.preventDefault(); // Prevent the default link behavior
+
+      // Create a temporary anchor element
+      const a = document.createElement("a");
+      a.href = link;
+      a.download = link.split("/").pop() || "document.pdf"; // Use the filename as the download name
+      a.target = "_blank"; // Open in a new tab if download fails
+      a.rel = "noopener noreferrer";
+
+      // Append to the body, click, and remove
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+    }
   };
 
   return (
@@ -84,9 +107,12 @@ const FAQ: React.FC = () => {
                               {hasLink ? (
                                 <>
                                   <a
-                                    href={hasLink}
+                                    href={hasLink.link || "#"}
                                     target="_blank"
                                     rel="noopener noreferrer"
+                                    onClick={(e) =>
+                                      handleLinkClick(e, hasLink.link || "")
+                                    }
                                   >
                                     {t(answer.list[linkKey].text || "")}
                                   </a>
@@ -99,6 +125,7 @@ const FAQ: React.FC = () => {
                         })}
                       </ul>
                     )}
+
                     {/* Handle para2Link */}
                     {answer.para2Link && (
                       <p>
@@ -122,6 +149,9 @@ const FAQ: React.FC = () => {
                           href={answer.para1Link?.link || "#"}
                           target="_blank"
                           rel="noopener noreferrer"
+                          onClick={(e) =>
+                            handleLinkClick(e, answer.para1Link?.link || "")
+                          }
                         >
                           {t(answer.para1Link?.text || "")}
                         </a>{" "}
