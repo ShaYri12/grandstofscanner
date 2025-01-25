@@ -42,12 +42,7 @@ const Accessibility: React.FC = () => {
                 {t("accessibility.headings.heading3")}
               </h2>
               <div className={styles.imageWrapper}>
-                <img
-                  src="/accessibility-statement.svg"
-                  alt="statement image"
-                  height={251}
-                  width={692}
-                />
+                <img src="/accessibility-statement.svg" alt="statement image" />
               </div>
             </div>
             <div>

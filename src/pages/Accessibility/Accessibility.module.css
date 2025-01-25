@@ -48,6 +48,10 @@
   max-height: 481px;
   margin-bottom: 71px;
 }
+.imageWrapper img {
+  height: 251px;
+  width: 692px;
+}
 
 /* Media Queries for Responsive Font Sizes */
 @media screen and (max-width: 1024px) {
@@ -77,6 +81,11 @@
   .imageWrapper {
     max-height: 400px;
     margin-bottom: 40px;
+  }
+
+  .imageWrapper img {
+    height: auto;
+    width: 100%;
   }
 }
 
