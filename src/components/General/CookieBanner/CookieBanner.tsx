@@ -24,6 +24,7 @@ const CookieBanner = () => {
         padding: "10px",
         textAlign: "center",
         justifyContent: "center",
+        alignItems: "center",
       }}
       buttonStyle={{
         background: "#56a9de",
@@ -41,7 +42,10 @@ const CookieBanner = () => {
       }}
     >
       <span>
-        This website uses cookies to enhance the user experience.{" "}
+        This website uses cookies to improve your browsing experience,
+        personalize content, and analyze our traffic. We may share information
+        about your use of our site with our trusted analytics and advertising
+        partners. By clicking "Accept", you consent to the use of cookies.{" "}
         <span
           style={{
             color: "#FFD700",
@@ -51,7 +55,9 @@ const CookieBanner = () => {
           onClick={() => navigate("/en/privacy")}
         >
           Learn more
-        </span>
+        </span>{" "}
+        about our cookie policy, how we use your data, and your options to
+        manage your preferences.
       </span>
     </CookieConsent>
   ) : null;
