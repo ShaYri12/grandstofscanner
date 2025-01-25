@@ -21,6 +21,10 @@ import Footer from "./components/General/Footer/Footer";
 import Login from "./pages/Login/Login";
 import Register from "./pages/Register/Register";
 import FAQ from "./pages/FAQ/FAQ";
+import ForgotPassword from "./pages/forgotPassword/ForgetPassword";
+import Accessibility from "./pages/Accessibility/Accessibility";
+import PrivacyStatement from "./pages/PrivacyStatement/PrivacyStatement";
+import CookieBanner from "./components/General/CookieBanner/CookieBanner";
 
 const App: React.FC = () => {
   return (
@@ -43,9 +47,14 @@ const App: React.FC = () => {
         <Route path="/:lang/faq" element={<FAQ />} />
         <Route path="/:lang/login" element={<Login />} />
         <Route path="/:lang/register" element={<Register />} />
+        <Route path="/:lang/forgot-password" element={<ForgotPassword />} />
+        <Route path="/:lang/accessibility" element={<Accessibility />} />
+        <Route path="/:lang/privacy" element={<PrivacyStatement />} />
         <Route path="*" element={<Navigate to="/en/home" />} />
       </Routes>
       <Footer />
+      {/* Cookie Consent Bar */}
+      <CookieBanner />
     </Router>
   );
 };

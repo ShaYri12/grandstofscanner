@@ -139,9 +139,12 @@ const Login: React.FC = () => {
           </Link>
         </div>
         <div className={styles.forgotPassword}>
-          <a href="#" className={styles.forgotPasswordLink}>
+          <Link
+            to={`/${currentLanguage}/forgot-password`}
+            className={styles.forgotPasswordLink}
+          >
             {t("login.forgotPassword")}
-          </a>
+          </Link>
         </div>
       </div>
     </div>

@@ -419,5 +419,49 @@
     "answer9": "We raden aan om de Grondstoffenscanner periodiek te gebruiken of wanneer er significante veranderingen in je productieproces of marktomstandigheden zijn.",
     "question10": "Is de Grondstoffenscanner beschikbaar in meerdere talen?",
     "answer10": "Momenteel is de tool beschikbaar in [taal (talen)], maar we werken aan uitbreiding naar meer talen in de toekomst."
+  },
+  "forgotPassword": {
+    "resetTitle": "Stel je wachtwoord opnieuw in",
+    "resetSubtitle": "Voer hieronder je nieuwe wachtwoord in.",
+    "emailPlaceholder": "E-mailadres",
+    "newPasswordPlaceholder": "Nieuw wachtwoord",
+    "confirmPasswordPlaceholder": "Bevestig wachtwoord",
+    "passwordMismatch": "Wachtwoorden komen niet overeen.",
+    "passwordUpdated": "Je wachtwoord is succesvol bijgewerkt.",
+    "emailNotFound": "Er is geen account gevonden met dat e-mailadres.",
+    "noUserData": "Geen gebruikersgegevens gevonden.",
+    "button": "Wachtwoord opnieuw instellen",
+    "backToLogin": "Terug naar inloggen"
+  },
+  "accessibility": {
+    "headings": {
+      "heading1": "Toegankelijkheid - Grondstoffenscanner",
+      "heading2": "Wat is een toegankelijke website?",
+      "heading3": "Toegankelijkheidsverklaring",
+      "heading4": "Maatregelen voor toegankelijkheid",
+      "heading5": "Meld toegankelijkheidsproblemen"
+    },
+    "paragraphs": {
+      "para1": "Wij willen ervoor zorgen dat iedereen onze website kan gebruiken op computer en laptop. Bent u een pagina tegengekomen die niet toegankelijk is? Laat het ons weten.",
+      "para2Start": "Een toegankelijke website betekent dat iedereen deze kan gebruiken. Overheidswebsites moeten voldoen aan toegankelijkheidseisen. De eisen zijn gepubliceerd in het Tijdelijk besluit digitale toegankelijkheid overheid (alleen in het Nederlands). Daarnaast moeten overheidswebsites verantwoording afleggen in een gepubliceerde toegankelijkheidsverklaring.",
+      "para2Link": "Tijdelijk besluit digitale toegankelijkheid overheid",
+      "para2End": "Ook moeten overheidssites verantwoordelijkheid afleggen in een gepubliceerde toegankelijkheidsverklaring.",
+      "para4": {
+        "aboutPara": "Wij waarborgen toegankelijkheid door verschillende maatregelen in onze processen:",
+        "point1": "Toegankelijkheid maakt deel uit van elke stap in het ontwerp-, bouw- en redactieproces van onze website.",
+        "point2": "Onafhankelijke experts testen regelmatig de toegankelijkheid van de website. Ze onderzoeken functionele en redactionele aspecten. We lossen problemen duurzaam op.",
+        "point3": "Onze medewerkers houden hun kennis over toegankelijkheid up-to-date en passen deze toe waar nodig."
+      },
+      "para5": "Als u problemen ondervindt met de toegankelijkheid van onze website, stuur dan een e-mail naar"
+    }
+  },
+  "privacyStatement": {
+    "headings": {
+      "heading1": "Privacyverklaring - Grondstoffenscanner.nl"
+    },
+    "paragraphs": {
+      "para1": "Grondstoffenscanner.nl hanteert het privacybeleid zoals gepubliceerd op de website:",
+      "para1Link": "https://www.rijksoverheid.nl/privacy"
+    }
   }
 }

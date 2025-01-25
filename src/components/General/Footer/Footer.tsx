@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./Footer.module.css";
 import { useTranslation } from "react-i18next";
 import { NavLink, useLocation, useParams } from "react-router-dom";
@@ -19,11 +19,19 @@ const Footer: React.FC = () => {
   const { fone, ftwo, fthree, ffour } = footerTranslations as FooterTranslation; // Then cast to FooterTranslation
   const { lang } = useParams<{ lang: string }>();
 
+  // Use local state to handle lang updates
+  const [currentLang, setCurrentLang] = useState<string | undefined>(lang);
+
   useEffect(() => {
     if (lang && lang !== i18next.language) {
       i18next.changeLanguage(lang);
+      setCurrentLang(lang);
+    } else if (!lang) {
+      setCurrentLang(i18next.language);
     }
   }, [lang]);
+
+  if (!currentLang) return null; // Avoid rendering before the language is set
 
   return (
     <div
@@ -34,9 +42,9 @@ const Footer: React.FC = () => {
       >
         <li className={`${styles.footerLi}`}>
           <NavLink
-            to={`/${lang}/grondstoffenscanner`}
+            to={`/${currentLang}/grondstoffenscanner`}
             className={
-              location.pathname === `/${lang}/grondstoffenscanner`
+              location.pathname === `/${currentLang}/grondstoffenscanner`
                 ? styles.linkActive
                 : styles.link
             }
@@ -44,9 +52,42 @@ const Footer: React.FC = () => {
             {fone}
           </NavLink>
         </li>
-        <li className={`${styles.footerLi}`}>{ftwo}</li>
-        <li className={`${styles.footerLi}`}>{fthree}</li>
-        <li className={`${styles.footerLi}`}>{ffour}</li>
+        <li className={`${styles.footerLi}`}>
+          <NavLink
+            to={`/${currentLang}/accessibility`}
+            className={
+              location.pathname === `/${currentLang}/accessibility`
+                ? styles.linkActive
+                : styles.link
+            }
+          >
+            {ftwo}
+          </NavLink>
+        </li>
+        <li className={`${styles.footerLi}`}>
+          <NavLink
+            to={`/${currentLang}/cookies`}
+            className={
+              location.pathname === `/${currentLang}/cookies`
+                ? styles.linkActive
+                : styles.link
+            }
+          >
+            {fthree}
+          </NavLink>
+        </li>
+        <li className={`${styles.footerLi}`}>
+          <NavLink
+            to={`/${currentLang}/privacy`}
+            className={
+              location.pathname === `/${currentLang}/privacy`
+                ? styles.linkActive
+                : styles.link
+            }
+          >
+            {ffour}
+          </NavLink>
+        </li>
       </ul>
     </div>
   );

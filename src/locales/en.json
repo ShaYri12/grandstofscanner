@@ -419,5 +419,49 @@
     "answer9": "We recommend using the Grondstoffenscanner periodically or whenever there are significant changes in your production process or market conditions.",
     "question10": "Is the Grondstoffenscanner available in multiple languages?",
     "answer10": "Currently, the tool is available in [language(s)], but we are working on expanding to include additional languages in the future."
+  },
+  "forgotPassword": {
+    "resetTitle": "Reset Your Password",
+    "resetSubtitle": "Please enter your new password below.",
+    "emailPlaceholder": "Email Address",
+    "newPasswordPlaceholder": "New Password",
+    "confirmPasswordPlaceholder": "Confirm Password",
+    "passwordMismatch": "Passwords do not match.",
+    "passwordUpdated": "Your password has been successfully updated.",
+    "emailNotFound": "No account found with that email address.",
+    "noUserData": "No user data found.",
+    "button": "Reset Password",
+    "backToLogin": "Back to Login"
+  },
+  "accessibility": {
+    "headings": {
+      "heading1": "Accessibity - Grondstoffenscanner",
+      "heading2": "What is an accessible website?",
+      "heading3": "Accessibility statement",
+      "heading4": "Accessibility measures",
+      "heading5": "Report accessibility issues"
+    },
+    "paragraphs": {
+      "para1": "We want to make sure everyone can use our website on computer and laptop. Have you come across a page that is not accessible? Please, let us know.",
+      "para2Start": "An accessible website means everyone can use it. Government sites must meet accessibility requirements. The requirements are published on the",
+      "para2Link": "Temporary decision digital accessibility government (only in Dutch)",
+      "para2End": "Also, government sites must provide accountability in a published accessibility statement.",
+      "para4": {
+        "aboutPara": "We ensure accessibility through various measures in our processes:",
+        "point1": "Accessibility is part of every step in the design, construction and editorial process of our website",
+        "point2": "Independent experts regularly test the website for accessibility. They investigate functional, and editorial aspects. We solve problems sustainably.",
+        "point3": "Our employees keep their knowledge of accessibility up to date and apply it where necessary."
+      },
+      "para5": "If you have any problems with accessibility on our website, please send an e-mail to"
+    }
+  },
+  "privacyStatement": {
+    "headings": {
+      "heading1": "Privacy statement - Grondstoffenscanner"
+    },
+    "paragraphs": {
+      "para1": "Grondstoffenscanner.nl uses the privacy policy as published on the webpage:",
+      "para1Link": "https://english.rvo.nl/about-us/privacy"
+    }
   }
 }

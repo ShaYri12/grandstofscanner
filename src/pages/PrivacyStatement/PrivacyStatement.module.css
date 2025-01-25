@@ -1,0 +1,109 @@
+.container {
+  min-height: 100vh;
+  padding: 40px 20px 80px 20px;
+}
+
+.innerContainer {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.heading1 {
+  font-size: 40px;
+  font-weight: 700;
+  letter-spacing: -2%;
+  color: #000;
+  margin-bottom: 33px;
+}
+
+.heading2 {
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: -2%;
+  color: #000;
+  margin-bottom: 30px;
+}
+
+.para1,
+.paraWithLink {
+  color: #000;
+  letter-spacing: -2%;
+  margin-bottom: 33px;
+  max-width: 858px;
+  font-size: 24px;
+}
+
+.paraWithLink a {
+  color: #01689b !important;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.paraWithLink a:hover {
+  color: #038ace !important;
+}
+
+.videoWrapper {
+  max-width: 858px;
+  max-height: 481px;
+  margin-bottom: 71px;
+}
+
+.videoWrapper iframe {
+  max-width: 858px;
+  height: 481px;
+}
+
+/* Media Queries for Responsive Font Sizes */
+@media screen and (max-width: 1024px) {
+  .heading1 {
+    font-size: 36px;
+    line-height: 40px;
+    margin-bottom: 18px;
+    margin-top: 5px;
+  }
+
+  .heading2 {
+    font-size: 28px;
+    margin-bottom: 18px;
+    margin-top: 5px;
+  }
+
+  .para1 {
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .heading1 {
+    font-size: 32px;
+  }
+
+  .videoWrapper {
+    max-height: 400px;
+    margin-bottom: 40px;
+  }
+
+  .videoWrapper iframe {
+    height: 300px;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .heading1 {
+    font-size: 27px;
+    line-height: 30px;
+  }
+
+  .heading2 {
+    font-size: 24px;
+  }
+
+  .para1 {
+    font-size: 14px;
+  }
+
+  .videoWrapper iframe {
+    height: 200px;
+  }
+}
