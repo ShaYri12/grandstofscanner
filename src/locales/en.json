@@ -432,14 +432,17 @@
     },
     "question5": "What are critical raw materials?",
     "answer5": {
-      "para1": "Critical raw materials are natural metals and minerals whose future availability is uncertain, despite being essential for our economy and society. Examples include rare metals such as rare earth elements, lithium, and cobalt, which are indispensable for various industrial ecosystems.",
-      "listDescribe": "The availability of critical raw materials is at risk due to factors such as:",
+      "para1": "Critical raw materials are natural metals and minerals of which we cannot be certain of their future availability, despite being essential for our economy and society. Examples include rare metals such as rare earth elements, lithium, and cobalt. These materials are indispensable in various ecosystems within our industry.",
+      "listDescribe": "The availability of critical raw materials faces risks due to factors such as:",
       "list": {
         "point1": "geopolitical instability;",
         "point2": "limited reserves;",
         "point3": "environmental damage caused by extraction."
       },
-      "para2": "Read more about critical raw materials on the website of the Dutch government."
+      "para2Link": {
+        "text": "For more information about critical raw materials, visit the website of the Dutch government.",
+        "link": "https://www.rijksoverheid.nl/ministeries/ministerie-van-buitenlandse-zaken/het-werk-van-bz-in-de-praktijk/weblogs/2023/wat-zijn-kritieke-grondstoffen-buitenlandse-zaken-in-begrijpelijke-taal"
+      }
     },
     "question6": "Is there a public database with information on raw materials?",
     "answer6": {
@@ -448,7 +451,10 @@
         "point1": "the United Nations (UN);",
         "point2": "the UN World Bank;",
         "point3": "the UN Food and Agriculture Organization (FAO);",
-        "point4Link": "Ecoinvent",
+        "point4Link": {
+          "text": "Ecoinvent",
+          "link": "https://ecoinvent.org/"
+        },
         "point4": "which provides data on the Life Cycle Inventory (LCI) of products."
       }
     },
@@ -456,11 +462,20 @@
     "answer7": {
       "listDescribe": "The Raw Material Scanner is based on data and methodologies from the following studies:",
       "list": {
-        "point1Link": "'Materials in the Dutch Economy'",
+        "point1Link": {
+          "text": "'Materialen in de Nederlandse Economie' (Materials in the Dutch Economy)",
+          "link": "/materialen-in-de-nederlandse-economie.pdf"
+        },
         "point1": "A report commissioned by the Ministry of Economic Affairs, produced through a collaboration between the Netherlands Organization for Applied Scientific Research (TNO), consulting firm EY, The Hague Centre for Strategic Studies (HCSS), Leiden University, and the procurement network Nevi.",
-        "point2Link": "‘Incorporation of biotic raw materials in the Raw Material Scanner’",
+        "point2Link": {
+          "text": "‘Incorporation of biotic raw materials in the Raw Material Scanner’",
+          "link": "/biotic-resources-in-the-resources-scanner.pdf"
+        },
         "point2": "A report commissioned by the Ministry of Agriculture, Nature and Food Quality, produced by consulting firm CREM and TNO.",
-        "point3Link": "‘Update and Expansion of the Raw Material Scanner 2021: Responsible Mining Index and Insights into Secondary Flows’",
+        "point3Link": {
+          "text": "‘Update and Expansion of the Raw Material Scanner 2021: Responsible Mining Index and Insights into Secondary Flows’",
+          "link": "/TNO-rapport-R10193-GrondstoffenScanner-2021-Signed.pdf"
+        },
         "point3": "A report by TNO, commissioned by the Netherlands Enterprise Agency (RVO)."
       }
     },
@@ -476,7 +491,10 @@
     "question10": "My question is not listed. How can I get in touch?",
     "answer10": {
       "para1Start": "Please",
-      "para1Link": "contact",
+      "para1Link": {
+        "text": "contact",
+        "link": "https://www.grondstoffenscanner.nl/Contact"
+      },
       "para1End": "us."
     }
   },

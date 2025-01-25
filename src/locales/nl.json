@@ -439,7 +439,10 @@
         "point2": "weinig reserves;",
         "point3": "milieuschade bij het uit de grond halen."
       },
-      "para2": "Lees meer informatie over kritieke grondstoffen op de website van de Rijksoverheid"
+      "para2Link": {
+        "text": "Lees meer informatie over kritieke grondstoffen op de website van de Rijksoverheid",
+        "link": "https://www.rijksoverheid.nl/ministeries/ministerie-van-buitenlandse-zaken/het-werk-van-bz-in-de-praktijk/weblogs/2023/wat-zijn-kritieke-grondstoffen-buitenlandse-zaken-in-begrijpelijke-taal"
+      }
     },
     "question6": "Is er een openbare databank met informatie over grondstoffen?",
     "answer6": {
@@ -448,7 +451,10 @@
         "point1": "de Verenigde Naties (VN);",
         "point2": "de Wereldbank van de VN;",
         "point3": "Voedsel- en Landbouworganisatie van de VN (FAO);",
-        "point4Link": "Ecoinvent",
+        "point4Link": {
+          "text": "Ecoinvent",
+          "link": "https://ecoinvent.org/"
+        },
         "point4": "met gegevens over de Life Cycle Inventory (LCI) van producten."
       }
     },
@@ -456,11 +462,20 @@
     "answer7": {
       "listDescribe": "De Grondstoffenscanner is gebaseerd op gegevens en methodes uit de volgende onderzoeken:",
       "list": {
-        "point1Link": "'Materialen in de Nederlandse Economie'",
+        "point1Link": {
+          "text": "'Materialen in de Nederlandse Economie'",
+          "link": "/materialen-in-de-nederlandse-economie.pdf"
+        },
         "point1": "Dit rapport is in opdracht van het ministerie van Economische Zaken. Door een samenwerking van Nederlandse Organisatie voor Toegepast-natuurwetenschappelijk Onderzoek (TNO), adviesbureau EY, The Hague Centre for Strategic Studies (HCSS), Universiteit Leiden en inkoopnetwerk Nevi.",
-        "point2Link": "‘Opname biotische grondstoffen in de Grondstoffenscanner’",
+        "point2Link": {
+          "text": "‘Opname biotische grondstoffen in de Grondstoffenscanner’",
+          "link": "/biotic-resources-in-the-resources-scanner.pdf"
+        },
         "point2": "Een rapport in opdracht van het ministerie van Landbouw, Natuur en Voedselkwaliteit. Door adviesbureau CREM en TNO.",
-        "point3Link": "‘Update en uitbreiding van de Grondstoffenscanner 2021: Responsible Mining Index en inzicht in secundaire stromen’",
+        "point3Link": {
+          "text": "‘Update en uitbreiding van de Grondstoffenscanner 2021: Responsible Mining Index en inzicht in secundaire stromen’",
+          "link": "/TNO-rapport-R10193-GrondstoffenScanner-2021-Signed.pdf"
+        },
         "point3": "Een rapport door TNO, in opdracht van de Rijksdienst voor Ondernemend Nederland (RVO)."
       }
     },
@@ -476,7 +491,10 @@
     "question10": "Mijn vraag staat er niet bij. Hoe kom ik in contact?",
     "answer10": {
       "para1Start": "Neem",
-      "para1Link": "contact",
+      "para1Link": {
+        "text": "contact",
+        "link": "https://www.grondstoffenscanner.nl/Contact"
+      },
       "para1End": "met ons op."
     }
   },

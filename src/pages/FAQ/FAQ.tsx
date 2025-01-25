@@ -88,24 +88,42 @@ const FAQ: React.FC = () => {
                                     target="_blank"
                                     rel="noopener noreferrer"
                                   >
-                                    {hasLink}
+                                    {t(answer.list[linkKey].text || "")}
                                   </a>
                                   ,
                                 </>
                               ) : null}{" "}
-                              {answer.list[key]}
+                              {t(answer.list[key])}
                             </li>
                           );
                         })}
                       </ul>
+                    )}
+                    {/* Handle para2Link */}
+                    {answer.para2Link && (
+                      <p>
+                        {answer.para2Link.text && (
+                          <a
+                            href={answer.para2Link.link || "#"}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            {t(answer.para2Link.text)}
+                          </a>
+                        )}
+                      </p>
                     )}
 
                     {/* Handle Inline Links */}
                     {answer.para1Start && (
                       <p>
                         {answer.para1Start}{" "}
-                        <a href="#" target="_blank" rel="noopener noreferrer">
-                          {answer.para1Link}
+                        <a
+                          href={answer.para1Link?.link || "#"}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          {t(answer.para1Link?.text || "")}
                         </a>{" "}
                         {answer.para1End}
                       </p>
