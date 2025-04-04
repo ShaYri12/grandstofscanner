@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import styles from "./Drawer.module.css";
 import { IoClose } from "react-icons/io5";
+import NavbarSearch from "../NavbarSearch/NavbarSearch";
 
 interface LinkItem {
   path: string;
@@ -43,6 +44,12 @@ const Drawer: React.FC<DrawerProps> = ({
           <button className={styles.closeButton} onClick={onClose}>
             <IoClose />
           </button>
+
+          {/* Mobile search component */}
+          <div className={styles.mobileSearchContainer}>
+            <NavbarSearch isMobile={true} className={styles.mobileSearch} />
+          </div>
+
           <ul className={styles.navLinks}>
             {links.map((link) => (
               <li key={link.path}>

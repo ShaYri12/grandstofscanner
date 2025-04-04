@@ -84,7 +84,7 @@
   font-weight: 700;
   color: var(--button1-color);
   padding: 16px;
-  width: 160px;
+  width: 130px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -102,7 +102,7 @@
   font-weight: 700;
   color: var(--button2-color);
   padding: 16px;
-  width: 160px;
+  width: 130px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -122,7 +122,7 @@
 
 .navBottomLeft {
   display: flex;
-  gap: 40px;
+  gap: 20px;
   align-items: center;
 }
 
@@ -135,17 +135,18 @@
 }
 
 @media screen and (max-width: 1340px) {
-  .navLinks {
-    gap: 10px !important;
-  }
   .navBottomLeft {
-    gap: 16px;
+    gap: 10px;
   }
 
   .navButton1,
   .navButton2 {
     width: 115px;
     padding: 12px;
+  }
+
+  .logoText img {
+    width: 130px;
   }
 }
 
@@ -160,9 +161,7 @@
     display: block !important;
     font-size: 30px;
   }
-}
 
-@media screen and (max-width: 1200px) {
   .navBottomLeft {
     display: flex;
     gap: 16px;
@@ -220,5 +219,20 @@
 @media screen and (max-width: 340px) {
   .navLabel {
     padding: 0 10px;
+  }
+}
+
+/* Add this after any existing styles in the file */
+
+.navbarSearch {
+  margin-left: 20px;
+  display: inline-flex;
+  align-items: center;
+}
+
+/* Add responsive styles for the search component */
+@media (max-width: 1200px) {
+  .navbarSearch {
+    display: none; /* Hide search on smaller screens */
   }
 }

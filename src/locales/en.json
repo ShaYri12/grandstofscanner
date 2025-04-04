@@ -9,7 +9,13 @@
     "h2three": "Trade",
     "h2four": "Landinfo",
     "h2btn1": "Register",
-    "h2btn2": "Login"
+    "h2btn2": "Login",
+    "browse": "Browse",
+    "advancedsearch": "Advanced search",
+    "explore": "Explore",
+    "about": "About",
+    "trade": "Trade data",
+    "factsheets": "Factsheets"
   },
   "body": {
     "title": "Grondstoffenscanner",
@@ -23,7 +29,57 @@
     "categoryRawMaterials": "Raw Materials",
     "categoryProductGroups": "Product Groups",
     "noResults": "No results found for your search",
-    "viewDetails": "View Details"
+    "viewDetails": "View Details",
+    "viewMore": "View more results",
+    "viewAllResults": "View all search results"
+  },
+  "searchResults": {
+    "breadcrumb": {
+      "home": "Home",
+      "current": "Search Results"
+    },
+    "title": "Search Results for",
+    "searchPlaceholder": "Refine your search...",
+    "filterByType": "Filter by Type",
+    "filterByCategory": "Filter by Category",
+    "all": "All Results",
+    "noResults": "No results found for your search query. Please try different keywords.",
+    "viewDetails": "View details",
+    "clearFilters": "Clear filters"
+  },
+  "browse": {
+    "breadcrumb": {
+      "home": "Home",
+      "current": "Browse"
+    },
+    "title": "Browse Raw Materials and Product Groups",
+    "subtitle": "Explore our comprehensive database of raw materials and product groups without requiring a search. Filter by category to find exactly what you're looking for.",
+    "searchPlaceholder": "Filter items by name, code, or category...",
+    "filter": "Filter",
+    "filterByCategory": "Filter by Category",
+    "clearFilters": "Clear filters",
+    "rawMaterials": "Raw Materials",
+    "productGroups": "Product Groups",
+    "noResults": "No items match your filter criteria. Try removing some filters.",
+    "tryDifferent": "Try different search terms or adjust your filters.",
+    "viewDetails": "View details",
+    "compareTitle": "Compare Raw Materials",
+    "compareText": "Need to compare different raw materials for your project? Use our comparison tool to analyze multiple raw materials side by side.",
+    "compareButton": "Start Comparing",
+    "allCategories": "All Categories",
+    "selectedItems": "Selected items: {{count}}",
+    "clearSelection": "Clear selection",
+    "compareSelected": "Compare Selected",
+    "backToBrowse": "Back to browse",
+    "comparingItems": "Comparing {{count}} items",
+    "property": "Property",
+    "category": "Category",
+    "description": "Description",
+    "riskLevel": "Risk Level",
+    "availability": "Availability",
+    "keyMaterials": "Key Materials",
+    "industryImpact": "Industry Impact",
+    "comparisonInstructions": "Select items to compare by clicking on the checkboxes."
   },
   "box1": {
     "boxline1": "Step 1",
@@ -569,6 +625,65 @@
         "link": "/en/contact"
       },
       "para1End": "us."
+    }
+  },
+  "detail": {
+    "notFound": "Item Not Found",
+    "itemNotFound": "The requested item was not found in our database.",
+    "backToBrowse": "Back to Browse",
+    "breadcrumb": {
+      "home": "Home",
+      "browse": "Browse"
+    },
+    "factsheet": {
+      "material": "Raw Material Factsheet",
+      "product": "Product Group Factsheet"
+    },
+    "priceVolatility": "Price Volatility",
+    "worldProduction": "World Production",
+    "keyMaterials": "Key Materials",
+    "industryImpact": "Industry Impact",
+    "riskLevel": "Risk Level",
+    "availability": "Availability",
+    "sharePage": "Share this page",
+    "relatedResources": "Related Resources",
+    "risksAndOpportunities": "Risks & Opportunities",
+    "marketTrends": "Market Trends",
+    "sustainabilityData": "Sustainability Data",
+    "additionalInfo": "Additional Information",
+    "contactForMoreInfo": "Contact us for more detailed information about this item.",
+    "contactUs": "Contact Us",
+    "expandAll": "Expand all sections",
+    "tooltips": {
+      "info": "Information",
+      "infoText": "Important information about this item",
+      "priceVolatility": "Price Volatility",
+      "priceVolatilityText": "The maximum percentage of price increase within the last 5 years",
+      "worldProduction": "World Production",
+      "worldProductionText": "The total annual global production of this raw material",
+      "keyMaterials": "Key Materials",
+      "keyMaterialsText": "Critical materials used in this product group",
+      "industryImpact": "Industry Impact",
+      "industryImpactText": "The strategic importance of this product group for various industries"
+    },
+    "expandableSections": {
+      "importInfo": "Import country information",
+      "importInfoText": "Information about the main countries importing and exporting this item.",
+      "priceInfo": "Price fluctuations",
+      "priceInfoText": "Analysis of price trends and fluctuations over time.",
+      "chains": "Supply chains",
+      "chainsText": "Overview of the supply chain phases for this item.",
+      "risks": "Risk indicators",
+      "risksText": "Assessment of various risks associated with this item."
+    },
+    "sideContent": {
+      "generalInformation": "General information",
+      "isAbbreviation": "is the abbreviation for",
+      "inPeriodicTable": "in the periodic table of elements",
+      "isProductCode": "is the product code for category",
+      "noConflictMaterial": "Not a conflict material",
+      "productGroups": "Product groups",
+      "relatedMaterials": "Related materials"
     }
   }
 }

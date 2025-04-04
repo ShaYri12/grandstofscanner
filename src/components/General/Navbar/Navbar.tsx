@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link, useLocation, useParams } from "react-router-dom";
 import styles from "./Navbar.module.css";
 import LanguageSelector from "../language-selector";
+import NavbarSearch from "../NavbarSearch/NavbarSearch";
 import { useTranslation } from "react-i18next";
 import { IoMenu } from "react-icons/io5";
 import Drawer from "./Drawer";
@@ -20,6 +21,7 @@ const Navbar: React.FC = () => {
   const h2btn1 = t("header2.h2btn1") as string;
   const h2btn2 = t("header2.h2btn2") as string;
   const faq = "FAQs" as string;
+  const browse = t("header2.browse") as string;
 
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const [currentLang, setCurrentLang] = useState(
@@ -38,6 +40,7 @@ const Navbar: React.FC = () => {
 
   const links = [
     { path: `/${currentLang}/home`, label: h2one },
+    { path: `/${currentLang}/browse`, label: browse },
     { path: `/${currentLang}/about`, label: h2two },
     { path: `/${currentLang}/trade`, label: h2three },
     { path: `/${currentLang}/landinfo`, label: h2four },
@@ -84,9 +87,9 @@ const Navbar: React.FC = () => {
               <img src="/logo.png" alt="Logo" />
             </Link>
             <div
-              className={`${styles.navLeft} d-flex align-items-center gap-5`}
+              className={`${styles.navLeft} d-flex align-items-center gap-1`}
             >
-              <ul className={`d-flex gap-3 ${styles.navLinks}`}>
+              <ul className={`d-flex ${styles.navLinks}`}>
                 {links.map((link) => (
                   <li key={link.path}>
                     <Link
@@ -102,6 +105,9 @@ const Navbar: React.FC = () => {
                   </li>
                 ))}
               </ul>
+
+              {/* Add search component to navbar */}
+              <NavbarSearch className={styles.navbarSearch} />
             </div>
             <IoMenu className={styles.menuIcon} onClick={toggleDrawer} />
           </div>

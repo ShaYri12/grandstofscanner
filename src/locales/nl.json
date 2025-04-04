@@ -1,7 +1,7 @@
 {
   "header1": {
-    "h1one": "Gegevens bron:",
-    "h1two": "NL (2018)"
+    "h1one": "Bron gegevens:",
+    "h1two": "CBS (2018)"
   },
   "header2": {
     "h2one": "Home",
@@ -9,30 +9,86 @@
     "h2three": "Handelen",
     "h2four": "Landinfo",
     "h2btn1": "Registreren",
-    "h2btn2": "Inloggen"
+    "h2btn2": "Inloggen",
+    "browse": "Bladeren",
+    "advancedsearch": "Geavanceerd zoeken",
+    "explore": "Verkennen",
+    "about": "Over",
+    "trade": "Handelsgegevens",
+    "factsheets": "Informatiebladen"
   },
   "body": {
     "title": "Grondstoffenscanner",
-    "subTitle": "Welkom bij de Grondstoffenscanner. Hier kunt u ontdekken in hoeverre (bio)grondstoffen waarvan u afhankelijk bent, in de toekomst mogelijk schaars worden of een risico vormen voor mens en milieu."
+    "subTitle": "Welkom bij de Grondstoffenscanner. Hier kunt u erachter komen in welke mate (Bio)grondstoffen waarvan u afhankelijk bent door schaarste in de toekomst een risico kunnen vormen voor mens en milieu."
   },
   "advancedSearch": {
     "title": "Zoek Grondstoffen",
     "subtitle": "Vind gedetailleerde informatie over grondstoffen en productgroepen",
-    "searchPlaceholder": "Voer een grondstof of productgroep naam in",
+    "searchPlaceholder": "Voer een grondstof of productgroep in",
     "searchButton": "Zoeken",
     "categoryRawMaterials": "Grondstoffen",
     "categoryProductGroups": "Productgroepen",
     "noResults": "Geen resultaten gevonden voor uw zoekopdracht",
-    "viewDetails": "Details bekijken"
+    "viewDetails": "Bekijk details",
+    "viewMore": "Bekijk meer resultaten",
+    "viewAllResults": "Bekijk alle zoekresultaten"
+  },
+  "searchResults": {
+    "breadcrumb": {
+      "home": "Home",
+      "current": "Zoekresultaten"
+    },
+    "title": "Zoekresultaten voor",
+    "searchPlaceholder": "Verfijn uw zoekopdracht...",
+    "filterByType": "Filteren op type",
+    "filterByCategory": "Filteren op categorie",
+    "all": "Alle resultaten",
+    "noResults": "Geen resultaten gevonden voor uw zoekopdracht. Probeer andere zoekwoorden.",
+    "viewDetails": "Bekijk details",
+    "clearFilters": "Filters wissen"
+  },
+  "browse": {
+    "breadcrumb": {
+      "home": "Home",
+      "current": "Bladeren"
+    },
+    "title": "Bladeren door Grondstoffen en Productgroepen",
+    "subtitle": "Verken onze uitgebreide database van grondstoffen en productgroepen zonder dat een zoekopdracht nodig is. Filter op categorie om precies te vinden wat u zoekt.",
+    "searchPlaceholder": "Filter items op naam, code of categorie...",
+    "filter": "Filter",
+    "filterByCategory": "Filteren op categorie",
+    "clearFilters": "Filters wissen",
+    "rawMaterials": "Grondstoffen",
+    "productGroups": "Productgroepen",
+    "noResults": "Geen items komen overeen met uw filtercriteria. Probeer enkele filters te verwijderen.",
+    "tryDifferent": "Probeer andere zoektermen of pas uw filters aan.",
+    "viewDetails": "Bekijk details",
+    "compareTitle": "Vergelijk Grondstoffen",
+    "compareText": "Wilt u verschillende grondstoffen vergelijken voor uw project? Gebruik onze vergelijkingstool om meerdere grondstoffen naast elkaar te analyseren.",
+    "compareButton": "Begin met vergelijken",
+    "allCategories": "Alle categorieën",
+    "selectedItems": "Geselecteerde items: {{count}}",
+    "clearSelection": "Selectie wissen",
+    "compareSelected": "Vergelijk geselecteerde items",
+    "backToBrowse": "Terug naar bladeren",
+    "comparingItems": "{{count}} items vergelijken",
+    "property": "Eigenschap",
+    "category": "Categorie",
+    "description": "Beschrijving",
+    "riskLevel": "Risiconiveau",
+    "availability": "Beschikbaarheid",
+    "keyMaterials": "Belangrijkste materialen",
+    "industryImpact": "Impact op industrie",
+    "comparisonInstructions": "Selecteer items om ze te vergelijken door op de checkboxes te klikken."
   },
   "box1": {
     "boxline1": "Stap 1",
     "boxline2": "Verkennen",
-    "boxline3": "Krijg inzicht in de grondstoffen en producten die bij uw productieproces horen.",
+    "boxline3": "Krijg inzicht in de grondstoffen en producten die deel uitmaken van uw productieproces horen",
     "boxbutton": "Start de scan",
     "boxline4": "Stap 2",
     "boxline5": "Beoordelen",
-    "boxline6": "Beoordeel of uw bedrijf in de toekomst een risico loopt."
+    "boxline6": "Beoordeel of uw bedrijf in de toekomst risico's loopt."
   },
   "box2": {
     "box2line1": "Stap 3",
@@ -569,6 +625,65 @@
         "link": "/nl/contact"
       },
       "para1End": "met ons op."
+    }
+  },
+  "detail": {
+    "notFound": "Item Niet Gevonden",
+    "itemNotFound": "Het gevraagde item is niet gevonden in onze database.",
+    "backToBrowse": "Terug naar Bladeren",
+    "breadcrumb": {
+      "home": "Home",
+      "browse": "Bladeren"
+    },
+    "factsheet": {
+      "material": "Grondstof Informatieblad",
+      "product": "Productgroep Informatieblad"
+    },
+    "priceVolatility": "Prijsvolatiliteit",
+    "worldProduction": "Wereldproductie",
+    "keyMaterials": "Belangrijkste Materialen",
+    "industryImpact": "Impact op Industrie",
+    "riskLevel": "Risiconiveau",
+    "availability": "Beschikbaarheid",
+    "sharePage": "Deel deze pagina",
+    "relatedResources": "Gerelateerde Bronnen",
+    "risksAndOpportunities": "Risico's & Kansen",
+    "marketTrends": "Markttrends",
+    "sustainabilityData": "Duurzaamheidsgegevens",
+    "additionalInfo": "Aanvullende Informatie",
+    "contactForMoreInfo": "Neem contact met ons op voor meer gedetailleerde informatie over dit item.",
+    "contactUs": "Neem Contact Op",
+    "expandAll": "Alle secties uitklappen",
+    "tooltips": {
+      "info": "Informatie",
+      "infoText": "Belangrijke informatie over dit item",
+      "priceVolatility": "Prijsvolatiliteit",
+      "priceVolatilityText": "Het maximale percentage van prijsstijging in de afgelopen 5 jaar",
+      "worldProduction": "Wereldproductie",
+      "worldProductionText": "De totale jaarlijkse wereldwijde productie van deze grondstof",
+      "keyMaterials": "Belangrijkste Materialen",
+      "keyMaterialsText": "Kritieke materialen die worden gebruikt in deze productgroep",
+      "industryImpact": "Impact op Industrie",
+      "industryImpactText": "Het strategische belang van deze productgroep voor verschillende industrieën"
+    },
+    "expandableSections": {
+      "importInfo": "Importland informatie",
+      "importInfoText": "Informatie over de belangrijkste landen die dit item importeren en exporteren.",
+      "priceInfo": "Prijsschommelingen",
+      "priceInfoText": "Analyse van prijstrends en schommelingen in de tijd.",
+      "chains": "Toeleveringsketens",
+      "chainsText": "Overzicht van de fasen in de toeleveringsketen voor dit item.",
+      "risks": "Risico-indicatoren",
+      "risksText": "Beoordeling van verschillende risico's die met dit item samenhangen."
+    },
+    "sideContent": {
+      "generalInformation": "Algemene informatie",
+      "isAbbreviation": "is de afkorting voor",
+      "inPeriodicTable": "in het periodiek systeem der elementen",
+      "isProductCode": "is de productcode voor categorie",
+      "noConflictMaterial": "Geen conflictmateriaal",
+      "productGroups": "Productgroepen",
+      "relatedMaterials": "Gerelateerde materialen"
     }
   }
 }

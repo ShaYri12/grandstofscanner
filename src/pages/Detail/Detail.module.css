@@ -1,0 +1,370 @@
+.section {
+  padding: 20px;
+  padding-bottom: 80px;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  color: #696969;
+  margin-bottom: 40px;
+}
+
+.breadcrumbLink {
+  color: #01689b;
+  text-decoration: none;
+}
+
+.breadcrumbLink:hover {
+  color: #333;
+}
+
+.breadcrumbIcon {
+  margin: 0 12px;
+  color: #c8c8c8;
+  font-size: 14px;
+}
+
+.breadcrumbCurrent {
+  color: #696969;
+}
+
+.backLink {
+  display: inline-block;
+  color: #01689b;
+  text-decoration: none;
+  font-weight: 500;
+  margin-top: 20px;
+}
+
+.backLink:hover {
+  text-decoration: underline;
+}
+
+.mainContent {
+  margin-top: 20px;
+}
+
+.grid {
+  display: flex;
+  gap: 29px;
+  flex-wrap: wrap;
+  align-items: start;
+}
+
+@media screen and (max-width: 611px) {
+  .grid {
+    flex-direction: column;
+  }
+}
+
+.gridMain {
+  flex: 2;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.subtitle {
+  font-size: 16px;
+  font-weight: 700;
+  color: #012e44;
+  margin-bottom: 0;
+  padding-bottom: 5px;
+}
+
+.titleContainer {
+  display: flex;
+  align-items: start;
+  gap: 9px;
+}
+
+.title {
+  font-size: 40px;
+  font-weight: 700;
+  color: #000;
+  margin: 0;
+}
+
+.symbol {
+  background-color: #cce0f1;
+  color: #01689b;
+  padding: 11px 13px;
+  font-weight: 700;
+  font-size: 18px;
+  border-radius: 8px;
+  margin-top: -2px;
+}
+
+.infoIcon {
+  color: #1565c0;
+  font-size: 2rem;
+}
+
+.description {
+  color: #4a4a4a;
+  margin-bottom: 2rem;
+  margin-top: 40px;
+  font-size: 24px;
+  font-weight: 300;
+  color: #000;
+}
+
+.infoBoxes {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.infoBox {
+  border: 1px solid #b4b4b4;
+  border-radius: 8px;
+  padding: 56px 19px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.infoBoxTitle {
+  font-size: 24px;
+  font-weight: 300;
+  color: #000;
+  margin-bottom: 0;
+  letter-spacing: -2%;
+}
+
+.infoBoxValue1,
+.infoBoxValue2 {
+  font-size: 40px;
+  font-weight: 700;
+  letter-spacing: -2%;
+  color: #1565c0;
+  margin-bottom: 0;
+}
+
+.infoBoxValue2 {
+  margin-top: 17px;
+}
+
+/* Expandable Sections */
+.expandableSections {
+  margin-top: 40px;
+}
+
+.expandAll {
+  background-color: transparent;
+  color: #01689b;
+  border: none;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 0;
+  margin-bottom: 20px;
+  text-decoration: underline;
+}
+
+.expandableBox {
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.expandableButton {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  padding: 15px 20px;
+  cursor: pointer;
+  text-align: left;
+}
+
+.expandableTitle {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.expandableContent {
+  padding: 0 20px 20px;
+}
+
+.expandedContent {
+  padding: 0 20px 20px;
+  border-top: 1px solid #eee;
+}
+
+/* Sidebar Styles */
+.sidebar {
+  width: 300px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.sidebarTitle,
+.ProductGroup {
+  font-size: 18px;
+  font-weight: 600;
+  color: #004d80;
+  margin-bottom: 15px;
+}
+
+.sidebarSection {
+  margin-bottom: 30px;
+}
+
+.sidebarPara {
+  font-size: 14px;
+  color: #333;
+  line-height: 1.5;
+}
+
+.symbolLabel {
+  font-weight: 700;
+  color: #004d80;
+}
+
+.nonConflictLabel {
+  display: inline-block;
+  background-color: #e8f4fd;
+  color: #004d80;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  margin-top: 10px;
+}
+
+.productList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.productItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: #333;
+}
+
+.fileIcon1,
+.fileIcon2 {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  background-color: #4887da;
+  border-radius: 4px;
+}
+
+.fileIcon2 {
+  background-color: #f2b34d;
+}
+
+.share {
+  margin-top: 60px;
+}
+
+.share p {
+  font-size: 18px;
+  font-weight: 700;
+  color: #000;
+  margin-bottom: 16px;
+  padding-bottom: 0;
+}
+
+.share span {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.share span svg {
+  font-size: 24px;
+  color: #004d80;
+}
+
+@media (max-width: 956px) {
+  .infoBoxes {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+/* Small Devices (768px and below) */
+@media screen and (max-width: 768px) {
+  .breadcrumb {
+    font-size: 14px;
+  }
+
+  .breadcrumbIcon {
+    margin: 0 8px;
+    font-size: 12px;
+  }
+
+  .subtitle {
+    font-size: 14px;
+  }
+
+  .title {
+    font-size: 32px; /* Decreased from 40px */
+  }
+
+  .symbol {
+    font-size: 16px; /* Decreased from 18px */
+    padding: 8px 10px;
+  }
+
+  .description {
+    font-size: 20px; /* Decreased from 24px */
+  }
+
+  .infoBoxTitle {
+    font-size: 20px; /* Decreased from 24px */
+  }
+
+  .infoBoxValue1,
+  .infoBoxValue2 {
+    font-size: 36px; /* Decreased from 40px */
+  }
+
+  .share p {
+    font-size: 16px; /* Decreased from 18px */
+  }
+
+  .share span svg {
+    font-size: 20px; /* Decreased from 24px */
+  }
+
+  .grid {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    margin-top: 30px;
+  }
+}
+
+/* Extra small devices (355px and below) */
+@media screen and (max-width: 355px) {
+  .breadcrumb {
+    font-size: 12px;
+  }
+}

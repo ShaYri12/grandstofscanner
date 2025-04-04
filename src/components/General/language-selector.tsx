@@ -43,12 +43,23 @@ const LanguageSelector: React.FC<LanguageSelectorProps> = ({
     localStorage.setItem("i18nextLng", lng);
     i18n.changeLanguage(lng);
     setSelectedLang(lng);
+
+    // Preserve query parameters when changing language
     const pathParts = location.pathname.split("/");
+    let newPath: string;
+
     if (pathParts.length > 1) {
       pathParts[1] = lng;
-      navigate(pathParts.join("/"));
+      newPath = pathParts.join("/");
     } else {
-      navigate(`/${lng}/home`);
+      newPath = `/${lng}/home`;
+    }
+
+    // Append the search parameters if they exist
+    if (location.search) {
+      navigate(`${newPath}${location.search}`);
+    } else {
+      navigate(newPath);
     }
   };
 

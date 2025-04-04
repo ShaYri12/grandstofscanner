@@ -42,6 +42,21 @@
   margin-left: -5px;
 }
 
+/* Mobile search styles */
+.mobileSearchContainer {
+  margin: 15px 0 25px;
+  width: 100%;
+}
+
+.mobileSearch {
+  width: 100%;
+  margin: 0;
+}
+
+.mobileSearch div {
+  width: 100%;
+}
+
 .navLinks {
   list-style: none; /* Remove default list styles */
   margin: 0;

@@ -18,7 +18,10 @@ import Landinfo from "./pages/Landinfo/Landinfo";
 import Grondstoffenscanner from "./pages/Grondstoffenscanner/Grondstoffenscanner";
 import Antimoon from "./pages/Antimoon/Antimoon";
 import Explore from "./pages/Explore/Explore";
+import Browse from "./pages/Browse/Browse";
 import Contact from "./pages/Contact/Contact";
+import SearchResults from "./pages/SearchResults/SearchResults";
+import Detail from "./pages/Detail/Detail";
 
 // Import components
 import Navbar from "./components/General/Navbar/Navbar";
@@ -83,10 +86,13 @@ const AppRoutes: React.FC = () => {
         <Route path="/:lang/contact" element={<Contact />} />
         <Route path="/:lang/faq" element={<NewFAQPage />} />
         <Route path="/:lang/explore" element={<Explore />} />
+        <Route path="/:lang/browse" element={<Browse />} />
+        <Route path="/:lang/detail/:id" element={<Detail />} />
         <Route path="/:lang/product-group" element={<ProductGroup />} />
         <Route path="/:lang/trade" element={<Trade />} />
         <Route path="/:lang/landinfo" element={<Landinfo />} />
         <Route path="/:lang/antimoon" element={<Antimoon />} />
+        <Route path="/:lang/search-results" element={<SearchResults />} />
         <Route
           path="/:lang/grondstoffenscanner"
           element={<Grondstoffenscanner />}

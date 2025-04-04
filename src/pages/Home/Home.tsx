@@ -6,7 +6,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import HeroSection from "../../components/PageSpecificComponents/Home/HeroSection/HeroSection";
 import InformationCards from "../../components/PageSpecificComponents/Home/InformationCards/InformationCard";
 import ServiceOverviewCards from "../../components/PageSpecificComponents/Home/ServiceOverviewCards/ServiceOverviewCards";
-import AdvancedSearch from "../../components/PageSpecificComponents/Home/AdvancedSearch/AdvancedSearch";
 
 interface LangParam extends Record<string, string | undefined> {
   lang: string;
@@ -24,9 +23,6 @@ const Home: React.FC = () => {
     <div className={styles.container}>
       <HeroSection t={t} />
       <InformationCards t={t} />
-      <div className={styles.advancedSearchWrapper}>
-        <AdvancedSearch t={t} />
-      </div>
       <ServiceOverviewCards t={t} />
     </div>
   );
