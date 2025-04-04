@@ -1,0 +1,19 @@
+.timelineContainer {
+  width: 100%;
+  padding: 65px 0 100px 0;
+}
+
+.timeline {
+  position: relative;
+  padding-left: 2.5rem;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 1.5rem;
+  top: 10px;
+  bottom: 0;
+  width: 2px;
+  background-color: #cce0f1;
+}

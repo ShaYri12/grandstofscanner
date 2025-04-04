@@ -8,6 +8,7 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
+    "install-cert": "mkdir .cert & mkcert-v1.4.4-windows-amd64.exe -key-file ./.cert/key.pem -cert-file ./.cert/cert.pem localhost",
     "test": "jest"
   },
   "jest": {
@@ -24,6 +25,7 @@
     ]
   },
   "dependencies": {
+    "axios": "^1.7.9",
     "bootstrap": "^5.3.3",
     "i18next": "^23.16.4",
     "i18next-browser-languagedetector": "^8.0.0",
@@ -46,6 +48,7 @@
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.1.0",
     "@testing-library/user-event": "^14.5.2",
+    "@types/node": "^22.10.6",
     "@types/i18next": "^13.0.0",
     "@types/jasmine": "^5.1.5",
     "@types/jest": "^29.5.14",

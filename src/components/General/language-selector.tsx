@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 
 interface Language {
   code: string;
@@ -32,19 +32,25 @@ const LanguageSelector: React.FC<LanguageSelectorProps> = ({
 }) => {
   const { i18n } = useTranslation();
   const navigate = useNavigate();
+  const location = useLocation();
   const [selectedLang, setSelectedLang] = useState<string>(i18n.language);
-
-  const changeLanguage = (lng: string) => {
-    i18n.changeLanguage(lng);
-    setSelectedLang(lng);
-    const currentPath = window.location.pathname.split("/");
-    currentPath[1] = lng;
-    navigate(currentPath.join("/"));
-  };
 
   useEffect(() => {
     setSelectedLang(i18n.language);
   }, [i18n.language]);
+
+  const changeLanguage = (lng: string) => {
+    localStorage.setItem("i18nextLng", lng);
+    i18n.changeLanguage(lng);
+    setSelectedLang(lng);
+    const pathParts = location.pathname.split("/");
+    if (pathParts.length > 1) {
+      pathParts[1] = lng;
+      navigate(pathParts.join("/"));
+    } else {
+      navigate(`/${lng}/home`);
+    }
+  };
 
   return (
     <div className="cursor-pointer">

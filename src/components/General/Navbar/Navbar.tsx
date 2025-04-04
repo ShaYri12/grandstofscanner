@@ -19,23 +19,22 @@ const Navbar: React.FC = () => {
   const h2four = t("header2.h2four") as string;
   const h2btn1 = t("header2.h2btn1") as string;
   const h2btn2 = t("header2.h2btn2") as string;
-  const faq = t("faq.title") as string;
+  const faq = "FAQs" as string;
 
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
-  const [currentLang, setCurrentLang] = useState(i18next.language);
+  const [currentLang, setCurrentLang] = useState(
+    localStorage.getItem("i18nextLng") || i18next.language
+  );
   const { lang } = useParams<{ lang: string }>();
 
   useEffect(() => {
+    // Update currentLang when URL param or i18next language changes
     if (lang) {
-      // Update the i18n language if lang is defined
-      i18next.changeLanguage(lang).then(() => {
-        setCurrentLang(lang);
-      });
-    } else {
-      // Fallback to the default language if lang is undefined
-      setCurrentLang(i18next.language);
+      setCurrentLang(lang);
+    } else if (localStorage.getItem("i18nextLng")) {
+      setCurrentLang(localStorage.getItem("i18nextLng") || i18next.language);
     }
-  }, [lang]);
+  }, [lang, i18next.language]);
 
   const links = [
     { path: `/${currentLang}/home`, label: h2one },

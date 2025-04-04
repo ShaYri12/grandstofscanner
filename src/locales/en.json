@@ -15,6 +15,16 @@
     "title": "Grondstoffenscanner",
     "subTitle": "Welcome to the Raw Materials Scanner. Here you can find out to what extent (Bio)raw materials on which you depend may be scarce in the future pose a risk to humans and the environment."
   },
+  "advancedSearch": {
+    "title": "Search Raw Materials",
+    "subtitle": "Find detailed information about raw materials and product groups",
+    "searchPlaceholder": "Enter a raw material or product group name",
+    "searchButton": "Search",
+    "categoryRawMaterials": "Raw Materials",
+    "categoryProductGroups": "Product Groups",
+    "noResults": "No results found for your search",
+    "viewDetails": "View Details"
+  },
   "box1": {
     "boxline1": "Step 1",
     "boxline2": "Explore",
@@ -61,7 +71,7 @@
     "heading1": "Review: your product groups",
     "paragraphs": {
       "intro1": "See which critical materials your selected products contain. You can view product groups or raw materials. Here you will see a risk analysis based on supply security, price volatility, and risks to people and the environment.",
-      "intro2": "If a raw material is designated as a “conflict material,” it is shaded red in the raw material overview.",
+      "intro2": "If a raw material is designated as a 'conflict material,' it is shaded red in the raw material overview.",
       "selectedGroups": "For each product group, the raw materials, including their relative amounts, are displayed.",
       "riskAction": "If the factsheet(s) for your product group(s) show that you are at risk for one or more raw materials, check 'Act' to see what you can do to mitigate this risk.",
       "note": "Please note that these action perspectives are not material-specific and need to be adapted to your specific situation."
@@ -214,7 +224,7 @@
     "heading": "Country Information",
     "description": "On this page, you will find country-specific information.",
     "tableArea": {
-      "label": "Choose which country’s information you want to view",
+      "label": "Choose which country's information you want to view",
       "land": "Country",
       "importTon": "Import in tons",
       "exportTon": "Export in tons",
@@ -397,8 +407,71 @@
       "registrationError": "Registration error"
     }
   },
+  "forgotPassword": {
+    "resetTitle": "Reset your password",
+    "resetSubtitle": "Enter your new password below.",
+    "emailPlaceholder": "Email",
+    "newPasswordPlaceholder": "New password",
+    "confirmPasswordPlaceholder": "Confirm password",
+    "passwordMismatch": "Passwords do not match.",
+    "passwordUpdated": "Your password has been successfully updated.",
+    "emailNotFound": "No account found with that email.",
+    "noUserData": "No user data found.",
+    "button": "Reset Password",
+    "backToLogin": "Back to login"
+  },
+  "accessibility": {
+    "headings": {
+      "heading1": "Accessibity - Grondstoffenscanner",
+      "heading2": "What is an accessible website?",
+      "heading3": "Accessibility statement",
+      "heading4": "Accessibility measures",
+      "heading5": "Report accessibility issues"
+    },
+    "paragraphs": {
+      "para1": "We want to make sure everyone can use our website on computer and laptop. Have you come across a page that is not accessible? Please, let us know.",
+      "para2Start": "An accessible website means everyone can use it. Government sites must meet accessibility requirements. The requirements are published on the",
+      "para2Link": "Temporary decision digital accessibility government (only in Dutch)",
+      "para2End": "Also, government sites must provide accountability in a published accessibility statement.",
+      "para4": {
+        "aboutPara": "We ensure accessibility through various measures in our processes:",
+        "point1": "Accessibility is part of every step in the design, construction and editorial process of our website",
+        "point2": "Independent experts regularly test the website for accessibility. They investigate functional, and editorial aspects. We solve problems sustainably.",
+        "point3": "Our employees keep their knowledge of accessibility up to date and apply it where necessary."
+      },
+      "para5": "If you have any problems with accessibility on our website, please send an e-mail to"
+    }
+  },
+  "privacyStatement": {
+    "headings": {
+      "heading1": "Privacy statement - Grondstoffenscanner"
+    },
+    "paragraphs": {
+      "para1": "Grondstoffenscanner.nl uses the privacy policy as published on the webpage:",
+      "para1Link": "https://english.rvo.nl/about-us/privacy"
+    }
+  },
+  "contact": {
+    "breadcrumb": {
+      "home": "Home",
+      "current": "Frequently Asked Questions Grondstoffenscanner"
+    },
+    "title": "Contact",
+    "description": "Do you have questions or comments? Or do you want to use a page that turns out to be inaccessible? Please send an email using the form below.",
+    "form": {
+      "subject": "Subject",
+      "name": "Name",
+      "email": "Email",
+      "message": "Message",
+      "submit": "Submit"
+    }
+  },
   "faq": {
-    "title": "FAQs",
+    "breadcrumb": {
+      "home": "Home",
+      "current": "Frequently Asked Questions Grondstoffenscanner"
+    },
+    "title": "Frequently Asked Questions Grondstoffenscanner",
     "question1": "What is the Raw Material Scanner?",
     "answer1": {
       "para1": "The Raw Material Scanner helps you assess the risks associated with the raw materials your business or organization uses. For example, you can anticipate predicted price increases or prepare for shortages of your (critical or rare) raw materials.",
@@ -468,12 +541,12 @@
         },
         "point1": "A report commissioned by the Ministry of Economic Affairs, produced through a collaboration between the Netherlands Organization for Applied Scientific Research (TNO), consulting firm EY, The Hague Centre for Strategic Studies (HCSS), Leiden University, and the procurement network Nevi.",
         "point2Link": {
-          "text": "‘Incorporation of biotic raw materials in the Raw Material Scanner’",
+          "text": "'Incorporation of biotic raw materials in the Raw Material Scanner'",
           "link": "/biotic-resources-in-the-resources-scanner.pdf"
         },
         "point2": "A report commissioned by the Ministry of Agriculture, Nature and Food Quality, produced by consulting firm CREM and TNO.",
         "point3Link": {
-          "text": "‘Update and Expansion of the Raw Material Scanner 2021: Responsible Mining Index and Insights into Secondary Flows’",
+          "text": "'Update and Expansion of the Raw Material Scanner 2021: Responsible Mining Index and Insights into Secondary Flows'",
           "link": "/TNO-rapport-R10193-GrondstoffenScanner-2021-Signed.pdf"
         },
         "point3": "A report by TNO, commissioned by the Netherlands Enterprise Agency (RVO)."
@@ -493,53 +566,9 @@
       "para1Start": "Please",
       "para1Link": {
         "text": "contact",
-        "link": "https://www.grondstoffenscanner.nl/Contact"
+        "link": "/en/contact"
       },
       "para1End": "us."
-    }
-  },
-  "forgotPassword": {
-    "resetTitle": "Reset Your Password",
-    "resetSubtitle": "Please enter your new password below.",
-    "emailPlaceholder": "Email Address",
-    "newPasswordPlaceholder": "New Password",
-    "confirmPasswordPlaceholder": "Confirm Password",
-    "passwordMismatch": "Passwords do not match.",
-    "passwordUpdated": "Your password has been successfully updated.",
-    "emailNotFound": "No account found with that email address.",
-    "noUserData": "No user data found.",
-    "button": "Reset Password",
-    "backToLogin": "Back to Login"
-  },
-  "accessibility": {
-    "headings": {
-      "heading1": "Accessibity - Grondstoffenscanner",
-      "heading2": "What is an accessible website?",
-      "heading3": "Accessibility statement",
-      "heading4": "Accessibility measures",
-      "heading5": "Report accessibility issues"
-    },
-    "paragraphs": {
-      "para1": "We want to make sure everyone can use our website on computer and laptop. Have you come across a page that is not accessible? Please, let us know.",
-      "para2Start": "An accessible website means everyone can use it. Government sites must meet accessibility requirements. The requirements are published on the",
-      "para2Link": "Temporary decision digital accessibility government (only in Dutch)",
-      "para2End": "Also, government sites must provide accountability in a published accessibility statement.",
-      "para4": {
-        "aboutPara": "We ensure accessibility through various measures in our processes:",
-        "point1": "Accessibility is part of every step in the design, construction and editorial process of our website",
-        "point2": "Independent experts regularly test the website for accessibility. They investigate functional, and editorial aspects. We solve problems sustainably.",
-        "point3": "Our employees keep their knowledge of accessibility up to date and apply it where necessary."
-      },
-      "para5": "If you have any problems with accessibility on our website, please send an e-mail to"
-    }
-  },
-  "privacyStatement": {
-    "headings": {
-      "heading1": "Privacy statement - Grondstoffenscanner"
-    },
-    "paragraphs": {
-      "para1": "Grondstoffenscanner.nl uses the privacy policy as published on the webpage:",
-      "para1Link": "https://english.rvo.nl/about-us/privacy"
     }
   }
 }

@@ -1,0 +1,17 @@
+.cat {
+    border: 1px solid #cce0f1;
+}
+
+.catContainer {
+    padding: 1.5em 1.5em 1.5em 1.5em;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+@media (max-width: 640px) {
+    .catContainer {
+        padding: 0.8em;
+    }
+}

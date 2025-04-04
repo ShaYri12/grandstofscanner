@@ -12,6 +12,7 @@
   padding: 0 90px;
   background-color: var(--background-color);
   min-height: 60vh;
+  position: relative;
 }
 
 /* Hero section styles */
@@ -20,6 +21,7 @@
   border-radius: 20px;
   padding: 40px;
   background-color: var(--hero-background); /* Set a background if needed */
+  margin-bottom: 60px; /* Add space for the AdvancedSearch component */
 }
 
 .heroHeading {
@@ -43,6 +45,9 @@
   }
   .heroSubHeading {
     width: 100%;
+  }
+  .container {
+    padding: 0 20px;
   }
 }
 

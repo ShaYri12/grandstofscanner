@@ -1,0 +1,86 @@
+.button {
+  width: 8.9em;
+  background-color: #56a9de;
+  color: #012e44;
+  border: none;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 27px;
+  letter-spacing: -0.02em;
+}
+
+.inputGroup {
+  display: inline-flex;
+  gap: 0.5rem;
+  flex-wrap: nowrap;
+  width: 100%;
+}
+
+.inputGroup input {
+  border: 1px solid #999999;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  width: 100%;
+  height: 50px;
+  padding: 0 16px;
+}
+
+.customInput,
+.customSelect {
+  border: 1px solid #999999;
+  border-radius: 4px !important;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  width: 100%;
+  height: 50px;
+  outline: none;
+  padding: 0 10px;
+  color: #999999;
+}
+
+.ofContainer {
+  width: 100%;
+  display: inline-flex;
+  flex-wrap: nowrap;
+  gap: 20px;
+  align-items: center;
+}
+
+.ofContainer .line {
+  width: 100%;
+  height: 1px;
+  background: #cce0f1;
+}
+
+.separator {
+  color: #0f6da9;
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 27px;
+  letter-spacing: -0.02em;
+}
+
+@media (max-width: 640px) {
+  .button {
+    width: 130px;
+    height: 45px;
+    font-size: 15px;
+  }
+
+  .inputGroup input {
+    height: 40px;
+    padding: 0 10px;
+    font-size: 14px;
+  }
+
+  .customInput,
+  .customSelect {
+    height: 40px;
+    padding: 0 8px;
+    font-size: 14px;
+  }
+}

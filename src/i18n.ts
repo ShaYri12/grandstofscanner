@@ -12,8 +12,10 @@ i18n
     fallbackLng: "en",
     returnObjects: true,
     detection: {
-      order: ["path", "cookie", "localStorage", "navigator", "htmlTag"],
+      order: ["localStorage", "path", "cookie", "navigator", "htmlTag"],
       lookupFromPathIndex: 0,
+      caches: ["localStorage"],
+      lookupLocalStorage: "i18nextLng",
     },
     resources: {
       en: {
@@ -24,5 +26,18 @@ i18n
       },
     },
   });
+
+const storedLang = localStorage.getItem("i18nextLng");
+if (storedLang && window.location.pathname.split("/")[1] !== storedLang) {
+  const pathParts = window.location.pathname.split("/");
+  if (pathParts.length > 1) {
+    pathParts[1] = storedLang;
+    setTimeout(() => {
+      if (window.location.pathname.split("/")[1] !== storedLang) {
+        window.history.replaceState(null, "", pathParts.join("/"));
+      }
+    }, 0);
+  }
+}
 
 export default i18n;

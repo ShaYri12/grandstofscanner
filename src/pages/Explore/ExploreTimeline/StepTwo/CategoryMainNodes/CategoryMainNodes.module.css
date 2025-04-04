@@ -1,0 +1,24 @@
+ .cat {
+     padding: 0 1.5em;
+     display: flex;
+     width: 100%;
+     align-items: center;
+     justify-content: space-between;
+     margin-top: 2px;
+     height: 5em;
+ }
+
+ .catContainer {
+     padding: 0px 1.5em 1.5em 1.5em;
+ }
+
+ @media (max-width: 640px) {
+     .cat {
+         padding: 0 1.2em;
+         height: 4em;
+     }
+
+     .catContainer {
+         padding: 0px 0.8em 0.8em 0.8em;
+     }
+ }

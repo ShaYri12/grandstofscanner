@@ -1,6 +1,6 @@
 import React from "react";
-import ExploreHeader from "../../components/PageSpecificComponents/Explore/ExploreHeader/ExploreHeader";
-import ExploreTimeline from "../../components/PageSpecificComponents/Explore/ExploreTimeline/ExploreTimeline";
+import ExploreHeader from "./ExploreHeader/ExploreHeader";
+import ExploreTimeline from "./ExploreTimeline/ExploreTimeline";
 import styles from "./Explore.module.css";
 
 const Explore: React.FC = () => {

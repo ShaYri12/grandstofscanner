@@ -1,0 +1,65 @@
+.button {
+  width: 160px !important;
+  background-color: #56a9de;
+  color: #012e44;
+  border: none;
+  border-radius: 8px !important;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 27px;
+  letter-spacing: -0.02em;
+}
+
+.viewButton {
+  border: 1px solid #56a9de;
+  background: transparent;
+  width: 160px;
+  height: 59px;
+  border-radius: 8px;
+  color: #012e44;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 27px;
+  letter-spacing: -0.02em;
+  text-align: center;
+}
+
+.searchGroup {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.searchGroup label {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 30px;
+  color: #000000de;
+}
+
+.stepTwo {
+  max-width: 750px;
+  width: 100%;
+  margin-left: 80px;
+}
+
+@media (max-width: 640px) {
+  .button {
+    font-size: 14px;
+  }
+
+  .stepTwo {
+    margin-left: 10px;
+    width: fit-content;
+    margin-right: 20px;
+  }
+}
+
+@media (max-width: 940px) {
+  .stepTwo {
+    margin-left: 40px;
+    width: fit-content;
+    margin-right: 40px;
+  }
+}

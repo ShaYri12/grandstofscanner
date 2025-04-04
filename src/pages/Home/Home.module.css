@@ -18,6 +18,13 @@
   overflow-x: hidden;
 }
 
+/* Advanced Search Wrapper */
+.advancedSearchWrapper {
+  margin: -2rem 0 4rem 0;
+  position: relative;
+  width: 100%;
+}
+
 /* Heading styles */
 h1 {
   color: var(--text-color);

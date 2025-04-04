@@ -1,0 +1,49 @@
+.cat-container {
+  margin-top: 20px;
+  background: white;
+  padding: 24px;
+  border-radius: 4px;
+  width: 100%;
+}
+
+.main-cat {
+  border: 1px solid #cce0f1;
+}
+
+.cat-title {
+  color: #01689b;
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  text-align: left;
+}
+
+.arrow-btn {
+  border: none;
+  background: transparent;
+  border-radius: 8px;
+}
+
+.arrow-btn img {
+  width: 45px;
+  height: 45px;
+}
+
+@media (max-width: 640px) {
+  .arrow-btn img {
+    width: 30px;
+    height: 30px;
+  }
+
+  .cat-container {
+    padding: 0.8em;
+  }
+
+  .main-cat {
+    padding: 0.8em 0 0 0;
+  }
+
+  .cat-title {
+    font-size: 16px;
+  }
+}

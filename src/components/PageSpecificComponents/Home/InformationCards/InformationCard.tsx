@@ -2,7 +2,7 @@ import React from "react";
 import { TFunction } from "i18next";
 import { FaChevronRight } from "react-icons/fa";
 import styles from "./InformationCards.module.css";
-
+import { useNavigate } from 'react-router-dom';
 interface Box1 {
   boxline1: string;
   boxline2: string;
@@ -32,14 +32,14 @@ const InformationCards: React.FC<InformationCardsProps> = ({ t }) => {
   const { boxline1, boxline2, boxline3, boxbutton, boxline4, boxline5, boxline6 } = t("box1", { returnObjects: true }) as Box1;
   const { box2line1, box2line2, box2line3, box2button } = t("box2", { returnObjects: true }) as Box2;
   const { box4line1 } = t("box4", { returnObjects: true }) as Box4;
-
+  const navigate = useNavigate();
   const heroStyle: React.CSSProperties = {
     cursor: "pointer",
   };
 
   const buttonElements = (
     <div className={styles.buttonsLG}>
-      <button className={`rounded-1 ${styles.heroButton1}`}>{boxbutton}</button>
+      <button className={`rounded-1 ${styles.heroButton1}`} onClick={() => {navigate('/en/explore')}}>{boxbutton}</button>
       <button className={styles.card2mblbtn2}>{box4line1}</button>
     </div>
   );
