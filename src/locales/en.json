@@ -24,7 +24,7 @@
   "advancedSearch": {
     "title": "Search Raw Materials",
     "subtitle": "Find detailed information about raw materials and product groups",
-    "searchPlaceholder": "Enter a raw material or product group name",
+    "searchPlaceholder": "Search",
     "searchButton": "Search",
     "categoryRawMaterials": "Raw Materials",
     "categoryProductGroups": "Product Groups",
@@ -45,7 +45,9 @@
     "all": "All Results",
     "noResults": "No results found for your search query. Please try different keywords.",
     "viewDetails": "View details",
-    "clearFilters": "Clear filters"
+    "clearFilters": "Clear filters",
+    "showFilters": "Show Filters",
+    "hideFilters": "Hide Filters"
   },
   "browse": {
     "breadcrumb": {

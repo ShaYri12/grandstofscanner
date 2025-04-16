@@ -24,7 +24,7 @@
   "advancedSearch": {
     "title": "Zoek Grondstoffen",
     "subtitle": "Vind gedetailleerde informatie over grondstoffen en productgroepen",
-    "searchPlaceholder": "Voer een grondstof of productgroep in",
+    "searchPlaceholder": "Zoeken",
     "searchButton": "Zoeken",
     "categoryRawMaterials": "Grondstoffen",
     "categoryProductGroups": "Productgroepen",
@@ -45,7 +45,9 @@
     "all": "Alle resultaten",
     "noResults": "Geen resultaten gevonden voor uw zoekopdracht. Probeer andere zoekwoorden.",
     "viewDetails": "Bekijk details",
-    "clearFilters": "Filters wissen"
+    "clearFilters": "Filters wissen",
+    "showFilters": "Toon Filters",
+    "hideFilters": "Verberg Filters"
   },
   "browse": {
     "breadcrumb": {

@@ -20,7 +20,6 @@ import Antimoon from "./pages/Antimoon/Antimoon";
 import Explore from "./pages/Explore/Explore";
 import Browse from "./pages/Browse/Browse";
 import Contact from "./pages/Contact/Contact";
-import SearchResults from "./pages/SearchResults/SearchResults";
 import Detail from "./pages/Detail/Detail";
 
 // Import components
@@ -92,7 +91,17 @@ const AppRoutes: React.FC = () => {
         <Route path="/:lang/trade" element={<Trade />} />
         <Route path="/:lang/landinfo" element={<Landinfo />} />
         <Route path="/:lang/antimoon" element={<Antimoon />} />
-        <Route path="/:lang/search-results" element={<SearchResults />} />
+        <Route
+          path="/:lang/search-results"
+          element={
+            <Navigate
+              to={`/${localStorage.getItem("i18nextLng") || "nl"}/browse${
+                window.location.search
+              }`}
+              replace
+            />
+          }
+        />
         <Route
           path="/:lang/grondstoffenscanner"
           element={<Grondstoffenscanner />}

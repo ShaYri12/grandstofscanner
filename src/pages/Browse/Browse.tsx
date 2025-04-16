@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useLocation, useNavigate } from "react-router-dom";
 import {
   FaSearch,
   FaTimes,
@@ -10,20 +10,48 @@ import {
   FaArrowLeft,
 } from "react-icons/fa";
 import styles from "./Browse.module.css";
+import Breadcrumb from "../../components/General/Breadcrumb/Breadcrumb";
 
 interface BrowseProps {}
+
+interface Material {
+  id: number;
+  name: string;
+  code: string;
+  category: string;
+  type: "materials";
+  description: string;
+  riskLevel: string;
+  availability: string;
+}
+
+interface Product {
+  id: number;
+  name: string;
+  code: string;
+  category: string;
+  type: "products";
+  keyMaterials: string;
+  industryImpact: string;
+}
+
+type Item = Material | Product;
 
 const Browse: React.FC<BrowseProps> = () => {
   const { t } = useTranslation();
   const { lang } = useParams<{ lang: string }>();
+  const location = useLocation();
+  const navigate = useNavigate();
+  const currentLang = lang || localStorage.getItem("i18nextLng") || "nl";
 
   // Raw materials data - using the same data as in the Search components
-  const rawMaterials = [
+  const rawMaterials: Material[] = [
     {
       id: 1,
       name: "Antimoon",
       code: "Sb",
       category: "Metaal",
+      type: "materials",
       description:
         "Antimoon is een metallisch element met symbool Sb en wordt voornamelijk gebruikt in legeringen, batterijen en vlamvertragers.",
       riskLevel: "Hoog",
@@ -34,6 +62,7 @@ const Browse: React.FC<BrowseProps> = () => {
       name: "IJzer",
       code: "Fe",
       category: "Metaal",
+      type: "materials",
       description:
         "IJzer is een metallisch element met symbool Fe en wordt gebruikt in staal en andere legeringen voor constructie en productie.",
       riskLevel: "Laag",
@@ -44,6 +73,7 @@ const Browse: React.FC<BrowseProps> = () => {
       name: "Aluminium",
       code: "Al",
       category: "Metaal",
+      type: "materials",
       description:
         "Aluminium is een licht metaal met symbool Al dat wordt gebruikt in transportmiddelen, verpakkingen en constructies.",
       riskLevel: "Gemiddeld",
@@ -54,6 +84,7 @@ const Browse: React.FC<BrowseProps> = () => {
       name: "Koper",
       code: "Cu",
       category: "Metaal",
+      type: "materials",
       description:
         "Koper is een metallisch element met symbool Cu en wordt gebruikt in elektrische bedrading, elektronica en legeringen.",
       riskLevel: "Gemiddeld",
@@ -64,6 +95,7 @@ const Browse: React.FC<BrowseProps> = () => {
       name: "Lithium",
       code: "Li",
       category: "Metaal",
+      type: "materials",
       description:
         "Lithium is een alkalimetaal met symbool Li en wordt voornamelijk gebruikt in batterijen voor elektronica en elektrische voertuigen.",
       riskLevel: "Hoog",
@@ -74,6 +106,7 @@ const Browse: React.FC<BrowseProps> = () => {
       name: "Kobalt",
       code: "Co",
       category: "Metaal",
+      type: "materials",
       description:
         "Kobalt is een metaal met symbool Co en wordt gebruikt in batterijen, supersterke legeringen en pigmenten.",
       riskLevel: "Hoog",
@@ -84,6 +117,7 @@ const Browse: React.FC<BrowseProps> = () => {
       name: "Zeldzame aardmetalen",
       code: "REE",
       category: "Metaal",
+      type: "materials",
       description:
         "Zeldzame aardmetalen zijn een groep van 17 chemische elementen die worden gebruikt in moderne technologie zoals smartphones en windturbines.",
       riskLevel: "Zeer Hoog",
@@ -94,6 +128,7 @@ const Browse: React.FC<BrowseProps> = () => {
       name: "Natuurrubber",
       code: "NR",
       category: "Biotisch",
+      type: "materials",
       description:
         "Natuurrubber is een elastomeer dat wordt gewonnen uit de rubberboom en wordt gebruikt voor banden, handschoenen en talrijke andere producten.",
       riskLevel: "Gemiddeld",
@@ -104,6 +139,7 @@ const Browse: React.FC<BrowseProps> = () => {
       name: "Katoen",
       code: "Ct",
       category: "Biotisch",
+      type: "materials",
       description:
         "Katoen is een natuurlijke vezel die wordt gebruikt voor textiel en kleding en wordt verbouwd in vele landen wereldwijd.",
       riskLevel: "Laag",
@@ -114,6 +150,7 @@ const Browse: React.FC<BrowseProps> = () => {
       name: "Hout",
       code: "Wd",
       category: "Biotisch",
+      type: "materials",
       description:
         "Hout is een biologisch materiaal dat wordt gebruikt voor constructie, meubels en brandstof, afkomstig van bomen.",
       riskLevel: "Gemiddeld",
@@ -124,6 +161,7 @@ const Browse: React.FC<BrowseProps> = () => {
       name: "Soja",
       code: "Soy",
       category: "Biotisch",
+      type: "materials",
       description:
         "Soja is een peulvrucht die wordt gebruikt voor voedselproducten, diervoeder en diverse industriële toepassingen.",
       riskLevel: "Laag",
@@ -134,6 +172,7 @@ const Browse: React.FC<BrowseProps> = () => {
       name: "Palmolie",
       code: "PO",
       category: "Biotisch",
+      type: "materials",
       description:
         "Palmolie is een plantaardige olie afkomstig van de oliepalm en wordt gebruikt in voedsel, cosmetica en biobrandstoffen.",
       riskLevel: "Gemiddeld",
@@ -142,95 +181,261 @@ const Browse: React.FC<BrowseProps> = () => {
   ];
 
   // Product groups data - using the same data as in the Search components
-  const productGroups = [
+  const productGroups: Product[] = [
     {
-      id: 1,
+      id: 101,
       name: "Elektronische apparaten",
       code: "85",
       category: "Technologie",
+      type: "products",
       keyMaterials: "Koper, Lithium, Zeldzame aardmetalen, Kobalt",
       industryImpact: "Hoog",
     },
     {
-      id: 2,
+      id: 102,
       name: "Voertuigen",
       code: "87",
       category: "Transport",
+      type: "products",
       keyMaterials: "Aluminium, IJzer, Rubber, Koper, Lithium",
       industryImpact: "Zeer Hoog",
     },
     {
-      id: 3,
+      id: 103,
       name: "Landbouwmachines",
       code: "84",
       category: "Landbouw",
+      type: "products",
       keyMaterials: "IJzer, Aluminium, Koper",
       industryImpact: "Hoog",
     },
     {
-      id: 4,
+      id: 104,
       name: "Weefsels van katoen",
       code: "52",
       category: "Textiel",
+      type: "products",
       keyMaterials: "Katoen",
       industryImpact: "Gemiddeld",
     },
     {
-      id: 5,
+      id: 105,
       name: "Farmaceutische producten",
       code: "30",
       category: "Gezondheid",
+      type: "products",
       keyMaterials: "Diverse chemische grondstoffen",
       industryImpact: "Hoog",
     },
+    {
+      id: 106,
+      name: "Smartphones en mobiele apparaten",
+      code: "8517",
+      category: "Technologie",
+      type: "products",
+      keyMaterials: "Kobalt, Lithium, Goud, Palladium, Zeldzame aardmetalen",
+      industryImpact: "Zeer Hoog",
+    },
+    {
+      id: 107,
+      name: "Zonnepanelen",
+      code: "8541",
+      category: "Energie",
+      type: "products",
+      keyMaterials: "Silicium, Zilver, Indium, Gallium",
+      industryImpact: "Hoog",
+    },
+    {
+      id: 108,
+      name: "Batterijen en accu's",
+      code: "8506",
+      category: "Energie",
+      type: "products",
+      keyMaterials: "Lithium, Kobalt, Nikkel, Grafiet",
+      industryImpact: "Zeer Hoog",
+    },
+    {
+      id: 109,
+      name: "Medische apparatuur",
+      code: "9018",
+      category: "Gezondheid",
+      type: "products",
+      keyMaterials: "Koper, Aluminium, Platina, Titanium",
+      industryImpact: "Hoog",
+    },
+    {
+      id: 110,
+      name: "Windturbines",
+      code: "8502",
+      category: "Energie",
+      type: "products",
+      keyMaterials: "IJzer, Aluminium, Koper, Zeldzame aardmetalen",
+      industryImpact: "Hoog",
+    },
+    {
+      id: 111,
+      name: "Laptops en computers",
+      code: "8471",
+      category: "Technologie",
+      type: "products",
+      keyMaterials: "Aluminium, Koper, Goud, Palladium, Kobalt",
+      industryImpact: "Hoog",
+    },
+    {
+      id: 112,
+      name: "Elektrische voertuigen",
+      code: "8703",
+      category: "Transport",
+      type: "products",
+      keyMaterials: "Lithium, Kobalt, Nikkel, Koper, Zeldzame aardmetalen",
+      industryImpact: "Zeer Hoog",
+    },
+    {
+      id: 113,
+      name: "Ledverlichting",
+      code: "9405",
+      category: "Technologie",
+      type: "products",
+      keyMaterials: "Gallium, Indium, Zeldzame aardmetalen",
+      industryImpact: "Gemiddeld",
+    },
+    {
+      id: 114,
+      name: "Halfgeleiders en chips",
+      code: "8542",
+      category: "Technologie",
+      type: "products",
+      keyMaterials: "Silicium, Germanium, Gallium, Arseen",
+      industryImpact: "Zeer Hoog",
+    },
+    {
+      id: 115,
+      name: "Meubels van hout",
+      code: "9403",
+      category: "Huishouden",
+      type: "products",
+      keyMaterials: "Hout, IJzer",
+      industryImpact: "Gemiddeld",
+    },
+  ];
+
+  // Combine both datasets
+  const allItems: Item[] = [...rawMaterials, ...productGroups];
+
+  // Extract all unique categories from data
+  const allCategories = [
+    ...new Set([
+      ...rawMaterials.map((item) => item.category),
+      ...productGroups.map((item) => item.category),
+    ]),
   ];
 
   const [searchTerm, setSearchTerm] = useState("");
-  const [activeCategory, setActiveCategory] = useState("all");
-  const [activeTab, setActiveTab] = useState("materials"); // 'materials' or 'productGroups'
-  const [showFilters, setShowFilters] = useState(false);
+  const [inputValue, setInputValue] = useState("");
+  const [showFilters, setShowFilters] = useState(true);
   const [selectedItems, setSelectedItems] = useState<number[]>([]);
   const [isComparing, setIsComparing] = useState(false);
+  const [filterType, setFilterType] = useState<string | null>(null);
+  const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
+  const [filteredItems, setFilteredItems] = useState<Item[]>(allItems);
 
   const filtersRef = useRef<HTMLDivElement>(null);
   const searchRef = useRef<HTMLDivElement>(null);
 
-  // Extract all unique categories from data
-  const materialCategories = [
-    "all",
-    ...Array.from(new Set(rawMaterials.map((item) => item.category))),
-  ];
-  const productGroupCategories = [
-    "all",
-    ...Array.from(new Set(productGroups.map((item) => item.category))),
-  ];
+  useEffect(() => {
+    // Parse search query from URL
+    const queryParams = new URLSearchParams(location.search);
+    const query = queryParams.get("q") || "";
+    const type = queryParams.get("type");
+    const categoriesParam = queryParams.get("categories");
 
-  // Get the current categories based on active tab
-  const currentCategories =
-    activeTab === "materials" ? materialCategories : productGroupCategories;
+    const categories = categoriesParam ? categoriesParam.split(",") : [];
 
-  // Get the current data based on active tab
-  const currentData = activeTab === "materials" ? rawMaterials : productGroups;
+    // If we're in comparison mode and the search params change, exit comparison mode
+    if (
+      isComparing &&
+      (query !== searchTerm ||
+        type !== filterType ||
+        categories.join(",") !== selectedCategories.join(","))
+    ) {
+      setIsComparing(false);
+    }
 
-  // Filter the data based on search term and active category
-  const filteredData = currentData.filter((item) => {
-    const matchesSearch =
-      item.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      item.code.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      item.category.toLowerCase().includes(searchTerm.toLowerCase());
-    const matchesCategory =
-      activeCategory === "all" || item.category === activeCategory;
-    return matchesSearch && matchesCategory;
-  });
+    setSearchTerm(query);
+    setInputValue(query);
+    setFilterType(type);
+    setSelectedCategories(categories);
+
+    // Apply filters
+    applyFilters(query, type, categories);
+  }, [location.search]);
+
+  const applyFilters = (
+    query: string,
+    type: string | null,
+    categories: string[]
+  ) => {
+    // Start with all items
+    let filtered = allItems;
+
+    // Apply search query filter
+    if (query) {
+      filtered = filtered.filter(
+        (item) =>
+          // Match words that start with the search term
+          item.name
+            .toLowerCase()
+            .split(/\s+/)
+            .some((word) => word.startsWith(query.toLowerCase())) ||
+          item.code.toLowerCase().startsWith(query.toLowerCase()) ||
+          item.category.toLowerCase().startsWith(query.toLowerCase())
+      );
+    }
+
+    // Apply type filter
+    if (type === "materials") {
+      filtered = filtered.filter((item) => item.type === "materials");
+    } else if (type === "products") {
+      filtered = filtered.filter((item) => item.type === "products");
+    }
+
+    // Apply category filter
+    if (categories.length > 0) {
+      filtered = filtered.filter((item) => categories.includes(item.category));
+    }
+
+    setFilteredItems(filtered);
+  };
 
   // Handle search input change
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setSearchTerm(e.target.value);
+    setInputValue(e.target.value);
   };
 
   // Clear search
   const handleClearSearch = () => {
+    setInputValue("");
     setSearchTerm("");
+
+    // Exit comparison mode if active
+    if (isComparing) {
+      setIsComparing(false);
+    }
+
+    updateUrl("", filterType, selectedCategories);
+  };
+
+  // Handle search form submit
+  const handleSearchSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setSearchTerm(inputValue);
+
+    // Exit comparison mode if active
+    if (isComparing) {
+      setIsComparing(false);
+    }
+
+    updateUrl(inputValue, filterType, selectedCategories);
   };
 
   // Toggle filters dropdown
@@ -238,23 +443,51 @@ const Browse: React.FC<BrowseProps> = () => {
     setShowFilters(!showFilters);
   };
 
-  // Set active category
-  const handleCategoryChange = (category: string) => {
-    setActiveCategory(category);
-  };
-
   // Clear all filters
   const clearFilters = () => {
-    setActiveCategory("all");
-    setShowFilters(false);
+    setSelectedCategories([]);
+    setFilterType(null);
+    updateUrl(searchTerm, null, []);
   };
 
-  // Set active tab
-  const handleTabChange = (tab: string) => {
-    setActiveTab(tab);
-    setActiveCategory("all");
-    setSelectedItems([]);
-    setIsComparing(false);
+  // Handle category selection
+  const handleCategoryChange = (category: string) => {
+    let newCategories: string[];
+
+    if (selectedCategories.includes(category)) {
+      // Remove category if already selected
+      newCategories = selectedCategories.filter((c) => c !== category);
+    } else {
+      // Add category if not selected
+      newCategories = [...selectedCategories, category];
+    }
+
+    setSelectedCategories(newCategories);
+    updateUrl(searchTerm, filterType, newCategories);
+  };
+
+  // Handle type filter change
+  const handleTypeChange = (type: string | null) => {
+    setFilterType(type);
+    updateUrl(searchTerm, type, selectedCategories);
+  };
+
+  // Update URL with current search parameters
+  const updateUrl = (
+    query: string,
+    type: string | null,
+    categories: string[]
+  ) => {
+    const queryParams = new URLSearchParams();
+    if (query) queryParams.set("q", query);
+    if (type) queryParams.set("type", type);
+    if (categories.length > 0)
+      queryParams.set("categories", categories.join(","));
+
+    // Navigate without interfering with the current state
+    navigate(`/${currentLang}/browse?${queryParams.toString()}`, {
+      replace: true,
+    });
   };
 
   // Handle item selection
@@ -292,7 +525,8 @@ const Browse: React.FC<BrowseProps> = () => {
         searchRef.current &&
         !searchRef.current.contains(event.target as Node)
       ) {
-        setShowFilters(false);
+        // Don't automatically close filters when clicking outside
+        // Only toggle them when the button is clicked
       }
     };
 
@@ -303,12 +537,20 @@ const Browse: React.FC<BrowseProps> = () => {
   }, []);
 
   // Get selected items data
-  const selectedItemsData = currentData.filter((item) =>
+  const selectedItemsData = allItems.filter((item) =>
     selectedItems.includes(item.id)
   );
 
+  // Breadcrumb items
+  const breadcrumbItems = [
+    { label: t("browse.breadcrumb.home"), url: `/${currentLang}/home` },
+    { label: t("browse.breadcrumb.current") },
+  ];
+
   return (
     <div className={styles.container}>
+      <Breadcrumb items={breadcrumbItems} />
+
       <div className={styles.header}>
         <h1 className={styles.title}>{t("browse.title")}</h1>
         <p className={styles.subtitle}>{t("browse.subtitle")}</p>
@@ -318,18 +560,19 @@ const Browse: React.FC<BrowseProps> = () => {
         <>
           {/* Search Section */}
           <div className={styles.searchSection} ref={searchRef}>
-            <div className={styles.searchForm}>
+            <form onSubmit={handleSearchSubmit} className={styles.searchForm}>
               <div className={styles.searchInputWrapper}>
                 <FaSearch className={styles.searchIcon} />
                 <input
                   type="text"
                   className={styles.searchInput}
                   placeholder={t("browse.searchPlaceholder")}
-                  value={searchTerm}
+                  value={inputValue}
                   onChange={handleSearchChange}
                 />
-                {searchTerm && (
+                {inputValue && (
                   <button
+                    type="button"
                     className={styles.clearButton}
                     onClick={handleClearSearch}
                     aria-label="Clear search"
@@ -338,41 +581,27 @@ const Browse: React.FC<BrowseProps> = () => {
                   </button>
                 )}
               </div>
-              <button className={styles.filterButton} onClick={toggleFilters}>
-                <FaFilter />
-                {t("browse.filter")}
+              <button type="submit" className={styles.searchButton}>
+                <FaSearch />
               </button>
-            </div>
+            </form>
+          </div>
 
-            {/* Filters Dropdown */}
-            {showFilters && (
-              <div className={styles.filtersDropdown} ref={filtersRef}>
-                <div className={styles.filterHeader}>
-                  <h3>{t("browse.filterByCategory")}</h3>
-                  <button
-                    className={styles.clearFiltersButton}
-                    onClick={clearFilters}
-                  >
-                    {t("browse.clearFilters")}
-                  </button>
-                </div>
-                <div className={styles.filterOptions}>
-                  {currentCategories.map((category) => (
-                    <label key={category} className={styles.filterOption}>
-                      <input
-                        type="radio"
-                        name="category"
-                        checked={activeCategory === category}
-                        onChange={() => handleCategoryChange(category)}
-                      />
-                      {category === "all"
-                        ? t("browse.allCategories")
-                        : category}
-                    </label>
-                  ))}
-                </div>
-              </div>
-            )}
+          <div className={styles.toggleButtonContainer}>
+            <button
+              className={styles.filtersToggleButton}
+              onClick={toggleFilters}
+            >
+              {showFilters ? (
+                <>
+                  <FaTimes /> {t("searchResults.hideFilters")}
+                </>
+              ) : (
+                <>
+                  <FaFilter /> {t("browse.filter")}
+                </>
+              )}
+            </button>
           </div>
 
           {/* Comparison Controls (visible when items are selected) */}
@@ -400,81 +629,154 @@ const Browse: React.FC<BrowseProps> = () => {
             </div>
           )}
 
-          {/* Tab Navigation */}
-          <div className={styles.tabNavigation}>
-            <button
-              className={`${styles.tabButton} ${
-                activeTab === "materials" ? styles.activeTab : ""
+          <div
+            className={`${
+              showFilters
+                ? styles.resultsContainer
+                : styles.resultsContainerNoGap
+            }`}
+          >
+            {/* Filters Column */}
+            <div
+              className={`${styles.filtersColumn} ${
+                !showFilters ? styles.filtersHidden : ""
               }`}
-              onClick={() => handleTabChange("materials")}
+              ref={filtersRef}
             >
-              {t("browse.rawMaterials")}
-            </button>
-            <button
-              className={`${styles.tabButton} ${
-                activeTab === "productGroups" ? styles.activeTab : ""
-              }`}
-              onClick={() => handleTabChange("productGroups")}
-            >
-              {t("browse.productGroups")}
-            </button>
-          </div>
-
-          {/* Results Grid */}
-          <div className={styles.resultsGrid}>
-            {filteredData.length > 0 ? (
-              filteredData.map((item) => (
-                <div
-                  key={item.id}
-                  className={`${styles.itemCard} ${
-                    selectedItems.includes(item.id) ? styles.itemSelected : ""
-                  }`}
-                >
-                  <div className={styles.itemSelection}>
-                    <label className={styles.selectionCheckbox}>
+              <div className={styles.filterContent}>
+                <div className={styles.filterSection}>
+                  <h3 className={styles.filterTitle}>
+                    {t("searchResults.filterByType")}
+                  </h3>
+                  <div className={styles.filterOptions}>
+                    <label className={styles.filterOption}>
                       <input
-                        type="checkbox"
-                        checked={selectedItems.includes(item.id)}
-                        onChange={() => handleItemSelect(item.id)}
+                        type="radio"
+                        checked={filterType === null}
+                        onChange={() => handleTypeChange(null)}
                       />
-                      <span className={styles.checkmark}>
-                        {selectedItems.includes(item.id) && <FaCheck />}
-                      </span>
+                      <span>{t("searchResults.all")}</span>
+                    </label>
+                    <label className={styles.filterOption}>
+                      <input
+                        type="radio"
+                        checked={filterType === "materials"}
+                        onChange={() => handleTypeChange("materials")}
+                      />
+                      <span>{t("advancedSearch.categoryRawMaterials")}</span>
+                    </label>
+                    <label className={styles.filterOption}>
+                      <input
+                        type="radio"
+                        checked={filterType === "products"}
+                        onChange={() => handleTypeChange("products")}
+                      />
+                      <span>{t("advancedSearch.categoryProductGroups")}</span>
                     </label>
                   </div>
-                  <div className={styles.itemHeader}>
-                    <span className={styles.itemCode}>{item.code}</span>
-                    <span className={styles.itemCategory}>{item.category}</span>
-                  </div>
-                  <h3 className={styles.itemName}>{item.name}</h3>
-                  <Link
-                    to={`/${lang}/detail/${item.id}`}
-                    className={styles.itemLink}
-                  >
-                    {t("browse.viewDetails")}
-                  </Link>
                 </div>
-              ))
-            ) : (
-              <div className={styles.noResults}>
-                <h3>{t("browse.noResults")}</h3>
-                <p>{t("browse.tryDifferent")}</p>
-              </div>
-            )}
-          </div>
 
-          {/* Comparison feature instruction section */}
-          {selectedItems.length === 0 && (
-            <div className={styles.comparisonSection}>
-              <h2 className={styles.comparisonTitle}>
-                {t("browse.compareTitle")}
-              </h2>
-              <p className={styles.comparisonText}>{t("browse.compareText")}</p>
-              <p className={styles.comparisonInstructions}>
-                {t("browse.comparisonInstructions")}
-              </p>
+                <div className={styles.filterSection}>
+                  <h3 className={styles.filterTitle}>
+                    {t("searchResults.filterByCategory")}
+                  </h3>
+                  <div className={styles.filterOptions}>
+                    {allCategories.map((category) => (
+                      <label key={category} className={styles.filterOption}>
+                        <input
+                          type="checkbox"
+                          checked={selectedCategories.includes(category)}
+                          onChange={() => handleCategoryChange(category)}
+                        />
+                        <span>{category}</span>
+                      </label>
+                    ))}
+                  </div>
+                </div>
+
+                {(selectedCategories.length > 0 || filterType !== null) && (
+                  <button
+                    className={styles.clearFiltersButton}
+                    onClick={clearFilters}
+                  >
+                    {t("searchResults.clearFilters")}
+                  </button>
+                )}
+              </div>
             </div>
-          )}
+
+            {/* Results Column */}
+            <div className={styles.resultsColumn}>
+              {filteredItems.length === 0 && (
+                <div className={styles.noResults}>
+                  <h3>{t("browse.noResults")}</h3>
+                  <p>{t("browse.tryDifferent")}</p>
+                </div>
+              )}
+              <div className={styles.resultsGrid}>
+                {filteredItems.length > 0 &&
+                  filteredItems.map((item) => (
+                    <div
+                      key={item.id}
+                      className={`${styles.itemCard} ${
+                        selectedItems.includes(item.id)
+                          ? styles.itemSelected
+                          : ""
+                      }`}
+                    >
+                      <div className={styles.itemSelection}>
+                        <label className={styles.selectionCheckbox}>
+                          <input
+                            type="checkbox"
+                            checked={selectedItems.includes(item.id)}
+                            onChange={() => handleItemSelect(item.id)}
+                          />
+                          <span className={styles.checkmark}>
+                            {selectedItems.includes(item.id) && <FaCheck />}
+                          </span>
+                        </label>
+                      </div>
+                      <div className={styles.itemHeader}>
+                        <span className={styles.itemCode}>{item.code}</span>
+                        <span
+                          className={`${styles.itemCategory} ${
+                            item.type === "products"
+                              ? styles.productGroup
+                              : styles.material
+                          }`}
+                        >
+                          {item.category}
+                        </span>
+                      </div>
+                      <h3 className={styles.itemName}>{item.name}</h3>
+                      <Link
+                        to={`/${currentLang}/detail/${item.id}`}
+                        className={styles.itemLink}
+                      >
+                        {t("browse.viewDetails")}
+                      </Link>
+                    </div>
+                  ))}
+              </div>
+
+              {/* Comparison feature instruction section */}
+              {filteredItems.length > 0 &&
+                selectedItems.length === 0 &&
+                !searchTerm && (
+                  <div className={styles.comparisonSection}>
+                    <h2 className={styles.comparisonTitle}>
+                      {t("browse.compareTitle")}
+                    </h2>
+                    <p className={styles.comparisonText}>
+                      {t("browse.compareText")}
+                    </p>
+                    <p className={styles.comparisonInstructions}>
+                      {t("browse.comparisonInstructions")}
+                    </p>
+                  </div>
+                )}
+            </div>
+          </div>
         </>
       ) : (
         /* Comparison View */
@@ -520,8 +822,10 @@ const Browse: React.FC<BrowseProps> = () => {
                   ))}
                 </tr>
 
-                {activeTab === "materials" ? (
-                  // Raw Materials specific properties
+                {/* Raw Materials specific properties */}
+                {selectedItemsData.some(
+                  (item) => item.type === "materials"
+                ) && (
                   <>
                     <tr>
                       <td className={styles.propertyName}>
@@ -529,8 +833,9 @@ const Browse: React.FC<BrowseProps> = () => {
                       </td>
                       {selectedItemsData.map((item) => (
                         <td key={item.id}>
-                          {(item as (typeof rawMaterials)[0]).description ||
-                            "-"}
+                          {item.type === "materials"
+                            ? item.description || "-"
+                            : "-"}
                         </td>
                       ))}
                     </tr>
@@ -540,7 +845,9 @@ const Browse: React.FC<BrowseProps> = () => {
                       </td>
                       {selectedItemsData.map((item) => (
                         <td key={item.id}>
-                          {(item as (typeof rawMaterials)[0]).riskLevel || "-"}
+                          {item.type === "materials"
+                            ? item.riskLevel || "-"
+                            : "-"}
                         </td>
                       ))}
                     </tr>
@@ -550,14 +857,17 @@ const Browse: React.FC<BrowseProps> = () => {
                       </td>
                       {selectedItemsData.map((item) => (
                         <td key={item.id}>
-                          {(item as (typeof rawMaterials)[0]).availability ||
-                            "-"}
+                          {item.type === "materials"
+                            ? item.availability || "-"
+                            : "-"}
                         </td>
                       ))}
                     </tr>
                   </>
-                ) : (
-                  // Product Groups specific properties
+                )}
+
+                {/* Product Groups specific properties */}
+                {selectedItemsData.some((item) => item.type === "products") && (
                   <>
                     <tr>
                       <td className={styles.propertyName}>
@@ -565,8 +875,9 @@ const Browse: React.FC<BrowseProps> = () => {
                       </td>
                       {selectedItemsData.map((item) => (
                         <td key={item.id}>
-                          {(item as (typeof productGroups)[0]).keyMaterials ||
-                            "-"}
+                          {item.type === "products"
+                            ? item.keyMaterials || "-"
+                            : "-"}
                         </td>
                       ))}
                     </tr>
@@ -576,8 +887,9 @@ const Browse: React.FC<BrowseProps> = () => {
                       </td>
                       {selectedItemsData.map((item) => (
                         <td key={item.id}>
-                          {(item as (typeof productGroups)[0]).industryImpact ||
-                            "-"}
+                          {item.type === "products"
+                            ? item.industryImpact || "-"
+                            : "-"}
                         </td>
                       ))}
                     </tr>

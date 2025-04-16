@@ -31,11 +31,11 @@
 
 .navLinks li a {
   padding: 8px;
+  text-wrap: nowrap;
 }
 
-.logoText {
-  line-height: 22px;
-  font-size: 30px;
+.logoText img {
+  width: 130px;
 }
 
 /* Link Styles */
@@ -43,7 +43,8 @@
   color: var(--link-color);
   text-transform: uppercase;
   text-decoration: none;
-  font-size: 1.2rem;
+  font-size: 1rem;
+  padding: 6px;
   font-weight: 400;
 }
 
@@ -51,14 +52,15 @@
   color: var(--link-active-color);
   font-weight: 700;
   text-decoration: none;
-  font-size: 1.2rem;
+  font-size: 1rem;
+  padding: 6px;
   text-transform: uppercase;
 }
 
 /* Navigation Label */
 .navLabel {
   background-color: var(--nav-label-background);
-  padding: 0 20px;
+  padding: 0 15px;
 }
 .navMaxWidth {
   max-width: 1280px;
@@ -67,6 +69,7 @@
   width: 100%;
   display: flex;
   justify-content: space-between;
+  column-gap: 5px;
 }
 
 /* Flag Image Styles */
@@ -83,8 +86,8 @@
   background-color: var(--button1-background);
   font-weight: 700;
   color: var(--button1-color);
-  padding: 16px;
-  width: 130px;
+  width: 115px;
+  padding: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -101,8 +104,8 @@
   background-color: var(--button2-background);
   font-weight: 700;
   color: var(--button2-color);
-  padding: 16px;
-  width: 130px;
+  width: 115px;
+  padding: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -117,41 +120,31 @@
 
 /* Bottom Navigation Styles */
 .navBottom {
-  padding: 25px 20px;
+  padding: 25px 16px;
 }
 
 .navBottomLeft {
   display: flex;
-  gap: 20px;
+  gap: 10px;
   align-items: center;
+  justify-content: space-between;
+  width: 100%;
 }
 
 .menuIcon {
   display: none;
 }
 
-.mblnavlogo {
-  display: none;
-}
-
-@media screen and (max-width: 1340px) {
-  .navBottomLeft {
-    gap: 10px;
-  }
-
-  .navButton1,
-  .navButton2 {
-    width: 115px;
-    padding: 12px;
-  }
-
-  .logoText img {
-    width: 130px;
-  }
-}
-
 /* Media Queries */
+@media screen and (max-width: 1238px) {
+  .logoText img {
+    width: 105px;
+  }
+}
 @media screen and (max-width: 1200px) {
+  .logoText img {
+    width: 110px;
+  }
   .mblnavlogo {
     display: block;
     font-size: 20px !important;
@@ -162,18 +155,6 @@
     font-size: 30px;
   }
 
-  .navBottomLeft {
-    display: flex;
-    gap: 16px;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-  }
-
-  .logoText img {
-    width: 130px;
-  }
-
   .menuIcon {
     font-size: 40px;
     display: flex;
@@ -182,21 +163,6 @@
 
   .navLeft,
   .navRight {
-    display: none !important;
-  }
-
-  .navLabel {
-    padding: 0 15px;
-  }
-
-  .navBottom {
-    padding-left: 20px !important;
-    padding-right: 20px !important;
-  }
-}
-
-@media screen and (min-width: 1200px) {
-  .navicon {
     display: none !important;
   }
 }
@@ -225,14 +191,46 @@
 /* Add this after any existing styles in the file */
 
 .navbarSearch {
-  margin-left: 20px;
-  display: inline-flex;
-  align-items: center;
+  margin-left: 15px;
+  flex: 0 1 auto;
+  max-width: 220px;
 }
 
 /* Add responsive styles for the search component */
+@media (max-width: 1340px) {
+  .navbarSearch {
+    max-width: 180px;
+  }
+}
+
+@media (max-width: 1280px) {
+  .navLeft {
+    flex-wrap: wrap;
+  }
+
+  .navbarSearch {
+    margin-left: 10px;
+    max-width: 160px;
+  }
+}
+
 @media (max-width: 1200px) {
   .navbarSearch {
     display: none; /* Hide search on smaller screens */
   }
+}
+
+/* Update existing navLeft styles to better accommodate the search */
+.navLeft {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  flex: 1;
+}
+
+.navLinks {
+  display: flex;
+  flex-wrap: nowrap;
+  margin: 0;
+  padding: 0;
 }

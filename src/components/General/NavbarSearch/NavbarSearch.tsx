@@ -3,7 +3,6 @@ import { useNavigate, useParams } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import styles from "./NavbarSearch.module.css";
 import { FaSearch, FaTimes } from "react-icons/fa";
-import i18next from "i18next";
 
 // Example grondstof data
 const exampleGrondstofData = [
@@ -69,7 +68,6 @@ const NavbarSearch: React.FC<NavbarSearchProps> = ({
   const [isOpen, setIsOpen] = useState(false);
   const [materialResults, setMaterialResults] = useState<any[]>([]);
   const [productResults, setProductResults] = useState<any[]>([]);
-  const [isSearchVisible, setIsSearchVisible] = useState(isMobile);
   const wrapperRef = useRef<HTMLDivElement>(null);
   const navigate = useNavigate();
   const { lang } = useParams<{ lang?: string }>();
@@ -88,9 +86,13 @@ const NavbarSearch: React.FC<NavbarSearchProps> = ({
       const filteredMaterials = exampleGrondstofData
         .filter(
           (item) =>
-            item.name.toLowerCase().includes(value.toLowerCase()) ||
-            item.code.toLowerCase().includes(value.toLowerCase()) ||
-            item.category.toLowerCase().includes(value.toLowerCase())
+            // Match words that start with the search term
+            item.name
+              .toLowerCase()
+              .split(/\s+/)
+              .some((word) => word.startsWith(value.toLowerCase())) ||
+            item.code.toLowerCase().startsWith(value.toLowerCase()) ||
+            item.category.toLowerCase().startsWith(value.toLowerCase())
         )
         .slice(0, 2); // Only show top 2 matches
 
@@ -98,9 +100,13 @@ const NavbarSearch: React.FC<NavbarSearchProps> = ({
       const filteredProducts = exampleProductgroepData
         .filter(
           (item) =>
-            item.name.toLowerCase().includes(value.toLowerCase()) ||
-            item.code.toLowerCase().includes(value.toLowerCase()) ||
-            item.category.toLowerCase().includes(value.toLowerCase())
+            // Match words that start with the search term
+            item.name
+              .toLowerCase()
+              .split(/\s+/)
+              .some((word) => word.startsWith(value.toLowerCase())) ||
+            item.code.toLowerCase().startsWith(value.toLowerCase()) ||
+            item.category.toLowerCase().startsWith(value.toLowerCase())
         )
         .slice(0, 2); // Only show top 2 matches
 
@@ -114,20 +120,6 @@ const NavbarSearch: React.FC<NavbarSearchProps> = ({
     }
   };
 
-  // Toggle search input visibility
-  const toggleSearchInput = () => {
-    setIsSearchVisible(!isSearchVisible);
-    if (!isSearchVisible) {
-      // If we're showing the search, focus the input
-      setTimeout(() => {
-        const inputElement = document.querySelector(
-          `.${styles.input}`
-        ) as HTMLInputElement;
-        if (inputElement) inputElement.focus();
-      }, 100);
-    }
-  };
-
   // Close dropdown when clicking outside
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
@@ -136,16 +128,13 @@ const NavbarSearch: React.FC<NavbarSearchProps> = ({
         !wrapperRef.current.contains(event.target as Node)
       ) {
         setIsOpen(false);
-        if (!isMobile) {
-          setIsSearchVisible(false);
-        }
       }
     }
     document.addEventListener("mousedown", handleClickOutside);
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, [wrapperRef, isMobile]);
+  }, [wrapperRef]);
 
   // Handle item selection
   const handleItemClick = (item: any, type: "material" | "product") => {
@@ -155,17 +144,16 @@ const NavbarSearch: React.FC<NavbarSearchProps> = ({
       navigate(`/${currentLang}/product-group`); // For demo purposes, navigate to product-group page for any product
     }
     setIsOpen(false);
-    setIsSearchVisible(false);
   };
 
   // Handle search button click or enter key
   const handleSearch = () => {
     if (searchTerm.trim()) {
-      navigate(
-        `/${currentLang}/search-results?q=${encodeURIComponent(searchTerm)}`
-      );
+      // Use replace: true to ensure the Browse component correctly handles the new search
+      navigate(`/${currentLang}/browse?q=${encodeURIComponent(searchTerm)}`, {
+        replace: true,
+      });
       setIsOpen(false);
-      setIsSearchVisible(false);
     }
   };
 
@@ -175,9 +163,6 @@ const NavbarSearch: React.FC<NavbarSearchProps> = ({
       handleSearch();
     } else if (e.key === "Escape") {
       setIsOpen(false);
-      if (!isMobile) {
-        setIsSearchVisible(false);
-      }
     }
   };
 
@@ -194,136 +179,117 @@ const NavbarSearch: React.FC<NavbarSearchProps> = ({
       className={`${styles.searchContainer} ${className || ""}`}
       ref={wrapperRef}
     >
-      <div className={styles.searchIconContainer} onClick={toggleSearchInput}>
-        <FaSearch className={styles.searchIconOnly} />
+      <div className={styles.searchInput}>
+        <FaSearch className={styles.searchIcon} onClick={handleSearch} />
+        <input
+          type="text"
+          value={searchTerm}
+          onChange={handleSearchChange}
+          onKeyDown={handleKeyDown}
+          placeholder={t("advancedSearch.searchPlaceholder")}
+          className={styles.input}
+        />
+        {searchTerm && (
+          <button className={styles.clearButton} onClick={clearSearch}>
+            <FaTimes />
+          </button>
+        )}
       </div>
-      {isSearchVisible && (
-        <div className={styles.searchInputWrapper}>
-          <div className={styles.searchInput}>
-            <FaSearch className={styles.searchIcon} onClick={handleSearch} />
-            <input
-              type="text"
-              value={searchTerm}
-              onChange={handleSearchChange}
-              onKeyDown={handleKeyDown}
-              placeholder={t("advancedSearch.searchPlaceholder")}
-              className={styles.input}
-            />
-            {searchTerm ? (
-              <button className={styles.clearButton} onClick={clearSearch}>
-                <FaTimes />
-              </button>
-            ) : (
-              !isMobile && (
-                <button
-                  className={styles.closeButton}
-                  onClick={toggleSearchInput}
-                >
-                  <FaTimes />
-                </button>
-              )
-            )}
-          </div>
 
-          {isOpen &&
-            searchTerm.trim().length > 0 &&
-            (materialResults.length > 0 || productResults.length > 0) && (
-              <div className={styles.resultsDropdown}>
-                {materialResults.length > 0 && (
-                  <div className={styles.categorySection}>
-                    <h3 className={styles.categoryTitle}>
-                      {t("advancedSearch.categoryRawMaterials")}
-                    </h3>
-                    {materialResults.map((item) => (
-                      <div
-                        key={`material-${item.id}`}
-                        className={styles.resultItem}
-                        onClick={() => handleItemClick(item, "material")}
-                      >
-                        <div className={styles.resultInfo}>
-                          <span className={styles.resultName}>{item.name}</span>
-                          <span className={styles.resultCode}>
-                            {item.code} - {item.category}
-                          </span>
-                        </div>
+      {isOpen && searchTerm.trim().length > 0 && (
+        <div className={styles.resultsDropdown}>
+          {materialResults.length > 0 || productResults.length > 0 ? (
+            <>
+              {materialResults.length > 0 && (
+                <div className={styles.categorySection}>
+                  <h3 className={styles.categoryTitle}>
+                    {t("advancedSearch.categoryRawMaterials")}
+                  </h3>
+                  {materialResults.map((item) => (
+                    <div
+                      key={`material-${item.id}`}
+                      className={styles.resultItem}
+                      onClick={() => handleItemClick(item, "material")}
+                    >
+                      <div className={styles.resultInfo}>
+                        <span className={styles.resultName}>{item.name}</span>
+                        <span className={styles.resultCode}>
+                          {item.code} - {item.category}
+                        </span>
                       </div>
-                    ))}
-                    {materialResults.length > 0 && (
-                      <div
-                        className={styles.viewMoreLink}
-                        onClick={() =>
-                          navigate(
-                            `/${currentLang}/search-results?q=${encodeURIComponent(
-                              searchTerm
-                            )}&type=materials`
-                          )
-                        }
-                      >
-                        {t("advancedSearch.viewMore")}
-                      </div>
-                    )}
-                  </div>
-                )}
-
-                {productResults.length > 0 && (
-                  <div className={styles.categorySection}>
-                    <h3 className={styles.categoryTitle}>
-                      {t("advancedSearch.categoryProductGroups")}
-                    </h3>
-                    {productResults.map((item) => (
-                      <div
-                        key={`product-${item.id}`}
-                        className={styles.resultItem}
-                        onClick={() => handleItemClick(item, "product")}
-                      >
-                        <div className={styles.resultInfo}>
-                          <span className={styles.resultName}>{item.name}</span>
-                          <span className={styles.resultCode}>
-                            {item.code} - {item.category}
-                          </span>
-                        </div>
-                      </div>
-                    ))}
-                    {productResults.length > 0 && (
-                      <div
-                        className={styles.viewMoreLink}
-                        onClick={() =>
-                          navigate(
-                            `/${currentLang}/search-results?q=${encodeURIComponent(
-                              searchTerm
-                            )}&type=products`
-                          )
-                        }
-                      >
-                        {t("advancedSearch.viewMore")}
-                      </div>
-                    )}
-                  </div>
-                )}
-
-                <div
-                  className={styles.viewAllResults}
-                  onClick={() =>
-                    navigate(
-                      `/${currentLang}/search-results?q=${encodeURIComponent(
-                        searchTerm
-                      )}`
-                    )
-                  }
-                >
-                  {t("advancedSearch.viewAllResults")}
+                    </div>
+                  ))}
+                  {materialResults.length > 0 && (
+                    <div
+                      className={styles.viewMoreLink}
+                      onClick={() =>
+                        navigate(
+                          `/${currentLang}/browse?q=${encodeURIComponent(
+                            searchTerm
+                          )}&type=materials`,
+                          { replace: true }
+                        )
+                      }
+                    >
+                      {t("advancedSearch.viewMore")}
+                    </div>
+                  )}
                 </div>
-              </div>
-            )}
+              )}
 
-          {isOpen &&
-            searchTerm.trim().length > 0 &&
-            materialResults.length === 0 &&
-            productResults.length === 0 && (
-              <div className={styles.noResults}>
-                {t("advancedSearch.noResults")}
+              {productResults.length > 0 && (
+                <div className={styles.categorySection}>
+                  <h3 className={styles.categoryTitle}>
+                    {t("advancedSearch.categoryProductGroups")}
+                  </h3>
+                  {productResults.map((item) => (
+                    <div
+                      key={`product-${item.id}`}
+                      className={styles.resultItem}
+                      onClick={() => handleItemClick(item, "product")}
+                    >
+                      <div className={styles.resultInfo}>
+                        <span className={styles.resultName}>{item.name}</span>
+                        <span className={styles.resultCode}>
+                          {item.code} - {item.category}
+                        </span>
+                      </div>
+                    </div>
+                  ))}
+                  {productResults.length > 0 && (
+                    <div
+                      className={styles.viewMoreLink}
+                      onClick={() =>
+                        navigate(
+                          `/${currentLang}/browse?q=${encodeURIComponent(
+                            searchTerm
+                          )}&type=products`,
+                          { replace: true }
+                        )
+                      }
+                    >
+                      {t("advancedSearch.viewMore")}
+                    </div>
+                  )}
+                </div>
+              )}
+
+              <div
+                className={styles.viewAllResults}
+                onClick={() =>
+                  navigate(
+                    `/${currentLang}/browse?q=${encodeURIComponent(searchTerm)}`
+                  )
+                }
+              >
+                {t("advancedSearch.viewAllResults")}
               </div>
-            )}
+            </>
+          ) : (
+            <div className={styles.noResults}>
+              {t("advancedSearch.noResults")}
+            </div>
+          )}
         </div>
       )}
     </div>
